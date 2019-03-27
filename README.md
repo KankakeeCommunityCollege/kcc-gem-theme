@@ -1,11 +1,8 @@
 # kcc-gem-theme
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+A Jekyll theme for new KCC starts. This theme has the `_layouts`, `_includes`, & `assets/*` (CSS, JS, images).
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
-
+This theme's GitHub repo has all the Gulp, npm, & Webpack dependancies included to compile & view it in a browser, just like our normal sites.
 
 ## Installation
 
@@ -31,8 +28,6 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
@@ -49,4 +44,3 @@ To add a custom directory to your theme-gem, please edit the regexp in `kcc-gem-
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
