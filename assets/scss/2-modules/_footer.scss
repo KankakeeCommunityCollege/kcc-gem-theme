@@ -1,0 +1,76 @@
+// Footer Styles
+
+.footer__margin {
+  margin-top: 20px;
+}
+
+
+.footer {
+  background-color: $grey-4;
+  margin-top: 60px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+// Footer's "athletics.kcc.edu link"
+a.footer-link {
+  color: $primary-blue;
+
+  &:hover {
+    text-decoration: none !important;
+    color: $primary-red;
+  }
+}
+
+.footer-heading {
+  transition-property: color;
+  transition-timing-function: ease;
+  transition-duration: .3s;
+}
+
+.footer-icons {
+  background-color: $primary-red;
+  border-radius: 50%;
+  transition-property: background-color;
+  transition-timing-function: ease;
+  transition-duration: .3s;
+  height: 33px;
+  margin: 4px;
+  padding: 2px;
+  width: 33px;
+}
+
+@media screen and (min-width: 360px) {
+  .footer-icons {
+    height: 40px;
+    margin: 5px;
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .footer-icons {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+a.footer-social-links, a.footer-social-links .footer-icons {
+  text-decoration: none !important; // Get rid of default link-underline on hover
+}
+
+a.footer-social-links:hover .footer-icons {
+  text-decoration: none !important;
+  background-color: $primary-blue;
+}
+
+.footer__mobile--margin-bottom {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .footer__mobile--margin-bottom {
+    margin-bottom: 0;
+  }
+}

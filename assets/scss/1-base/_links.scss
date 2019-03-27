@@ -1,0 +1,86 @@
+.blue-link {
+  color: $primary-blue;
+  font-family: $secondaryfont-stack;
+  font-size: 1.1em;
+  font-weight: $secondaryfont-weight-bold;
+}
+
+.blue-link:hover {
+  color: $primary-red;
+  text-decoration: none;
+}
+
+.schedule-link {
+  margin-left: -20px;
+}
+
+// News rollup Styles
+// =========================================
+.news__link {
+  text-decoration: none !important; // IMPORTANT NEEDED TO PREVENT UNDERLINE ON LINK HOVER
+}
+
+// Change the news heading's color to blue when hovering any part of the news item
+.news__cell-left:hover .news__heading, //this selector isn't functioning properly on hover
+.news__cell-right:hover .news__heading,
+.news__cell-left:focus .news__heading, //this selector isn't functioning properly on hover
+.news__cell-right:focus .news__heading {
+// Change the news headings color to blue when hovering any part of the news item
+  color: $primary-blue;
+}
+
+// link__offset class used to offset anchor jump-links via CSS only method
+// Links need offseting to compensate for fixed nav menu
+// ===========================================================================================
+.link__offset::before {
+  // mobile devices get slightly different offset w/ different sized fixed header
+  content: " ";
+  display: block;
+  height: 371px; // defining a height increases the size
+  margin-top: -371px; // negative margin offsets hight to pull it back down
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .link__offset::before {
+      height: 271px;
+      margin-top: -271px;
+  }
+}
+
+.links__kcc-logo {
+  display: inline;
+  float: left;
+  width: 120px;
+  height:80px;
+}
+
+.link__more-padding {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.links__local-nav__newsroom-heading-link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar-light .navbar-nav .links__local-nav__nav-link--color { // Ugly (chain of) selectors needed to overide bootstrap's "nav-link" color:
+  // Overide bootstrap 4's "nav-link" color:
+  color: $primary-blue;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+  color: $primary-red;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: $primary-red;
+}
+
+.links__darker-link {
+  color: $darker-link;
+}

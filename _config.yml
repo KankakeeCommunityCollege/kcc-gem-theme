@@ -1,0 +1,51 @@
+title: "Kankakee Community College"
+collections:
+  posts:
+    _hide_content: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    title: ''
+    permalink: /:categories/:title/
+    baseurl: ../../../
+    categories: news
+permalink: pretty
+description: > # this means to ignore newlines until "baseurl:"
+# Delete this comment and place description on this line
+baseurl: "" # the subpath of your site, e.g. /blog
+# include:
+#   - "_pages"
+#   - "_posts"
+
+# include future posts? (true or false)
+future: true
+# Build settings
+markdown: kramdown
+
+exclude:
+  - "gulpfile.js"
+  - "node_modules"
+  - "npm-debug.log"
+  - "package.json"
+  - "package-lock.json"
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "gulpconfig.yml"
+  - "/docs/"
+  - "yarn.lock"
+  - "/assets/adobe/"
+
+uploads_dir: # specifies the default uploads directory for CloudCannon
+  - "uploads/"
+
+_comments:
+  layout: Do NOT modify layouts. It may break things.
+  baseurl: Do NOT modify baseurl. It WILL break all page links.
+  categories: "FOR CATEGORIES <br/>SPORTS-SPECIFIC: <br/>1.) First enter the sport's category from this list <br/>2.) followed by the \"news\" category. <br/>(e.g. mens-basketball news) <br/>GENERAL NEWS: <br/>1.) Enter \"news\" category first <br/>2.) followed by the \"general\" category. <br/>(e.g. news general)"
+  sport_category: Sport for which news item pertains. Gets pulled into news rollup.
+  news_thumb_image: Must be 16:9 ratio image. Preferably 200px wide.
+  description: "Descriptions are seen by search engines like Google and displayed in search results"

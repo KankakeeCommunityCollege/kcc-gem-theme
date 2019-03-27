@@ -1,0 +1,58 @@
+//  TO USE GOOGLE FONTS FOR SITE:
+//==============================================
+//fall back font stack for site
+$basefont-stack: 'Open Sans', sans-serif;
+$base-font-size: 1em;
+$base-font-weight: 400;
+$base-font-weigth-bold: 600;
+//secondary font stack for site
+$secondaryfont-stack: 'Roboto', sans-serif;
+$secondaryfont-weight-regular: 400;
+$secondaryfont-weight-boldish: 500;
+$secondaryfont-weight-bold: 700;
+$secondaryfont-weight-black: 900;
+
+$powerfont-family: 'Libre Franklin', sans-serif;
+$powerfont-weight-light: 300;
+$powerfont-weight-bold: 700;
+
+//Image path for most of global style sheet
+$imagedir:'/assets/img/';
+
+//KCC colors
+$primary-blue: #0f3b63;       // Primary red-color
+$primary-red: #c61f48;        // Primary blue-color
+$accent-blue: #005bac;        // Accent blue-color used in all links and link buttons;
+
+$black: #000;
+$grey-1: #666;
+$grey-2: #e5e8ed;
+$grey-3: #f1f2f7;            //  Background color for slick tracks
+$grey-4: #f8f9fa;            // Background color for footer (and Bootstrap 4 light navbar)
+$grey-5: #b1b1b1;            // Border-bottom for local-nav navigation bar
+$grey-6: #58585b;
+$grey-7: #868686;
+
+$white: #fff;
+
+
+$landing-bg: $grey-2;        // Landing page's background-color
+$default-bg: $white;        // Background color for non-landing pages
+$footer-bg: $white;         // Footer's background color
+$grey-heading: $grey-1;      // Grey headings used within page content
+$fa-color: $primary-red;
+$slide-bg: $white;            // Background color for the upcoming games slick slides
+$sub-nav-heading: $white;     // Font color for h1.page-heading heading of sub-nav
+$nav-link: $white;            // Color for nav-link-main links in mega-nav
+
+$btn-primary-bg: #0051a7;
+$btn-primary-border: #003773;
+$btn-hover-bg: #022b55;
+$btn-hover-border: #021e3d;
+$darker-link: #006ce0;
+$orange-heading: #f99e1b;
+
+html,
+body {
+  overflow-x: hidden;
+}

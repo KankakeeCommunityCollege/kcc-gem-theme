@@ -1,0 +1,36 @@
+.social-icons__icons {
+  background-color: $primary-red;
+  border-radius: 50%;
+  height: 33px;
+  margin: 4px;
+  padding: 2px;
+  transition-property: background-color;
+  transition-timing-function: ease;
+  transition-duration: .3s;
+  width: 33px;
+}
+
+@media screen and (min-width: 360px) {
+  .social-icons__icons {
+    height: 40px;
+    margin: 5px;
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .social-icons__icons {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+a.social-icons__links,
+a.social-icons__links .social-icons__icons {
+  text-decoration: none !important; // Get rid of default link-underline on hover
+}
+
+a.social-icons__links:hover .social-icons__icons {
+  text-decoration: none !important;
+  background-color: $primary-blue;
+}

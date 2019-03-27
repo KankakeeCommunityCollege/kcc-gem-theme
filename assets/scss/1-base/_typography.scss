@@ -1,0 +1,399 @@
+.page-heading { // This class is applied to h1 level headings
+  color: $sub-nav-heading;
+  font-family: $secondaryfont-stack;
+  font-size: 1.1em;
+  font-weight: $secondaryfont-weight-bold;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 992px) {
+  .page-heading {
+    font-size: 1.8em;
+  }
+}
+
+p {
+  color: $grey-1;
+  font-family: $basefont-stack;
+  font-size: $base-font-size;
+}
+
+ul {
+  color: $grey-1;
+  font-family: $basefont-stack;
+  font-size: $base-font-size;
+}
+
+.menu-heading {
+  color: $primary-red;
+  font-family: $secondaryfont-stack;
+  font-size: 1.2em;
+  font-weight: $secondaryfont-weight-bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.nav-link-main { //styles for Main links in mega-nav
+  color: $nav-link !important;
+  font-family: $secondaryfont-stack;
+  font-size: 1em;
+  font-weight: $secondaryfont-weight-regular;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1080px) {
+  .nav-link-main {
+    font-size: .9em;
+    }
+}
+
+.sub-nav-link {
+  color: $sub-nav-heading;
+  font-family: $secondaryfont-stack;
+  font-size: .8em;
+  font-weight: $secondaryfont-weight-regular;
+  letter-spacing: .06em;
+}
+
+@media screen and (min-width: 992px) {
+  .sub-nav-link {
+    font-size: 1em;
+  }
+}
+
+.footer-heading {
+  font-family: $secondaryfont-stack;
+  font-size: 1.95rem;
+  font-weight: $secondaryfont-weight-black;
+}
+
+@media screen and (min-width: 360px) {
+  .footer-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .footer-heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .footer-heading {
+    font-size: 2.6rem;
+  }
+}
+
+p {
+  font-family: $basefont-stack;
+}
+
+.blue-heading {
+  color: $primary-blue;
+  font-family: $secondaryfont-stack;
+  font-size: 1.4em;
+  font-weight: $secondaryfont-weight-bold;
+}
+
+.f-color {
+  color: $fa-color;  // Sets color for FontAwesome icons
+}
+
+.main-heading {
+  color: $grey-heading;
+  font-family: $secondaryfont-stack;
+  font-size: 1.4em;
+  font-weight: $secondaryfont-weight-regular;
+}
+
+// Typography for Coaches sections on pages
+// ===========================================
+.coaches-heading {
+  color: $grey-heading;
+  font-family: $secondaryfont-stack;
+  font-size: 1.4em;
+  font-weight: $secondaryfont-weight-regular;
+  margin-left: 15px;
+}
+
+.coach-name {
+  color: $primary-red;
+  font-family: $secondaryfont-stack;
+  font-size: 1.5em;
+  font-weight: $secondaryfont-weight-bold;
+}
+
+.coach-title {
+  color: $grey-heading;
+  font-family: $secondaryfont-stack;
+  font-size: 1.2em;
+  font-weight: $secondaryfont-weight-black;
+}
+
+p.general-p {
+  font-family: $basefont-stack;
+  font-size: 1rem;
+}
+
+.news__heading {
+  color: $primary-red;
+  font-family: $secondaryfont-stack;
+  font-size: 1.2em;
+}
+
+.news__sub-heading {
+  color: #666;
+  font-family: $secondaryfont-stack;
+  font-size: .9em;
+  font-weight: $secondaryfont-weight-boldish;
+  text-transform: uppercase;
+}
+
+.news__paragraph {
+  color: #666;
+  font-family: $basefont-stack;
+  font-size: 1rem;
+}
+
+// ALERT TYPOGRAPHY SHIT HERE
+// ==========================
+.alert__title {
+  color: $primary-red;
+  font-family: $secondaryfont-stack;
+  font-size: 1.2em;
+}
+
+.typography__latest-news-widget__h2 {
+  border-bottom-color: $primary-red;
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  color: $primary-blue;
+  text-transform: uppercase;
+}
+
+.typography__newsroom-main-heading {
+  align-self: center;
+  color: $primary-blue;
+  display: inline;
+  font-family: eurostile,sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  vertical-align: middle;
+  transition-property: color;
+  transition-timing-function: ease;
+  transition-duration: .4s;
+  &:hover,
+  &:focus {
+    color: $primary-red;
+  }
+}
+
+@media screen and (min-width:360px) {
+  .typography__newsroom-main-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width:410px) {
+  .typography__newsroom-main-heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width:576px) {
+  .typography__newsroom-main-heading {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .typography__newsroom-main-heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .typography__newsroom-main-heading {
+    font-size: 2.6rem;
+  }
+}
+
+.typography__latest-news-widget__rollup-list-h {
+  color: $black;
+}
+
+.latest-news-widget__latest__tease__link:focus .typography__latest-news-widget__rollup-list-h,
+.latest-news-widget__latest__tease__link:hover .typography__latest-news-widget__rollup-list-h,
+.latest-news-widget__latest__tease__number .tease-is-active  {
+  color: $primary-red;
+}
+
+.typography__upcoming-events {
+  color: $primary-blue;
+  font-family: $basefont-stack;
+  font-weight: $base-font-weigth-bold;
+  text-transform: uppercase;
+}
+
+.typography__social-accounts {
+  color: $primary-blue;
+}
+
+.typography__newsroom-heading {
+  font-family: $secondaryfont-weight-bold;
+}
+
+.red-heading {
+  color: $primary-red;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.typography__red-h3 {
+  color: $primary-red;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.typography__red-h3--margin-btm {
+  margin-bottom: 40px;
+}
+
+.typography__red-h3--tan--margin-btm{
+  margin-bottom: 21px;
+}
+
+.typography__col--heading-underline {
+  background-image: url(/assets/img/heading-bg-underline.png);
+  background-repeat: no-repeat;
+  background-position: 0 50px;
+}
+
+.typography__col--heading-underline-tan {
+  background-image: url(/assets/img/heading-bg-underline-tan.png);
+  background-repeat: no-repeat;
+  background-position: 0 50px;
+}
+
+.typography__contacts--name {
+  color: $primary-blue;
+  font-family: $secondaryfont-stack;
+  font-size: 1.3em;
+  font-weight: $secondaryfont-weight-bold;
+}
+
+.typography__contacts--title {
+  color: $grey-heading;
+  font-family: $secondaryfont-stack;
+  font-size: 1.1em;
+  font-weight: $secondaryfont-weight-black;
+}
+
+.typography__stories--quote {
+  color: $primary-blue;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 488px) {
+  .typography__stories--quote {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .typography__stories--quote {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__stories--quote {
+    font-size: 1.4rem;
+  }
+}
+
+.typography__stories--name {
+  color: $primary-blue;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.typography__orange-h4  {
+  color: $orange-heading;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.4rem;
+}
+
+.typography__h5 {
+  color: $grey-6;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.typography__sub-nav--red-h3 {
+  color: $primary-red;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .typography__sub-nav--red-h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.typography__nav-link {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.typography__power-text {
+  color: $white;
+  font-family: $powerfont-family;
+  font-size: 1.1rem;
+  font-weight: $powerfont-weight-bold;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 360px) {
+  .typography__power-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .typography__power-text {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__power-text {
+    font-size: 2.9rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .typography__power-text {
+    font-size: 3.1rem;
+  }
+}

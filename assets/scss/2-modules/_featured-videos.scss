@@ -1,0 +1,17 @@
+
+@media screen and (min-width:992px) {
+  .featured-videos__right-border {
+    border-right-color: $black;
+    border-right-style: solid;
+    border-right-width: thin;
+  }
+}
+
+.featured-videos__heading-margin {
+  margin-bottom: 20px;
+}
+
+.featured-video__video-center {
+  margin-left: auto;
+  margin-right: auto;
+}

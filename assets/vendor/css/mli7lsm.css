@@ -1,0 +1,22 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * eurostile:
+ *   - http://typekit.com/eulas/00000000000000003b9b2162
+ *
+ * © 2009-2019 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-08-07 16:08:55 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=mli7lsm&ht=tk&f=25765&a=2358592&app=typekit&e=css");
+
+@font-face {
+font-family:"eurostile";
+src:url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/l?subset_id=2&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/d?subset_id=2&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/a?subset_id=2&fvd=i7&v=3") format("opentype");
+font-style:italic;font-weight:700;
+}
+
+.tk-eurostile { font-family: "eurostile",sans-serif; }

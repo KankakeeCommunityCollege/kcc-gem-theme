@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{page.title}} - {{site.title}}</title>
+        <meta name="description" content="{{page.description}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if jekyll.environment == "publish" %}
+          <!-- include Google Tag Manager script on production -->
+          {% include google-tag.html %}
+        {% endif %}
+        <!-- YouTube API -->
+        <meta name="yt-api-k" value="AIzaSyBpxv9JNl4AX816ScNmZcqHkLncMUeiAws" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        {% if jekyll.environment == "publish" %}
+          {% include stylesheets.html %}
+        {% else %}
+          {% include local-stylesheets.html %}
+        {% endif %}
+        <!-- Standard Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico" />
+        <!-- Custom CSS Stylesheet -->
+        <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico" />
+        <!-- Custom CSS Stylesheet -->
+        <link rel="stylesheet" href="{{page.baseurl}}assets/css/main.css{% if site.data.cache_bust_css %}?version={{ site.data.cache_bust_css | truncate: 32, '' }}{% endif %}">
+        <!-- Custom CSS Stylesheet for CloudCannon -->
+        <link rel="stylesheet" href="{{page.baseurl}}assets/css/content.css">
+        <!-- Uncomment to prevent IE-11 caching (for IE testing) -->
+        <!-- <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1"> -->
+    </head>
+    <body id="page-top">
+      {% if jekyll.environment == "publish" %}
+        <!-- include Google Tag Manager noscript on production -->
+        {% include google-noscript.html %}
+      {% endif %}
