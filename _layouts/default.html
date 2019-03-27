@@ -3,10 +3,6 @@
   {% include local-nav.html %}
   {{ content }}
   {% include footer.html %}
-  {% if jekyll.environment == "publish" %}
-    {% include scripts/vendor-local.html %}
-  {% else %}
-    {% include scripts/vendor-cdn.html %}
-  {% endif %}
+  {% include scripts/vendor-cdn.html %}
   {% include scripts/custom.html %}
 {% include foot.html %}
