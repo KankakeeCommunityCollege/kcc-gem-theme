@@ -7,10 +7,11 @@
     "watch": "gulp",
     "production": "run-p g-production wp-bundle",
     "g-production": "gulp --production",
+    "g-dev": "gulp",
     "wp-bundle": "npx webpack --mode=production",
-    "dev": "gulp && npx webpack --mode=development",
-    "build": "gulp --production",
-    "test": "gulp --production"
+    "wp-dev": "npx webpack --mode=development",
+    "dev": "run-p g-dev wp-dev",
+    "build": "gulp build"
   },
   "author": "",
   "license": "",
