@@ -28,7 +28,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HashPlugin({ path: './_data/', fileName: 'hash.yml' }),
+    new HashPlugin({ path: './_data/', fileName: 'theme-hash.yml' }),
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
