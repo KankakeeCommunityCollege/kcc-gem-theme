@@ -1,10 +1,16 @@
 # kcc-gem-theme
 
+### A Jekyll theme for new KCC sites.
+
 [![Gem Version](https://badge.fury.io/rb/kcc-gem-theme.svg)](https://badge.fury.io/rb/kcc-gem-theme)
 
-A Jekyll theme for new KCC starts. This theme has the `_layouts`, `_includes`, & `assets/*` (CSS, JS, images).
+---
 
-This theme's GitHub repo has all the Gulp, npm, & Webpack dependancies included to compile & view it in a browser, just like our normal sites.
+This theme's GitHub repo has all the Gulp, npm, & Webpack dependancies included to compile & view it in a browser, just like our new sites, for convenient development and previewing of changes.
+
+---
+
+<br>
 
 ## Installation
 
@@ -28,11 +34,18 @@ Or install it yourself as:
 
     $ gem install kcc-gem-theme
 
-## Usage
+
+---
+
+<br>
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+---
+
+<br>
 
 ## Development
 
@@ -113,6 +126,10 @@ On your next build you should see any new changes to gem theme.
 
 When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
 To add a custom directory to your theme-gem, please edit the regexp in `kcc-gem-theme.gemspec` accordingly.
+
+---
+
+<br>
 
 ## License
 
