@@ -41,6 +41,9 @@ exclude:
   - "/assets/adobe/"
   - "LICENSE.txt"
   - "webpack.config.js"
+  - "*.gem"
+  - "*.gemspec"
+  - "gulp-tasks/"
 
 uploads_dir: # specifies the default uploads directory for CloudCannon
   - "uploads/"
