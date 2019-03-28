@@ -1,6 +1,6 @@
 # kcc-gem-theme
 
-`kcc-gem-theme` is @ [![Gem Version](https://badge.fury.io/rb/kcc-gem-theme.svg)](https://badge.fury.io/rb/kcc-gem-theme)
+[![Gem Version](https://badge.fury.io/rb/kcc-gem-theme.svg)](https://badge.fury.io/rb/kcc-gem-theme)
 
 A Jekyll theme for new KCC starts. This theme has the `_layouts`, `_includes`, & `assets/*` (CSS, JS, images).
 
