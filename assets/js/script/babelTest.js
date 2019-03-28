@@ -6,7 +6,8 @@ function doStuff() {
     'Beryllium',
     'Boron',
     'Carbon',
-    'Nitrogen'
+    'Nitrogen',
+    'Oxygen'
   ];
   const data = materials.map(material => material.length + '<br>' + material + ' <br><hr>');
   const theDiv = document.getElementById('theDiv');
