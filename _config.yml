@@ -17,8 +17,8 @@ permalink: pretty
 description: > # this means to ignore newlines until "baseurl:"
 # Delete this comment and place description on this line
 baseurl: "" # the subpath of your site, e.g. /blog
-#include:
-#   - "_pages"
+include:
+  - "_pages"
 #   - "_posts"
 
 # include future posts? (true or false)
