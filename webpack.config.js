@@ -1,5 +1,5 @@
 const path = require('path');
-//const HashPlugin = require('hash-webpack-plugin');
+const HashPlugin = require('hash-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
@@ -10,8 +10,8 @@ module.exports = {
     'kcc-theme': './assets/js/script/all.js'
   },
   output: {
-    filename: '[name].bundle.js', // Leave out the [hash] naming for this
-    path: path.resolve(__dirname, 'assets', 'js', 'dist')
+    filename: '[name].[hash].bundle.js', // Leave out the [hash] naming for this
+    path: path.resolve(__dirname, 'assets', 'js', 'theme')
   },
   module: {
     rules: [
@@ -28,8 +28,8 @@ module.exports = {
     ]
   },
   plugins: [
-    //new HashPlugin({ path: './_data/', fileName: 'hash.yml' }),
-    new CleanWebpackPlugin({ path: './assets/js/dist/' })
+    new HashPlugin({ path: './_data/', fileName: 'hash.yml' }),
+    new CleanWebpackPlugin({ path: './assets/js/theme/' })
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']
