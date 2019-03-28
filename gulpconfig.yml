@@ -37,8 +37,8 @@ sass:
   dest:
     jekyllRoot: "assets/css/"
     buildDir: "_site/assets/css/"
-  notification: "Running Main Sass"
-  src: "assets/scss/main.scss"
+  notification: "Running KCC Theme Sass"
+  src: "assets/scss/kcc-theme.scss"
 
 # Gulp task to create stylesheet for custom options in CloudCannon (CMS customizations). Editors can use these styles as option in the CMS.
 cmsScss:
