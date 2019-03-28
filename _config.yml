@@ -1,4 +1,5 @@
 title: "Kankakee Community College"
+public-url: "https://www.kcc.edu"
 collections:
   posts:
     _hide_content: true
@@ -38,6 +39,8 @@ exclude:
   - "/docs/"
   - "yarn.lock"
   - "/assets/adobe/"
+  - "LICENSE.txt"
+  - "webpack.config.js"
 
 uploads_dir: # specifies the default uploads directory for CloudCannon
   - "uploads/"
