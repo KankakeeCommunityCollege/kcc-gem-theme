@@ -13,7 +13,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync');
-var hashsum = require('gulp-hashsum');
+//var hashsum = require('gulp-hashsum');
 const config = require('./gulp-tasks/loadGulpConfig'); // import custom js to parse YAML-configuration file (gulpconfig.yml)
 
 // Clean stuff (delete '_site/' dir)
@@ -54,7 +54,7 @@ function mainScss() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
     .pipe(autoprefixer(config.sass.compatibility)) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
-    .pipe(hashsum({filename: './_data/theme_cache_bust_css.yml', hash: 'md5'}))
+    //.pipe(hashsum({filename: './_data/theme_cache_bust_css.yml', hash: 'md5'}))
     .pipe(gulpif(PRODUCTION, cssnano({ zindex: false }))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(config.sass.dest.jekyllRoot))
