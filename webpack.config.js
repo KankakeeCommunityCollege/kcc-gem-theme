@@ -7,11 +7,11 @@ module.exports = {
   watch: true,
   entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
-    'kcc-theme': './assets/js/script/all.js'
+    'kcc-theme': './assets/js/theme/script/all.js'
   },
   output: {
     filename: '[name].[hash].bundle.js', // Leave out the [hash] naming for this
-    path: path.resolve(__dirname, 'assets', 'js', 'theme')
+    path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
   },
   module: {
     rules: [
@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new HashPlugin({ path: './_data/', fileName: 'hash.yml' }),
-    new CleanWebpackPlugin({ path: './assets/js/theme/' })
+    new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']
