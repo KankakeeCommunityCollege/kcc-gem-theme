@@ -14,8 +14,8 @@
 
 .latest-news-widget__latest__h {
   font-size: 41px;
-  font-weight: $base-font-weigth-bold;
-  font-family: $basefont-stack;
+  font-weight: $font-weight-bolder;
+  font-family: $font-family-paragraph;
   margin: 0 0 18px;
   line-height: 1;
   padding: 15px 0;
@@ -719,7 +719,7 @@
   color: #fff;
   text-decoration: none;
   margin-bottom: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-family-oswald;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: .1rem;

@@ -18,7 +18,7 @@
 @import '2-modules/timeline';
 @import '2-modules/social-icons';
 @import '2-modules/footer';
-@import '2-modules/global-nav';
+@import '2-modules/nav-global';
 @import '2-modules/playlist';
 @import '2-modules/archive';
 @import '2-modules/bios';
@@ -27,7 +27,9 @@
 // Layout items
 // @import "3-layout/...";
 @import '3-layout/positioning';
-@import '3-layout/posts';
+@import '3-layout/margins';
+@import '3-layout/padding';
+@import '3-layout/tables';
 
 // Page specific styling
 // @import "4-pages/...";
