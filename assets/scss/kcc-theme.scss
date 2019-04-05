@@ -10,18 +10,9 @@
 @import '2-modules/header';
 @import '2-modules/footer';
 @import '2-modules/sliders';
-@import '2-modules/latest-news-widget';
 @import '2-modules/local-nav';
-@import '2-modules/events';
-@import '2-modules/fb-widget';
-@import '2-modules/featured-videos';
-@import '2-modules/timeline';
 @import '2-modules/social-icons';
-@import '2-modules/footer';
 @import '2-modules/nav-global';
-@import '2-modules/playlist';
-@import '2-modules/archive';
-@import '2-modules/bios';
 @import '2-modules/error';
 
 // Layout items
@@ -34,6 +25,3 @@
 // Page specific styling
 // @import "4-pages/...";
 @import '4-pages/index/home';
-
-// Internet Exploder fixes
-@import '0-tools/ie-only';
