@@ -1,4 +1,2 @@
-{% comment %}
-  Another placeholder that just gets replaced.
-  This file prevents Liquid errors from breaking the build in the gem-theme.
-{% endcomment %}
+    <!-- Link to this site's main stylesheet -->
+    <link rel="stylesheet" href="{{page.baseurl}}assets/css/main.css{% if site.data.cache_bust_css %}?version={{ site.data.cache_bust_css | truncate: 32, '' }}{% endif %}">

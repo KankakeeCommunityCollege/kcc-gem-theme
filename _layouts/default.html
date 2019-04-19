@@ -1,4 +1,10 @@
-{% include head.html %}
+{% include document-head.html %}
+  {% include scripts/google-tag.html %}
+  {% include styles/fonts.html %}
+  {% include styles/vendor.html %}
+  {% include styles/main.html %}
+  {% include body.html %}
+  {% include scripts/google-noscript.html %}
   {% include nav-global.html %}
   {% include nav-local.html %}
   {{ content }}
