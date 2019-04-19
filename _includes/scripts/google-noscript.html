@@ -1,6 +1,6 @@
     <!-- Google Tag Manager (noscript) -->
-
-    <!-- Place appropriate Google Tag Manager noscript here.
-    ======================================================= -->
-
+    {% if site.google-tag_key == "Google Tag Manager key goes here" or site.google-tag_key == nil or site.google-tag_key == '' %}<!-- =========================================================================================
+    YOU NEED TO PUT THE GOOGLE TAG KEY IN THE _config.yml FILE FOR THE <noscript> TO SHOW UP HERE!
+    ============================================================================================ -->{% endif %}
+    {% if site.google-tag_key != "Google Tag Manager key goes here" and site.google-tag_key != nil %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google-tag_key }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
     <!-- End Google Tag Manager (noscript) -->

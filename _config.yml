@@ -1,5 +1,6 @@
 title: "KCC"
 public-url: "https://www.kcc.edu"
+google-tag_key: Google Tag Manager key goes here
 collections:
   posts:
     _hide_content: true
