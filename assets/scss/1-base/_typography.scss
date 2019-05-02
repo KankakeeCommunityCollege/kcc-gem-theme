@@ -199,6 +199,31 @@ body {
   font-size: 1.4em;
 }
 
+.typography__phone--span {
+  color: $white;
+  font-family: $font-family-oswald;
+  font-size: 1.3rem;
+  font-weight: $font-weight-regular;
+  letter-spacing: .07rem;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  .typography__phone--span {
+    font-size: 1.45rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .typography__phone--span {
+    font-size: 1.5rem;
+  }
+}
+
+.typography__larger-p {
+  font-size: 1.3rem;
+}
+
 // Other font styles
 p {
   color: $grey-heading;

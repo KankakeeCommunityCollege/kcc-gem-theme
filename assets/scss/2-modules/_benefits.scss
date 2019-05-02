@@ -1,0 +1,349 @@
+
+.benefits__typography--caption {
+  bottom: 15px;
+  color: $white;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.25));
+  font-family: $font-family-oswald;
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  letter-spacing: .07rem;
+  position: absolute;
+  right: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography--caption {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .benefits__typography--caption {
+    font-size: 1.2rem;
+  }
+}
+
+.benefits__typography-h4 {
+  font-family: $font-family-oswald;
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography-h4 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__typography-h4 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .benefits__typography-h4 {
+    font-size: 2.4rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+.benefits__typography--h5 {
+  color: $primary-red;
+  font-family: $font-family-oswald;
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  letter-spacing: .03rem;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography--h5 {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__typography--h5 {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__typography-h5 {
+    font-size: 3rem;
+  }
+}
+
+.benefits__typography--h5--black {
+  color: $black;
+  font-family: $font-family-oswald;
+  font-size: 2rem;
+  font-weight: $font-weight-regular;
+  letter-spacing: .03rem;
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography--h5--black {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__typography-h5--black {
+    font-size: 3rem;
+  }
+}
+
+.benefits__typography--student-p {
+  color: $black;
+  font-weight: 600;
+  font-size: 1.15em;
+  margin-top: 15px;
+  margin-bottom: .5rem;
+}
+
+.benefits__typography--img-cap {
+  font-size: 1.35rem;
+  font-weight: 600;
+  display: block;
+}
+
+.benefits__typography-itransfer {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  position: absolute;
+  top: 4rem;
+  margin-left: -20px;
+}
+
+@media screen and (min-width: 400px) {
+  .benefits__typography-itransfer {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography-itransfer {
+    font-size: 1.9rem;
+  }
+}
+
+.benefits__typography--h6 {
+  color: $primary-red;
+  font-family: $font-family-saira;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: .03rem;
+}
+
+.benefits__typography--thank-you {
+  color: $primary-blue;
+  font-family: $font-family-kcc;
+  font-size: 2rem;
+  &--message {
+    color: $primary-red;
+    font-family: $font-family-saira;
+    font-weight: $font-weight-bold;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__typography--thank-you {
+    font-size: 2.4rem;
+    margin-left: 100px;
+    margin-top: -10px;
+    &--message {
+      font-size: 1.6rem;
+      margin-left: 95px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__typography--thank-you {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .benefits__typography--thank-you {
+    font-size: 3rem;
+    margin-top: -15px;
+  }
+}
+
+.benefits__check-svg {
+  margin-top: -60px;
+  width: 80px;
+}
+
+.benefits__blue-section {
+  background-color: $color-blue-light;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.benefits__card--spacing {
+  margin-bottom: 40px;
+}
+
+.benefits__first-section--marg {
+  margin-top: 15px;
+  background-color: $color-blue-light;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__first-section--marg {
+    margin-top: 15px;
+  }
+}
+
+.benefits__section--marg {
+  margin-top: 35px;
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__section--marg {
+    margin-top: 65px;
+  }
+}
+
+.benefits__row--pad {
+  margin-top: 25px;
+}
+
+.benefits__itransfer-img {
+  width: 120px;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 400px) {
+  .benefits__itransfer-img {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__itransfer-img {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__itransfer-img {
+    margin-top: 20px;
+    width: 160px;
+  }
+}
+
+.benefits__idfpr-img {
+  width: 330px;
+}
+
+@media screen and (max-width: 768px) {
+  .benefits__idfpr-img {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .benefits__idfpr-img {
+    margin-bottom: 15px;
+  }
+}
+
+.benefits__iccb-img {
+  width: 250px;
+}
+
+@media screen and (max-width: 992px) {
+  .benefits__iccb-img {
+    margin-top: 15px;
+  }
+}
+
+.benefits__offset-global-nav {
+  margin-top: 60px;
+}
+
+
+.benefits__accredited--card {
+  background-color: $primary-blue;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  width: 90%
+}
+
+@media screen and (min-width: 400px) {
+  .benefits__accredited--card {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__accredited--card {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .benefits__accredited--card {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__accredited--card {
+    width: 75%;
+  }
+}
+
+.benefits__accredited--span-l {
+  color: $white;
+  font-size: 2.1rem;
+  font-weight: bolder;
+  display: block;
+  line-height: 1;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+.benefits__accredited--span-s {
+  color: $white;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: .5;
+  font-weight: 600;
+  letter-spacing: -.04rem;
+}
+
+.benefits__accredited--span--source {
+  display: block;
+}
+
+.benefits__accredited--itransfer--wrapper {
+  width: 50%;
+}
+
+.benefits__borders--circle-img {
+  border: 3px solid $white;
+  filter: drop-shadow(5px 5px 12px #b1b1b1);
+}
+
+#page-top::before {
+  display: block;
+  content: " ";
+  margin-top: -60px;
+  height: 60px;
+  visibility: hidden;
+  pointer-events: none;
+}
