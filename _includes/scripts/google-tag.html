@@ -1,9 +1,9 @@
 <!-- Google Tag Manager -->
 
 {% if site.google-tag_key == "Google Tag Manager key goes here" or site.google-tag_key == nil or site.google-tag_key == '' %}<!-- =========================================================================================
-  YOU NEED TO PUT THE GOOGLE TAG KEY IN THE _config.yml FILE FOR THE <script> TO SHOW UP HERE!
+  YOU NEED TO PUT THE GOOGLE TAG KEY IN THE _config.yml FILE!
   ============================================================================================ -->{% endif %}
-{% if site.google-tag_key != "Google Tag Manager key goes here" and site.google-tag_key != nil %}
+{% if jekyll.environment == "publish" %}{% if site.google-tag_key != "Google Tag Manager key goes here" and site.google-tag_key != nil %}
 <script>
   (function(w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -20,5 +20,5 @@
     f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', '{{ site.google-tag_key }}');
 </script>
-{% endif %}
+{% endif %}{% endif %}
 <!-- End Google Tag Manager -->
