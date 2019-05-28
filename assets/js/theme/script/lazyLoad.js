@@ -8,7 +8,4 @@ function lazyLoad() {
     };
   });
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  lazyLoad();
-});
+module.exports = lazyLoad;

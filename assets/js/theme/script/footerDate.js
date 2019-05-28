@@ -4,7 +4,4 @@ function footerDate() {
   const fullYear = d.getFullYear();
   document.getElementById('currentYear').innerHTML = fullYear;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  footerDate();
-});
+module.exports = footerDate;

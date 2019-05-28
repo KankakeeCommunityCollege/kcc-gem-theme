@@ -1,41 +1,22 @@
 // Custom JS to toggle the search form on mobile devices
-var imgsrc = $('#searchImg').attr('src');
-//function toggler() {
-//  if (imgsrc.indexOf('assets/img/search.svg') != -1) {
-//    console.log('true');
-//    $('#searchImg').attr('src', 'assets/img/x.svg');
-//  } else {
-//    $('#searchImg').attr('src', 'assets/img/search.svg');
-//    console.log('false');
-//  }
-//}
-$('#searchIcon').click(function () {
-  function searchCheck() {
-    var imgUrl = $('#searchImg').css('background-image');
-    if ( imgUrl.indexOf('assets/img/search.svg') != -1 ) {
-//      $('#searchImg').css('background-image', '../../../../x.svg');
-//      console.log('search');
-      $('#searchImg').css('background-image', 'url("http://news.kcc.edu/assets/img/x.svg")');
-    } else {
-      $('#searchImg').css('background-image', 'url("http://news.kcc.edu/assets/img/search.svg")');
-    }
-  }
-  searchCheck();
-  $('#searchCollapse').toggleClass('global-nav__search-collapse--visible');
-//  $('#searchImg').css('background-image', 'url('')')
-//  toggler();
-  $('#mainNav').toggleClass('local-nav--search-toggle');
-  $('#globalNav').toggleClass('global-nav--search-toggle');
-});
-
-
-$('document').ready(function () {
-  // Inject custom text into Google Custom Search input-field's placeholder text.
-  function placeholderText() {
-    // Write the "placeholder" attribute . . .
-    $('input.gsc-input').attr('placeholder', 'Search KCC...');
-  }
-  // HOWEVER!! Don't do it for 3,000 milliseconds after document.ready has fired (give Google Custom Search's script time finish). . .
-  // otherwise the Google's script overwrites any JS injected customization like this.
-  window.setTimeout(placeholderText, 3000);
-});
+function searchToggle() {
+  document.addEventListener('click', function (event) {
+    const searchIconElement = document.getElementById('searchImg');
+    const searchCollapse = document.getElementById('searchCollapse');
+    const mainNav = document.getElementById('mainNav');
+    const globalNav = document.getElementById('globalNav');
+    const searchIconBackgroundImage = searchIconElement.style.backgroundImage;
+    const iconIsSearch = ( searchIconBackgroundImage.indexOf('assets/img/search.svg') != -1 );
+    const collapseAria = searchCollapse.getAttribute('aria-hidden');
+    // If the clicked element doesn't have the right selector, bail
+    if (!event.target.matches('#searchIcon')) return;
+    // Don't follow the link
+    event.preventDefault();
+    iconIsSearch ? searchIconElement.style.backgroundImage = 'url("./assets/img/x.svg")' : searchIconElement.style.backgroundImage = 'url("./assets/img/search.svg")';
+    searchCollapse.classList.toggle('nav-global__search-collapse--visible');
+    (collapseAria === "true") ? searchCollapse.setAttribute('aria-hidden', 'false') : searchCollapse.setAttribute('aria-hidden', 'true');
+    mainNav.classList.toggle('local-nav--search-toggle');
+    globalNav.classList.toggle('global-nav--search-toggle');
+  }, false);
+}
+module.exports = searchToggle;

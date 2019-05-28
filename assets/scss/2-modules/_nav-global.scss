@@ -91,6 +91,7 @@
   display: inline;
   height: 22px;
   margin: 4px;
+  pointer-events: none; // needed so the icon itself doesn't pick up the click event
   width: 22px;
 }
 
