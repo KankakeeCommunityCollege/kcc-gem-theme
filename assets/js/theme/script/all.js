@@ -1,6 +1,6 @@
 import './footerDate.js';
 import './searchToggle.js';
 import './lazyLoad.js';
-import './test.js';
-import './babelTest.js';
 import './walkText.js';
+//import './babelTest.js';
+//import './test.js';

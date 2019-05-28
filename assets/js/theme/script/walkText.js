@@ -9,6 +9,8 @@ function walkText(node) {
     }
   }
 }
-document.addEventListener('DOMContentLoaded', function() {
-  walkText(document.body);
-});
+//  Usage:
+//
+//    walkText(document.body);
+//
+module.exports = walkText;
