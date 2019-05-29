@@ -17,7 +17,7 @@ function searchToggle() {
       searchCollapse.classList.toggle('nav-global__search-collapse--visible');
       (collapseAria === "true") ? searchCollapse.setAttribute('aria-hidden', 'false') : searchCollapse.setAttribute('aria-hidden', 'true');
       mainNav.classList.toggle('local-nav--search-toggle');
-      globalNav.classList.toggle('global-nav--search-toggle');
+      globalNav.classList.toggle('nav-global--search-toggle');
     }, false)
   : null;
 }
