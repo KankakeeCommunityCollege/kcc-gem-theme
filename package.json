@@ -3,6 +3,22 @@
   "version": "4.0.0",
   "description": "",
   "private": true,
+  "babel": {
+    "presets": [
+    [
+      "@babel/preset-env"
+    ]
+  ]
+  },
+  "browserslist": [
+    "> 0.25%",
+    "ie >=9",
+    "Firefox ESR",
+    "not ie <= 8",
+    "not ie_mob <= 8",
+    "not bb <= 10",
+    "not op_mob <= 12.1"
+  ],
   "scripts": {
     "watch": "gulp",
     "production": "run-p g-production wp-bundle",

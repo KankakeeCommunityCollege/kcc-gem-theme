@@ -1,8 +1,8 @@
 const path = require('path');
-//const HashPlugin = require('hash-webpack-plugin');
+const HashPlugin = require('hash-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = {
+const config = {
   mode: 'production',
   watch: true,
   //entry: path.join(__dirname, 'webpack', 'main'),
@@ -16,22 +16,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         exclude: [
           path.resolve(__dirname, 'node_modules')
         ],
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
+        use: {
+          loader: 'babel-loader'
         }
       }
     ]
   },
   plugins: [
-    //new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }),
+    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }), // Hash is needed to kick-off jekyll build after JS changes
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']
   }
 };
+
+module.exports = config;

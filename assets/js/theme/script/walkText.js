@@ -13,4 +13,4 @@ function walkText(node) {
 //
 //    walkText(document.body);
 //
-module.exports = walkText;
+export default walkText;
