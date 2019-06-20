@@ -3,6 +3,23 @@ layout: default
 baseurl: ''
 title: KCC Gem Theme
 description: ''
+slides:
+  - image: assets/img/kcc-placeholder.png
+    alt-text: The Power of Community
+    url: 'https://continuinged.kcc.edu'
+    text: The **POWER** of Community
+  - image: assets/img/kcc-placeholder.png
+    alt-text: The Power of Education
+    url: 'https://continuinged.kcc.edu'
+    text: The **POWER** of Community
+  - image: assets/img/kcc-placeholder.png
+    alt-text: The Power of Giving
+    url: 'https://continuinged.kcc.edu'
+    text: The **POWER** of Community
+  - image: assets/img/kcc-placeholder.png
+    alt-text: The Power of Giving
+    url: 'https://continuinged.kcc.edu'
+    text: The **POWER** of Community
 ---
 
 <main class="position__offset-fixed-nav">
@@ -12,6 +29,29 @@ description: ''
         <div class="jumbotron" style="background-color:#bada55;">
           <h1 style="font-size:72px;text-transform:uppercase;">Hello World!</h1>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col hero-slider__slider">
+      {% for slide in page.slides %}
+        {% if forloop.first == true %}
+        <div>
+          <a href="{{ slide.url }}"><img src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
+          <div class="hero-slider__slider--heading-container text-center">
+            <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+          </div>
+        </div>
+        {% else %}
+        <div>
+          <a href="{{ slide.url }}"><img src="assets/img/placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
+          <div class="hero-slider__slider--heading-container text-center">
+            <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
       </div>
     </div>
   </div>
