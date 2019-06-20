@@ -224,6 +224,18 @@ body {
   font-size: 1.3rem;
 }
 
+.typography__col--heading-underline {
+  background-image: url(/assets/img/heading-bg-underline.png);
+  background-repeat: no-repeat;
+  background-position: 0 50px;
+}
+
+.typography__col--heading-underline-tan {
+  background-image: url(/assets/img/heading-bg-underline-tan.png);
+  background-repeat: no-repeat;
+  background-position: 0 50px;
+}
+
 // Other font styles
 p {
   color: $grey-heading;
