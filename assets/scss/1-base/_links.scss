@@ -89,3 +89,10 @@ a.links__phone--span {
   color: $white;
   text-decoration: none;
 }
+
+.links__no-underline {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
