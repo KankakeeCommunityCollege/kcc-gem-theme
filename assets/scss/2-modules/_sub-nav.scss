@@ -1,0 +1,32 @@
+
+.sub-nav__nav-link {
+  color: $primary-blue;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  &:hover {
+    color: $primary-red;
+  }
+}
+
+.nav-item.active .sub-nav__nav-link {
+  border-bottom-color: $primary-red;
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  padding-bottom: 0;
+}
+
+.sub-nav__navbar {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $grey-5;
+  border-radius: 3px;
+}
+
+.sub-nav__content--wrapper {
+  padding-left: 25px;
+  padding-right: 25px;
+}
