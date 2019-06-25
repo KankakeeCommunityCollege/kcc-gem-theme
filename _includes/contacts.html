@@ -1,0 +1,36 @@
+{% assign sorted_contacts = site.contacts | sort: "display_order" %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col margins__col--top home__col--heading-underline">
+        <h3 class="typography__section--heading margins__heading--btm">Contacts</h3>
+      </div>
+    </div>
+    <div class="row editor-link">
+      <div class="col editor-link mb-3">
+        <a href="cloudcannon:collections/_contacts/" class="btn btn-success editor-button">Edit Contacts</a>
+      </div>
+    </div>
+    <div class="row">
+      {% for contact in sorted_contacts %}
+      {% assign contact_name = contact.name | split: " " %}
+      {% assign first = contact_name[0] %}
+      {% assign last = contact_name[1] %}
+      <div class="col-md-6 contacts__col-bottom-margin">
+        <div class="row">
+          <div class="col-4 contacts__col--img">
+            <img src="uploads/blank-contact.svg" data-src="{{ page.baseurl }}{{ contact.portrait }}" alt="{{ contact.name }}" class="img-fluid contacts__portrait modal-link" />
+          </div>
+          <div class="col-8 float-right">
+            <h5 class="typography__contacts--name">{{ contact.name }}</h5>
+            <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+            <p>
+              <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
+              <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first | downcase }}&amp;to[last]={{ last | downcase }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
