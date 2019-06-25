@@ -1,0 +1,16 @@
+// Specific classes for the CloudCannon editor/interface.
+.editor-link {
+  display: none;
+}
+
+.cms-editor-active .editor-link {
+  display: block;
+}
+
+.editor-button {
+  display: none;
+}
+
+.cms-editor-active .editor-button {
+  display: inline-block;
+}
