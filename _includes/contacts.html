@@ -16,6 +16,7 @@
       {% assign contact_name = contact.name | split: " " %}
       {% assign first = contact_name[0] %}
       {% assign last = contact_name[1] %}
+      {% if contact.portrait != "For departments with no contact photos, do not change this field." %}
       <div class="col-md-6 contacts__col-bottom-margin">
         <div class="row">
           <div class="col-4 contacts__col--img">
@@ -30,6 +31,16 @@
           </div>
         </div>
       </div>
+      {% else %}
+      <div class="col-sm-6 col-md-4 mb-3">
+        <h5 class="typography__contacts--name">{{ contact.name }}</h5>
+        <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+        <p>
+          <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
+          <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first | downcase }}&amp;to[last]={{ last | downcase }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+        </p>
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>

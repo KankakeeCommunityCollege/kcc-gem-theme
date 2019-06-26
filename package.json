@@ -21,12 +21,15 @@
   ],
   "scripts": {
     "watch": "gulp",
-    "production": "run-p g-production wp-bundle",
+    "production": "run-p g-p wp-bundle",
     "g-production": "gulp --production",
     "g-dev": "gulp",
     "wp-bundle": "npx webpack --mode=production",
     "wp-dev": "npx webpack --mode=development",
-    "dev": "run-p g-dev wp-dev",
+    "g-wait": "sleep 1",
+    "g-p": "run-s g-wait g-production",
+    "g-d": "run-s g-wait g-dev",
+    "dev": "run-p g-d wp-dev",
     "build": "gulp build"
   },
   "author": "",
