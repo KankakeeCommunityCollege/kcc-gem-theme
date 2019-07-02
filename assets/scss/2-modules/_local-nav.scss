@@ -1,10 +1,3 @@
-.local-nav {
-  top: 55px;
-  border-bottom-color: $grey-5;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-}
-
 .local-nav--search-toggle {
   top: 86px;
 }
@@ -19,53 +12,6 @@
 .local-nav__centered {
   margin-left: auto;
   margin-right: auto;
-}
-
-.local-nav__kcc-logo {
-  margin-bottom: -4px; // pull the logo down a little to line-up with "Newsroom" heading.
-  width: 65px;
-}
-
-@media screen and (min-width: 360px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -5px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 70px;
-  }
-}
-
-@media screen and (min-width: 410px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -7px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 75px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -15px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 140px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -15px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 160px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -17px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 135px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .local-nav__kcc-logo {
-    margin-bottom: -15px; // pull the logo down a little to line-up with "Newsroom" heading.
-    width: 160px;
-  }
 }
 
 .local-nav .nav-link {

@@ -237,13 +237,10 @@ body {
 }
 
 // Other font styles
-p {
-  color: $grey-heading;
-  font-family: $font-family-paragraph;
-  font-size: $font-size-base;
-}
 
-ul,ol { // Needed so list font looks the same as paragraph font
+p,
+ul:not(.navbar-nav), // :not() selecter prevents unnecesary style override
+ol { // Needed so list font looks the same as paragraph font
   color: $grey-heading; // Bootstrap sets these things to black
   font-family: $font-family-paragraph;
   font-size: $font-size-base;
