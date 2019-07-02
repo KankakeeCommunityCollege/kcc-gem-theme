@@ -1,11 +1,13 @@
 // Lazy load images
-// ex. <img data-src="/path/to/image.jpg" alt="">
+// ex. <img src="/path/to/small-placeholder_image.png" data-src="/path/to/actual_image.jpg" alt="You better not leave it blank">
 function lazyLoad() {
-  [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+  const lazyLoadImages = document.querySelectorAll('img[data-src]');
+
+  for (let img of lazyLoadImages) {
     img.setAttribute('src', img.getAttribute('data-src'));
     img.onload = function() {
       img.removeAttribute('data-src');
     };
-  });
+  }
 }
-module.exports = lazyLoad;
+export default lazyLoad;
