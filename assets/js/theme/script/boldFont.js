@@ -1,13 +1,17 @@
-// Replace all occurences of "--" (double hyphens) with "—" (long-em dash)
-function boldFont() {
-  function replaceFont() {
-    var headingArray = document.querySelectorAll('h3.hero-slider__slider--slide-heading');
-    headingArray.forEach(function(element) {
-      element.innerHTML = element.innerHTML.replace(/\*\*POWER\*\*/g, '<span class="typography__power-text">POWER</span>');
-    });
+function regexText(node) {
+  if (node.nodeType == 3) { // is it a text node?
+    const reg = /\*\*(\S+)\*\*/g;
+    const replacement = '<span class="typography__power-text">$1</span>';
+    const nodeContainsMatch = node.data.search(reg) != -1;
+    if (nodeContainsMatch) {
+      node.parentElement.innerHTML = node.parentElement.innerHTML.replace(reg, replacement);
+    }
   }
-
-  document.querySelectorAll('h3.hero-slider__slider--slide-heading') ? replaceFont()
-  : null;
+  if (node.nodeType == 1 && node.nodeName != 'SCRIPT') {
+    for (var i = 0; i < node.childNodes.length; i++) {
+      regexText(node.childNodes[i]);
+    }
+  }
 }
-module.exports = boldFont;
+//  regexText(document.body);
+export default regexText;

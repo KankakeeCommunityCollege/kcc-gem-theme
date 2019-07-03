@@ -12,4 +12,4 @@ function initSliders() {
   }
   document.querySelector('.hero-slider__slider') ? initSlick() : null;
 }
-module.exports = initSliders;
+export default initSliders;

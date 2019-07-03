@@ -21,4 +21,4 @@ function searchToggle() {
     }, false)
   : null;
 }
-module.exports = searchToggle;
+export default searchToggle;

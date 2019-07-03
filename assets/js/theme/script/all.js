@@ -3,14 +3,15 @@ import searchToggle from './searchToggle.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import boldFont from './boldFont.js';
+import regexText from './boldFont.js';
 //import './babelTest.js';
-//import './test.js';
+//import test from './test.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+  regexText(document.body);
+  //test();
   initSliders();
-  boldFont()
-  walkText(document.body);
+  walkText(document.querySelector('.hero-slider__slider'));
   footerDate();
   searchToggle();
   lazyLoad();
