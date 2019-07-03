@@ -116,7 +116,10 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(gcse, s);
     })();
-  </script> <a id="searchIcon" href="#" class="nav-global__search-toggle d-lg-none"><span id="searchImg" style="background-image: url('{{ page.baseurl }}assets/img/search.svg')" class="nav-global__search-icon" alt="Search icon"></span></a>
+  </script>
+  <a id="searchIcon" href="#" class="nav-global__search-toggle d-lg-none ml-auto">
+    <span id="searchImg" style="background-image: url('{{ page.baseurl }}assets/img/search.svg')" class="nav-global__search-icon" alt="Search icon"></span>
+  </a>
   <div id="searchCollapse" aria-hidden="true" class="nav-global__gcse-wrapper nav-global__search-collapse ml-auto">
     <gcse:searchbox-only resultsUrl="{{ page.baseurl }}search/"></gcse:searchbox-only>
   </div>

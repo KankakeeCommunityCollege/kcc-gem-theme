@@ -10,7 +10,7 @@ function searchToggle() {
       const iconIsSearch = ( searchIconBackgroundImage.indexOf('assets/img/search.svg') != -1 );
       const collapseAria = searchCollapse.getAttribute('aria-hidden');
       // If the clicked element doesn't have the right selector, bail
-      if (!event.target.matches('#searchIcon')) return;
+      if (!event.target.closest('#searchIcon')) return;
       // Don't follow the link
       event.preventDefault();
       iconIsSearch ? searchIconElement.style.backgroundImage = 'url("./assets/img/x.svg")' : searchIconElement.style.backgroundImage = 'url("./assets/img/search.svg")';
