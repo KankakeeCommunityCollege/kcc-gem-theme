@@ -10,8 +10,7 @@ import regexText from './boldFont.js';
 document.addEventListener('DOMContentLoaded', function() {
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
-    Element.prototype.matches = Element.prototype.msMatchesSelector ||
-                                Element.prototype.webkitMatchesSelector;
+    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
   }
 
   if (!Element.prototype.closest) {
@@ -25,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-
-  regexText(document.body);
+  const sliderContainer = document.querySelector('.hero-slider__slider');
+  sliderContainer ? regexText(document.querySelector('.hero-slider__slider')) : null;
   //test();
   initSliders();
-  walkText(document.querySelector('.hero-slider__slider'));
+  walkText(document.body);
   footerDate();
   searchToggle();
   lazyLoad();
