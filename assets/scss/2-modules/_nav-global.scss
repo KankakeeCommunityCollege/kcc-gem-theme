@@ -154,6 +154,7 @@
 
 .nav-global--search-toggle {
   top: 30px;
+  text-decoration: none !important;
 }
 
 .nav-global__search--conatiner {
@@ -305,9 +306,4 @@
     width: 85px;
     margin-left: -40px;
   }
-}
-
-#gsc-iw-id1 {
-  border-radius: 2rem;
-  padding-left: .5rem;
 }

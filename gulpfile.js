@@ -122,12 +122,14 @@ function watchFiles() {
   // Watch for SASS changes in main.scss
   watch(
     config.watch.sass,
-    mainScss
+    mainScss,
+    browserSyncReload
   );
   // Watch for SASS changes in content.scss
   watch(
     config.watch.sass,
-    cmsScss
+    cmsScss,
+    browserSyncReload
   );
   // Watchin' for static asset changes (e.g. new images)
   watch(

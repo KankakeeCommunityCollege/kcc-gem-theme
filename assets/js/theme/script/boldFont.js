@@ -13,5 +13,10 @@ function regexText(node) {
     }
   }
 }
-//  regexText(document.body);
+//  USAGE:
+//    document.addEventListener('DOMContentLoaded', function() [
+//      regexText(document.body);
+//    ]);
+//
+//
 export default regexText;

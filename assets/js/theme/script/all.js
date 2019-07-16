@@ -4,10 +4,12 @@ import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import regexText from './boldFont.js';
+import moveSearchIcon from './moveSearchIcon.js';
 //import './babelTest.js';
 //import test from './test.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+  moveSearchIcon();
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
