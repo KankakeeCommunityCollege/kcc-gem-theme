@@ -1,3 +1,19 @@
+function checkXIcon() {
+  const checkXIconOnLoad = (function() {
+      let executed = false;
+      return function() {
+          if (!executed) {
+              executed = true;
+              // do checkXIconOnLoad
+              const icon = document.getElementById('xIcon');
+              const xIsHidden = icon.getAttribute('style') === 'display: none;';
+              xIsHidden ? removeClear() : clearXIcon();
+          }
+      };
+  })();
+  checkXIconOnLoad(); // "do checkXIconOnLoad" happens
+}
+
 function clearXIcon() {
   const targetEl = document.querySelector('button.gsc-search-button-v2');
   targetEl.classList.add('gsc-overrides__clear-x');
@@ -24,7 +40,6 @@ function gscInit() {
 }
 
 function moveSearchIcon() {
-
   let initSearchPromise = new Promise((resolve, reject) => {
     gscInit();
     resolve();
@@ -49,6 +64,7 @@ function moveSearchIcon() {
       //observer.disconnect();
     });
     addIdPromise.then(() => {
+      checkXIcon();
       const targetNode = document.getElementById('xIcon');
       const config = { attributes: true, childList: true, subtree: true };
       const callback = function(mutationsList, observer) {
