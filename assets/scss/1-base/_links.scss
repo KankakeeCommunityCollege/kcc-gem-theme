@@ -50,3 +50,14 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: $primary-red;
 }
+
+.links__phone--span {
+  color: $white;
+  text-decoration: none;
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
