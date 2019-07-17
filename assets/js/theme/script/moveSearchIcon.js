@@ -40,51 +40,55 @@ function gscInit() {
 }
 
 function moveSearchIcon() {
-  let initSearchPromise = new Promise((resolve, reject) => {
-    gscInit();
-    resolve();
-  });
-  initSearchPromise.then(() => {
+  const pageHasGSearch = document.getElementById('searchCollapse');
 
-    let addIdPromise = new Promise((resolve, reject) => {
-
-      const targetNode = document.getElementById('searchCollapse');
-      const config = { attributes: true, childList: true, subtree: true };
-      const callback = function(mutationsList, observer) {
-          for(const mutation of mutationsList) {
-              if (mutation.type == 'childList') {
-                  addId();
-                  resolve();
-              }
-          }
-      };
-      const observer = new MutationObserver(callback);
-      observer.observe(targetNode, config);
-      // Later, you can stop observing
-      //observer.disconnect();
+  if ( pageHasGSearch ) {
+    let initSearchPromise = new Promise((resolve, reject) => {
+      gscInit();
+      resolve();
     });
-    addIdPromise.then(() => {
-      checkXIcon();
-      const targetNode = document.getElementById('xIcon');
-      const config = { attributes: true, childList: true, subtree: true };
-      const callback = function(mutationsList, observer) {
-          for(const mutation of mutationsList) {
-              if (mutation.type == 'attributes') {
-                const xIsHidden = targetNode.getAttribute('style') === 'display: none;';
-                if (xIsHidden) {
-                  removeClear();
-                } else {
-                  clearXIcon();
+    initSearchPromise.then(() => {
+
+      let addIdPromise = new Promise((resolve, reject) => {
+
+        const targetNode = document.getElementById('searchCollapse');
+        const config = { attributes: true, childList: true, subtree: true };
+        const callback = function(mutationsList, observer) {
+            for(const mutation of mutationsList) {
+                if (mutation.type == 'childList') {
+                    addId();
+                    resolve();
                 }
-              }
-          }
-      };
-      const observer = new MutationObserver(callback);
-      observer.observe(targetNode, config);
-      // Later, you can stop observing
-      //observer.disconnect();
+            }
+        };
+        const observer = new MutationObserver(callback);
+        observer.observe(targetNode, config);
+        // Later, you can stop observing
+        //observer.disconnect();
+      });
+      addIdPromise.then(() => {
+        checkXIcon();
+        const targetNode = document.getElementById('xIcon');
+        const config = { attributes: true, childList: true, subtree: true };
+        const callback = function(mutationsList, observer) {
+            for(const mutation of mutationsList) {
+                if (mutation.type == 'attributes') {
+                  const xIsHidden = targetNode.getAttribute('style') === 'display: none;';
+                  if (xIsHidden) {
+                    removeClear();
+                  } else {
+                    clearXIcon();
+                  }
+                }
+            }
+        };
+        const observer = new MutationObserver(callback);
+        observer.observe(targetNode, config);
+        // Later, you can stop observing
+        //observer.disconnect();
+      });
     });
-});
+  }
 }
 
 export default moveSearchIcon;
