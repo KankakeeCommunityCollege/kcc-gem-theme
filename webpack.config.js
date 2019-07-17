@@ -1,6 +1,7 @@
+process.traceDeprecation = true;
 const path = require('path');
 const HashPlugin = require('hash-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
   mode: 'production',
@@ -10,7 +11,7 @@ const config = {
     'kcc-theme': './assets/js/theme/script/all.js'
   },
   output: {
-    filename: '[name].bundle.js', // Leave out the [hash] naming for this
+    filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
   },
   module: {
@@ -27,7 +28,7 @@ const config = {
     ]
   },
   plugins: [
-    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }), // Hash is needed to kick-off jekyll build after JS changes
+    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }),
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {

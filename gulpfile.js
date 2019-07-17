@@ -13,7 +13,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync');
-//var hashsum = require('gulp-hashsum');
+const hashsum = require('gulp-hashsum');
 const config = require('./gulp-tasks/loadGulpConfig'); // import custom js to parse YAML-configuration file (gulpconfig.yml)
 
 // Clean stuff (delete '_site/' dir)
@@ -31,20 +31,20 @@ function jekyllBuild(done) {
   .on('close', done);
 }
 
-// Create sitemap on production builds // DONT NEED A SITEMAP FOR PROJECT THEME
-//function gulpSitemap(done) {
-  //const PRODUCTION = !!(yargs.argv.production); // Run things that say 'PRODCUTION' on production builds only ($ gulp --production)
+// Create sitemap on production builds
+function gulpSitemap(done) {
+  const PRODUCTION = !!(yargs.argv.production); // Run things that say 'PRODCUTION' on production builds only ($ gulp --production)
 
-  //gulp.src((config.sitemap.src), {
-    //read: false
-  //})
-    //.pipe(sitemap({
-      //siteUrl: (config.sitemap.siteUrl),
-    ///}))
-    //.pipe(gulpif(PRODUCTION, gulp.dest('./')))
-    //.pipe(gulpif(PRODUCTION, gulp.dest('./_site')));
-  //done();
-//}
+  gulp.src((config.sitemap.src), {
+    read: false
+  })
+    .pipe(sitemap({
+      siteUrl: (config.sitemap.siteUrl),
+    }))
+    .pipe(gulpif(PRODUCTION, gulp.dest('./')))
+    .pipe(gulpif(PRODUCTION, gulp.dest('./_site')));
+  done();
+}
 
 // Compile main.css file from sass modules
 function mainScss() {
@@ -54,26 +54,11 @@ function mainScss() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
     .pipe(autoprefixer(config.sass.compatibility)) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
-    //.pipe(hashsum({filename: './_data/theme_cache_bust_css.yml', hash: 'md5'}))
+    .pipe(hashsum({filename: './_data/cache_bust_css.yml', hash: 'md5'}))
     .pipe(gulpif(PRODUCTION, cssnano({ zindex: false }))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(config.sass.dest.jekyllRoot))
     .pipe(gulp.dest(config.sass.dest.buildDir))
-    .pipe(browserSync.stream());
-}
-
-// compile 'content.css' which creates custom styles that are available to users the CloudCannon interface.
-function cmsScss() {
-  const PRODUCTION = !!(yargs.argv.production);
-
-  return gulp.src(config.cmsScss.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer(config.cmsScss.compatibility))
-    .pipe(gulpif(PRODUCTION, cssnano({ zindex: false }))) // {zindex:false} to prevent override of z-index values -- higher z-index's needed to bring objects above bootstrap's default z-index values
-    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(gulp.dest(config.cmsScss.dest.jekyllRoot))
-    .pipe(gulp.dest(config.cmsScss.dest.buildDir))
     .pipe(browserSync.stream());
 }
 
@@ -122,14 +107,7 @@ function watchFiles() {
   // Watch for SASS changes in main.scss
   watch(
     config.watch.sass,
-    mainScss,
-    browserSyncReload
-  );
-  // Watch for SASS changes in content.scss
-  watch(
-    config.watch.sass,
-    cmsScss,
-    browserSyncReload
+    mainScss
   );
   // Watchin' for static asset changes (e.g. new images)
   watch(
@@ -147,9 +125,8 @@ const build = series( // Series items need to be executed in a specific order (n
   clean,
   jekyllBuild,
   parallel( // These parallel tasks require the '_site' to be built, but it doesnt really matter what order they execute.
-    //gulpSitemap, // DONT NEED A SITEMAP IN THE GEM THEME
+    gulpSitemap,
     mainScss,
-    cmsScss,
     copy
   ),
 );
