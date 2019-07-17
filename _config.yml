@@ -6,6 +6,9 @@ nav_links:
   - link_text: Home
     link_href: ''
     button: false
+  - link_text: Landing Page
+    link_href: 'landing-page'
+    button: false
 collections:
   posts:
     _hide_content: true
