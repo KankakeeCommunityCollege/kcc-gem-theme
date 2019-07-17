@@ -1,6 +1,6 @@
 process.traceDeprecation = true;
 const path = require('path');
-const HashPlugin = require('hash-webpack-plugin');
+//const HashPlugin = require('hash-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
@@ -11,7 +11,7 @@ const config = {
     'kcc-theme': './assets/js/theme/script/all.js'
   },
   output: {
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
   },
   module: {
@@ -28,7 +28,7 @@ const config = {
     ]
   },
   plugins: [
-    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }),
+    //new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }),
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
