@@ -9,9 +9,14 @@ nav_links:
   - link_text: Landing Page
     link_href: 'landing-page'
     button: false
+  - link_text: Tabbed Navigation
+    link_href: 'tabbed-nav'
+    button: false
 collections:
   posts:
     _hide_content: true
+  tabbed_nav:
+    output: false
 defaults:
 - scope:
     path: ''

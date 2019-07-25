@@ -7,6 +7,9 @@
   border-radius: 2rem;
   padding-left: .5rem;
   border: solid thin $grey-5;
+  line-height: 1;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .gsc-search-button-v2 {
@@ -45,7 +48,7 @@ td.gsc-search-button {
   display: inline;
   pointer-events: none;
   position: absolute;
-  right: 50px;
+  right: 30px;
 }
 
 @media screen and (min-width: 1400px) {

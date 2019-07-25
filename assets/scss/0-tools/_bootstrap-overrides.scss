@@ -20,3 +20,13 @@
 .nav-tabs .nav-link.active {
   border-color: $grey-5 $grey-5 $white;
 }
+
+.navbar-brand {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-brand {
+    margin-right: 1rem;
+  }
+}

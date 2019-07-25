@@ -26,17 +26,23 @@ body {
   &:focus {
     color: $primary-red;
   }
+  &--smaller {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width:360px) {
   .typography__nav-heading {
     font-size: 1.8rem;
+    &--smaller {
+      font-size: 1.35rem;
+    }
   }
 }
 
 @media screen and (min-width:410px) {
   .typography__nav-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
