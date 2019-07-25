@@ -93,13 +93,15 @@ body {
   font-family: $font-family-headings;
   font-size: 1.3em;
   font-weight: $font-weight-bold;
+  margin-bottom: .2rem;
 }
 
 .typography__contacts--title {
   color: $grey-heading;
   font-family: $font-family-headings;
   font-size: 1.1em;
-  font-weight: $font-weight-black;
+  font-weight: $font-weight-bold;
+  margin-bottom: .2rem;
 }
 
 .typography__orange-h4  {
