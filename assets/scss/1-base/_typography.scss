@@ -97,7 +97,7 @@ body {
 }
 
 .typography__contacts--title {
-  color: $grey-heading;
+  color: $color-grey-heading;
   font-family: $font-family-headings;
   font-size: 1.1em;
   font-weight: $font-weight-bold;
@@ -173,7 +173,7 @@ body {
 
 // Content Headings
 .typography__h2 {
-  color: $grey-heading;
+  color: $color-grey-heading;
   font-family: $font-family-headings;
   font-size: 2rem;
   font-weight: $font-weight-boldish;
@@ -194,14 +194,14 @@ body {
 }
 
 .typography__h5 {
-  color: $grey-heading;
+  color: $color-grey-heading;
   font-family: $font-family-headings;
   font-weight: $font-weight-bold;
   font-size: 1.5rem;
 }
 
 .typography__h6 {
-  color: $grey-heading;
+  color: $color-grey-heading;
   font-family: $font-family-headings;
   font-weight: $font-weight-bold;
   font-size: 1.4rem;
@@ -249,7 +249,7 @@ body {
 p,
 ul:not(.navbar-nav), // :not() selecter prevents unnecesary style override
 ol { // Needed so list font looks the same as paragraph font
-  color: $grey-heading; // Bootstrap sets these things to black
+  color: $color-grey-heading; // Bootstrap sets these things to black
   font-family: $font-family-paragraph;
   font-size: $font-size-base;
 }
@@ -261,7 +261,7 @@ ol { // Needed so list font looks the same as paragraph font
 }
 
 .typography__tables td {
-  color: $grey-heading; // Bootstrap sets these things to black
+  color: $color-grey-heading; // Bootstrap sets these things to black
   font-family: $font-family-paragraph;
   font-size: $font-size-base;
 }
