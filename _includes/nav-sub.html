@@ -7,8 +7,8 @@
         {% assign section = page.sub-nav_section | append: "/" %}
         {% for nav in site.sub-nav_links %}
           {% if nav.link_href contains section %}
-          <li class="nav-item">
-            <a href="{{ page.baseurl }}{{ nav.link_href }}" class="nav-link sub-nav__nav-link{% if forloop.first == true %} active{% endif %}">{{ nav.link_text }}</a>
+          <li class="nav-item js-sub-nav-item">
+            <a href="{{ page.baseurl }}{{ nav.link_href }}" class="nav-link sub-nav__nav-link">{{ nav.link_text }}</a>
           </li>
           {% endif %}
         {% endfor %}
