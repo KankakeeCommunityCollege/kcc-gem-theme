@@ -12,6 +12,23 @@ nav_links:
   - link_text: Tabbed Navigation
     link_href: 'tabbed-nav'
     button: false
+#  - link_text: Example External Link
+#    link_href: 'https://example-external-link.com'
+#    button: false
+#    external: true  <---- #### Add the `external: true` key & value to make an external link ####
+#
+#### Example sub-nav configuration below #### =============================================================== #
+##                                                                                                           ##
+##   `link_href:` values must have a single '/' in the link (no '/' in the begining or end of the string)    ##
+##                                                                                                           ##
+## ========================================================================================================== #
+#
+#sub-nav_links:
+#  - link_text: Sheets
+#    link_href: 'reference/gsheets'
+#  - link_text: CloudCannon
+#    link_href: 'reference/cloudcannon'
+#
 collections:
   posts:
     _hide_content: true
