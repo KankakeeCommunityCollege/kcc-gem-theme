@@ -5,14 +5,14 @@
       {% if forloop.first == true %}
       <div>
         <a href="{{ slide.url }}"><img src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
-        <div class="hero-slider__slider--heading-container text-center">
+        <div class="hero-slider__slider--heading-container hero-slider__slider--heading-container--width hero-slider__slides-{{ forloop.length }} text-center">
           <h3 class="hero-slider__heading--bold">{{slide.text}}</h3>
         </div>
       </div>
       {% else %}
       <div>
         <a href="{{ slide.url }}"><img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
-        <div class="hero-slider__slider--heading-container text-center">
+        <div class="hero-slider__slider--heading-container hero-slider__slider--heading-container--width hero-slider__slides-{{ forloop.length }} text-center">
           <h3 class="hero-slider__heading--bold">{{slide.text}}</h3>
         </div>
       </div>
