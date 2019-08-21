@@ -228,6 +228,13 @@ body {
   }
 }
 
+.typography__p--bold {
+  color: $color-grey-heading;
+  font-family: $font-family-headings;
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+}
+
 .typography__larger-p {
   font-size: 1.3rem;
 }
