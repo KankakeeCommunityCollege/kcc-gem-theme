@@ -20,19 +20,30 @@ slides:
     alt-text: The Power of Giving
     url: 'https://continuinged.kcc.edu'
     text: The **POWER** of Community
+card_section: Card Section Name
+cards:
+  - name: Card Name
+    description: A brief description about the card
+    button_text: Learn More
+    link: #
+    thumb: assets/img/kcc-placeholder-square.png
+    thumb_alt_text: ''
+  - name: Card Name
+    description: A brief description about the card
+    button_text: Learn More
+    link: #
+    thumb: assets/img/kcc-placeholder-square.png
+    thumb_alt_text: ''
+  - name: Card Name
+    description: A brief description about the card
+    button_text: Learn More
+    link: #
+    thumb: assets/img/kcc-placeholder-square.png
+    thumb_alt_text: ''
 ---
 
 <main class="position__offset-fixed-nav">
-  <div class="container text-center" style="background-color:#bada55; margin-top: 200px;">
-    <div class="row">
-      <div class="col">
-        <div class="jumbotron" style="background-color:#bada55;">
-          <h1 style="font-size:72px;text-transform:uppercase;">Hello World!</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row">
       <div class="col hero-slider__slider">
       {% for slide in page.slides %}
@@ -55,6 +66,7 @@ slides:
       </div>
     </div>
   </div>
+  {% include card-section.html %}
   <div class="container">
     <div class="row">
       <div class="col margins__col--top home__col--heading-underline">
