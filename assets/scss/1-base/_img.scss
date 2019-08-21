@@ -6,3 +6,11 @@
 .img__full-width {
   width: 100%;
 }
+
+.img__shadow {
+  filter: drop-shadow(3px 3px 10px rgba(126, 126, 126, .45));
+  &--border {
+    filter: drop-shadow(3px 3px 10px rgba(126, 126, 126, .45));
+    border: 3px solid $primary-blue;
+  }
+}
