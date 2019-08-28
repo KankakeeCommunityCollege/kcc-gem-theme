@@ -72,3 +72,143 @@
   width: 100%;
   height: 100%;
 }
+
+.positioning__offset-global-nav {
+  margin-top: 60px;
+}
+
+.positioning__accordian--padding {
+  margin-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 992px) {
+  .positioning__accordian--padding {
+    margin-top: 60px;
+  }
+}
+
+.positioning__accordian-marg {
+  margin-top: 75px;
+}
+
+.positioning__card--spacing {
+  margin-bottom: 40px;
+}
+
+.positioning__first-section--marg {
+  margin-top: 15px;
+  background-color: $color-blue-light;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+@media screen and (min-width: 1200px) {
+  .positioning__first-section--marg {
+    margin-top: 15px;
+  }
+}
+
+.positioning__section--marg {
+  margin-top: 35px;
+}
+
+@media screen and (min-width: 1200px) {
+  .positioning__section--marg {
+    margin-top: 65px;
+  }
+}
+
+.positioning__row--pad {
+  margin-top: 25px;
+}
+
+.positioning__register--itransfer-img {
+  width: 120px;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 400px) {
+  .positioning__register--itransfer-img {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .positioning__register--itransfer-img {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .positioning__register--itransfer-img {
+    padding-left: 25px;
+  }
+}
+
+.positioning__register--mobile-row--pad {
+  padding-left: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .positioning__register--mobile-row--pad {
+    padding-left: 20%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .positioning__register--mobile-row--pad {
+    padding-left: 0;
+  }
+}
+
+.positioning__register--idfpr-img {
+  width: 330px;
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 992px) {
+  .positioning__register--idfpr-img {
+    margin-bottom: 15px;
+  }
+}
+
+.positioning__register--iccb-img {
+  width: 250px;
+}
+
+@media screen and (max-width: 992px) {
+  .positioning__register--iccb-img {
+    margin-top: 15px;
+  }
+}
+
+.positioning__heading--row {
+  margin-top: 16%;
+}
+
+.positioning__check-svg {
+  margin-top: -60px;
+  width: 80px;
+}
+
+.positioning__blue-section {
+  background-color: $color-blue-light;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.positioning__col--offset {
+  margin-right: -25px;
+}
+
+@media screen and (min-width: 768px) {
+  .positioning__col--offset {
+    margin-right: -45px;
+  }
+}
+
+.positioning__offset-global-nav {
+  margin-top: 60px;
+}
