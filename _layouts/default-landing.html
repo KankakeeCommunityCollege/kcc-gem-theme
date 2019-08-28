@@ -1,5 +1,5 @@
 {% include document-head.html %}
-  {% include targetx-head.html %}
+  {% if page.targetx_form == true %}{% include targetx-head.html %}{% endif %}
   {% include scripts/google-tag.html %}
   {% include styles/fonts.html %}
   {% include styles/vendor.html %}
