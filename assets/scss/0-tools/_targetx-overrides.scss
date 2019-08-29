@@ -44,3 +44,9 @@ p.supportInfo {
   visibility: hidden;
   pointer-events: none;
 }
+
+@media screen and (min-width: 1800px) {
+  #tfa_775-D {
+    margin-top: 5px !important;
+  }
+}
