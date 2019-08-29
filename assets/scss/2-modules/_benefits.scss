@@ -55,7 +55,9 @@
   font-size: 2rem;
   font-weight: $font-weight-bold;
   letter-spacing: .03rem;
-  margin-bottom: 40px;
+  &--mb {
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -65,14 +67,18 @@
 }
 
 @media screen and (min-width: 992px) {
-  .benefits__typography--h5 {
+  .benefits__typography--h5--mb {
     margin-bottom: 60px;
   }
 }
 
+.benefits__testimonials--mb {
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 1200px) {
-  .benefits__typography-h5 {
-    font-size: 3rem;
+  .benefits__testimonials--mb {
+    margin-bottom: 0;
   }
 }
 
@@ -219,6 +225,12 @@
 
 .benefits__row--pad {
   margin-top: 25px;
+}
+
+@media screen and (min-width: 1200px) {
+  .benefits__row--pad {
+    margin-top: 0;
+  }
 }
 
 .benefits__itransfer-img {
