@@ -112,6 +112,12 @@
   margin-bottom: .5rem;
 }
 
+@media screen and (min-width: 1200px) {
+  .benefits__typography--student-p--larger {
+    font-size: 1.3rem;
+  }
+}
+
 .benefits__typography--img-cap {
   font-family: $font-family-paragraph;
   font-size: 1rem;
