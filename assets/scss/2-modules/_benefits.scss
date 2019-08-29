@@ -98,15 +98,17 @@
 }
 
 .benefits__typography--student-p {
+  font-family: $font-family-paragraph;
   color: $black;
   font-weight: 600;
-  font-size: 1.15em;
+  font-size: 1.25rem;
   margin-top: 15px;
   margin-bottom: .5rem;
 }
 
 .benefits__typography--img-cap {
-  font-size: 1.35rem;
+  font-family: $font-family-paragraph;
+  font-size: 1rem;
   font-weight: 600;
   display: block;
 }
