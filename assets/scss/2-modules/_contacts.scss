@@ -1,0 +1,46 @@
+.contacts__section-margin {
+  margin-top: 40px;
+}
+
+.contacts__col-bottom-margin {
+  margin-bottom: 40px;
+}
+
+.contacts__padding-top {
+  padding-top: 40px;
+}
+
+.contacts__col--img {
+  margin-left: 0;
+  margin-right: -15px;
+}
+
+@media screen and (min-width: 360px) {
+  .contacts__col--img {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .contacts__col--img {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contacts__padding-left {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts__padding-left {
+    padding-left: 70px;
+  }
+}
+
+.contacts__portrait {
+  border-color: $white;
+  border-style: solid;
+  border-width: 5px;
+}
