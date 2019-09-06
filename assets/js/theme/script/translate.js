@@ -1,4 +1,9 @@
 // WORK IN PROGRESS BELOW
+// TODO:
+//
+// REMOVE ALL JQUERY
+// STRIP OUT ALL $'s
+// MAKE VANILLA !!!
 
 function styleTranslateMenu() {
   // RESTYLE THE DROPDOWN MENU
