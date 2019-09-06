@@ -41,7 +41,7 @@ sass:
   src: "assets/scss/kcc-theme.scss"
 
 # Gulp task to create stylesheet for custom options in CloudCannon (CMS customizations). Editors can use these styles as option in the CMS.
-cmsScss:
+translateSass:
   compatibility:
     - "last 2 versions"
     - "ie >= 9"
@@ -49,8 +49,8 @@ cmsScss:
   dest:
     jekyllRoot: "assets/css/"
     buildDir: "_site/assets/css/"
-  notification: "Running cmsScss"
-  src: "assets/scss/content.scss"
+  notification: "Running translateScss"
+  src: "assets/scss/translate.scss"
 
 # Gulp task to create sitemap on production builds (`$ gulp --production`).
 sitemap:

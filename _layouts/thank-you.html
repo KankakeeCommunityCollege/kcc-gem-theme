@@ -5,10 +5,13 @@
   {% include styles/main.html %}
   {% include body.html %}
   {% include scripts/google-noscript.html %}
+  {% if site.translate == true %}{% include translate.html %}{% endif %}
   {% include nav-global.html %}
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
   {% include scripts/kcc-theme.html %}
   {% include scripts/custom.html %}
+  {% if site.translate == true %}<!-- Link to this site's custom google translate stylesheet -->
+  {% include scripts/translate.html %}{% endif %}
 {% include foot.html %}

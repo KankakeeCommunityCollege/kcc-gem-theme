@@ -2,6 +2,7 @@ title: "KCC"
 site_name: KCC Gem Theme
 public-url: "https://www.kcc.edu"
 google-tag_key: Google Tag Manager key goes here
+translate: true
 nav_links:
   - link_text: Home
     link_href: ''
