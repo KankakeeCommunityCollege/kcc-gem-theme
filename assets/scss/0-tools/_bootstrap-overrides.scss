@@ -30,3 +30,7 @@
     margin-right: 1rem;
   }
 }
+
+.btn {
+  vertical-align: baseline;  // Needed so Google Translate's injected <font> tags don't mess with font's alignment in the page
+}
