@@ -1,6 +1,5 @@
 function styleIFrameElement(IFRAME_MENU_ELEMENT, iframeStyles) {
   const currentStyles = IFRAME_MENU_ELEMENT.style.cssText;
-  console.log('currentStyles = ' + currentStyles);
   let currentStylesString = currentStyles.toString();
   const combinedStyles = currentStylesString += iframeStyles
   IFRAME_MENU_ELEMENT.setAttribute('style', combinedStyles);
@@ -31,7 +30,6 @@ function setStyles(selector, styles, IFRAME_MENU_ELEMENT) {
   const itemsToStyle = content.document.querySelectorAll(selector);
   for (let i = 0; i < itemsToStyle.length; i++) {
     const items = itemsToStyle[i];
-    console.log(items);
     items.setAttribute('style', styles);
   }
 }
