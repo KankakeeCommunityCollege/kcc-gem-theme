@@ -1,65 +1,58 @@
-// WORK IN PROGRESS BELOW
-// TODO:
-//
-// REMOVE ALL JQUERY
-// STRIP OUT ALL $'s
-// MAKE VANILLA !!!
+function styleIFrameElement(IFRAME_MENU_ELEMENT, iframeStyles) {
+  const currentStyles = IFRAME_MENU_ELEMENT.style.cssText;
+  console.log('currentStyles = ' + currentStyles);
+  let currentStylesString = currentStyles.toString();
+  const combinedStyles = currentStylesString += iframeStyles
+  IFRAME_MENU_ELEMENT.setAttribute('style', combinedStyles);
+}
 
-function styleTranslateMenu() {
-  // RESTYLE THE DROPDOWN MENU
-  const GOOGLE_TRANSLATE_WRAPPER = document.getElementById('google_translate_element');
-  if (GOOGLE_TRANSLATE_WRAPPER) {
-    $('#google_translate_element').on("click", function () {
+function setIframeStyles() {
+  const iframeStyles = ' height: 100%; width: 100%; top: 0px; box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);';
+  return iframeStyles;
+}
 
-        // Change font family and color
-        $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
-            .css({
-                'color': '#544F4B',
-                'font-family': 'Roboto',
-                'width':'100%'
-            });
-        // Change menu's padding
-        $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
+function createStyleConfigurationObject() {
+  const styleConfigurationObject = {  // Setting all the selectors & the styles they should get.
+    '.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *': 'color: #544F4B; font-family: "Roboto", sans-serif; width: 100%;',  // Change font fam and color!
+    '.goog-te-menu2-item-selected': 'display: none;',       // Change menu's padding
+    '.goog-te-menu2': 'overflow-y: scroll; padding: 0px;',  // Change menu's padding
+    '.goog-te-menu2-item div': 'padding: 20px;',  // Change the padding of the languages
+    '.goog-te-menu2-item': 'width: 100%;',          // Change the width of the languages
+    'td': 'width: 100%; display: block;',           // Change the width of the languages
+    '.goog-te-menu2-colpad': 'display: none;',      // Change the width of the languages
+    '.goog-te-menu2': 'border: none;',  // Change Google's default blue border
+    '.goog-te-menu2': 'height: 100%; width: 100%;'
+  }
+  return styleConfigurationObject;
+}
 
-        // Change menu's padding
-        $("iframe").contents().find('.goog-te-menu2').css ({								'overflow-y':'scroll','padding':'0px'});
-
-        // Change the padding of the languages
-        $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px');
-
-        // Change the width of the languages
-        $("iframe").contents().find('.goog-te-menu2-item').css('width', '100%');
-        $("iframe").contents().find('td').css({'width':'100%','display':'block'});
-        $("iframe").contents().find('.goog-te-menu2-colpad').css('display', 'none');
-
-        // Change hover effects
-        $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
-            $(this).css('background-color', '#4385F5').find('span.text').css('color', 'white');
-        }, function () {
-            $(this).css('background-color', 'white').find('span.text').css('color', '#544F4B');
-        });
-
-        // Change Google's default blue border
-        $("iframe").contents().find('.goog-te-menu2').css('border', 'none');
-
-        // Change the iframe's box shadow
-        $(".goog-te-menu-frame").css('box-shadow', '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)');
-
-
-
-        // Change the iframe's size and position?
-        $(".goog-te-menu-frame").css({
-            'height': '100%',
-            'width': '100%',
-            'top': '0px'
-        });
-        // Change iframes's size
-        $("iframe").contents().find('.goog-te-menu2').css({
-            'height': '100%',
-            'width': '100%'
-        });
-    });
+function setStyles(selector, styles, IFRAME_MENU_ELEMENT) {
+  const content = IFRAME_MENU_ELEMENT.contentWindow;
+  const itemsToStyle = content.document.querySelectorAll(selector);
+  for (let i = 0; i < itemsToStyle.length; i++) {
+    const items = itemsToStyle[i];
+    console.log(items);
+    items.setAttribute('style', styles);
   }
 }
 
-export default styleTranslateMenu;
+function watchForMenuClicks() {
+  // RESTYLE THE DROPDOWN MENU
+  if (document.getElementById('google_translate_element')) {
+    const GOOGLE_TRANSLATE_ELEMENT = document.getElementById('google_translate_element');
+    const styleConfigurationObject = createStyleConfigurationObject();
+    const iframeStyles = setIframeStyles();
+    GOOGLE_TRANSLATE_ELEMENT.addEventListener('click', function (event) {
+      const IFRAME_MENU_ELEMENT = document.querySelector('iframe[class*="goog-te-menu-frame"]');
+
+      //event.preventDefault();
+      styleIFrameElement(IFRAME_MENU_ELEMENT, iframeStyles);
+      Object.keys(styleConfigurationObject).forEach(function(selector) {
+        setStyles(selector, styleConfigurationObject[selector], IFRAME_MENU_ELEMENT);
+      });
+
+    }, false);
+  }
+}
+
+export default watchForMenuClicks;
