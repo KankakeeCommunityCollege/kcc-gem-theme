@@ -10,7 +10,6 @@ body {
 
 // h1 is KCC's logo-font, reserved for the nav-local's page-title heading.
 .typography__nav-heading { // Not to be used for page content
-  align-self: center;
   color: $primary-blue;
   display: inline;
   font-family: $font-family-kcc;
@@ -18,7 +17,6 @@ body {
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;
-  vertical-align: middle;
   transition-property: color;
   transition-timing-function: ease;
   transition-duration: .4s;
