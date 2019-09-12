@@ -3,7 +3,7 @@
 .bundle
 
 ### Ignore the Gemfile to keep it out of cloudcannon ###
-Gemfile
+#Gemfile
 
 ### General Apple things to ignore ###
 .DS_Store
@@ -40,7 +40,7 @@ _site
 node_modules/
 
 # Ignore gem lock to avoid mac/windows discrepencies
-Gemfile.lock
+#Gemfile.lock
 
 # Ignore adobe directory containing working illustrator, photoshop,
 assets/adobe/
@@ -54,3 +54,6 @@ yarn-error.log
 # Ye Olde Gulp tasks from an API long, long ago, in a galaxy far, far away:
 old-gulp-tasks/
 old.gulpfile.js
+
+# Jekyll 4's caching dir
+.jekyll-cache/
