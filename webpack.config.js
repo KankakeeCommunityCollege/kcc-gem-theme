@@ -1,6 +1,6 @@
 process.traceDeprecation = true;
 const path = require('path');
-//const HashPlugin = require('hash-webpack-plugin');
+const HashPlugin = require('hash-webpack-plugin'); // HASH IS USED TO KICK-OFF JEKYLL (BY DEFAULT: JEKYLL UPDATES THE `_site` BUILD WHENEVER THERES A CHANGE IN ITS `_data` DIR!!!)
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
@@ -28,7 +28,7 @@ const config = {
     ]
   },
   plugins: [
-    //new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }),
+    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }), // HASH IS USED TO KICK-OFF JEKYLL
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
