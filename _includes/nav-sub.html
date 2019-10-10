@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <nav class="navbar navbar-light bg-light sub-nav__navbar">
-        <a class="navbar-brand" href="{{ page.baseurl }}{{ page.sub-nav_section }}"><h3 class="typography__sub-nav--red-h3">{{ page.sub-nav_section | capitalize }}</h3></a>
+        <a class="navbar-brand" href="{{ page.baseurl }}{{ page.sub-nav_section }}"><h3 class="typography__sub-nav--red-h3">{{ page.sub-nav_section | capitalize | replace: "-", " " }}</h3></a>
         <ul id="subNavNav" class="nav ml-auto">
         {% assign section = page.sub-nav_section | append: "/" %}
         {% for nav in site.sub-nav_links %}
