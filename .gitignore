@@ -4,6 +4,7 @@
 
 ### Ignore the Gemfile to keep it out of cloudcannon ###
 #Gemfile
+Gemfile.lock
 
 ### General Apple things to ignore ###
 .DS_Store

@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       {% for card in page.cards %}
-      <div class="col-md-6 col-lg-4 text-center card-section__col--margin-btm">
+      <div class="col-md-6 col-lg-4 text-center mx-auto card-section__col--margin-btm">
         <div class="mb-3">
           <a href="{{ card.link }}" class="links__block"><img alt="{{ card.thumb_alt_text }}" class="img-fluid rounded-circle w-50 img__shadow--border" src="{{ page.baseurl }}assets/img/kcc-placeholder-square.png" data-src="{{ page.baseurl }}{{ card.thumb }}" /></a>
         </div>
