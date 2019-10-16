@@ -217,7 +217,7 @@ body {
 
 .typography__h5--description {
   color: $grey-6;
-  font-family: Oswald,sans-serif;
+  font-family: $font-family-oswald;
   font-size: 1.25rem;
   font-weight: 400;
 }
