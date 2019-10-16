@@ -31,21 +31,6 @@ function jekyllBuild(done) {
   .on('close', done);
 }
 
-// Create sitemap on production builds
-function gulpSitemap(done) {
-  const PRODUCTION = !!(yargs.argv.production); // Run things that say 'PRODCUTION' on production builds only ($ gulp --production)
-
-  gulp.src((config.sitemap.src), {
-    read: false
-  })
-    .pipe(sitemap({
-      siteUrl: (config.sitemap.siteUrl),
-    }))
-    .pipe(gulpif(PRODUCTION, gulp.dest('./')))
-    .pipe(gulpif(PRODUCTION, gulp.dest('./_site')));
-  done();
-}
-
 // Compile main.css file from sass modules
 function mainScss() {
   const PRODUCTION = !!(yargs.argv.production);
@@ -144,7 +129,6 @@ const build = series( // Series items need to be executed in a specific order (n
   clean,
   jekyllBuild,
   parallel( // These parallel tasks require the '_site' to be built, but it doesnt really matter what order they execute.
-    gulpSitemap,
     mainScss,
     translateScss,
     copy

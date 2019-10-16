@@ -52,17 +52,6 @@ translateSass:
   notification: "Running translateScss"
   src: "assets/scss/translate.scss"
 
-# Gulp task to create sitemap on production builds (`$ gulp --production`).
-sitemap:
-  src: # Defines what items should be in used in creating the sitemap.
-    - "_site/*.html"
-    - "_site/**/*.html"
-    - "_site/**/**/*.html"
-    - "_site/**/*.pdf" # Yes, PDF's too.
-    - "_site/**/**/*.pdf"
-  notification: "Running sitemap"
-  siteUrl: "styleguide.kcc.edu"
-
 jekyll:
   notification: "Running jekyll"
 
