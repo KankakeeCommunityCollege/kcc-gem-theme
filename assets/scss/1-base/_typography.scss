@@ -215,6 +215,13 @@ body {
   font-size: 1.4rem;
 }
 
+.typography__h5--description {
+  color: $grey-6;
+  font-family: Oswald,sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
 .typography__phone--span {
   color: $white;
   font-family: $font-family-oswald;
