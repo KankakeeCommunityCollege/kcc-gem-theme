@@ -212,3 +212,22 @@
 .positioning__offset-global-nav {
   margin-top: 60px;
 }
+
+
+@media screen and (min-width: 768px) {
+  .position__col--min-height {
+    min-height: 15rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .position__col--min-height {
+    min-height: 12rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .position__col--min-height {
+    min-height: 9rem;
+  }
+}
