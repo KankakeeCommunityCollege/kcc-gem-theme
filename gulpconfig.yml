@@ -29,11 +29,6 @@ copy:
 
 # Main Gulp Sass task (for main.css).
 sass:
-  # Autoprefixer will make sure your CSS works with these browsers
-  compatibility:    # These are pretty standard autoprefixer compatibility settings
-    - "last 2 versions"
-    - "ie >= 9"
-    - "defaults"
   dest:
     jekyllRoot: "assets/css/"
     buildDir: "_site/assets/css/"
@@ -42,10 +37,6 @@ sass:
 
 # Gulp task to create stylesheet for custom options in CloudCannon (CMS customizations). Editors can use these styles as option in the CMS.
 translateSass:
-  compatibility:
-    - "last 2 versions"
-    - "ie >= 9"
-    - "defaults"
   dest:
     jekyllRoot: "assets/css/"
     buildDir: "_site/assets/css/"
