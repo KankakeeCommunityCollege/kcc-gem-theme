@@ -5,8 +5,9 @@ import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import regexText from './boldFont.js';
 import moveSearchIcon from './moveSearchIcon.js';
-import highlightNav from './highlightCurrentNav.js'
-import watchForMenuClicks from './translate.js'
+import highlightNav from './highlightCurrentNav.js';
+import watchForMenuClicks from './translate.js';
+import closeMenuOnClick from './closeMenuOnClick.js';
 //import './babelTest.js';
 //import test from './test.js';
 
@@ -38,4 +39,5 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   searchToggle();
   lazyLoad();
+  closeMenuOnClick();
 });
