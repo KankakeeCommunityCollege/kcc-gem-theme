@@ -11,13 +11,18 @@
 // use the 'link__offset' class to offset jump-links via CSS only method.
 // Links need to be offset to clear the fixed navigation bar at the top.
 // =========================================
+
+.links__offset {
+  pointer-events: none !important;
+}
+
 .links__offset::before {
   // mobile devices get slightly different offset b/c of different sized fixed header
   content: " ";
   display: block;
   height: 171px; // defining a height pushes the element down the page
   margin-top: -171px; // negative margin is needed to push it back to its original position
-  pointer-events: none; // w/ out this it will interfere with the sites navigation links
+  pointer-events: none !important; // w/ out this it will interfere with the sites navigation links
   visibility: hidden;
 }
 
