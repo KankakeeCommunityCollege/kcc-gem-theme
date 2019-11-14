@@ -1,6 +1,7 @@
 ### Gem/Bundler stuffs to ignore ###
 *.gem
 .bundle
+.ruby-version ## Prevent CloudCannon Errors
 
 ### Ignore the Gemfile to keep it out of cloudcannon ###
 #Gemfile
