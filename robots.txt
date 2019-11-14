@@ -1,5 +1,10 @@
+---
+layout: null
+---
 # www.robotstxt.org/
 
 # Allow crawling of all content
 User-agent: *
 Disallow:
+
+{% if site.url and site.url != 'URL is needed for robots.txt to work properly' %}Sitemap: {{ site.url }}/sitemap.xml{% endif %}
