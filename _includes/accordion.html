@@ -1,3 +1,8 @@
+<div class="row editor-link">
+  <div class="col editor-link mb-3">
+    <a href="cloudcannon:collections/_accordions/" class="btn btn-success editor-button">Edit Accordions Collection</a>
+  </div>
+</div>
 <div id="accordion" class="accordion">
   {% assign page_title = page.title %}
   {% assign accordion_collection = site.accordions | where: "accordion_page", page_title | sort: "order" %}
