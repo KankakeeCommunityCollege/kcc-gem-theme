@@ -33,3 +33,16 @@
   background-color: $btn-hover-bg;
   border-color: $btn-hover-border;
 }
+
+.buttons__no-decoration {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
