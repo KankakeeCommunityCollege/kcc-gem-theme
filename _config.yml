@@ -2,13 +2,16 @@ title: "KCC"
 site_name: KCC Gem Theme
 public-url: "https://www.kcc.edu"
 google-tag_key: Google Tag Manager key goes here
-#translate: true ## Uncomment to activate Google Translate Powers!!
+#translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 nav_links:
   - link_text: Home
     link_href: ''
     button: false
   - link_text: Landing Page
     link_href: 'landing-page'
+    button: false
+  - link_text: accordion
+    link_href: 'accordion'
     button: false
   - link_text: Tabbed Navigation
     link_href: 'tabbed-nav'
@@ -34,6 +37,8 @@ collections:
   posts:
     _hide_content: true
   tabbed_nav:
+    output: false
+  accordions:
     output: false
 defaults:
 - scope:
