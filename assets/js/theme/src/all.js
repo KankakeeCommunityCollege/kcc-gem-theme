@@ -8,6 +8,7 @@ import moveSearchIcon from './moveSearchIcon.js';
 import highlightNav from './highlightCurrentNav.js';
 import watchForMenuClicks from './translate.js';
 import closeMenuOnClick from './closeMenuOnClick.js';
+import accordion from './accordion.js'
 //import './babelTest.js';
 //import test from './test.js';
 
@@ -37,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initSliders();
   walkText(document.body);
   footerDate();
-  searchToggle();
   lazyLoad();
+  accordion();
+  searchToggle();
   closeMenuOnClick();
 });

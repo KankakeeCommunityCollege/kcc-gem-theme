@@ -8,7 +8,7 @@ const config = {
   watch: true,
   //entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
-    'kcc-theme': './assets/js/theme/script/all.js'
+    'kcc-theme': './assets/js/theme/src/all.js'
   },
   output: {
     filename: '[name].bundle.js',
