@@ -1,4 +1,5 @@
-function regexText(node) {
+
+function walkNodes(node) {
   if (node.nodeType == 3) { // is it a text node?
     const reg = /\*\*(\S+)\*\*/g;
     const replacement = '<span class="typography__power-text">$1</span>';
@@ -9,8 +10,15 @@ function regexText(node) {
   }
   if (node.nodeType == 1 && node.nodeName != 'SCRIPT') {
     for (var i = 0; i < node.childNodes.length; i++) {
-      regexText(node.childNodes[i]);
+      walkNodes(node.childNodes[i]);
     }
+  }
+}
+
+function regexText() {
+  if ( document.querySelector('.hero-slider__slider') ) {
+    const slider = document.querySelector('.hero-slider__slider');
+    walkNodes(slider);
   }
 }
 //  USAGE:

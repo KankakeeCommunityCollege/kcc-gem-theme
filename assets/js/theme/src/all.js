@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  const sliderContainer = document.querySelector('.hero-slider__slider');
-  sliderContainer ? regexText(document.querySelector('.hero-slider__slider')) : null;
+  regexText();
   //test();
   initSliders();
   walkText(document.body);
