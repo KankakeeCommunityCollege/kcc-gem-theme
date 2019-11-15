@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  regexText();
+  regexText(document.querySelector('.hero-slider__slider').parentNode);
   //test();
   initSliders();
   walkText(document.body);
