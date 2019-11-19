@@ -1,4 +1,4 @@
-const SLIDE_HEADING_ELEMENTS = document.querySelectorAll('.hero-slider__slider--slide-heading');; // Element from HTML
+const SLIDE_HEADING_ELEMENTS = document.querySelectorAll('.hero-slider__slider--slide-heading'); // Element from HTML
 const regEx = /\*\*(\S+)\*\*/g;
 const replacement = '<span class="typography__power-text">$1</span>';
 
@@ -13,6 +13,8 @@ function loopOverNodeList(nodeList) {
 }
 
 function wrapPowerText() {
+  if ( !document.querySelectorAll('.hero-slider__slider--slide-heading') )
+    return; // Bail out of theres no slider in the page.
   loopOverNodeList(SLIDE_HEADING_ELEMENTS);
 }
 
