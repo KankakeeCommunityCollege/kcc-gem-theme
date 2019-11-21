@@ -1,0 +1,9 @@
+// Styling for the little loading GIF
+
+.loader {
+  text-align: center;
+  &__img {
+    height: 100px;
+    width: 100px;
+  }
+}
