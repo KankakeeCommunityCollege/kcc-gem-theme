@@ -1,26 +1,13 @@
 #!/bin/bash/
 
-echo "" && echo "Creating '.ruby-version' file from 'ruby-version.txt'" && echo ""
-
-sleep .25
-
-echo "DO NOT COMMIT '.ruby-version' TO GITHUB!! IT WILL BREAK CLOUDCANNON!!" && echo ""
-
-cp ruby-version.txt .ruby-version
-
-echo "" && sleep .25
-
-echo "" && echo "Switching to ruby version in new '.ruby-version' file via 'rvm use'." && echo ""
-
-rvm use
-
-sleep .25
-
-echo "" && echo "Switching to Node.js version in '.nvmrc' file via 'nvm use'." && echo ""
-
-nvm use
-
-sleep .25
+while true; do
+    read -p "Did you run 'cp ruby-version.txt .ruby-version && rvm use && nvm use'? [Y/N]: " yn
+    case $yn in
+        [Yy]* ) echo "" && echo "Proceeding with install" && echo ""; break;;
+        [Nn]* ) exit;;
+        * ) echo "" && echo "Please answer yes or no." && echo "";;
+    esac
+done
 
 echo "" && echo "Running npm install" && echo ""
 
@@ -58,4 +45,4 @@ unset UNAME
 
 sleep 1
 
-echo "Installation Complete!"
+echo "" && echo "Installation Complete!" && echo ""
