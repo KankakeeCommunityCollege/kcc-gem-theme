@@ -12,7 +12,7 @@ This theme's GitHub repo has all the Gulp, npm, & Webpack dependancies included 
 
 <br>
 
-## Installation
+## Install the Gem in a Jekyll Project
 
 Add this line to your Jekyll site's `Gemfile`:
 
