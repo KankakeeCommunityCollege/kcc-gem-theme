@@ -1,6 +1,28 @@
 #!/bin/bash/
 
-echo "Running npm install"
+echo "" && echo "Creating '.ruby-version' file from 'ruby-version.txt'" && echo ""
+
+sleep .25
+
+echo "DO NOT COMMIT '.ruby-version' TO GITHUB!! IT WILL BREAK CLOUDCANNON!!" && echo ""
+
+cp ruby-version.txt .ruby-version
+
+echo "" && sleep .25
+
+echo "" && echo "Switching to ruby version in new '.ruby-version' file via 'rvm use'." && echo ""
+
+rvm use
+
+sleep .25
+
+echo "" && echo "Switching to Node.js version in '.nvmrc' file via 'nvm use'." && echo ""
+
+nvm use
+
+sleep .25
+
+echo "" && echo "Running npm install" && echo ""
 
 sleep .5
 
