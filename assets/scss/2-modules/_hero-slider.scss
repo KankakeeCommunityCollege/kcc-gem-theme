@@ -241,6 +241,12 @@
   padding-right: 0;
 }
 
+.hero-slider__slide-img--border {
+  border-color: $grey-8;
+  border-style: solid;
+  border-width: thin;
+}
+
 .hero-slider__slider {   // prevents all slides from displaying vertically before slick has initialized
   visibility: hidden;
 }
