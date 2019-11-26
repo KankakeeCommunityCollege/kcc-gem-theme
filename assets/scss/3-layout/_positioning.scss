@@ -30,13 +30,10 @@
   }
 }
 
-.position__offset-fixed-nav {
-  margin-top: 115px;
-}
 
-@media screen and (min-width:360px) {
+@media screen and (min-width: 360px) {
   .position__offset-fixed-nav {
-    margin-top: 115px;
+    margin-top: 125px;
   }
 }
 
@@ -54,7 +51,7 @@
 
 @media screen and (min-width:768px) {
   .position__offset-fixed-nav {
-    margin-top: 160px;
+    margin-top: 135px;
   }
 }
 
