@@ -16,6 +16,7 @@ slides:
     alt-text: The Power of Giving
     url: 'https://continuinged.kcc.edu'
     text: The **POWER** of Community
+    white_background: true
   - image: assets/img/kcc-placeholder.png
     alt-text: The Power of Giving
     url: 'https://continuinged.kcc.edu'
@@ -44,27 +45,7 @@ cards:
 
 <main class="position__offset-fixed-nav">
   <div class="container">
-    <div class="row">
-      <div class="col hero-slider__slider">
-      {% for slide in page.slides %}
-        {% if forloop.first == true %}
-        <div>
-          <a href="{{ slide.url }}"><img src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
-          <div class="hero-slider__slider--heading-container text-center">
-            <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
-          </div>
-        </div>
-        {% else %}
-        <div>
-          <a href="{{ slide.url }}"><img src="assets/img/placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img" alt="{{slide.alt-text}}" /></a>
-          <div class="hero-slider__slider--heading-container text-center">
-            <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
-          </div>
-        </div>
-        {% endif %}
-      {% endfor %}
-      </div>
-    </div>
+    {% include hero-slider.html %}
   </div>
   {% include card-section.html %}
   <div class="container">

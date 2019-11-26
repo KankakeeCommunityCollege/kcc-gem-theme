@@ -1,0 +1,23 @@
+
+<div class="row">
+  <div class="col hero-slider__slider">
+  {% for slide in page.slides %}
+    {% if forloop.first == true %}
+    <div>
+      <a href="{{ slide.url }}"><img src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}" alt="{{slide.alt-text}}" /></a>
+      <div class="hero-slider__slider--heading-container text-center">
+        <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+      </div>
+    </div>
+    {% else %}
+    <div>
+      <a href="{{ slide.url }}"><img src="assets/img/placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}" alt="{{slide.alt-text}}" /></a>
+      <div class="hero-slider__slider--heading-container text-center">
+        <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+</div>
