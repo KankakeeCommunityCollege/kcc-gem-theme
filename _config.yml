@@ -14,6 +14,9 @@ nav_links:
   - link_text: accordion
     link_href: 'accordion'
     button: false
+  - link_text: Global Nav
+    link_href: 'global-nav'
+    button: false
   - link_text: Tabbed Navigation
     link_href: 'tabbed-nav'
     button: false
