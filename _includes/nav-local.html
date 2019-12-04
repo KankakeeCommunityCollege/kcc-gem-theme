@@ -1,23 +1,18 @@
-<nav id="mainNav" role="navigation" class="navbar navbar-expand-lg navbar-light bg-light nav-local fixed-top">
-  <a href="{{ page.baseurl }}" class="links__no-underline navbar-brand">
-    <h1 class="typography__nav-heading">{{ site.site_name }}</h1>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavContent, #navbarSupportedContent" aria-controls="mainNavContent, navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="mainNavContent">
-    <ul class="js-nav navbar-nav ml-auto">
-      {% for link in site.nav_links %}
-      {% if link.button == false  %}
-      <li class="js-nav-item nav-item">
-        <a class="nav-link links__nav-link--color typography__nav-link" href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}">{{ link.link_text }}</a>
-      </li>
-      {% else %}
-      <li class="js-nav-item nav-item">
-        <a href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}" class="btn btn-primary typography__nav-link">{{ link.link_text }}</a>
-      </li>
-      {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-</nav>
+<ul class="navbar-nav header-global__nav-local justify-content-end align-items-lg-center bg-light">
+  <li class="nav-item mr-auto">
+    <a href="{{ page.baseurl }}" class="nav-link navbar-brand header-global__nav-local--navbar-brand">
+      <h1 class="typography__nav-heading">{{ site.site_name }}</h1>
+    </a>
+  </li>
+  {% for link in site.nav_links %}
+  {% if link.button == false  %}
+  <li class="js-nav-item nav-item">
+    <a class="nav-link typography__header-global--nav-local typography__nowrap--sm" href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}">{{ link.link_text }}</a>
+  </li>
+  {% else %}
+  <li class="js-nav-item nav-item">
+    <a href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}" class="btn btn-primary typography__header-global--nav-local typography__nowrap--sm">{{ link.link_text }}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
