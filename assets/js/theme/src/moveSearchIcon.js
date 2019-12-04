@@ -1,3 +1,5 @@
+const SEARCH_INPUT_ID = 'gsc-i-id1';
+
 function checkXIcon() {
   const checkXIconOnLoad = (function() {
       let executed = false;
@@ -29,6 +31,12 @@ function addId() {
   xIcon.setAttribute('id', 'xIcon');
 }
 
+function addAttribute(id, attr, val) {
+  const el = document.getElementById(id);
+
+  el.setAttribute(attr, val);
+}
+
 function gscInit() {
   var cx = '006320264078644364913:sy48bet-lr8';
   var gcse = document.createElement('script');
@@ -48,7 +56,6 @@ function moveSearchIcon() {
       resolve();
     });
     initSearchPromise.then(() => {
-
       let addIdPromise = new Promise((resolve, reject) => {
 
         const targetNode = document.getElementById('searchCollapse');
@@ -56,6 +63,7 @@ function moveSearchIcon() {
         const callback = function(mutationsList, observer) {
             for(const mutation of mutationsList) {
                 if (mutation.type == 'childList') {
+                    addAttribute(SEARCH_INPUT_ID, 'tabindex', '-1')
                     addId();
                     resolve();
                 }

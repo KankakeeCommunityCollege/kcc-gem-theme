@@ -14,7 +14,11 @@ import wrapPowerText from './wrapPowerText.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   highlightNav();
-  moveSearchIcon();
+  wrapPowerText();
+  initSliders();
+  walkText(document.body);
+  footerDate();
+  lazyLoad();
   watchForMenuClicks();
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
@@ -32,12 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  //test();
-  wrapPowerText();
-  initSliders();
-  walkText(document.body);
-  footerDate();
-  lazyLoad();
+  moveSearchIcon();
   accordion();
   searchToggle();
   closeMenuOnClick();

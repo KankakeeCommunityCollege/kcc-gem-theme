@@ -1,6 +1,6 @@
 const NAV_LINKS_SELECTOR = '.nav-link';  // Bootstrap 4 class
-const MENU_COLLAPSE_JQUERY = $('#mainNavContent'); // Bootstrap 4 crap that requires $() w/ an ID from the HTML
-const MENU_COLLAPSE = 'mainNavContent';  // ID from the HTML
+const MENU_COLLAPSE_JQUERY = $('#headerGlobalNavbarContent'); // Bootstrap 4 crap that requires $() w/ an ID from the HTML
+const MENU_COLLAPSE = 'headerGlobalNavbarContent';  // ID from the HTML
 const HIDE = 'hide';  // Bootstrap 4 class
 const SHOW = 'show';  // Bootstrap 4 class
 
