@@ -11,15 +11,13 @@
 @import '1-base/links';
 @import '1-base/buttons';
 @import '1-base/img';
+@import '1-base/header-global';
 
 // Modular components
 @import '2-modules/header';
 @import '2-modules/footer';
 @import '2-modules/sliders';
-@import '2-modules/nav-local';
 @import '2-modules/social-icons';
-@import '2-modules/nav-global';
-@import '2-modules/nav-global-new';
 @import '2-modules/error';
 @import '2-modules/benefits';
 @import '2-modules/hero-slider';

@@ -31,13 +31,13 @@
 }
 
 .position__offset-fixed-nav {
-  margin-top: 120px;
+  margin-top: 105px;
 }
 
 
 @media screen and (min-width: 360px) {
   .position__offset-fixed-nav {
-    margin-top: 125px;
+    margin-top: 110px;
   }
 }
 
@@ -47,15 +47,21 @@
   }
 }
 
-@media screen and (min-width:576px) {
+@media screen and (min-width: 576px) {
   .position__offset-fixed-nav {
-    margin-top: 145px;
+    margin-top: 125px;
   }
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .position__offset-fixed-nav {
-    margin-top: 135px;
+    margin-top: 130px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .position__offset-fixed-nav {
+    margin-top: 170px;
   }
 }
 
