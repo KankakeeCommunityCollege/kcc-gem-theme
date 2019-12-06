@@ -7,7 +7,7 @@
   {% for link in site.nav_links %}
   {% if link.button == false  %}
   <li class="js-nav-item nav-item">
-    <a class="nav-link typography__header-global--nav-local typography__nowrap--sm" href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}">{{ link.link_text }}</a>
+    <a class="nav-link typography__header-global--nav-local typography__nowrap--sm links__header-global--nav-local" href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}">{{ link.link_text }}</a>
   </li>
   {% else %}
   <li class="js-nav-item nav-item">

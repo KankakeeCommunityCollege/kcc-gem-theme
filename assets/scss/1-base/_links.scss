@@ -73,3 +73,20 @@
     text-decoration: none;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .links__header-global--nav-local {
+    position: relative;
+  }
+
+  .active .links__header-global--nav-local::after {
+    background-color: $primary-red;
+    bottom: .125rem;
+    content: '';
+    display: block;
+    height: .145rem;
+    position: absolute;
+    transition: opacity 0.3s,transform 0.3s;
+    width: calc(100% - 1rem);
+  }
+}
