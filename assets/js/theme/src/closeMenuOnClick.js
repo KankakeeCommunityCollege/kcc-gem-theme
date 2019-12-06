@@ -27,6 +27,10 @@ function clickHandlerFunction(e) {
   if ( !e.target.matches(NAV_LINKS_SELECTOR) )  // Bail out of the rest of the code if the click event's target is not what we want!
     return;
 
+  if ( e.target.classList.contains('dropdown-toggle') )
+    return;
+
+
   const menuIsOpen = checkIfMenuIsOpen();
 
   hideMenuIfOpen(menuIsOpen);
