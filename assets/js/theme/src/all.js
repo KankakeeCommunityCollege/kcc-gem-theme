@@ -1,9 +1,8 @@
 import footerDate from './footerDate.js';
-import searchToggle from './searchToggle.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import moveSearchIcon from './moveSearchIcon.js';
+import googleCustomSearchInit from './googleCustomSearch.js';
 import highlightNav from './highlightCurrentNav.js';
 import watchForMenuClicks from './translate.js';
 import closeMenuOnClick from './closeMenuOnClick.js';
@@ -36,8 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  moveSearchIcon();
+  googleCustomSearchInit();
   accordion();
-  searchToggle();
   closeMenuOnClick();
 });
