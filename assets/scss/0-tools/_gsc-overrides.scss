@@ -17,18 +17,18 @@
   border: none !important;
   pointer-events: auto;
   position: relative;
-  right: 30px;
+  right: -.75rem;
   transition-property: right;
   transition-duration: .2s;
 }
 
-.gsst_a .gscb_a {
-  vertical-align: middle;
+button.gsc-overrides__clear-x {
+  right: .125rem;
+  padding-right: 5px !important;
 }
 
-button.gsc-overrides__clear-x {
-  right: 48px;
-  padding-right: 5px !important;
+.gsst_a .gscb_a {
+  vertical-align: middle;
 }
 
 .gsc-search-button-v2 svg {
