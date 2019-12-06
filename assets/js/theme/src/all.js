@@ -8,6 +8,7 @@ import watchForMenuClicks from './translate.js';
 import closeMenuOnClick from './closeMenuOnClick.js';
 import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
+import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
 //import './babelTest.js';
 //import test from './test.js';
 
@@ -38,4 +39,5 @@ document.addEventListener('DOMContentLoaded', function() {
   googleCustomSearchInit();
   accordion();
   closeMenuOnClick();
+  toggleMenuOnWindowResize();
 });
