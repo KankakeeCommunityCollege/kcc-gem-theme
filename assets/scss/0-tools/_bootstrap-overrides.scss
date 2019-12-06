@@ -39,3 +39,18 @@
 .modal-open .gsc-search-button {
   margin-right: 15px;
 }
+
+.dropdown-toggle::after {
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-item.dropdown.show .dropdown-toggle::after {
+  transform: rotate(0deg);
+}
+
+@media screen and (min-width: 992px) {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
