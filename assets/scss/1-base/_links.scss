@@ -78,7 +78,6 @@
   .links__header-global--nav-local {
     position: relative;
   }
-
   .active .links__header-global--nav-local::after {
     background-color: $primary-red;
     bottom: .125rem;
