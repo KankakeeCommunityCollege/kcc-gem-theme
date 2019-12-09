@@ -69,6 +69,7 @@
     transition-property: opacity;
     transition-timing-function: ease-in-out;
     transition-duration: .1s;
+    z-index: 1032;
   }
 }
 
@@ -100,6 +101,7 @@
 .header-global__close-icon--hidden {
   opacity: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
 @media screen and (max-width: 992px) {
