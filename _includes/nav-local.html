@@ -12,6 +12,17 @@
       <li class="js-nav-item nav-item">
         <a class="nav-link links__nav-link--color typography__nav-link" href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}">{{ link.link_text }}</a>
       </li>
+      {% elsif link.dropdown %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle btn btn-primary typography__nav-link links__nav-link--color" href="#" id="{{ link.link_text | downcase }}NavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ link.link_text }}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="{{ link.link_text | downcase }}NavbarDropdown">
+          {% for item in link.dropdown %}
+          <a class="dropdown-item" href="{{ page.baseurl }}{{ item.href }}">{{ item.text }}</a>
+          {% endfor %}
+        </div>
+      </li>
       {% else %}
       <li class="js-nav-item nav-item">
         <a href="{% unless link.external == true %}{{page.baseurl}}{% endunless %}{{ link.link_href }}" class="btn btn-primary typography__nav-link">{{ link.link_text }}</a>
