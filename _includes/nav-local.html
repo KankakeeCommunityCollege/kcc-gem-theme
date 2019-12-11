@@ -1,6 +1,6 @@
 <nav id="mainNav" role="navigation" class="navbar navbar-expand-lg navbar-light bg-light nav-local fixed-top">
   <a href="{{ page.baseurl }}" class="links__no-underline navbar-brand">
-    <h1 class="typography__nav-heading">{{ site.site_name }}</h1>
+    <h1 class="typography__nav-heading{% if site.nav_config.smaller_brand == true %} typography__nav-heading--smaller{% endif %}">{{ site.site_name }}</h1>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavContent" aria-controls="mainNavContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
