@@ -18,11 +18,27 @@
       {% assign contact_name = contact.name | split: " " %}
       {% assign first = contact_name[0] %}
       {% assign last = contact_name[1] %}
-      {% if contact.portrait != "For departments with no contact photos, do not change this field." %}
+      {% if contact.portrait != 'For departments with no contact photos, do not change this field.' and contact.portrait != 'none' %}
       <div class="col-md-6 contacts__col-bottom-margin">
         <div class="row">
           <div class="col-4 contacts__col--img">
             <img src="assets/img/blank-contact.svg" data-src="{{ page.baseurl }}{{ contact.portrait }}" alt="{{ contact.name }}" class="img-fluid contacts__portrait" />
+          </div>
+          <div class="col-8 float-right">
+            <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
+            <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+            <p class="notranslate">
+              <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
+              <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% elsif contact.portrait == 'none' %}
+      <div class="col-md-6 contacts__col-bottom-margin">
+        <div class="row">
+          <div class="col-4 contacts__col--img">
+            <!-- Contact has no portrait -->
           </div>
           <div class="col-8 float-right">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>

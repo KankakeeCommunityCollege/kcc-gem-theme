@@ -51,6 +51,8 @@ collections:
     output: false
   accordions:
     output: false
+  contacts:
+    output: false
 defaults:
 - scope:
     path: ''
