@@ -41,16 +41,16 @@
 }
 
 .dropdown-toggle::after {
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
   transition: transform 0.3s ease-in-out;
 }
 
 .nav-item.dropdown.show .dropdown-toggle::after {
-  transform: rotate(0deg);
+  transform: rotate(-180deg);
 }
 
 @media screen and (min-width: 992px) {
-  .dropdown-toggle::after {
+  .dropdown-toggle:not(.btn)::after {
     display: none;
   }
 }
