@@ -6,7 +6,7 @@ function collapseElement(el) {
 }
 
 function checkNavbarCollapseState(menuEl) {
-  if ( menuEl.classList.contains('show') ) { // 'show' is a Bootstrap 4 class that makes `.collapse` items visibile. // Checking to see if the Menu is open
+  if ( menuEl.classList.contains('show') ) { // 'show' is a Bootstrap 4 class that makes `.collapse` items visible. // Checking to see if the Menu is open
     collapseElement(menuEl);
   }
 }
