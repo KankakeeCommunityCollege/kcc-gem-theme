@@ -9,6 +9,7 @@ import closeMenuOnClick from './closeMenuOnClick.js';
 import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
 import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
+import megaNavInit from './megaNav.js';
 //import './babelTest.js';
 //import test from './test.js';
 
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
   googleCustomSearchInit();
+  megaNavInit();
   accordion();
   closeMenuOnClick();
   toggleMenuOnWindowResize();
