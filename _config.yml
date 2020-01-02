@@ -17,9 +17,14 @@ nav_links:
   - link_text: Global Nav
     link_href: 'global-nav'
     button: false
-  - link_text: Tabbed Navigation
-    link_href: 'tabbed-nav'
-    button: false
+  - link_text: Enroll
+    dropdown:
+      - text: Community Literacy
+        href: 'programs/community-literacy'
+      - text: English as a Second Language
+        href: 'programs/esl'
+      - text: GED/High School Equivalency
+        href: 'programs/ged'
 #  - link_text: Example External Link
 #    link_href: 'https://example-external-link.com'
 #    button: false
