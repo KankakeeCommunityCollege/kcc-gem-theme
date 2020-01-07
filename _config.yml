@@ -6,7 +6,9 @@ google-tag_key: Google Tag Manager key goes here
 #translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 global_nav:
   - link_text: Academics
-    image: 'uploads/e-tech_a-roberts_mar2016_D41_6690.jpg'
+    image:
+      source: 'uploads/e-tech_a-roberts_mar2016_D41_6690.jpg'
+      alt: 'Student working in an electrical technology lab'
     dropdown:
       - text: Action
         href: '#'
@@ -16,7 +18,9 @@ global_nav:
       - text: Something else here
         href: '#'
   - link_text:  Admission
-    image: 'uploads/2016-senior-viewbook.jpg'
+    image:
+      source: 'uploads/2016-senior-viewbook.jpg'
+      alt: 'Take the first step to achieveing your goals, dreams & ambitions'
     dropdown:
       - text: Action
         href: '#'
@@ -28,7 +32,9 @@ global_nav:
       - text: Something else here
         href: '#'
   - link_text:  Tuition & Aid
-    image: 'uploads/fafsa-early-bird-banner-18.jpg'
+    image:
+      source: 'uploads/fafsa-early-bird-banner-18.jpg'
+      alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
     dropdown:
       - text: Action
         href: '#'
@@ -42,7 +48,9 @@ global_nav:
       - text: Something else here
         href: '#'
   - link_text: Student Resources
-    image: 'uploads/DSC_5650_helpful.jpg'
+    image:
+      source: 'uploads/DSC_5650_helpful.jpg'
+      alt: 'Receptionist answering the phone'
     dropdown:
       - text: Action
         href: '#'
@@ -58,7 +66,9 @@ global_nav:
       - text: Something else here
         href: '#'
   - link_text: Community
-    image: 'uploads/go_cavs_20171002_193828-web.jpg'
+    image:
+      source: 'uploads/go_cavs_20171002_193828-web.jpg'
+      alt: 'Group photo of students holding Cavalier signs'
     dropdown:
       - text: Action
         href: '#'
@@ -70,7 +80,9 @@ global_nav:
       - text: Something else here
         href: '#'
   - link_text: About
-    image: 'uploads/ATEC-DSC_1033.jpeg'
+    image:
+      source: 'uploads/ATEC-DSC_1033.jpeg'
+      alt: 'The new Advanced Technology Education Center building'
     dropdown:
       - text: Action
         href: '#'

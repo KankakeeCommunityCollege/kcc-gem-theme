@@ -6,7 +6,7 @@
       <div class="row">
         {% if item.image %}
         <div class="col-auto mr-3">
-          <img src="assets/img/kcc-placeholder.png" data-src="{{ item.image }}" class="img-fluid" style="width: 300px; height: auto;" alt="">
+          <img src="assets/img/kcc-placeholder.png" data-src="{{ item.image.source }}" class="img-fluid" style="width: 300px; height: auto;" alt="{{ item.image.alt }}">
         </div>
         {% endif %}
         <div class="col ml-1">
