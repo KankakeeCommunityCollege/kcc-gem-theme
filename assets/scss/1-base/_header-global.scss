@@ -345,23 +345,37 @@
   }
 }
 
+@keyframes meganav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header-global__nav-bottom .dropdown:hover .dropdown-menu,
+  .header-global__nav-bottom .dropdown .dropdown-menu:hover {
+    animation-duration: .5s;
+    animation-name: meganav;
+    display: block !important; // Because Bootstrap loves to use !important
+  }
+}
+
 @media screen and (min-width: 992px) {
   .header-global__nav-bottom .dropdown:hover {
     background-color: $white;
     &::after {
       content: '';
-      display: block;
-      width: 100%;
-      height: 1rem;
       background-color: $white;
+      display: block;
+      height: 1rem;
+      position: absolute;
+      width: 100%;
     }
   }
-  .header-global__nav-bottom .dropdown:hover .dropdown-menu,
-  .header-global__nav-bottom .dropdown .dropdown-menu:hover {
-    display: block;
-  }
 }
-
 
 @media screen and (min-width: 992px) {
   .nav-item.dropdown.header-global__dropdown--position { // First 2 classes in this selector are to override BS4 styling

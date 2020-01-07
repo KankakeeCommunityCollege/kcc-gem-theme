@@ -172,10 +172,15 @@ body {
     color: $white;
     font-size: 1.05rem;
     font-weight: 400;
-    &:hover,
-    &:focus {
-      color: $primary-blue;
-    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-bottom:hover,
+  .typography__header-global--nav-bottom:focus,
+  .header-global__dropdown:hover .typography__header-global--nav-bottom,
+  .header-global__dropdown:focus .typography__header-global--nav-bottom {
+    color: $primary-blue;
   }
 }
 
