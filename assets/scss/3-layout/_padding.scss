@@ -1,2 +1,14 @@
 // Padding Styles
 // ==========================
+
+.padding__col--mobile-none {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .padding__col--mobile-none {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
