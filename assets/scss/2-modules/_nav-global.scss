@@ -1,0 +1,315 @@
+.nav-global {
+  background-color: $primary-red;
+  height: 56px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  min-width: 100%;
+  padding-bottom: 5px;
+  padding-left: 5%;
+  padding-top: 5px;
+  width: 100%;
+  z-index: 1031;
+}
+
+.nav-global__kcc-logo {
+  margin-left: 5px;
+  width: 190px;
+}
+
+@media screen and (min-width: 360px) {
+  .nav-global__kcc-logo {
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .nav-global__kcc-logo {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .nav-global__kcc-logo {
+    width: 255px;
+  }
+}
+
+@media screen and (min-width: 488px) {
+  .nav-global__kcc-logo {
+    width: 260px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .nav-global__kcc-logo {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-global__kcc-logo {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+  .nav-global__kcc-logo {
+    margin-left: -25px;
+    width: 310px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .nav-global__kcc-logo {
+    margin-left: -25px;
+    width: 340px;
+  }
+}
+
+.clearSearch {
+  background-position: center 72px;
+  padding-top: 72px;
+}
+
+.search-row {
+  background-color: $accent-blue;
+  height: 46px;
+}
+
+.nav-global__gcse-wrapper {
+  margin-left: -5px;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-global__gcse-wrapper {
+    display: block;
+    float: right;
+    margin-top: -18px;
+    width: 50%;
+  }
+}
+
+.nav-global__search-icon {
+  background-position: center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  display: inline;
+  height: 22px;
+  margin: 4px;
+  pointer-events: none; // needed so the icon itself doesn't pick up the click event
+  width: 22px;
+}
+
+@media screen and (min-width: 360px) {
+  .nav-global__search-icon {
+    background-size: 21px 21px;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .nav-global__search-icon {
+    background-size: 22px 22px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .nav-global__search-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-global__search-icon {
+    background-size: 25px 25px;
+    height: 26px;
+    width: 26px;
+  }
+}
+
+.nav-global .nav-global__search-toggle .nav-global__search-icon {
+  float: right;
+}
+
+.nav-global__search-collapse {
+  display: none;
+  margin-top: -113px;
+}
+
+@media screen and (min-width: 576px) {
+  .nav-global__search-collapse {
+    margin-top: -115px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-global__search-collapse {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+.nav-global__search-collapse--visible {
+  display: block;
+  width: 100%;
+}
+
+.nav-global__search-toggle {
+  top: 40px;
+  text-decoration: none !important;
+}
+
+.nav-global__search--conatiner {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-global__search--open-background {
+  width: 120%;
+  background-color: #c61f48;
+  height: 65px;
+  position: absolute;
+  z-index: -1;
+  top: -60px;
+  left: -40px;
+}
+
+.nav-global__navbar-brand {
+  margin-left: -10px;
+}
+
+@media screen and (min-width: 410px) {
+  .nav-global__navbar-brand {
+    margin-left: -15px;
+  }
+}
+
+@media screen and (min-width: 488px) {
+  .nav-global__navbar-brand {
+    margin-left: -20px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .nav-global__navbar-brand {
+    margin-left: -25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-global__navbar-brand {
+    margin-left: -35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-global__navbar-brand {
+    margin-left: -20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .nav-global__navbar-brand {
+    margin-left: -18px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .nav-global__navbar-brand {
+    margin-left: -22px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-global__navbar-brand {
+    margin-left: -2.5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .nav-global__navbar-brand {
+    margin-left: -3%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .nav-global__navbar-brand {
+    margin-left: -3.25%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .nav-global__navbar-brand {
+    margin-left: -3.5%;
+  }
+}
+
+.nav-global__kcc-logo-inverse {
+  margin-left: -3px;
+  width: 50px;
+  margin-right: -10px;
+}
+
+@media screen and (min-width: 360px) {
+  .nav-global__kcc-logo-inverse {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width: 410px) {
+  .nav-global__kcc-logo-inverse {
+    width: 68px;
+  }
+}
+
+@media screen and (min-width: 488px) {
+  .nav-global__kcc-logo-inverse {
+    width: 68px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .nav-global__kcc-logo-inverse {
+    width: 73px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-global__kcc-logo-inverse {
+    width: 80px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-global__kcc-logo-inverse {
+    width: 80px;
+    margin-left: -30px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .nav-global__kcc-logo-inverse {
+    width: 85px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .nav-global__kcc-logo-inverse {
+    width: 85px;
+    margin-left: -35px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nav-global__kcc-logo-inverse {
+    width: 85px;
+    margin-left: -40px;
+  }
+}
