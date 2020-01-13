@@ -64,15 +64,37 @@
   color: $primary-red;
 }
 
-.links__phone--span {
+.links__phone--span { // Phone # link in the navigation on landing pages like info.kcc.edu
   color: $white;
+  position: relative; // Needed to make pseudo-element underlining the right width
   text-decoration: none;
   &:visited {
     color: $white;
   }
-  &:hover {
-    text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $white;  // Remove the Bootstrap primary blue colour on a:hover
+    text-decoration: none; // Prevent underlining
   }
+}
+
+
+.links__phone--span:focus:after,
+.links__phone--span:hover:after { // mouse-hover effect for phone # in landing pages
+  opacity: 1;  // Make the underline fade in
+  transform: translateY(-.2em); // Move the underline up (along the Y-axis) as it fades-in
+}
+
+.links__phone--span:after { // Pseudo-element to unerline the phone # on mouse-hover
+    background-color: $color-orange;
+    bottom: - .325rem;
+    content: "";
+    display: block;
+    height: .1875rem;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .3s,transform .3s; // mouse-hover effect
+    width: 100%;
 }
 
 .links__no-underline {
