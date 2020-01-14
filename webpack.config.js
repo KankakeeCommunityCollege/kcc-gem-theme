@@ -8,7 +8,8 @@ const config = {
   watch: true,
   //entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
-    'kcc-theme': './assets/js/theme/src/all.js'
+    'kcc-theme': './assets/js/theme/src/all.js',
+    'kcc-theme-landing': './assets/js/theme/landing/landing.js'
   },
   output: {
     filename: '[name].bundle.js',
