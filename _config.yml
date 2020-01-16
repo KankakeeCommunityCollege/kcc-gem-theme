@@ -1,6 +1,6 @@
 title: "KCC"
 site_name: KCC Gem Theme
-public-url: "https://www.kcc.edu"
+public-url: "http://www.kcc.edu"
 url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
 google-tag_key: Google Tag Manager key goes here
 #translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
