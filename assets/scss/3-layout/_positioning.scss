@@ -280,3 +280,13 @@
     min-height: 9rem;
   }
 }
+
+.position__offset-core-nav {
+  margin-top: 109px;
+}
+
+@media screen and (min-width: 992px) {
+  .position__offset-core-nav {
+    margin-top: 93px;
+  }
+}
