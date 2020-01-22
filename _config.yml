@@ -11,26 +11,44 @@ global_nav:
       source: 'uploads/e-tech_a-roberts_mar2016_D41_6690.jpg'
       alt: 'Student working in an electrical technology lab'
     dropdown:
-      - text: Action
+      - text: Register for Classes
         href: '#'
-      - text: Another action
+      - text: Courses & Areas of Study
         href: '#'
-      - text: dropdown-divider
-      - text: Something else here
+      - text: Class Schedule
         href: '#'
-  - link_text:  Admission
+      - text: Academic Calendar
+        href: '#'
+      - text: Continuing Education
+        href: '#'
+      - text: High School Equivalency (GED/HiSET)
+        href: '#'
+      - text: Graduation
+        href: '#'
+      - text: Final Exam Schedule
+        href: '#'
+      - text: Divisions
+        href: '#'
+  - link_text:  Admissions
     image:
       source: 'uploads/2016-senior-viewbook.jpg'
       alt: 'Take the first step to achieveing your goals, dreams & ambitions'
     dropdown:
-      - text: Action
+      - text: Start Here
         href: '#'
-      - text: Another action
+      - text: Apply
         href: '#'
-      - text: Another action
+      - text: Request Information
         href: '#'
-      - text: dropdown-divider
-      - text: Something else here
+      - text: Visit/Explore
+        href: '#'
+      - text: Transcripts & Forms
+        href: '#'
+      - text: Placement Testing
+        href: '#'
+      - text: Cav Day
+        href: '#'
+      - text: Student Complaint Policy
         href: '#'
   - link_text:  Tuition & Aid
     image:
