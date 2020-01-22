@@ -44,7 +44,7 @@
     color: rgba(0,0,0,.5);
     position: absolute;
     right: 1rem;
-    top: 3.125rem;
+    top: 3.25rem;
     z-index: 1032;
     & .navbar-toggler-icon { // Straight from the BOOTSTRAP 4 Styling
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -73,27 +73,15 @@
   }
 }
 
-@media screen and (min-width: 360px) {
-  .header-global__navbar--toggler {
-    top: 3.25rem;
-  }
-}
-
 @media screen and (min-width: 410px) {
   .header-global__navbar--toggler {
-    top: 3.345rem;
+    top: 3.2rem;
   }
 }
 
 @media screen and (min-width: 576px) {
   .header-global__navbar--toggler {
-    top: 3.445rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .header-global__navbar--toggler {
-    top: 3.55rem;
+    top: 3.25rem;
   }
 }
 
@@ -402,5 +390,17 @@
     &--border {
       border: thin solid $grey-8;
     }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header-global__core::after { // This provides the light-gray background for the navbar in mobile on core sites only
+    content: '';
+    display: block;
+    height: 60px;
+    background-color: $grey-4; // Same light-gray as in Bootstrap
+    border-bottom-color: $grey-5; // Same border-bottom as in Bootstrap
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
   }
 }
