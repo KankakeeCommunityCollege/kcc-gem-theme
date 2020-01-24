@@ -54,6 +54,15 @@
   }
 }
 
+.dropdown-toggle.btn::after {  // Set starting position & transition Fx
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-item.dropdown.show .dropdown-toggle.btn::after {  // Selectors that are only present when a dropdown is toggled to the open state.
+  transform: rotate(-180deg);
+}
+
 @media screen and (min-width: 992px) {
   .dropdown-toggle:not(.btn)::after {  // Set starting position & transition Fx
     display: none;
