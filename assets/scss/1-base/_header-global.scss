@@ -333,6 +333,10 @@
   }
 }
 
+.header-global__dropdown.show {
+  background-color: $color-blue-light-nav;
+}
+
 @keyframes meganav {
   0% {
     opacity: 0;
