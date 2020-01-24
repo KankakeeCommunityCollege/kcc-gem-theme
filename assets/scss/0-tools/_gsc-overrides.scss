@@ -1,9 +1,9 @@
-#___gcse_0:hover #gsc-iw-id1,
-#___gcse_0:focus #gsc-iw-id1 {
+.header-global__search-collapse #___gcse_0:hover #gsc-iw-id1,
+.header-global__search-collapse #___gcse_0:focus #gsc-iw-id1 {
   filter: drop-shadow(2px 2px 6px rgba(128,128,128, 0.5));
 }
 
-#gsc-iw-id1 {
+.header-global__search-collapse #gsc-iw-id1 {
   border-radius: 2rem;
   padding-left: .5rem;
   border: solid thin $grey-5;
@@ -12,7 +12,7 @@
   padding-bottom: 3px;
 }
 
-.gsc-search-button-v2 {
+.header-global__search-collapse .gsc-search-button-v2 {
   background-color: transparent !important;
   border: none !important;
   pointer-events: auto;
@@ -22,16 +22,16 @@
   transition-duration: .2s;
 }
 
-button.gsc-overrides__clear-x {
+.header-global__search-collapse button.gsc-overrides__clear-x {
   right: .125rem;
   padding-right: 5px !important;
 }
 
-.gsst_a .gscb_a {
+.header-global__search-collapse .gsst_a .gscb_a {
   vertical-align: middle;
 }
 
-.gsc-search-button-v2 svg {
+.header-global__search-collapse .gsc-search-button-v2 svg {
   fill: $primary-blue !important;
   height: 1.25rem;
   width: 1.25rem;
@@ -39,12 +39,12 @@ button.gsc-overrides__clear-x {
   transition-duration: .2s;
 }
 
-.gsc-search-button-v2:hover svg,
-.gsc-search-button-v2:focus svg {
+.header-global__search-collapse .gsc-search-button-v2:hover svg,
+.header-global__search-collapse .gsc-search-button-v2:focus svg {
   fill: $primary-red !important;
 }
 
-td.gsc-search-button {
+.header-global__search-collapse td.gsc-search-button {
   display: inline;
   pointer-events: none;
   position: absolute;
@@ -52,15 +52,79 @@ td.gsc-search-button {
 }
 
 @media screen and (min-width: 1400px) {
-  td.gsc-search-button {
+  .header-global__search-collapse td.gsc-search-button {
     right: 44px;
   }
 }
 
-.gsc-search-box-tools .gsc-search-box .gsc-input {
+.header-global__search-collapse .gsc-search-box-tools .gsc-search-box .gsc-input {
   padding-right: 0 !important;
 }
 
 //.nav-global__search-collapse--visible #___gcse_0 {
 //  margin-bottom: 20px;
 //}
+
+
+.nav-global__gcse-wrapper #___gcse_0:hover #gsc-iw-id1,
+.nav-global__gcse-wrapper #___gcse_0:focus #gsc-iw-id1 {
+  filter: drop-shadow(2px 2px 6px rgba(128,128,128, 0.5));
+}
+
+.nav-global__gcse-wrapper #gsc-iw-id1 {
+  border-radius: 2rem;
+  padding-left: .5rem;
+  border: solid thin $grey-5;
+  line-height: 1;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.nav-global__gcse-wrapper .gsc-search-button-v2 {
+  background-color: transparent !important;
+  border: none !important;
+  pointer-events: auto;
+  position: relative;
+  right: 30px;
+  transition-property: right;
+  transition-duration: .2s;
+}
+
+.nav-global__gcse-wrapper .gsst_a .gscb_a {
+  vertical-align: middle;
+}
+
+.nav-global__gcse-wrapper button.gsc-overrides__clear-x {
+  right: 48px;
+  padding-right: 5px !important;
+}
+
+.nav-global__gcse-wrapper .gsc-search-button-v2 svg {
+  fill: $primary-blue !important;
+  height: 1.25rem;
+  width: 1.25rem;
+  transition-property: fill;
+  transition-duration: .2s;
+}
+
+.nav-global__gcse-wrapper .gsc-search-button-v2:hover svg,
+.nav-global__gcse-wrapper .gsc-search-button-v2:focus svg {
+  fill: $primary-red !important;
+}
+
+.nav-global__gcse-wrapper td.gsc-search-button {
+  display: inline;
+  pointer-events: none;
+  position: absolute;
+  right: 50px;
+}
+
+@media screen and (min-width: 1400px) {
+  .nav-global__gcse-wrapper td.gsc-search-button {
+    right: 44px;
+  }
+}
+
+.nav-global__search-collapse--visible #___gcse_0 {
+  margin-bottom: 20px;
+}
