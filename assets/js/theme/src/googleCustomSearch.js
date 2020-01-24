@@ -1,3 +1,13 @@
+import initSearchToggle from './searchToggle.js';
+
+const FOCUSABLE_GOOGLE_CUSTOM_SEARCH_SELECTORS_ARR = [
+  '#gsc-i-id1',
+  '#gs_st50 .gsst_a',
+  '.gsc-search-button .gsc-search-button.gsc-search-button-v2'
+];
+const SEARCH_INPUT_ID = 'gsc-i-id1';  // ID OF THE GOOGLE CUSTOM SEARCH (GCS) INPUT ELEMENT // Not in the DOM until the GCS JS fires `gcsInit()`
+const SEARCH_DIV_WRAPPER_ID = 'searchCollapse';  // ID OF THE DIV BUILT INTO THE SITES HTML WHICH WRAPS THE GCS
+
 function checkXIcon() {
   const checkXIconOnLoad = (function() {
       let executed = false;
@@ -29,7 +39,13 @@ function addId() {
   xIcon.setAttribute('id', 'xIcon');
 }
 
-function gscInit() {
+function addAttribute(selector, attr, val) {
+  const el = document.querySelector(selector);
+
+  el.setAttribute(attr, val);
+}
+
+function gcsInit() {  // Init The GCS JS
   var cx = '006320264078644364913:sy48bet-lr8';
   var gcse = document.createElement('script');
   gcse.type = 'text/javascript';
@@ -39,16 +55,13 @@ function gscInit() {
   s.parentNode.insertBefore(gcse, s);
 }
 
-function moveSearchIcon() {
-  const pageHasGSearch = document.getElementById('searchCollapse');
-
-  if ( pageHasGSearch ) {
+function googleCustomSearchInit() {
+  if ( document.getElementById(SEARCH_DIV_WRAPPER_ID) ) {
     let initSearchPromise = new Promise((resolve, reject) => {
-      gscInit();
+      gcsInit();
       resolve();
     });
     initSearchPromise.then(() => {
-
       let addIdPromise = new Promise((resolve, reject) => {
 
         const targetNode = document.getElementById('searchCollapse');
@@ -56,12 +69,16 @@ function moveSearchIcon() {
         const callback = function(mutationsList, observer) {
             for(const mutation of mutationsList) {
                 if (mutation.type == 'childList') {
-                    addId();
-                    resolve();
+                  addId();
+                  let len = FOCUSABLE_GOOGLE_CUSTOM_SEARCH_SELECTORS_ARR.length;
+                  for (var i = 0; i < len; i++) {
+                    addAttribute(FOCUSABLE_GOOGLE_CUSTOM_SEARCH_SELECTORS_ARR[i], 'tabindex', '-1'); // Make Elements initially unfocusable, so that screen readers don't pick up the hidden GCS
+                  }
+                  resolve();
                 }
             }
         };
-        const observer = new MutationObserver(callback);
+        const observer = new MutationObserver(callback);  // Using a MutationObserver to watch for changes in the Google Custom Search Elements that got built into the page from `gcsInit()`
         observer.observe(targetNode, config);
         // Later, you can stop observing
         //observer.disconnect();
@@ -86,9 +103,10 @@ function moveSearchIcon() {
         observer.observe(targetNode, config);
         // Later, you can stop observing
         //observer.disconnect();
+        initSearchToggle();
       });
     });
   }
 }
 
-export default moveSearchIcon;
+export default googleCustomSearchInit;

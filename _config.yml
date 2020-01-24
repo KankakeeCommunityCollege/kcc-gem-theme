@@ -3,6 +3,7 @@ site_name: KCC Gem Theme
 public-url: "http://www.kcc.edu"
 url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
 google-tag_key: Google Tag Manager key goes here
+core_site: true
 #translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 nav_config:
   smaller_brand: true
@@ -27,6 +28,117 @@ nav_links:
         href: 'programs/esl'
       - text: GED/High School Equivalency
         href: 'programs/ged'
+
+global_nav:
+  - link_text: Academics
+    image:
+      source: 'uploads/e-tech_a-roberts_mar2016_D41_6690.jpg'
+      alt: 'Student working in an electrical technology lab'
+    dropdown:
+      - text: Register for Classes
+        href: '#'
+      - text: Courses & Areas of Study
+        href: '#'
+      - text: Class Schedule
+        href: '#'
+      - text: Academic Calendar
+        href: '#'
+      - text: Continuing Education
+        href: '#'
+      - text: High School Equivalency (GED/HiSET)
+        href: '#'
+      - text: Graduation
+        href: '#'
+      - text: Final Exam Schedule
+        href: '#'
+      - text: Divisions
+        href: '#'
+  - link_text:  Admissions
+    image:
+      source: 'uploads/2016-senior-viewbook.jpg'
+      alt: 'Take the first step to achieveing your goals, dreams & ambitions'
+    dropdown:
+      - text: Start Here
+        href: '#'
+      - text: Apply
+        href: '#'
+      - text: Request Information
+        href: '#'
+      - text: Visit/Explore
+        href: '#'
+      - text: Transcripts & Forms
+        href: '#'
+      - text: Placement Testing
+        href: '#'
+      - text: Cav Day
+        href: '#'
+      - text: Student Complaint Policy
+        href: '#'
+  - link_text:  Tuition & Aid
+    image:
+      source: 'uploads/fafsa-early-bird-banner-18.jpg'
+      alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
+    dropdown:
+      - text: Action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: dropdown-divider
+      - text: Something else here
+        href: '#'
+  - link_text: Student Resources
+    image:
+      source: 'uploads/DSC_5650_helpful.jpg'
+      alt: 'Receptionist answering the phone'
+    dropdown:
+      - text: Action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: dropdown-divider
+      - text: Something else here
+        href: '#'
+  - link_text: Community
+    image:
+      source: 'uploads/go_cavs_20171002_193828-web.jpg'
+      alt: 'Group photo of students holding Cavalier signs'
+    dropdown:
+      - text: Action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: dropdown-divider
+      - text: Something else here
+        href: '#'
+  - link_text: About
+    image:
+      source: 'uploads/ATEC-DSC_1033.jpeg'
+      alt: 'The new Advanced Technology Education Center building'
+    dropdown:
+      - text: Action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: Another action
+        href: '#'
+      - text: dropdown-divider
+      - text: Something else here
+        href: '#'
+
 #  - link_text: Example External Link
 #    link_href: 'https://example-external-link.com'
 #    button: false

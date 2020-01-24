@@ -1,0 +1,24 @@
+<header class="container-fluid header-global fixed-top">
+  <nav id="headerGlobalNavbar" class="navbar navbar-expand-lg header-global__navbar--padding">
+    <a class="navbar-brand header-global__brand" href="http://www.kcc.edu" aria-label="Kankakee Community College Home Page">
+      {% include svg/kcc.html %}
+    </a>
+    <button id="openSearchButton" role="button" class="header-global__search-icon" aria-label="Open Search" aria-hidden="false" tabindex="0">
+      <span id="searchImg" style="background-image: url('{{ page.baseurl }}assets/img/search.svg')" class="header-global__nav--search-icon" alt="Search icon"></span>
+    </button>
+    <div id="searchCollapse" aria-hidden="true" class="header-global__search-collapse">
+      <gcse:searchbox-only resultsUrl="{{ page.baseurl }}search/"></gcse:searchbox-only>
+    </div>
+    <button id="closeSearchButton" role="button" class="header-global__close-icon header-global__close-icon--hidden" aria-label="Close Search" aria-hidden="true" tabindex="-1">
+      <span id="searchImg" style="background-image: url('{{ page.baseurl }}assets/img/x.svg')" class="header-global__nav--close-icon" alt="Close icon"></span>
+    </button>
+    <button class="navbar-toggler ml-auto header-global__navbar--toggler" type="button" data-toggle="collapse" data-target="#headerGlobalNavbarContent" aria-controls="headerGlobalNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-column{% if site.core_site == true %} header-global__core{% endif %}" id="headerGlobalNavbarContent">
+      {% include nav-global-top.html %}
+      {% include nav-global-bottom.html %}
+      {% if site.core_site != true %}{% include nav-local.html %}{% endif %}
+    </div>
+  </nav>
+</header>

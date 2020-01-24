@@ -1,20 +1,23 @@
 import footerDate from './footerDate.js';
-import searchToggle from './searchToggle.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import moveSearchIcon from './moveSearchIcon.js';
+import googleCustomSearchInit from './googleCustomSearch.js';
 import highlightNav from './highlightCurrentNav.js';
 import watchForMenuClicks from './translate.js';
 import closeMenuOnClick from './closeMenuOnClick.js';
 import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
-//import './babelTest.js';
+import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
 //import test from './test.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   highlightNav();
-  moveSearchIcon();
+  wrapPowerText();
+  initSliders();
+  walkText(document.body);
+  footerDate();
+  lazyLoad();
   watchForMenuClicks();
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
@@ -32,13 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  //test();
-  wrapPowerText();
-  initSliders();
-  walkText(document.body);
-  footerDate();
-  lazyLoad();
+  googleCustomSearchInit();
   accordion();
-  searchToggle();
   closeMenuOnClick();
+  toggleMenuOnWindowResize();
 });

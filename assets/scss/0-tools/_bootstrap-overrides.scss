@@ -43,12 +43,21 @@
 // Modify the Bootstrap 4 dropdown menu's carot to give it an animated/interactice effect using pure CSS
 // ======================================
 // .dropdown-toggle::after controls the BS4 dropdown-menu carot symbol's display
-.dropdown-toggle::after {  // Set starting position & transition Fx
-  transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out;
+@media screen and (max-width: 992px) {
+  .dropdown-toggle::after {  // Set starting position & transition Fx
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-item.dropdown.show .dropdown-toggle::after {  // Selectors that are only present when a dropdown is toggled to the open state.
+    transform: rotate(-180deg);
+  }
 }
 
-.nav-item.dropdown.show .dropdown-toggle::after {  // Selectors that are only present when a dropdown is toggled to the open state.
-  transform: rotate(-180deg);
+@media screen and (min-width: 992px) {
+  .dropdown-toggle:not(.btn)::after {  // Set starting position & transition Fx
+    display: none;
+  }
 }
+
 // End BS4 dropdown-menu carot modifications.

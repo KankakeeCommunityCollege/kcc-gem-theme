@@ -25,7 +25,7 @@ body {
     color: $primary-red;
   }
   &--smaller {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -33,14 +33,14 @@ body {
   .typography__nav-heading {
     font-size: 1.8rem;
     &--smaller {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
     }
   }
 }
 
 @media screen and (min-width:410px) {
   .typography__nav-heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -139,10 +139,81 @@ body {
   font-weight: $font-weight-boldish;
 }
 
-.typography__nav-link {
+.typography__header-global--nav-top,
+.typography__header-global--nav-bottom,
+.typography__header-global--nav-local {
+  color: $primary-blue;
   font-family: $font-family-oswald;
+  font-size: 1rem;
   font-weight: 500;
-  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  padding-bottom: .25rem;
+  padding-top: .25rem;
+  text-transform: capitalize;
+  &:hover,
+  &:focus {
+    color: $primary-red;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-top {
+    color: $color-blue-light-nav;
+    font-size: 1.1rem;
+    &:hover,
+    &:focus {
+      color: $color-blue-light-nav;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-bottom {
+    color: $white;
+    font-size: 1.05rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-bottom:hover,
+  .typography__header-global--nav-bottom:focus,
+  .header-global__dropdown:hover .typography__header-global--nav-bottom,
+  .header-global__dropdown:focus .typography__header-global--nav-bottom {
+    color: $primary-blue;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-local {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  & .nav-link {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.typography__nav-link {
+  color: $white;
+  font-family: $font-family-oswald;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  text-transform: capitalize;
+}
+
+.typography__nav-local--nav-link {
+  font-family: $font-family-oswald;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  text-transform: capitalize;
+}
+
+.typography__nav-local--color {
+  color: $primary-blue;
 }
 
 // "The POWER of Community" text
@@ -546,5 +617,11 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup { // Make superscripts within hea
   .typography__register--thank-you {
     font-size: 3rem;
     margin-top: -15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .typography__nowrap--sm {
+    white-space: nowrap;
   }
 }
