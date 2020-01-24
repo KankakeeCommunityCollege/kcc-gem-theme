@@ -1,0 +1,45 @@
+.nav-local {
+  top: 55px;
+  border-bottom-color: $grey-5;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.nav-local__search-toggle {
+  top: 86px;
+}
+
+.nav-local .nav-link {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width:992px) {
+  .nav-local .nav-link {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .nav-local .nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+#mainNav .navbar-brand {
+  transition: all ease .4s;
+}
+
+@media screen and (min-width: 992px) {
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: .96;
+  }
+
+  #mainNav.navbar-shrink .navbar-brand {
+    transform: scale(.8, .8);
+  }
+}
