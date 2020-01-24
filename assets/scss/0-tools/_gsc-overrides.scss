@@ -1,3 +1,7 @@
+// Custom styling to the Google Custom Search used in `_includes/header-global.html` & `_includes/nav-global.html`
+// ==================================================
+// Styling for the Google Custom Search used in the `_includes/header-global.html` version of the nav
+// ==================================================
 .header-global__search-collapse #___gcse_0:hover #gsc-iw-id1,
 .header-global__search-collapse #___gcse_0:focus #gsc-iw-id1 {
   filter: drop-shadow(2px 2px 6px rgba(128,128,128, 0.5));
@@ -17,14 +21,27 @@
   border: none !important;
   pointer-events: auto;
   position: relative;
-  right: -.75rem;
+  right: -0.5rem;
+  top: -.25rem;
   transition-property: right;
   transition-duration: .2s;
 }
 
 .header-global__search-collapse button.gsc-overrides__clear-x {
-  right: .125rem;
+  right: .5rem;
   padding-right: 5px !important;
+}
+
+@media screen and (min-width: 992px) {
+  .header-global__search-collapse .gsc-search-button-v2 {
+    top: 0;
+    right: .5rem;
+  }
+
+  .header-global__search-collapse button.gsc-overrides__clear-x {
+    right: 1.125rem;
+    padding-right: 5px !important;
+  }
 }
 
 .header-global__search-collapse .gsst_a .gscb_a {
@@ -61,11 +78,8 @@
   padding-right: 0 !important;
 }
 
-//.nav-global__search-collapse--visible #___gcse_0 {
-//  margin-bottom: 20px;
-//}
-
-
+// Similar styling for the Google Custom Search used in the `_includes/nav-global.html` version of the nav
+// ==================================================
 .nav-global__gcse-wrapper #___gcse_0:hover #gsc-iw-id1,
 .nav-global__gcse-wrapper #___gcse_0:focus #gsc-iw-id1 {
   filter: drop-shadow(2px 2px 6px rgba(128,128,128, 0.5));
