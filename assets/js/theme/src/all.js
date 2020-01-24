@@ -2,17 +2,12 @@ import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import googleCustomSearchInit from './googleCustomSearch.js';
-import highlightNav from './highlightCurrentNav.js';
 import watchForMenuClicks from './translate.js';
-import closeMenuOnClick from './closeMenuOnClick.js';
 import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
-import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
 //import test from './test.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  highlightNav();
   wrapPowerText();
   initSliders();
   walkText(document.body);
@@ -35,8 +30,5 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  googleCustomSearchInit();
   accordion();
-  closeMenuOnClick();
-  toggleMenuOnWindowResize();
 });
