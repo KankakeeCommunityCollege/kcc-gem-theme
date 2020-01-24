@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse flex-column{% if site.core_site == true %} header-global__core{% endif %}" id="headerGlobalNavbarContent">
       {% include nav-global-top.html %}
       {% include nav-global-bottom.html %}
-      {% if site.core_site != true %}{% include nav-local.html %}{% endif %}
+      {% if site.core_site != true %}{% include nav-global-local.html %}{% endif %}
     </div>
   </nav>
 </header>
