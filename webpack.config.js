@@ -9,7 +9,9 @@ const config = {
   //entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
     'kcc-theme': './assets/js/theme/src/all.js',
-    'kcc-theme-landing': './assets/js/theme/landing/landing.js'
+    'kcc-theme-landing': './assets/js/theme/landing/landing.js',
+    'kcc-nav': './assets/js/theme/nav/nav.js',
+    'kcc-mega-nav': './assets/js/theme/nav/megaNav.js'
   },
   output: {
     filename: '[name].bundle.js',
