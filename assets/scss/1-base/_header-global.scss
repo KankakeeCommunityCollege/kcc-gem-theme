@@ -333,8 +333,10 @@
   }
 }
 
-.header-global__dropdown.show {
-  background-color: $color-blue-light-nav;
+@media screen and (min-width: 992px) {
+  .header-global__dropdown.show {
+    background-color: $color-blue-light-nav;
+  }
 }
 
 @keyframes meganav {
@@ -355,11 +357,15 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .header-global__nav-bottom .dropdown-item {
-    color: $grey-1;
-  }
+.header-global__nav-bottom .dropdown-item {
+  color: $grey-1;
 }
+
+.header-global__nav-bottom .dropdown-item:active {
+  background-color: $primary-blue;
+  color: $white;
+}
+
 
 @media screen and (min-width: 992px) {
   .header-global__nav-bottom .dropdown:hover {
