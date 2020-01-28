@@ -1,18 +1,18 @@
 <ul id="navGlobalBottom" class="navbar-nav header-global__nav-bottom justify-content-end header-global__navbar-nav--divider">
   {% for item in site.global_nav %}
   <li class="nav-item dropdown header-global__dropdown header-global__dropdown--position">
-    <a href="#" id="{{ item.link_text | downcase }}Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle header-global__nav-bottom--nav-link typography__nowrap--sm typography__header-global--nav-bottom">{{ item.link_text | capitalize }}</a>
+    <a href="{{ page.baseurl }}{{ item.link_href }}" id="{{ item.link_text | downcase }}Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle header-global__nav-bottom--nav-link typography__nowrap--sm typography__header-global--nav-bottom">{{ item.link_text | capitalize }}</a>
     <div class="dropdown-menu header-global__dropdown-menu--full-width py-3 px-3 px-lg-5" aria-labelledby="{{ item.link_text | downcase }}Dropdown">
       <div class="container">
         <div class="row">
           {% if item.image %}
           <div class="col-auto padding__col--mobile-none mr-lg-3">
-            <img src="assets/img/kcc-placeholder.png" data-src="{{ item.image.source }}" class="header-global__drodpown-menu--img img-fluid d-none d-lg-block" alt="{{ item.image.alt }}">
+            <img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{ page.baseurl }}{{ item.image.source }}" class="header-global__drodpown-menu--img img-fluid d-none d-lg-block" alt="{{ item.image.alt }}">
           </div>
           {% endif %}
           <div class="col ml-lg-1">
             {% for link in item.dropdown %}
-            {% if link.text != 'dropdown-divider' %}<a class="dropdown-item" href="{{ link.href }}">{{ link.text }}</a>{% else %}<div class="dropdown-divider"></div>{% endif %}
+            {% if link.text != 'dropdown-divider' %}<a class="dropdown-item" href="{{ page.baseurl }}{{ link.href }}">{{ link.text }}</a>{% else %}<div class="dropdown-divider"></div>{% endif %}
             {% endfor %}
           </div>
         </div>
