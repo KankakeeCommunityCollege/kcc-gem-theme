@@ -1,5 +1,6 @@
 import setSheetParameters from './simpleSetSheetParameters.js';
 import createCampusAlertsHtml from './createCampusAlertsHtml.js';
+import trackAlertsCloseClicks from './trackAlertsCloseClicks.js';
 
 const SHEET_KEY = '1IF8WbIYeEtF0C6YQjgpdVoivXb54uGbKaSxEF46Wbs4';
 const SHEET_TAB_NAME = 'Alerts';
@@ -15,14 +16,15 @@ function start() {
     function execute() {
       return gapi.client.sheets.spreadsheets.values.get(sheetParams)
         .then(function(response) {
-          let createTablePromise = new Promise((resolve, reject) => {
+          let createCampusAlertsPromise = new Promise((resolve, reject) => {
             // Do stuff with the response here
             // returned array of arrays w/ values = response.result.values
             createCampusAlertsHtml(response, resolve);
           });
-          createTablePromise.then(() => {
-          // Do stuff after you handled the response here
-          // E.g. slick slider or dataTables stuffs
+          createCampusAlertsPromise.then(() => {
+            // Do stuff after you handled the response here
+            //console.log('createCampusAlertsPromise has resolved');
+            trackAlertsCloseClicks();
           });
         },
         function(err) {

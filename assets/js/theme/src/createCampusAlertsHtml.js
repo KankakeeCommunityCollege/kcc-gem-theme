@@ -79,7 +79,7 @@ function setAttributesFromObject(el, attributeObject) {
   return el;
 }
 
-function createBootstrapCloseAlertButton(parent) {
+function createBootstrapCloseAlertButton(parent, resolve) {
   const button = document.createElement('button');
   const span = document.createElement('span');
 
@@ -93,6 +93,7 @@ function createBootstrapCloseAlertButton(parent) {
   span.innerHTML = '&times;';
   button.appendChild(span);
   parent.appendChild(button);
+  resolve();
   return button;
 }
 
@@ -101,14 +102,14 @@ function setDateTimesToZero(d) {
   return d;
 }
 
-function initCreateCampusAlerts(firstRow) {
+function initCreateCampusAlerts(firstRow, resolve) {
   const ALERT_MESSAGE_CELL_VALUE = firstRow[1];
   const campusAlertsDiv = document.getElementById(CAMPUS_ALERTS_ID_STRING);
   const container = appendDivWithClassToParent(campusAlertsDiv, BOOTSTRAP_CONTAINER_FLUID_CLASS);
   const alert = appendDivWithClassToParent(container, BOOTSTRAP_ALERT_CLASS_ARRAY);
   setAttributeOnElement(alert, 'role', 'alert');
   const p = createAlertParagraph(alert, ALERT_MESSAGE_CELL_VALUE);
-  const closeButton = createBootstrapCloseAlertButton(alert);
+  const closeButton = createBootstrapCloseAlertButton(alert, resolve);
 }
 
 function createCampusAlertsHtml(response, resolve) {
@@ -129,12 +130,12 @@ function createCampusAlertsHtml(response, resolve) {
     const today = setDateTimesToZero(now);
 
     if ( start.getTime() <= today.getTime() && end.getTime() > today.getTime() ) {
-      initCreateCampusAlerts(FIRST_ROW_OF_DATA);
+      initCreateCampusAlerts(FIRST_ROW_OF_DATA, resolve);
     } else {
       return;
     }
   } else {
-    initCreateCampusAlerts(FIRST_ROW_OF_DATA);
+    initCreateCampusAlerts(FIRST_ROW_OF_DATA, resolve);
   }
 
 }
