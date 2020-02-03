@@ -36,7 +36,7 @@ function windowResizeHandler() {
     console.log('Media query matches is true');
   }
 
-  if ( window.innerWidth >= 992 ) {
+  if ( window.innerWidth <= 992 ) {
     const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
     const dropdownMenuNodeList = menuCollapseElement.querySelectorAll('.dropdown-toggle');
 

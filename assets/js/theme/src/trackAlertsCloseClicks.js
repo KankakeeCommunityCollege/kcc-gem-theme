@@ -20,7 +20,7 @@ function trackAlertsCloseClicks() {
     return;
 
   const closeAlertsButton = alertDiv.querySelector('button.close');
-  addEventListenerToElement(closeAlertsButton, 'click', clickCounter)
+  addEventListenerToElement(closeAlertsButton, 'click', clickCounter);
 }
 
 export default trackAlertsCloseClicks;
