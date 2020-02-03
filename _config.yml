@@ -43,7 +43,7 @@ global_nav:
       - text: Class Schedule
         href: '#'
       - text: Academic Calendar
-        href: '#'
+        href: 'academic-calendar'
       - text: Continuing Education
         href: '#'
       - text: High School Equivalency (GED/HiSET)

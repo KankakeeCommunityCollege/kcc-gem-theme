@@ -93,7 +93,7 @@ function createBootstrapCloseAlertButton(parent, resolve) {
   span.innerHTML = '&times;';
   button.appendChild(span);
   parent.appendChild(button);
-  resolve();
+  resolve();  // Signals async completion for `createCampusAlertsPromise` in `./campusAlertsSheetsAPI.js`
   return button;
 }
 

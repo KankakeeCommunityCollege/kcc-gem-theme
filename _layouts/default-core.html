@@ -18,12 +18,14 @@
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
+  {% if page.homepage == true %}
+  {% include scripts/google-api.html %}
   {% include scripts/kcc-mega-nav.html %}
+  {% endif %}
   {% include scripts/kcc-theme.html %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}
-  {% include scripts/google-api.html %}
   {% include scripts/custom.html %}
   {% if site.translate == true %}<!-- Link to this site's custom google translate stylesheet -->
   {% include scripts/translate.html %}{% endif %}
