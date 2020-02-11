@@ -23,7 +23,7 @@
     - text: Divisions
       href: '#'
 - link_text:  Admissions
-  link_href: '#'
+  link_href: admissions
   image:
     source: 'uploads/2016-senior-viewbook.jpg'
     alt: 'Take the first step to achieveing your goals, dreams & ambitions'
@@ -45,7 +45,6 @@
     - text: Student Complaint Policy
       href: '#'
 - link_text:  Tuition & Aid
-  link_href: '#'
   image:
     source: 'uploads/fafsa-early-bird-banner-18.jpg'
     alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
@@ -62,7 +61,6 @@
     - text: Something else here
       href: '#'
 - link_text: Student Resources
-  link_href: '#'
   image:
     source: 'uploads/DSC_5650_helpful.jpg'
     alt: 'Receptionist answering the phone'
@@ -81,7 +79,6 @@
     - text: Something else here
       href: '#'
 - link_text: Community
-  link_href: '#'
   image:
     source: 'uploads/go_cavs_20171002_193828-web.jpg'
     alt: 'Group photo of students holding Cavalier signs'
@@ -96,7 +93,6 @@
     - text: Something else here
       href: '#'
 - link_text: About
-  link_href: '#'
   image:
     source: 'uploads/ATEC-DSC_1033.jpeg'
     alt: 'The new Advanced Technology Education Center building'
