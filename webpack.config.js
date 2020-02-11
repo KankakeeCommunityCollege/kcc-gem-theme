@@ -11,7 +11,8 @@ const config = {
     'kcc-theme': './assets/js/theme/src/all.js',
     'kcc-theme-landing': './assets/js/theme/landing/landing.js',
     'kcc-nav': './assets/js/theme/nav/nav/nav.js',
-    'kcc-mega-nav': './assets/js/theme/nav/megaNav/megaNav.js'
+    'kcc-mega-nav': './assets/js/theme/nav/megaNav/megaNav.js',
+    'kcc-alerts': './assets/js/theme/alerts/alerts.js'
   },
   output: {
     filename: '[name].bundle.js',

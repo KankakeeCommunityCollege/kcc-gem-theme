@@ -5,8 +5,6 @@ import initSliders from './sliders.js';
 import watchForMenuClicks from './translate.js';
 import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
-import start from './campusAlertsSheetsAPI.js';
-import gapiInit from './gapi.js';
 //import test from './test.js';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   lazyLoad();
   watchForMenuClicks();
-  gapiInit('client', start);
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;

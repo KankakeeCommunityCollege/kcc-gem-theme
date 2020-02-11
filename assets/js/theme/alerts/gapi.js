@@ -1,5 +1,3 @@
-const url = window.location.href.replace(/^http:\/\/|^https:\/\//, '').replace(window.location.host, '');
-
 function setSessionStorage() {  // Set the initial click count for tracking when the alert has been closed
   if( sessionStorage.clickcount == undefined ) {
     sessionStorage.clickcount = 0;
@@ -7,9 +5,6 @@ function setSessionStorage() {  // Set the initial click count for tracking when
 }
 
 function gapiInit(param1, param2) {
-
-  if ( url != '/' )
-    return;
 
   setSessionStorage();
 
