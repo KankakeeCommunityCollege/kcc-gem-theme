@@ -366,6 +366,12 @@
   color: $white;
 }
 
+.header-global__nav-bottom .dropdown-item:hover,
+.header-global__nav-bottom .dropdown-item:focus {
+  background-color: $color-blue-lighter-nav;
+  border-radius: .175rem;
+}
+
 
 @media screen and (min-width: 992px) {
   .header-global__nav-bottom .dropdown:hover {
