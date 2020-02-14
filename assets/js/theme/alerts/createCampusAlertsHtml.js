@@ -10,30 +10,29 @@ const BOOTSTRAP_COL_CLASS = 'col';  // Class used in Bootstrap 4
 const BOOTSTRAP_CLOSE_CLASS = 'close';  // Class used in Bootstrap 4
 const FALSE_FROM_SHEETS = 'FALSE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
 const NO_BOTTOM_MARGIN_CLASS = 'margins__bottom--none';  // A class from the kcc-gem-theme's stylesheet
-const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning', 'alert-dismissible', 'fade', 'show'];
+const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning', 'alert-dismissible', 'fade', 'show', 'campus-alerts__margin-bottom']; // all BS4 classes except the last BEM-ey one
 const INHERET_COLOR_CLASS = 'typography__color--inherit';
 
-function addClassesToElement(parent, classArr) {
-  let len = classArr.length;
-
-  for (var i = 0; i < classArr.length; i++) {
-    parent.classList.add(classArr[i]);
+function loopOverClassArguments(el, classArguments) {
+  for (var i = 0, len = classArguments.length; i < len; i++) {
+    el.classList.add(classArguments[i]);
   }
-  return parent;
+  return el;
 }
 
-function appendDivWithClassToParent(parent, classArgument) {
+function addClassestoElement(el, classArgument) {
+  const classArgumentIsString = typeof classArgument === 'string';
+  const classArgumentIsIterable = typeof classArgument === 'object';
+  // Terns are seabirds in the family Laridae that have a worldwide distribution and are normally found near the sea
+  classArgumentIsString ? el.classList.add(classArgument)
+  : classArgumentIsIterable ? loopOverClassArguments(el, classArgument)
+  : null;
+}
+
+function appendParentWithDiv(parent, classArgument) {
   const div = document.createElement('div');
 
-  if ( typeof classArgument === 'string' ) {
-    div.classList.add(classArgument);
-  } else if ( typeof classArgument === 'object' ) {
-    let len = classArgument.length;
-
-    for (var i = 0; i < len; i++) {
-      div.classList.add(classArgument[i]);
-    }
-  }
+  addClassestoElement(div, classArgument);
   parent.appendChild(div);
   return div;
 }
@@ -79,11 +78,22 @@ function setAttributesFromObject(el, attributeObject) {
   return el;
 }
 
+function closeAlertClickHandler() {
+  const campusAlertsDiv = closeAlertClickHandler.alert_parent_element;
+
+  campusAlertsDiv.classList.remove('position__campus-alerts--open');
+}
+
+function addEventListenerToElement(el, listener, handler) {
+  el.addEventListener(listener, handler);
+}
+
 function createBootstrapCloseAlertButton(parent, resolve) {
   const button = document.createElement('button');
   const span = document.createElement('span');
 
   button.classList.add(BOOTSTRAP_CLOSE_CLASS);
+  addEventListenerToElement(button, 'click', closeAlertClickHandler)
   setAttributesFromObject(button, {
     'type': 'button',
     'data-dismiss': 'alert',
@@ -105,11 +115,14 @@ function setDateTimesToZero(d) {
 function initCreateCampusAlerts(firstRow, resolve) {
   const ALERT_MESSAGE_CELL_VALUE = firstRow[1];
   const campusAlertsDiv = document.getElementById(CAMPUS_ALERTS_ID_STRING);
-  const container = appendDivWithClassToParent(campusAlertsDiv, BOOTSTRAP_CONTAINER_FLUID_CLASS);
-  const alert = appendDivWithClassToParent(container, BOOTSTRAP_ALERT_CLASS_ARRAY);
-  setAttributeOnElement(alert, 'role', 'alert');
+  const container = appendParentWithDiv(campusAlertsDiv, BOOTSTRAP_CONTAINER_FLUID_CLASS);
+  const alert = appendParentWithDiv(container, BOOTSTRAP_ALERT_CLASS_ARRAY);
   const p = createAlertParagraph(alert, ALERT_MESSAGE_CELL_VALUE);
   const closeButton = createBootstrapCloseAlertButton(alert, resolve);
+
+  closeAlertClickHandler.alert_parent_element = campusAlertsDiv;
+  setAttributeOnElement(alert, 'role', 'alert');
+  campusAlertsDiv.classList.add('position__campus-alerts--open');
 }
 
 function createCampusAlertsHtml(response, resolve) {
@@ -121,7 +134,7 @@ function createCampusAlertsHtml(response, resolve) {
   if ( ALERTS_VISIBLE_CELL_VALUE === FALSE_FROM_SHEETS )
     return;// If alerts are set to be hidden, there's no point in executing the rest of the code (bail-out).
 
-  const ALERT_EXPIRATION_CELL_VALUE = FIRST_ROW_OF_DATA[2];
+  const ALERT_EXPIRATION_CELL_VALUE = FIRST_ROW_OF_DATA[2]; // defined after above-return statement to prevent errors if it's not there.
 
   if (ALERT_EXPIRATION_CELL_VALUE !== FALSE_FROM_SHEETS) {
     const start = new Date(FIRST_ROW_OF_DATA[3]);

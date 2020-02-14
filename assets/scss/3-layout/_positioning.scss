@@ -282,11 +282,18 @@
 }
 
 .position__offset-core-nav {
+  margin-top: 99px;
+}
+
+.position__offset-core-nav.position__campus-alerts--open {
   margin-top: 109px;
 }
 
 @media screen and (min-width: 992px) {
   .position__offset-core-nav {
+    margin-top: 80px;
+  }
+  .position__offset-core-nav.position__campus-alerts--open {
     margin-top: 93px;
   }
 }
