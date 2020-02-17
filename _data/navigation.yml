@@ -1,7 +1,7 @@
 - link_text: Academics
   link_href: 'academics'
   image:
-    source: 'uploads/e-tech_a-roberts_mar2016_D41_6690.jpg'
+    source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg'
     alt: 'Student working in an electrical technology lab'
   dropdown:
     - text: Register for Classes
@@ -25,7 +25,7 @@
 - link_text:  Admissions
   link_href: admissions
   image:
-    source: 'uploads/2016-senior-viewbook.jpg'
+    source: 'assets/img/2016-senior-viewbook.jpg'
     alt: 'Take the first step to achieveing your goals, dreams & ambitions'
   dropdown:
     - text: Start Here
@@ -46,7 +46,7 @@
       href: '#'
 - link_text:  Tuition & Aid
   image:
-    source: 'uploads/fafsa-early-bird-banner-18.jpg'
+    source: 'assets/img/fafsa-early-bird-banner-18.jpg'
     alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
   dropdown:
     - text: Action
@@ -62,7 +62,7 @@
       href: '#'
 - link_text: Student Resources
   image:
-    source: 'uploads/DSC_5650_helpful.jpg'
+    source: 'assets/img/DSC_5650_helpful.jpg'
     alt: 'Receptionist answering the phone'
   dropdown:
     - text: Action
@@ -80,7 +80,7 @@
       href: '#'
 - link_text: Community
   image:
-    source: 'uploads/go_cavs_20171002_193828-web.jpg'
+    source: 'assets/img/go_cavs_20171002_193828-web.jpg'
     alt: 'Group photo of students holding Cavalier signs'
   dropdown:
     - text: Action
@@ -94,7 +94,7 @@
       href: '#'
 - link_text: About
   image:
-    source: 'uploads/ATEC-DSC_1033.jpeg'
+    source: 'assets/img/ATEC-DSC_1033.jpeg'
     alt: 'The new Advanced Technology Education Center building'
   dropdown:
     - text: Action
