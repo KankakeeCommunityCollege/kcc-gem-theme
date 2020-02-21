@@ -352,6 +352,13 @@
 .benefits__borders--circle-img {
   border: 3px solid $white;
   filter: drop-shadow(5px 5px 12px #b1b1b1);
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits__borders--circle-img {
+    width: 100%;
+  }
 }
 
 #page-top::before {
