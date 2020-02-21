@@ -630,3 +630,9 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup { // Make superscripts within hea
   font-size: 1.15em;
   font-weight: 600;
 }
+
+.typography__my-kcc {
+  font-family: $font-family-kcc;
+  line-height: 1.2;
+  font-size: 1.2rem;
+}

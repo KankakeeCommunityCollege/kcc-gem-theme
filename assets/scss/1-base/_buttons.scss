@@ -46,3 +46,38 @@
     text-decoration: none;
   }
 }
+
+.buttons{
+  display: inline-block;
+  padding-left: .9rem;
+  padding-right: .9rem;
+  padding-top: .125rem;
+  padding-bottom: .125rem;
+  &__my-kcc {
+    border-color: $color-blue-grey;
+    padding-top: .125rem;
+    padding-bottom: .125rem;
+    margin-top: 0.25rem;
+    margin-bottom: .375rem;
+    &--mobile {
+      position: absolute;
+      bottom: .65rem;
+      left: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .buttons__my-kcc:hover,
+  .buttons__my-kcc:focus {
+    //color: $white;
+    background-color: #0c3050;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .buttons__my-kcc:hover,
+  .buttons__my-kcc:focus {
+    color: $primary-red;
+  }
+}

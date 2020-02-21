@@ -204,7 +204,7 @@
 
 @media screen and (min-width: 992px) {
   .header-global__brand {
-    top: 2.5rem;
+    top: 3.125rem;
   }
 }
 
@@ -259,6 +259,7 @@
   background-repeat: no-repeat;
   display: block;
   height: 20px;
+  margin-top: .3125rem;
   pointer-events: none;
   width: 20px;
 }
@@ -418,5 +419,11 @@
     border-bottom-color: $grey-5; // Same border-bottom as in Bootstrap
     border-bottom-style: solid;
     border-bottom-width: 1px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #navGlobalTop .header-global__nav-top--nav-link {
+    margin-top: .3125rem;
   }
 }
