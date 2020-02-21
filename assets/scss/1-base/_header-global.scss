@@ -188,6 +188,9 @@
   fill: $white;
   height: auto;
   width: 85%;
+  & #st0 {
+    fill: none;
+  }
 }
 
 @media screen and (min-width: 360px) {
