@@ -12,10 +12,11 @@
       color: $primary-red;
     }
   }
-  &__icon {
+  &__button::before {
     background-color: $primary-blue;
     border-radius: 50%;
     color: #fff;
+    content: ' \002D';
     display: inline-block;
     font-family: $font-family-paragraph;
     font-size: 2rem;
@@ -26,14 +27,8 @@
     text-decoration: none !important;
     vertical-align: middle;
     width: 30px;
-    &--plus::after {
-      content: "+";
-      position: static;
-    }
-    &--minus::after {
-      content: "-";
-      position: relative;
-      top: -3px;
-    }
+  }
+  &__button.collapsed::before {
+    content: ' \002B';
   }
 }

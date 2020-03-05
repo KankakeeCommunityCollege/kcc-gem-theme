@@ -3,7 +3,6 @@ import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import watchForMenuClicks from './translate.js';
-import accordion from './accordion.js';
 import wrapPowerText from './wrapPowerText.js';
 //import test from './test.js';
 
@@ -30,5 +29,4 @@ document.addEventListener('DOMContentLoaded', function() {
       return null;
     };
   }
-  accordion();
 });
