@@ -41,7 +41,7 @@ function landingPageInit() {
   const requiredPageElements = document.querySelector(QUERYSELECTOR_IN_LANDING_PAGES) && document.querySelector(FORM_WRAPPER_QUERYSELCTOR) && document.querySelector(GET_STARTED_BUTTON_QUERYSELECTOR) && document.querySelector(FIRST_NAME_INPUT_QUERYSELECTOR);
 
   if ( ! requiredPageElements )
-    return console.error('The requred page elements for `landingPage.js` to work are missing.');
+    return;
 
   addClickEventListener(GET_STARTED_BUTTON_QUERYSELECTOR);
 }
