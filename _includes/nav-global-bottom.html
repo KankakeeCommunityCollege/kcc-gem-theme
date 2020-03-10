@@ -11,7 +11,6 @@
           </div>
           {% endif %}
           <div class="col ml-lg-1">
-
             {% if item.link_href %}
             {% assign site_name_lowercase = site.site_name | downcase %}
             <a class="dropdown-item typography__dropdown--category" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}{{ page.baseurl }}{{ item.link_href }}{% endif %}">{{ item.link_text }}</a>{% endif %}
