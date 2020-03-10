@@ -93,6 +93,7 @@ exclude:
   - "*.gemspec"
   - "gulp-tasks/"
   - "install.sh"
+  - "ruby-version.txt"
 
 uploads_dir: # specifies the default uploads directory for CloudCannon
   - "uploads/"
