@@ -297,3 +297,31 @@
     margin-top: 93px;
   }
 }
+
+.position__offset-alert {
+  margin-top: 125px;
+}
+
+@media screen and (min-width: 400px) {
+  .position__offset-alert {
+    margin-top: 135px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .position__offset-alert {
+      margin-top: 140px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .position__offset-alert {
+      margin-top: 145px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .position__offset-alert {
+      margin-top: 150px;
+  }
+}
