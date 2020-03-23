@@ -12,7 +12,8 @@ const config = {
     'kcc-theme-landing': './assets/js/theme/landing/landing.js',
     'kcc-nav': './assets/js/theme/nav/nav/nav.js',
     'kcc-mega-nav': './assets/js/theme/nav/megaNav/megaNav.js',
-    'kcc-alerts': './assets/js/theme/alerts/alerts.js'
+    'kcc-alerts': './assets/js/theme/alerts/alerts.js', // ALERTS FOR THE NEW MEGA-NAV STYLE NAVIGATION
+    'alerts': './assets/js/theme/emergency/alerts.js' // ALERTS FOR THE OLD STYLE NAVIGATION (Still used in subdomain.kcc.edu Web03 sites)
   },
   output: {
     filename: '[name].bundle.js',

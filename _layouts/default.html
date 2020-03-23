@@ -15,12 +15,14 @@
   {% if site.translate == true %}{% include translate.html %}{% endif %}
   {% include nav-global.html %}
   {% if page.no_local_nav != true %}{% include nav-local.html %}{% endif %}
-  {% if site.emergency_alert == true and page.homepage == true %}{% include emergency-alert.html %}{% endif %}
+  {% include emergency-alerts.html %}
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
   {% include scripts/kcc-nav.html %}
   {% include scripts/kcc-theme.html %}
+  {% include scripts/emergency-alerts.html %}
+  {% include scripts/google-api.html %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}
