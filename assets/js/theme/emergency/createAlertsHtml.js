@@ -8,10 +8,10 @@ const BOOTSTRAP_CONTAINER_CLASS = 'container';  // Class used in Bootstrap 4
 const BOOTSTRAP_ROW_CLASS = 'row';  // Class used in Bootstrap 4
 const BOOTSTRAP_COL_CLASS = 'col';  // Class used in Bootstrap 4
 const BOOTSTRAP_CLOSE_CLASS = 'close';  // Class used in Bootstrap 4
+const TRUE_FROM_SHEETS = 'TRUE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
 const FALSE_FROM_SHEETS = 'FALSE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
-const NO_BOTTOM_MARGIN_CLASS = 'margins__bottom--none';  // A class from the kcc-gem-theme's stylesheet
-const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning']; // BS4 classes
-const PARAGRAPH_CLASS_ARRAY = ['typography__alert', 'mb-0'];
+const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning']; // BS4 classes for alerts
+const PARAGRAPH_CLASS_ARRAY = ['typography__alert', 'mb-0']; // KCC Gem Theme & Bootstrap 4 class strings in an array
 
 function addClassesToEl(el, classArr) {
   for (let i = 0, len = classArr.length; i < len; i++) {
@@ -28,16 +28,83 @@ function appendElementWithNewNode(el, nodeType, classArr) {
   return newNode;
 }
 
+// =========================================================================== //
+//                                                                             //
+//                                                                             //
+//                                                                             //
+//     TODO:   Breakout markdown parsing functions into its own export         //
+//             Then, import into this file.                                    //
+//                                                                             //
+//                                                                             //
+//                                                                             //
+// =========================================================================== //
+
+
+function replaceRegex(string, regex, replacement) {
+  const newString = string.replace(regex, replacement);
+  return newString;
+}
+
+function escapeCharacters(string, escapeOption) {
+  const escapedCharactersObject = {
+    '\\*': '__asterisk__',
+    '\\_': '__underscore__',
+    '\\[': '__openBracket__',
+    '\\]': '__closeBracket__',
+    '\\(': '__openParenthesis__',
+    '\\)': '__closeParenthesis__'
+  }
+
+  for (let char in escapedCharactersObject) {
+    if (escapedCharactersObject.hasOwnProperty(char)) {
+      escapeOption === true ? string = replaceRegex(string, char, escapedCharactersObject[char])
+      : escapeOption === false ? string = replaceRegex(string, escapedCharactersObject[char], char.replace(/^\\/g, ''))
+      : null;
+    }
+  }
+  return string;
+}
+
+function createAnchorElements(string) {
+  return string = string.replace(/\[(?<linkText>[^\]]*)\]\((?<linkHref>[^\)]*)\)/g, '<a href="$<linkHref>" target="_blank" rel="noopener noreferrer">$<linkText></a>');
+}
+
+function createInlineElements(string) {
+  const inlineElementObject = {
+    'strong': /\*\*([^\*]*)\*\*/g,
+    'em': /(?<!_)_([^_]*)(?<!_)_/g // That's some pretty intense RegEx right there: "Negative lookbehind" to omit the escaped characters
+  }
+  for (var el in inlineElementObject) {
+    if (inlineElementObject.hasOwnProperty(el)) {
+      string = string.replace(inlineElementObject[el], '<' + el + '>$1</' + el + '>' );
+    }
+  }
+  return string;
+}
+
+function createParagraphElements(string) {
+   return string = string.replace(/(?<!$)^(.*)(?<!^)$/gm, '<p class="typography__alert">$1</p>');
+}
+
+function parseMarkdownToHTML(string) {
+  const escapedString = escapeCharacters(string, true);
+  const stringWithInlineElements = createInlineElements(escapedString);
+  const stringWithAnchorElements = createAnchorElements(stringWithInlineElements);
+  const stringWithParagraphElements = createParagraphElements(stringWithAnchorElements);
+  const unescapedString = escapeCharacters(stringWithParagraphElements, false);
+  //console.log(unescapedString);
+  return unescapedString;
+}
+
 function createHTML(SHEET_DATA) { // Finally....after all those checks....we get to do something!
-  const DOM_TARGET = document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING);
-  const MESSAGE = SHEET_DATA[2];
+  const DOM_TARGET = document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING); // This targets an element built into the DOM that we inject everything into.
+  const MESSAGE = parseMarkdownToHTML(SHEET_DATA[2]); // The third cell, or third item, in the array
   const container = appendElementWithNewNode(DOM_TARGET, 'div', BOOTSTRAP_CONTAINER_CLASS);
   const row = appendElementWithNewNode(container, 'div', BOOTSTRAP_ROW_CLASS);
   const col = appendElementWithNewNode(row, 'div', BOOTSTRAP_COL_CLASS);
   const alertDiv = appendElementWithNewNode(col, 'div', BOOTSTRAP_ALERT_CLASS_ARRAY);
-  const alertParagraph = appendElementWithNewNode(alertDiv, 'p', PARAGRAPH_CLASS_ARRAY);
 
-  alertParagraph.innerHTML = MESSAGE;
+  alertDiv.innerHTML = MESSAGE;
 }
 
 function zeroDatesTime(dateObjectArr) {
@@ -59,18 +126,17 @@ function checkAlertExpiration(SHEET_DATA) {
 }
 
 function init(SHEET_DATA) {
-  const ALERT_HAS_EXPIRATION = SHEET_DATA[3] === 'TRUE';
+  const ALERT_HAS_EXPIRATION = SHEET_DATA[3] === TRUE_FROM_SHEETS;
 
   ALERT_HAS_EXPIRATION ? checkAlertExpiration(SHEET_DATA) : createHTML(SHEET_DATA);
 }
 
 function checkAlertPages(SHEET_DATA) {
-  const DISPLAY_ALERT_ON_ALL_PAGES_CELL = SHEET_DATA[1];
+  const DISPLAY_ALERT_ON_ALL_PAGES = SHEET_DATA[1] === TRUE_FROM_SHEETS; // Second cell toggles if it displayes on just homepages or all pages of the sites
   const pathname = window.location.pathname;
   const locationIsHomepage = pathname === '/';
-  const displayAlertOnAllPagesIsTrue = DISPLAY_ALERT_ON_ALL_PAGES_CELL === 'TRUE';
 
-  if ( ! displayAlertOnAllPagesIsTrue ) {
+  if ( ! DISPLAY_ALERT_ON_ALL_PAGES ) {
     locationIsHomepage ? init(SHEET_DATA) : null;
   } else {
     init(SHEET_DATA);
@@ -78,10 +144,10 @@ function checkAlertPages(SHEET_DATA) {
 }
 
 function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
-  const SHEET_CELL_VALUES_ARRAY = response.result.values;  // Requires `response` to be defined.
-  const SHEET_DATA = SHEET_CELL_VALUES_ARRAY[2];
-  const ALERT_VISIBILITY_CELL = SHEET_DATA[0];
-  const ALERT_VISIBILITY_IS_FALSE = ALERT_VISIBILITY_CELL === FALSE_FROM_SHEETS;
+  // This is where the cell values hide in the response object from the Google API.
+  const SHEET_CELL_VALUES_ARRAY = response.result.values; // `values` is an array consisting of an array for each row (i.e an array of arrays)
+  const SHEET_DATA = SHEET_CELL_VALUES_ARRAY[2]; // Selecting the third row of the values array. This is where all the important options/data are in the Google Sheet
+  const ALERT_VISIBILITY_IS_FALSE = SHEET_DATA[0] === FALSE_FROM_SHEETS; // First cell(SHEET_DATA[0]) is to toggle the alert's visibility.
 
   if ( ALERT_VISIBILITY_IS_FALSE )
     return;
