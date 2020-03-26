@@ -13,6 +13,7 @@ const TRUE_FROM_SHEETS = 'TRUE';  // Because Google Sheets does 'TRUE' & 'FALSE'
 const FALSE_FROM_SHEETS = 'FALSE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
 const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning']; // BS4 classes for alerts
 const PARAGRAPH_CLASS_ARRAY = ['typography__alert', 'mb-0']; // KCC Gem Theme & Bootstrap 4 class strings in an array
+const ALERTS_VISIBLE_CLASS = 'position__offset-alert--visible';
 
 function addClassesToEl(el, classArr) {
   for (let i = 0, len = classArr.length; i < len; i++) {
@@ -38,6 +39,7 @@ function createHTML(SHEET_DATA) { // Finally....after all those checks....we get
   const alertDiv = appendElementWithNewNode(col, 'div', BOOTSTRAP_ALERT_CLASS_ARRAY);
 
   alertDiv.innerHTML = MESSAGE;
+  DOM_TARGET.classList.add(ALERTS_VISIBLE_CLASS);
 }
 
 function zeroDatesTime(dateObjectArr) {

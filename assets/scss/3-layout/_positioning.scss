@@ -300,6 +300,10 @@
 
 .position__offset-alert {
   margin-top: 125px;
+  height: 1px;
+  &--visible {
+    height: auto;
+  }
 }
 
 @media screen and (min-width: 400px) {
