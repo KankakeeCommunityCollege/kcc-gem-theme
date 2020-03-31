@@ -1,3 +1,8 @@
+const INLINE_MARKDOWN_ELEMENTS_OBJECT = {
+  'strong': /\*\*([^\*]*)\*\*/g,
+  'em': /_([^_]*)_/g
+}
+
 function replaceRegex(string, regex, replacement) {
   const newString = string.replace(regex, replacement);
   return newString;
@@ -27,14 +32,23 @@ function createAnchorElements(string) {
   return string = string.replace(/\[(?<linkText>[^\]]*)\]\((?<linkHref>[^\)]*)\)/g, '<a href="$<linkHref>" target="_blank" rel="noopener noreferrer">$<linkText></a>');
 }
 
-function createInlineElements(string) {
-  const inlineElementObject = {
-    'strong': /\*\*([^\*]*)\*\*/g,
-    'em': /(?<!_)_([^_]*)(?<!_)_/g // That's some pretty intense RegEx right there: "Negative lookbehind" to omit the escaped characters
+function replacer(match, p1, offset, string) {
+  if ( p1 === '' ) { // Return all the '__' (double underscore) matches, as is.
+    return match;
+  } else {
+    for (var el in INLINE_MARKDOWN_ELEMENTS_OBJECT) {
+      if (INLINE_MARKDOWN_ELEMENTS_OBJECT.hasOwnProperty(el)) {
+        match = match.replace(INLINE_MARKDOWN_ELEMENTS_OBJECT[el], '<' + el + '>$1</' + el + '>' );
+      }
+    }
+    return match;
   }
-  for (var el in inlineElementObject) {
-    if (inlineElementObject.hasOwnProperty(el)) {
-      string = string.replace(inlineElementObject[el], '<' + el + '>$1</' + el + '>' );
+}
+
+function createInlineElements(string) {
+  for (var el in INLINE_MARKDOWN_ELEMENTS_OBJECT) {
+    if (INLINE_MARKDOWN_ELEMENTS_OBJECT.hasOwnProperty(el)) {
+      string = string.replace(INLINE_MARKDOWN_ELEMENTS_OBJECT[el], replacer);
     }
   }
   return string;
