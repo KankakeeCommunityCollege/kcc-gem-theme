@@ -32,8 +32,8 @@ function createAnchorElements(string) {
   return string = string.replace(/\[(?<linkText>[^\]]*)\]\((?<linkHref>[^\)]*)\)/g, '<a href="$<linkHref>" target="_blank" rel="noopener noreferrer">$<linkText></a>');
 }
 
-function replacer(match, p1, offset, string) {
-  if ( p1 === '' ) { // Return all the '__' (double underscore) matches, as is.
+function replacer(match, p1) {
+  if ( p1 === '' ) { // Filters out the '__' (double underscore) matches.
     return match;
   } else {
     for (var el in INLINE_MARKDOWN_ELEMENTS_OBJECT) {
@@ -54,8 +54,16 @@ function createInlineElements(string) {
   return string;
 }
 
+function paragraphReplacer(match, p1) {
+  if ( p1 === '' ) { // Filters out blank lines
+    return match;
+  } else {
+    return match.replace(/^(.*)$/gm, '<p class="typography__alert">$1</p>');
+  }
+}
+
 function createParagraphElements(string) {
-   return string = string.replace(/(?<!$)^(.*)(?<!^)$/gm, '<p class="typography__alert">$1</p>');
+   return string = string.replace(/^(.*)$/gm, paragraphReplacer);
 }
 
 function parseMarkdownToHTML(string) {

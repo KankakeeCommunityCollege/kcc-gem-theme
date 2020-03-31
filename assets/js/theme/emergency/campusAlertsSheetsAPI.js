@@ -2,7 +2,7 @@ import setSheetParameters from './simpleSetSheetParameters.js';
 import createAlertsHtml from './createAlertsHtml.js';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs';
-const SHEET_TAB_NAME = 'Alerts';
+const SHEET_TAB_NAME = 'Alerts Testing';
 const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
 
 function start() {
