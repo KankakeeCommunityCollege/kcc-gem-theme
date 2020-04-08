@@ -20,8 +20,8 @@ function initSlick() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    prevArrow:'<img alt="Previous" class="a-left control-c prev slick-prev" src="/assets/img/dbl-prev.svg">',  // TODO: change to <button> el
-    nextArrow:'<img alt="Next" class="a-right control-c next slick-next" src="/assets/img/dbl-next.svg">'  // TODO: change to <button> el
+    prevArrow:'<button type="button" data-role="none" class="prev slick-prev" aria-label="Previous" role="button" style="display: block;">Previous</button>',  // TODO: change to <button> el
+    nextArrow:'<button type="button" data-role="none" class="next slick-next" aria-label="Next" role="button" style="display: block;">Next</button>'  // TODO: change to <button> el
   });
 }
 
@@ -34,6 +34,7 @@ function toggleSlickPlayState(el, slickState, newButtonText) {
 
   $(HERO_SLIDER_CLASSNAME).slick(slickState);
   setAttributeOnEl(el, 'aria-label', newButtonText);
+  el.classList.toggle('hero-slider__button--play');
   el.innerHTML = newButtonText;
 
   newButtonTextIsPause ? $(HERO_SLIDER_CLASSNAME).slick(SLICK_NEXT_SLIDE) : null;
@@ -55,6 +56,7 @@ function createButton() {
   setAttributeOnEl(button, 'role', 'button');
   setAttributeOnEl(button, 'type', 'button');
   setAttributeOnEl(button, 'aria-label', 'Pause');
+  setAttributeOnEl(button, 'style', 'display: block;');
   button.innerHTML = initialButtonText;
   button.classList.add('hero-slider__button--toggle');
   SLICK_PARENT_EL.appendChild(button);

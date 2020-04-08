@@ -249,3 +249,82 @@
 .slick-initialized {   // makes slides visible again once slick has initialized
   visibility: visible;
 }
+
+.slick-next::before {
+  content: url('/assets/img/dbl-next_mobile.svg');
+}
+
+.slick-prev::before {
+  content: url('/assets/img/dbl-prev_mobile.svg');
+}
+
+@media screen and (min-width: 992px) {
+  .slick-next::before {
+    content: url('/assets/img/dbl-next.svg');
+  }
+
+  .slick-prev::before {
+    content: url('/assets/img/dbl-prev.svg');
+  }
+}
+
+.hero-slider__button--toggle {
+  background: transparent;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  height: 25px;
+  right: 50%;
+  margin-right: -12.5px;
+  line-height: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  transform: translate(0, -50%);
+  width: 25px;
+}
+
+@media screen and (min-width: 992px) {
+  .hero-slider__button--toggle {
+    width: 40px;
+    bottom: 10px;
+    margin-right: -20px;
+  }
+}
+
+.hero-slider__button--toggle:before {
+  content: url('/assets/img/pause_mobile.svg');
+  opacity: .75;
+}
+
+@media screen and (min-width: 992px) {
+  .hero-slider__button--toggle:before {
+    content: url('/assets/img/pause.svg');
+  }
+}
+
+.hero-slider__button--play:before {
+  content: url('/assets/img/play_mobile.svg');
+  opacity: .75;
+}
+
+@media screen and (min-width: 992px) {
+  .hero-slider__button--play:before {
+    content: url('/assets/img/play.svg');
+  }
+}
+
+.hero-slider__button--toggle:hover,
+.hero-slider__button--toggle:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+
+.hero-slider__button--toggle:hover:before,
+.hero-slider__button--toggle:focus:before {
+  opacity: 1;
+}
