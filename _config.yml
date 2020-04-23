@@ -46,9 +46,7 @@ nav_links:
 #    link_href: 'reference/cloudcannon'
 #
 collections:
-  posts:
-    _hide_content: true
-  tabbed_nav:
+  tabs:
     output: false
   accordions:
     output: false
@@ -76,6 +74,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 future: true
 # Build settings
 markdown: kramdown
+
+include:
+  - "_accordions/"
+  - "_tabs/"
 
 exclude:
   - "gulpfile.js"

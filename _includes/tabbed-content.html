@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs" id="{{ page.title | replace: ' ', '-' | downcase }}" role="tablist">
+  {% assign page_title = page.title %}
+  {% assign tab_collection = site.tabs | where: "tabs_page", page_title | sort: "order" %}
+  {% for tab in tab_collection %}
+  <li class="nav-item">
+    <a class="nav-link{% if forloop.first == true %} active{% endif %}" id="{{ tab.name | downcase | replace: ' ', '-' }}-tab" data-toggle="tab" href="#{{ tab.name | downcase | replace: ' ', '-' }}" role="tab" aria-controls="{{ tab.name | downcase | replace: ' ', '-' }}" aria-selected="{% if forloop.first == true %}true{% else %}false{% endif %}">{{ tab.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+<div class="tab-content" id="{{ page.title | replace: ' ', '-' | downcase }}-content">
+  {% for tab in tab_collection %}
+  <div class="tab-pane fade{% if forloop.first == true %} show active{% endif %}" id="{{ tab.name | downcase | replace: ' ', '-' }}" role="tabpanel" aria-labelledby="{{ tab.name | downcase | replace: ' ', '-' }}-tab">
+    {{ tab.content }}
+  </div>
+  {% endfor %}
+</div>
