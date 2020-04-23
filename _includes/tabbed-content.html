@@ -7,7 +7,7 @@
   </li>
   {% endfor %}
 </ul>
-<div class="tab-content" id="{{ page.title | replace: ' ', '-' | downcase }}-content">
+<div class="tab-content mt-3 px-1" id="{{ page.title | replace: ' ', '-' | downcase }}-content">
   {% for tab in tab_collection %}
   <div class="tab-pane fade{% if forloop.first == true %} show active{% endif %}" id="{{ tab.name | downcase | replace: ' ', '-' }}" role="tabpanel" aria-labelledby="{{ tab.name | downcase | replace: ' ', '-' }}-tab">
     {{ tab.content }}
