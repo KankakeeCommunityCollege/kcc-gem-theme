@@ -1,5 +1,9 @@
-// TARGETX STYLES
-// ========================================
+// Target-X/FormAssembly STYLE OVERRIDES
+// ================================================================================ //
+//
+//  FormAssembly uses some `!important`'s and they are needed where used
+//
+// ================================================================================ //
 
 .targetx__wrapper {
   margin-top: -35px;
@@ -48,5 +52,25 @@ p.supportInfo {
 @media screen and (min-width: 1800px) {
   #tfa_775-D {
     margin-top: 5px !important;
+  }
+}
+
+.oneField.field-container-D {  // Keeps dropdown selection boxes from going wider than other element's in the form
+  max-width: 100%;
+}
+
+// Submit buttons always have the following ID.
+#submit_button {  // YES, the `!important`'s are actually needed!
+  background-color: #0051a7 !important;
+  border-color: #003773 !important;
+  font-family: $font-family-paragraph !important;
+  font-weight: 400 !important;
+  font-size: 1.25rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; // Same transitioning on buttons used in Bootstrap 4 styling
+  &:hover {
+    background-color: #022b55 !important;
+    border-color: #021e3d !important;
   }
 }
