@@ -28,7 +28,7 @@
             <p class="notranslate">
               {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
-              {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
+              {% if contact.fax %}<br>Fax: {{ contact.fax }}{% endif %}
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@
             <p class="notranslate">
               {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
-              {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
+              {% if contact.fax %}<br>Fax: {{ contact.fax }}{% endif %}
             </p>
           </div>
         </div>
@@ -57,7 +57,7 @@
         <p class="notranslate">
           {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
           {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
-          {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
+          {% if contact.fax %}<br>Fax: {{ contact.fax }}{% endif %}
         </p>
       </div>
       {% endif %}
