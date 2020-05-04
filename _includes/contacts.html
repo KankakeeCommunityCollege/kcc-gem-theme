@@ -24,10 +24,11 @@
           </div>
           <div class="col-8 float-right">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
-            <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+            {% if contact.title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
             <p class="notranslate">
-              <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
-              <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
+              {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
+              {% if contact.fax %}{{ contact.fax }}{% endif %}
             </p>
           </div>
         </div>
@@ -40,10 +41,11 @@
           </div>
           <div class="col-8 float-right">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
-            <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+            {% if contact.title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
             <p class="notranslate">
-              <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
-              <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
+              {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
+              {% if contact.fax %}{{ contact.fax }}{% endif %}
             </p>
           </div>
         </div>
@@ -51,10 +53,11 @@
       {% else %}
       <div class="col-sm-6 col-md-4 mb-3">
         <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
-        <h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>
+        {% if contact.title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
         <p class="notranslate">
-          <a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>
-          <a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>
+          {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
+          {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a>{% endif %}
+          {% if contact.fax %}{{ contact.fax }}{% endif %}
         </p>
       </div>
       {% endif %}
