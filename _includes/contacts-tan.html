@@ -28,7 +28,7 @@
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
             {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
             <p class="notranslate">
-              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% contact.portrait %}
+              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
               {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
             </p>
@@ -45,7 +45,7 @@
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
             {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
             <p class="notranslate">
-              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% contact.portrait %}
+              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
               {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
             </p>
@@ -57,7 +57,7 @@
         <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
         {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
         <p class="notranslate">
-          {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% contact.portrait %}
+          {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
           {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
           {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
         </p>
