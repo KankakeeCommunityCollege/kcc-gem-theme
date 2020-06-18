@@ -1,4 +1,4 @@
-<div id="emergencyAlerts" class="position__offset-alert">
+<div id="emergencyAlerts" class="position__offset-alert{% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}">
   <!-- Alerts get built here via JS if they are set to be active -->
   {% comment %}
   <div class="container position__offset-alert">
@@ -12,3 +12,18 @@
   </div>
   {% endcomment %}
 </div>
+{% comment %}
+
+<!-- TODO:
+
+  AFTER CORE IS LAUNCHED
+
+  REMOVE:
+  ```
+    {% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}
+  ```
+  (ALSO REMOVE FROM CONFIG)
+
+ENDTODO -->
+
+{% endcomment %}
