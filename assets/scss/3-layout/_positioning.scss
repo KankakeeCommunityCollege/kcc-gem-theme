@@ -329,3 +329,13 @@
       margin-top: 150px;
   }
 }
+
+.position__offset-alert.position__offset-alert-core {
+  margin-top: 115px;
+}
+
+@media screen and (min-width: 992px) {
+  .position__offset-alert.position__offset-alert-core {
+    margin-top: 110px;
+  }
+}
