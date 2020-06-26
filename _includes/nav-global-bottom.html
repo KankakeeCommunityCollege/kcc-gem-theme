@@ -13,9 +13,13 @@
           <div class="col ml-lg-1">
             {% if item.link_href %}
             {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
-            <a class="dropdown-item typography__dropdown--category" href="/{{ item.link_href }}">{{ item.link_text }}</a>{% endif %}
+            <a class="dropdown-item typography__dropdown--category" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ item.link_href }}{% endif %}">{{ item.link_text }}</a>{% endif %}
             {% for link in item.dropdown %}
-            {% if link.text != 'dropdown-divider' %}<a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% elsif item.link_href contains site_name_lowercase %}{{ page.baseurl }}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>{% else %}<div class="dropdown-divider"></div>{% endif %}
+            {% if item.link_href contains site_name_lowercase %}
+              {% if link.text != 'dropdown-divider' %}<a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>{% else %}<div class="dropdown-divider"></div>{% endif %}
+            {% else %}
+              {% if link.text != 'dropdown-divider' %}<a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>{% else %}<div class="dropdown-divider"></div>{% endif %}
+            {% endif %}
             {% endfor %}
           </div>
         </div>
