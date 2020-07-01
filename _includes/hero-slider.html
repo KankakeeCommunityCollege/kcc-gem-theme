@@ -12,7 +12,7 @@
     </div>
     {% else %}
     <div>
-      <a {% if slide.url contains 'https://' or slide.url contains 'http:// %}target="_blank" href="{{ slide.url }}"{% elsif url_first_char == '.' or url_first_char == '/' %}href="{{ slide.url }}"{% else %}href="{{ page.baseurl }}{{ slide.url }}{% endif %}"><img src="assets/img/kcc-placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}" alt="{{slide.alt-text}}" /></a>
+      <a {% if slide.url contains 'https://' or slide.url contains 'http:// %}target="_blank" href="{{ slide.url }}"{% elsif url_first_char == '.' or url_first_char == '/' %}href="{{ slide.url }}"{% else %}href="{{ page.baseurl }}{{ slide.url }}{% endif %}"><img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{page.baseurl}}{{slide.image}}" class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}" alt="{{slide.alt-text}}" /></a>
       {% if slide.text and slide.text != '' %}<div class="hero-slider__slider--heading-container text-center">
         <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
       </div>{% endif %}
