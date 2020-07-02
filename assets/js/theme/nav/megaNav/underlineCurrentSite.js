@@ -8,7 +8,7 @@ function findNavItem(path) {
     let navTextAsURL = navText.replace(' ', '-').toLowerCase()
     let navTextNoAmp = navTextAsURL.replace('&amp;', 'and');
 
-    if ( navTextNoAmp === 'admissions' )
+    if ( navTextNoAmp === path )
       NAV_LINKS_NODELIST[i].classList.add('header-global__nav-bottom--underlined');
   }
 }
