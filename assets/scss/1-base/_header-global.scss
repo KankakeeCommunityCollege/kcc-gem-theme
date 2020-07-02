@@ -179,6 +179,31 @@
 }
 
 @media screen and (min-width: 992px) {
+  a.header-global__nav-bottom--nav-link {
+    position: relative;
+  }
+  a.header-global__nav-bottom--nav-link.header-global__nav-bottom--underlined::after {
+    background-color: $orange-heading;
+    color: $orange-heading;
+    bottom: .25rem;
+    border-top-width: .125rem;
+    content: '';
+    display: block;
+    height: .125rem;
+    margin-left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s,transform 0.3s;
+    width: calc(100% - 1rem); // The `- 1.8rem` in `calc (100% - 1.8rem)` offsets the padding-left/right: .5rem on the links
+  }
+  a.header-global__nav-bottom--nav-link.header-global__nav-bottom--underlined::after {
+    opacity: 1;
+    transform: translateY(-0.2em);
+  }
+
+}
+
+@media screen and (min-width: 992px) {
   .header-global__nav-local {
     padding-bottom: .5rem;
     padding-top: .5rem;
