@@ -7,8 +7,9 @@ function findNavItem(path) {
     let navText = NAV_LINKS_NODELIST[i].innerHTML.trim();
     let navTextAsURL = navText.replace(' ', '-').toLowerCase()
     let navTextNoAmp = navTextAsURL.replace('&amp;', 'and');
+    let navTextFormated = navTextNoAmp.replace('-kcc', '');
 
-    if ( navTextNoAmp === path )
+    if ( navTextFormated === path )
       NAV_LINKS_NODELIST[i].classList.add('header-global__nav-bottom--underlined');
   }
 }
