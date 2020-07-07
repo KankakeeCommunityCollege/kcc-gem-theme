@@ -54,6 +54,7 @@ watch: # 'Watch' for changes in all the following:
   pages:
     - "*.{md,html,yml,xml}" # watch the project root.
     - "{_data,_hash,_includes,_layouts,_pages,_posts,_alerts,_accordions,_tabs}/**/*.{md,html,yml,xml}" # watch standard jekyll dirs.
+    - "humans.txt"
     # !exlclusions:
     # These are important exceptions that should be excluded from watching!
     - "!sitemap.xml" # When you run `$ gulp --production`, sitemap gets copied-out to project root. This would then, be picked up by watch, which would kick-off another build, causing another change in the sitemap.xml file (i.e. an infinite loop)

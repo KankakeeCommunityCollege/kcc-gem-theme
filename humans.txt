@@ -1,0 +1,17 @@
+---
+layout: null
+---
+
+/* TEAM */
+
+Name: Wesley Zajicek
+Role: Developer/DevOps/Site-maintanace
+Site: https://wesleyzajicek.com
+Github: https://github.com/wdzajicek
+
+/* SITE */
+
+© {{ site.time | date: "%Y" }} Kankakee Community College
+Last update: {{ site.time | date: "%m/%d/%Y %H:%M" }} CST
+Standards: HTML5, CSS3, ES6/JavaScript, CommonJS, SCSS, YAML, Liquid - templating language, and more. Oh, yes, and a tiny JQuery when absolutely necessary
+Tools: Jekyll, Webpack, Babel/Corejs-3, Autoprefixer, Nodejs, ES6, Google YouTube & Sheets API's, gulp, CloudCannon, and other open-source packages
