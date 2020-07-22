@@ -1,3 +1,10 @@
+// Import Bootstrap styling dependencies //
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Import Slick styling (from Ken Wheeler) // See ../vendor/slick-1.8.1/README.md
+@import '../vendor/slick-1.8.1/slick/slick.scss';
+@import '../vendor/slick-1.8.1/slick/slick-theme.scss';
+
 // Variables
 @import '0-tools/vars';
 @import '0-tools/bootstrap-overrides';

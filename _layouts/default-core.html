@@ -1,14 +1,22 @@
 {% include document-head.html %}
   {% include scripts/google-tag.html %}
   {% include styles/fonts.html %}
+  {% comment %}
+  <!-- 7/22/2020 All vendor styling is being compiled into the kcc-gem-theme main .css file to reduce <link> calls --> 
   {% include styles/vendor.html %}
+  
+  {% endcomment %}
   {% if page.sheet_key %}
   <!-- dataTables stylesheets -->
   <!-- dataTables Bootstrap4 themed stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"
+    crossorigin="anonymous">
   <!-- dataTables "Responsive" extension stylesheet for bootstrap4 theme -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/sp-1.1.1/sl-1.3.1/datatables.min.css" />
   {% endif %}
+  
   {% include styles/main.html %}
   {% include body.html %}
   {% include scripts/google-noscript.html %}
@@ -18,10 +26,10 @@
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
+  {% include scripts/kcc-theme.html %}
   {% include scripts/kcc-mega-nav.html %}
   {% include scripts/google-api.html %}
   {% include scripts/emergency-alerts.html %}
-  {% include scripts/kcc-theme.html %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}

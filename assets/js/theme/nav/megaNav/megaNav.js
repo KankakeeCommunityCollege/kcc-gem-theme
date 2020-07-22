@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
 import toggleDropdownOnWindowResize from './toggleDropdownOnWindowResizeTwo.js';
 import googleCustomSearchInit from './googleCustomSearch.js';

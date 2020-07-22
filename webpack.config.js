@@ -28,6 +28,13 @@ const config = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: require.resolve('jquery'),
+        loader: 'expose-loader',
+        options: {
+          exposes: ['$', 'jQuery'],
+        },
       }
     ]
   },

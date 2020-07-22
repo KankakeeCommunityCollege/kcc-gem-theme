@@ -1,3 +1,6 @@
+import $ from "jquery";
+import "bootstrap";
+import slick from "../../../vendor/slick-1.8.1/slick/slick";
 import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
@@ -14,6 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   lazyLoad();
   watchForMenuClicks();
+
+
+  $('#dataTableExample').DataTable({
+    dom: 'Pfrtip',
+    responsive: true, // Activate responsive powers GO!
+    paging: false, // Don't paginate. Schedule schould all be on one page
+    'order': []//, // Initial column ordering
+  });
 
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
