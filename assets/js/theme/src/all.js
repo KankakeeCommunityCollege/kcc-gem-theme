@@ -1,5 +1,9 @@
 import $ from "jquery";
 import "bootstrap";
+import 'datatables.net-dt';
+import 'datatables.net-responsive-dt';
+import 'datatables.net-searchpanes-dt';
+import 'datatables.net-select-dt';
 import slick from "../../../vendor/slick-1.8.1/slick/slick";
 import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
