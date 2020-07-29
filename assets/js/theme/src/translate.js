@@ -34,7 +34,7 @@ function setStyles(selector, styles, IFRAME_MENU_ELEMENT) {
   }
 }
 
-function watchForMenuClicks() {
+function watchForTranslateClicks() {
   // RESTYLE THE DROPDOWN MENU
   if (document.getElementById('google_translate_element')) {
     const GOOGLE_TRANSLATE_ELEMENT = document.getElementById('google_translate_element');
@@ -53,4 +53,4 @@ function watchForMenuClicks() {
   }
 }
 
-export default watchForMenuClicks;
+export default watchForTranslateClicks;

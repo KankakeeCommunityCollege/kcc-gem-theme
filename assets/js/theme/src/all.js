@@ -1,38 +1,33 @@
 import $ from "jquery";  // Imports jquery from the node_module/
 import "bootstrap";  // Imports bootstrap from the node_module/
-import 'datatables.net-dt';  // Imports DataTables from the node_module/
-import 'datatables.net-responsive-dt';  // Imports DataTables Responsive Plugin from the node_module/ 
-import 'datatables.net-searchpanes-dt';  // Imports DataTables SearchPane Plugin from node_module/ 
-import 'datatables.net-select-dt';  // Imports DataTables Select Plugin from node_module/ - required for searchPanes plugin
+//import 'datatables.net-dt';  // Imports DataTables from the node_module/
+//import 'datatables.net-responsive-dt';  // Imports DataTables Responsive Plugin from the node_module/ 
+//import 'datatables.net-searchpanes-dt';  // Imports DataTables SearchPane Plugin from node_module/ 
+//import 'datatables.net-select-dt';  // Imports DataTables Select Plugin from node_module/ - required for searchPanes plugin
 //import slick from "../../../vendor/slick-1.8.1/slick/slick";  // Imports slick from the /assets/vendor dir.
 import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import watchForMenuClicks from './translate.js';
+import watchForTranslateClicks from './translate.js';
 import wrapPowerText from './wrapPowerText.js';
+import initDataTables from  './dataTables.js';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
-const HERO_SLIDER_CLASS = '.hero-slider__slider';
+const HERO_SLIDER_SELECTOR = '.hero-slider__slider';
+const TABLE_SELECTOR_STRING = '#Data';
 
 document.addEventListener('DOMContentLoaded', function() {
-  if ( document.querySelector(HERO_SLIDER_CLASS) ) {
-    initSliders();
-  }
 
   wrapPowerText();
-  walkText(document.body);
+  initSliders(HERO_SLIDER_SELECTOR);
+  
   footerDate();
   lazyLoad();
-  watchForMenuClicks();
+  walkText(document.body);
+  watchForTranslateClicks();
 
-
-  $('#dataTableExample').DataTable({
-    dom: 'Pfrtip',
-    responsive: true, // Activate responsive powers GO!
-    paging: false, // Don't paginate. Schedule schould all be on one page
-    'order': []//, // Initial column ordering
-  });
+  initDataTables(TABLE_SELECTOR_STRING);
 
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {
