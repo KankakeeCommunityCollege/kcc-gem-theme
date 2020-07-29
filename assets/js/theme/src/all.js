@@ -1,10 +1,10 @@
-import $ from "jquery";
-import "bootstrap";
-import 'datatables.net-dt';
-import 'datatables.net-responsive-dt';
-import 'datatables.net-searchpanes-dt';
-import 'datatables.net-select-dt';
-import slick from "../../../vendor/slick-1.8.1/slick/slick";
+import $ from "jquery";  // Imports jquery from the node_module/
+import "bootstrap";  // Imports bootstrap from the node_module/
+import 'datatables.net-dt';  // Imports DataTables from the node_module/
+import 'datatables.net-responsive-dt';  // Imports DataTables Responsive Plugin from the node_module/ 
+import 'datatables.net-searchpanes-dt';  // Imports DataTables SearchPane Plugin from node_module/ 
+import 'datatables.net-select-dt';  // Imports DataTables Select Plugin from node_module/ - required for searchPanes plugin
+//import slick from "../../../vendor/slick-1.8.1/slick/slick";  // Imports slick from the /assets/vendor dir.
 import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
@@ -13,10 +13,14 @@ import watchForMenuClicks from './translate.js';
 import wrapPowerText from './wrapPowerText.js';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
+const HERO_SLIDER_CLASS = '.hero-slider__slider';
 
 document.addEventListener('DOMContentLoaded', function() {
+  if ( document.querySelector(HERO_SLIDER_CLASS) ) {
+    initSliders();
+  }
+
   wrapPowerText();
-  initSliders();
   walkText(document.body);
   footerDate();
   lazyLoad();

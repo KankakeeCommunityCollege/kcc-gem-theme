@@ -13,18 +13,6 @@ const pause = 'Pause';
 //                                                                                                 //
 // =============================================================================================== //
 
-function initSlick() {
-  $(HERO_SLIDER_CLASSNAME).slick({
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    prevArrow:'<button type="button" data-role="none" class="prev slick-prev" aria-label="Previous" role="button" style="display: block;">Previous</button>',  // TODO: change to <button> el
-    nextArrow:'<button type="button" data-role="none" class="next slick-next" aria-label="Next" role="button" style="display: block;">Next</button>'  // TODO: change to <button> el
-  });
-}
-
 function setAttributeOnEl(el, attr, value) {
   return el.setAttribute(attr, value);
 }
@@ -63,19 +51,31 @@ function createButton() {
   watchForElementClicks(button);
 }
 
-function watchForSlickInit(initFunction) {
-  // slick's on 'init' function (See events in slick docs):
-  $(HERO_SLIDER_CLASSNAME).on('init', function(event, slick){ // According to slick doc's; you have to call a $(slick).on('init', function(){ //... }); before you initialize slick
-    createButton();
-  });
-  initFunction();  // Initializing slick after the above `.on('init', function() {})`
-}
-
-function initSliders() {
+function initSliders(slick) {
   if ( ! document.querySelector(HERO_SLIDER_CLASSNAME) )
     return;
 
-  watchForSlickInit(initSlick);
+  (function() {
+    console.log('importSlickGo!!');
+    return import(/* webpackChunkName: "slick" */ '../../../vendor/slick-1.8.1/slick/slick').then(module => {
+      const slick = module.default;
+      console.log(slick);
+
+      $(HERO_SLIDER_CLASSNAME).on('init', function (event) { // According to slick doc's; you have to call a $(slick).on('init', function(){ //... }); before you initialize slick
+        createButton();
+      });
+
+      $(HERO_SLIDER_CLASSNAME).slick({
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        prevArrow: '<button type="button" data-role="none" class="prev slick-prev" aria-label="Previous" role="button" style="display: block;">Previous</button>',  // TODO: change to <button> el
+        nextArrow: '<button type="button" data-role="none" class="next slick-next" aria-label="Next" role="button" style="display: block;">Next</button>'  // TODO: change to <button> el
+      });
+    });
+  }());
 }
 //
 //  USAGE:
