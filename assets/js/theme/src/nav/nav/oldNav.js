@@ -4,10 +4,12 @@ import moveSearchIcon from './moveSearchIcon.js';
 import searchToggle from './searchToggleNav.js';
 import toggleSearchDropdownOnWindowResize from './toggleNavSearchDropdownOnWindowResize.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+function initOldNav() {
   highlightNav();
   searchToggle();
   moveSearchIcon();
   closeMenuOnClick();
   toggleSearchDropdownOnWindowResize();
-});
+}
+
+export default initOldNav;

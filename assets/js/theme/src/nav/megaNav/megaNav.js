@@ -5,10 +5,12 @@ import googleCustomSearchInit from './googleCustomSearch.js';
 import closeMenuOnClick from './closeMegaNavOnClick.js';
 import underlineCurrentSite from './underlineCurrentSite.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+function initMegaNav() {
   googleCustomSearchInit();
   underlineCurrentSite();
   toggleMenuOnWindowResize();
   toggleDropdownOnWindowResize();
   closeMenuOnClick();
-});
+}
+
+export default initMegaNav;

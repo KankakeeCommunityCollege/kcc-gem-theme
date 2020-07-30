@@ -6,22 +6,12 @@ const TABLE_SETTINGS_OBJECT = {
 };
 
 function importDataTables(tableSelector) {
-  import(/* webpackChunkName: 'DataTable' */ 'datatables.net-dt').then(module => {
-    const DataTable = module.default;
-  }).then(() => {
-    import(/* webpackChunkName: 'select' */ 'datatables.net-select-dt').then(module => {
-      const select = module.default;
-    }).then(() => {
-      import(/* webpackChunkName: 'searchPanes' */ 'datatables.net-searchpanes-dt').then(module => {
-        const searchPanes = module.default;
-      }).then(() => {
-        import(/* webpackChunkName: 'responsive' */ 'datatables.net-responsive-dt').then(module => {
-          const responsive = module.default;
-
-          $(tableSelector).DataTable(TABLE_SETTINGS_OBJECT);
-        })
-      })
-    })
+  import(/* webpackChunkName: 'select' */ 'datatables.net-select-dt').then(() => {
+    import(/* webpackChunkName: 'searchPanes' */ 'datatables.net-searchpanes-dt').then(() => {
+      import(/* webpackChunkName: 'responsive' */ 'datatables.net-responsive-dt').then(() => {
+        $(tableSelector).DataTable(TABLE_SETTINGS_OBJECT);
+      });
+    });
   });
 }
 

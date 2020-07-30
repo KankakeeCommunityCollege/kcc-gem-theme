@@ -9,15 +9,12 @@ const config = {
   //entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
     'kcc-theme': './assets/js/theme/src/all.js',
-    'kcc-theme-landing': './assets/js/theme/landing/landing.js',
-    'kcc-nav': './assets/js/theme/nav/nav/nav.js',
-    'kcc-mega-nav': './assets/js/theme/nav/megaNav/megaNav.js',
-    'alerts': './assets/js/theme/alerts/alerts.js'
+    'kcc-theme-landing': './assets/js/theme/landing/landing.js'
   },
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
-    publicPath: 'assets/js/theme/dist/',
+    publicPath: '/assets/js/theme/dist/',
     path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
   },
   module: {

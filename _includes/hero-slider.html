@@ -1,4 +1,35 @@
+{% comment %}
+  <!-- ==========================================
+    # The Hero Slider Component
 
+    Consists of:
+    - `/_includes/hero-slider.html`
+    - `/assets/js/theme/src/sliders.js` - which gets called in `/assets/js/theme/src/all.js`
+    - `/assets/scss/2-modules/_hero-slider.scss`
+    - A `slides` collection defined in the pages YAML front-matter with the following:
+      - ```YAML in HTML
+        ---
+        slides:
+          - image: path/to/image/file.extension
+            alt-text: Alt text to describe the image for screen-readers
+            url: An absolute or relative URL, or '#' if no URL is desired for the slide
+            text: The **POWER** of Community
+            #### NOTE: wrapping a word in double asterisks (**POWER**) willl result in that word being bold ####
+          - image: path/to/another/image/file.extension
+            alt-text: More alternate text here
+            url: 'landing-page'
+            #### NOTE: omit the `text:` key completely if you do not want a heading over the slide ####
+        ---
+        ```
+    - An include (i.e. `{% include hero-slider.html %}`) in the page which has `slides` defined in the YAML front-matter
+    - Finally, you may need to adjust the width defined in the `.hero-slider__slider--heading-container` class 
+      (found in `/assets/scss/2-modules/_hero-slider.scss`) by 1% or 2%. This is especially true if you added or removed slides.
+  
+  SEE: https://github.com/KankakeeCommunityCollege/kcc-development-environment/blob/master/kcc-gem-theme/hero-slider.md
+  FOR MORE-DETAILED INFORMATION ON THE HERO-SLIDER COMPONENT.
+
+  ========================================== -->
+{% endcomment %}
 <div class="row">
   <div class="col hero-slider__slider">
   {% for slide in page.slides %}
