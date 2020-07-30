@@ -13,7 +13,7 @@ const config = {
   },
   output: {
     filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.bundle.js',
     publicPath: '/assets/js/theme/dist/',
     path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
   },
