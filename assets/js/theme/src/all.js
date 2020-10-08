@@ -1,15 +1,14 @@
-import $ from "jquery";  // Imports jquery from the node_module/
-import "bootstrap";  // Imports bootstrap from the node_module/
+import $ from 'jquery';  // Imports jquery from the node_module/
+import 'bootstrap';  // Imports bootstrap from the node_module/
 import footerDate from './footerDate.js';
 import initCampusAlerts from './alerts/campusAlerts.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import watchForTranslateClicks from './translate.js';
+import initTranslate from './initTranslate.js';
 import wrapPowerText from './wrapPowerText.js';
 import initDataTables from  './dataTables.js';
 import initNav from "./nav.js";
-
 
 const HERO_SLIDER_SELECTOR = '.hero-slider__slider';
 const TABLE_SELECTOR_STRING = '#Data';
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   lazyLoad();
   walkText(document.body);
-  watchForTranslateClicks();
+  initTranslate();
 
   initDataTables(TABLE_SELECTOR_STRING);
 

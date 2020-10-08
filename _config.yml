@@ -5,7 +5,7 @@ url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<-
 timezone: America/Chicago
 google-tag_key: Google Tag Manager key goes here
 core_site: true
-#translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
+translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 nav_config:
   smaller_brand: true
 nav_links:
