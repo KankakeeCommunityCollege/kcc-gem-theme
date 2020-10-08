@@ -4,6 +4,9 @@
 .header-global {
   padding-left: 0;
   padding-right: 0;
+  bottom: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
   &__brand {
     left: 1rem;
     position: absolute;
