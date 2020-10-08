@@ -1,3 +1,16 @@
+// Import Bootstrap styling dependencies //
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// DataTables stylesheets saved as SCSS files. See files for attribution/info
+@import '../vendor/DataTables/scss/datatables.responsive.bootstrap4-1.10.18.scss'; // Base stylesheet for datatables bootstrap4
+@import '../vendor/DataTables/scss/datatables.responsive-2.2.2.bootstrap4.scss'; // Base stylesheet for responsive plugin
+@import '../vendor/DataTables/scss/datatables.searchPanes-1.1.1.select-1.3.1.scss'; // Base stylesheet for searchPanes and select plugins
+
+
+// Import Slick styling (from Ken Wheeler) // See ../vendor/slick-1.8.1/README.md
+@import '../vendor/slick-1.8.1/slick/slick.scss';
+@import '../vendor/slick-1.8.1/slick/slick-theme.scss';
+
 // Variables
 @import '0-tools/vars';
 @import '0-tools/bootstrap-overrides';
