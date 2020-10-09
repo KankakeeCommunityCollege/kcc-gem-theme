@@ -1,27 +1,26 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col margins__col--top section__heading-underline">
-        <h3 class="typography__section--heading margins__heading--btm">{{ page.card_section }}</h3>
-      </div>
-    </div>
-    <div class="row">
-      {% for card in page.cards %}
-      <div class="col-md-6 col-lg-4 text-center mx-auto card-section__col--margin-btm">
-        <div class="mb-3">
-          <a href="{{ card.link }}" class="links__block"><img alt="{{ card.thumb_alt_text }}" class="img-fluid rounded-circle w-50 img__shadow--border" src="{{ page.baseurl }}assets/img/kcc-placeholder-square.png" data-src="{{ page.baseurl }}{{ card.thumb }}" /></a>
-        </div>
-        <a class="links__no-underline" href="{{ card.link }}">
-          <h4 class="typography__orange-h4">{{ card.name }}</h4>
-        </a>
-        <div class="row card-section__text-wrapper">
-          <div class="col align-self-start">
-            <p class="typography__p--bold">{{ card.description }}</p>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col margins__col--top section__heading-underline">
+              <h3 class="typography__section--heading margins__heading--btm">{{ page.card_section }}</h3>
+            </div>
+          </div>
+          <div class="row">{% for card in page.cards %}
+            <div class="col-md-6 col-lg-4 text-center mx-auto card-section__col--margin-btm">
+              <div class="mb-3">
+                <a href="{{ card.link }}" class="links__block"><img alt="{{ card.thumb_alt_text }}" class="img-fluid rounded-circle w-50 img__shadow--border" src="{{ page.baseurl }}assets/img/kcc-placeholder-square.png" data-src="{{ page.baseurl }}{{ card.thumb }}" /></a>
+              </div>
+              <a class="links__no-underline" href="{{ card.link }}">
+                <h4 class="typography__orange-h4">{{ card.name }}</h4>
+              </a>
+              <div class="row card-section__text-wrapper">
+                <div class="col align-self-start">
+                  <p class="typography__p--bold">{{ card.description }}</p>
+                </div>
+              </div>
+                <a href="{{ card.link }}" class="btn btn-primary">{{ card.button_text }}</a>
+            </div>
+            {%- endfor -%}
           </div>
         </div>
-          <a href="{{ card.link }}" class="btn btn-primary">{{ card.button_text }}</a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+      </section>

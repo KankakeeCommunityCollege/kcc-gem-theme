@@ -1,8 +1,10 @@
-  <!-- Custom CSS Stylesheet for CloudCannon -->
-  <link rel="stylesheet" href="{{page.baseurl}}assets/css/content.css">
-  <!-- Uncomment to prevent IE-11 caching (for IE testing) -->
-  <!-- <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-  <META HTTP-EQUIV="Expires" CONTENT="-1"> -->
-</head>
-<body{% if page.homepage == true %} id="homePage"{% endif %}>
-  <h1 class="sr-only">{% if page.outline_title %}{{ page.outline_title }}{% else %}{{ page.title }}{% endif %}</h1>
+    <!-- Custom CSS Stylesheet for CloudCannon -->
+    <link rel="stylesheet" href="{{page.baseurl}}assets/css/content.css">
+    {%- comment -%}
+    <!-- Uncomment to prevent IE-11 caching (for IE testing) -->
+    <!-- <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1"> -->
+    {% endcomment %}
+  </head>
+  <body{% if page.homepage == true %} id="homePage"{% endif %}>
+    <h1 class="sr-only">{%- if page.outline_title -%}{{ page.outline_title }}{% else %}{{ page.title }}{%- endif -%}</h1>

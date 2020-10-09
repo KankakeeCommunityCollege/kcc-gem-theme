@@ -13,7 +13,9 @@
       Theme & theme's build-process coded and developed by Wesley Zajicek for KCC 2019-2020
       Author: Wesley Zajicek | https://github.com/wdzajicek
       -->
-    {% if site.humans_file == true %}<!-- The human's, the human's!! -->
-    <link rel="author" type="text/plain" href="/humans.txt" />{% endif %}
+    {% if site.humans_file == true %}
+    <!-- The human's, the human's!! -->
+    <link rel="author" type="text/plain" href="/humans.txt" />
+    {%- endif -%}
     <!-- Standard Favicon -->
     <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico"/>
