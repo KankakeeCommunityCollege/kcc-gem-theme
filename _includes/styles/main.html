@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{page.baseurl}}assets/css/kcc-theme.css">
     <!-- Link to this site's main stylesheet -->
     <link rel="stylesheet" href="{{page.baseurl}}assets/css/main.css{% if site.data.cache_bust_css %}?version={{ site.data.cache_bust_css | truncate: 32, '' }}{% endif %}">
-    {% if site.translate == true %}
+    {%- if site.translate == true -%}
     <!-- Link to this site's custom google translate stylesheet -->
     <link rel="stylesheet" href="{{page.baseurl}}assets/css/translate.css">
-    {% endif %}
+    {%- endif -%}

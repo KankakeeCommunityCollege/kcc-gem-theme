@@ -75,6 +75,12 @@
   }
 }
 
+.header-global__open {
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 @media screen and (min-width: 410px) {
   .header-global__navbar--toggler {
     top: 3.2rem;

@@ -1,29 +1,29 @@
-<div id="emergencyAlerts" class="position__offset-alert{% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}">
-  <!-- Alerts get built here via JS if they are set to be active -->
-  {% comment %}
-  <div class="container position__offset-alert">
-    <div class="row">
-      <div class="col">
-        <div class="alert alert-warning">
-          <p class="typography__alert mb-0"><strong>Alert</strong>:&nbsp;All KCC facilities will be closed March 18-30. Credit classes resume online March 23. <a href="https://coronavirus.kcc.edu/" target="_blank" rel="noopener noreferrer">coronavirus.kcc.edu</a> has&nbsp;details.</p>
+    <div id="emergencyAlerts" class="position__offset-alert{% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}">
+      <!-- Alerts get built here via JS if they are set to be active -->
+      {%- comment -%}
+      <div class="container position__offset-alert">
+        <div class="row">
+          <div class="col">
+            <div class="alert alert-warning">
+              <p class="typography__alert mb-0"><strong>Alert</strong>:&nbsp;All KCC facilities will be closed March 18-30. Credit classes resume online March 23. <a href="https://coronavirus.kcc.edu/" target="_blank" rel="noopener noreferrer">coronavirus.kcc.edu</a> has&nbsp;details.</p>
+            </div>
+          </div>
         </div>
       </div>
+      {% endcomment %}
     </div>
-  </div>
-  {% endcomment %}
-</div>
-{% comment %}
+    {%- comment -%}
 
-<!-- TODO:
+    <!-- TODO:
 
-  AFTER CORE IS LAUNCHED
+      AFTER CORE IS LAUNCHED
 
-  REMOVE:
-  ```
-    {% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}
-  ```
-  (ALSO REMOVE FROM CONFIG)
+      REMOVE:
+      ```
+        {% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}
+      ```
+      (ALSO REMOVE FROM CONFIG)
 
-ENDTODO -->
+    ENDTODO -->
 
-{% endcomment %}
+    {%- endcomment -%}

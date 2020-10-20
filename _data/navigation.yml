@@ -4,8 +4,6 @@
     source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg'
     alt: 'Student working in an electrical technology lab'
   dropdown:
-    - text: Register for Classes
-      href: 'register'
     - text: Courses & Areas of Study
       href: 'courses'
     - text: Class Schedule
@@ -20,12 +18,16 @@
       href: 'commencement'
     - text: Final Exam Schedule
       href: 'final-exams'
+    - text: Register for Classes
+      href: 'register'
 - link_text:  Admissions
   link_href: admissions
   image:
     source: 'assets/img/2016-senior-viewbook.jpg'
-    alt: 'Take the first step to achieveing your goals, dreams & ambitions'
+    alt: 'Take the first step to achieving your goals, dreams & ambitions'
   dropdown:
+    - text: Placement Testing
+      href: 'testing'
     - text: Apply
       href: 'https://kccedu.force.com/portal/TX_SiteLogin?startURL=%2Fportal%2FTargetX_Base__Portal'
     - text: Request Information
@@ -34,69 +36,81 @@
       href: 'https://visit.kcc.edu'
     - text: Cav Day
       href: 'cav-day'
-    - text: 'College Credit in High School'
-      href: 'college-credit'
+    - text: 'Start in High School'
+      href: 'high-school'
+    - text: Veteran Services
+      href: 'veterans'
 - link_text:  Tuition & Aid
+  link_href: 'tuition-and-aid'
   image:
     source: 'assets/img/fafsa-early-bird-banner-18.jpg'
     alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
   dropdown:
-    - text: Action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: dropdown-divider
-    - text: Something else here
-      href: '#'
+    - text: Financial Aid
+      href: 'financial-aid'
+    - text: Net Price Calculator
+      href: 'net-price-calculator'
 - link_text: Student Resources
+  link_href: 'student-resources'
   image:
     source: 'assets/img/DSC_5650_helpful.jpg'
     alt: 'Receptionist answering the phone'
   dropdown:
-    - text: Action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: dropdown-divider
-    - text: Something else here
-      href: '#'
+    - text: Bookstore
+      href: 'http://books.kcc.edu'
+    - text: Clubs & Organizations
+      href: 'clubs'
+    - text: Fitness Center
+      href: 'https://athletics.kcc.edu/facilities/fitness-center'
+    - text: Advising
+      href: 'advising'
+    - text: 'Counseling & Referral Services'
+      href: 'counseling-and-referral-services'
+    - text: Social Services
+      href: 'social-services'
+    - text: Disability Services
+      href: 'disability-services'
+    - text: Student Representatives
+      href: 'student-representatives'
+    - text: Student Complaint Policy
+      href: 'student-complaint-policy'
+    - text: Career Resources
+      href: 'career-resources'
+    - text: Food Pantry
+      href: 'food-pantry'
 - link_text: Community
+  link_href: 'community'
   image:
     source: 'assets/img/go_cavs_20171002_193828-web.jpg'
     alt: 'Group photo of students holding Cavalier signs'
   dropdown:
-    - text: Action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: dropdown-divider
-    - text: Something else here
-      href: '#'
-- link_text: About
+    - text: Testing Services
+      href: 'testing-services'
+    - text: Continuing Education
+      href: 'https://continuinged.kcc.edu'
+    - text: Sustainability
+      href: 'sustainability'
+    - text: Speakers Bureau
+      href: 'speakers-bureau'
+    - text: Arts & Culture
+      href: 'arts-and-culture'
+- link_text: About KCC
+  link_href: 'about'
   image:
     source: 'assets/img/ATEC-DSC_1033.jpeg'
     alt: 'The new Advanced Technology Education Center building'
   dropdown:
-    - text: Action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: Another action
-      href: '#'
-    - text: dropdown-divider
-    - text: Something else here
-      href: '#'
+    - text: Newsroom
+      href: 'https://newsroom.kcc.edu'
+    - text: Leadership
+      href: 'leadership'
+    - text: 'Police & Safety'
+      href: 'police-and-safety'
+    - text: Human Resources
+      href: 'human-resources'
+    - text: ITS
+      href: 'its'
+    - text: Marketing
+      href: 'marketing'
+    - text: 'Institutional Effectiveness'
+      href: 'institutional-effectiveness'

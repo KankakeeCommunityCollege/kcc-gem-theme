@@ -7,7 +7,15 @@
     <title>{{page.title}} - {{site.title}}</title>
     <meta name="description" content="{{page.description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if site.humans_file == true %}<!-- The human's -->
-    <link rel="author" type="text/plain" href="/humans.txt" />{% endif %}
+    <!-- ==============================
+      KCC GEM THEME
+      A Jekyll gem-based theme for Kankakee Community College's websites
+      Theme & theme's build-process coded and developed by Wesley Zajicek for KCC 2019-2020
+      Author: Wesley Zajicek | https://github.com/wdzajicek
+      -->
+    {% if site.humans_file == true %}
+    <!-- The human's, the human's!! -->
+    <link rel="author" type="text/plain" href="/humans.txt" />
+    {%- endif -%}
     <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico"/>
