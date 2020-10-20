@@ -1,0 +1,29 @@
+<div class="row editor-link">
+  <div class="col editor-link mb-3">
+    <a href="cloudcannon:collections/_accordions/" class="btn btn-success editor-button">Edit Accordions Collection</a>
+  </div>
+</div>
+<div id="accordion" class="accordion">
+  {% assign page_title = page.title | downcase | replace: ' ', '-' | replace: '&', 'and' %}
+  {% assign accordion_collection = site.accordions | where_exp: "item", "item.path contains page_title" %}
+  {% for item in accordion_collection | sort: 'order' %}
+  {% assign this_accordion_id = item.card_heading | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | remove: "/" | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
+  <div class="card">
+    <div class="card-header accordion__padding-left" id="card-header-{{ this_accordion_id }}">
+        <h2 class="mb-0 accordion__typography--card-header accordion__typography--hover">
+          <button class="btn btn-link buttons__no-decoration accordion__button{% if forloop.first != true %} collapsed{% endif %}{% if forloop.first == true and page.accordion_expanded == false %} collapsed{% endif %}" type="button" data-target="#{{ this_accordion_id }}" data-toggle="collapse" aria-expanded="{% if forloop.first == true and page.accordion_expanded != false %}true{% else %}false{% endif %}" aria-controls="{{ this_accordion_id }}">
+            {{ item.card_heading }}
+          </button>
+        </h2>
+    </div>
+    <div id="{{ this_accordion_id }}" class="collapse{% if forloop.first == true and page.accordion_expanded != false %} show{% endif %}" aria-labelledby="card-header-{{ this_accordion_id }}">
+        <div class="card-body">
+          <!-- Editor Link -->
+          <a href="cloudcannon:collections/{{ item.path }}" class="btn btn-success mb-4 editor-button">Edit This Accordion Item</a>
+
+          {{ item.content }}
+        </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
