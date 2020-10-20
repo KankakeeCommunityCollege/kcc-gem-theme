@@ -8,6 +8,7 @@
     font-family: $font-family-paragraph;
     font-size: 1.4rem;
     font-weight: 600;
+    text-align: left;
     &:hover {
       color: $primary-red;
     }
@@ -24,11 +25,18 @@
     height: 30px;
     line-height: 30px;
     margin-right: 10px;
+    text-align: center;
     text-decoration: none !important;
+    text-indent: 0;
     vertical-align: middle;
     width: 30px;
   }
   &__button.collapsed::before {
     content: ' \002B';
   }
+}
+
+.accordion__button {
+  text-indent: -45px;
+  margin-left: 45px;
 }
