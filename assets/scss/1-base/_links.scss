@@ -12,8 +12,12 @@
 // Links need to be offset to clear the fixed navigation bar at the top.
 // =========================================
 
-.links__offset {
-  pointer-events: none !important;
+.links__offset {  // Pointer-events is needed to prevent the .links__offset::before pseudo-element
+  pointer-events: none;  // from "blocking" any anchor tag above from being clicked.
+  & a,
+  & button {  // HOWEVER, if there is a child anchor, or button, element,
+    pointer-events: auto; // it obviously needs to be clickable.
+  }
 }
 
 .links__offset::before {
@@ -22,7 +26,7 @@
   display: block;
   height: 171px; // defining a height pushes the element down the page
   margin-top: -171px; // negative margin is needed to push it back to its original position
-  pointer-events: none !important; // w/ out this it will interfere with the sites navigation links
+  pointer-events: none; // w/ out this it will interfere with the sites navigation links
   visibility: hidden;
 }
 
