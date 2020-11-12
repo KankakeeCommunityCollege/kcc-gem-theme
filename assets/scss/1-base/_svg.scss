@@ -6,3 +6,17 @@
     fill: $white;
   }
 }
+
+.svg {
+  height: 100px;
+  width: 100px;
+  &--none {
+    fill: none;
+  }
+  &--blue {
+    fill: $primary-blue;
+  }
+  &--red {
+    fill: $primary-red;
+  }
+}
