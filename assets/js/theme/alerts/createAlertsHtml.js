@@ -1,9 +1,12 @@
-// Custom JS to build an alert message using data coming from a Google Sheets (Using the Sheets API v4)
-// ==================================================================================
-// This exported module requires you pass the function the `response` object from the API call,
-// and `resolve()` from the Promise that the function call is wrapped in (see './campusAlertsSheetsAPI.js')
+/*
+// Custom JS | written by https://github.com/wdzajicek
+// © 2020 Kankakee Community College
+// =================================================== */
+// JS module to build alert message using data from Google Sheets API v4
+//
+// This exported module requires you pass it's default-function the `response` object from the API call, as the only argument
 import parseMarkdownToHTML from './parseMarkdownToHTML.js';
-
+//
 const CAMPUS_ALERTS_DIV_ID_STRING = 'emergencyAlerts';  // ID of the div to house campus alerts - already built into the page.
 const BOOTSTRAP_CONTAINER_CLASS = 'container';  // Class used in Bootstrap 4
 const BOOTSTRAP_ROW_CLASS = 'row';  // Class used in Bootstrap 4
@@ -67,7 +70,7 @@ function init(SHEET_DATA) {
 }
 
 function checkAlertPages(SHEET_DATA) {
-  const DISPLAY_ALERT_ON_ALL_PAGES = SHEET_DATA[1] === TRUE_FROM_SHEETS; // Second cell toggles if it displayes on just homepages or all pages of the sites
+  const DISPLAY_ALERT_ON_ALL_PAGES = SHEET_DATA[1] === TRUE_FROM_SHEETS; // Second cell toggles if it displays on just homepages or all pages of the sites
   const pathname = window.location.pathname;
   const locationIsHomepage = pathname === '/';
 
@@ -83,7 +86,6 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
   const SHEET_CELL_VALUES_ARRAY = response.result.values; // `values` is an array consisting of an array for each row (i.e an array of arrays)
   const SHEET_DATA = SHEET_CELL_VALUES_ARRAY[2]; // Selecting the third row of the values array. This is where all the important options/data are in the Google Sheet
   const ALERT_VISIBILITY_IS_FALSE = SHEET_DATA[0] === FALSE_FROM_SHEETS; // First cell(SHEET_DATA[0]) is to toggle the alert's visibility.
-
   if ( ALERT_VISIBILITY_IS_FALSE )
     return;
 

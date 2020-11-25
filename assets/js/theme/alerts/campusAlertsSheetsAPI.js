@@ -1,39 +1,51 @@
+/*
+// Custom JS | written by https://github.com/wdzajicek
+// © 2020 Kankakee Community College
+// =================================================== */
+//  1. Execute Google API call to grab Google Sheet data from:
+//     https://docs.google.com/spreadsheets/d/1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs/edit#gid=0
+//  2. Build & inject the alert message into the page
+//  3. Run the `tabLink.js` module after alert has painted into DOM (and altered documents hight)
+//  4. Cache the API response in sessionStorage
+// =================================================== //
 import setSheetParameters from './simpleSetSheetParameters.js';
 import createAlertsHtml from './createAlertsHtml.js';
+import makeTabsLinkable from './tabLink.js';
+import cacheResponse from './cacheResponse.js';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs';
 const SHEET_TAB_NAME = 'Alerts';
 const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
+const SHEET_PARAMS = setSheetParameters(SHEET_KEY, SHEET_TAB_NAME);
+const PARAMS = { // This is configuration for API call with spreadsheets that are setup as readonly
+  'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
+  'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
+};
+
+function init() {
+  gapi.client.init(PARAMS).then(function() { // Executes an API request, and returns a Promise.
+    return gapi.client.sheets.spreadsheets.values.get(SHEET_PARAMS)
+      .then((response) => {
+        createAlertsHtml(response); // Build the html & inject it into the DOM
+        return response;
+      }).then((response) => {
+        makeTabsLinkable();  // Handle hash & query URI's to target accordion and tabbed-nav content
+        cacheResponse(response); // Cache the Google API response for subsequent page loads in the site
+      },
+      function(err) {
+        console.error("Execute error", err);
+        makeTabsLinkable();
+      });
+  });
+}
 
 function start() {
   if ( ! document.getElementById(EMERGENCY_ALERT_DIV_ID) )
-    return;
+    return makeTabsLinkable();
 
-  //var t0 = performance.now();
   init();
   //var t1 = performance.now();
   //console.info("Call to 'init' took " + (t1 - t0) + " milliseconds.");
-}
-
-function init() {
-  const params = {
-    'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
-    'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
-  };
-  const sheetParams = setSheetParameters(SHEET_KEY, SHEET_TAB_NAME);
-
-  gapi.client.init(params).then(function() { // Executes an API request, and returns a Promise.
-    function execute() {
-      return gapi.client.sheets.spreadsheets.values.get(sheetParams)
-        .then(function(response) {
-          createAlertsHtml(response);
-        },
-        function(err) {
-          console.error("Execute error", err);
-        });
-    }
-    execute();
-  });
 }
 // Loads the JavaScript client library and invokes `start` afterwards.
 //    Usage:
