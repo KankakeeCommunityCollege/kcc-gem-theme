@@ -1,8 +1,8 @@
-{% assign sorted_contacts = site.contacts | sort: "display_order" %}
+{%- assign sorted_contacts = site.contacts | sort: "display_order" -%}
 <section>
   <div class="container">
     <div class="row">
-      <div class="col margins__col--top home__col--heading-underline-tan">
+      <div class="col mt-1 home__col--heading-underline home__col--heading-underline-tan">
         <h3 id="contact" class="typography__section--heading margins__heading--btm links__offset">Contacts</h3>
       </div>
     </div>
@@ -14,15 +14,15 @@
       </div>
     </div>
     <div class="row">
-      {% for contact in sorted_contacts %}
-      {% assign contact_name = contact.name | split: " " %}
-      {% assign first = contact_name[0] %}
-      {% assign last = contact_name[1] %}
-      {% if contact.portrait != 'For departments with no contact photos, do not change this field.' and contact.portrait != 'none' %}
+      {%- for contact in sorted_contacts -%}
+      {%- assign contact_name = contact.name | split: " " -%}
+      {%- assign first = contact_name[0] -%}
+      {%- assign last = contact_name[1] -%}
+      {% if contact.portrait_image != "For departments with no contact photos, do not change this field." %}
       <div class="col-md-6 contacts__col-bottom-margin">
         <div class="row">
           <div class="col-4 contacts__col--img">
-            <img src="assets/img/blank-contact.svg" data-src="{{ page.baseurl }}{{ contact.portrait }}" alt="{{ contact.name }}" class="img-fluid contacts__portrait" />
+            {% if contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" alt="Photo of {{ contact.name }}" class="img-fluid contacts__portrait" />{% endif %}
           </div>
           <div class="col-8 float-right">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
@@ -30,24 +30,8 @@
             <p class="notranslate">
               {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
-              {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
-            </p>
-          </div>
-        </div>
-      </div>
-      {% elsif contact.portrait == 'none' %}
-      <div class="col-md-6 contacts__col-bottom-margin">
-        <div class="row">
-          <div class="col-4 contacts__col--img">
-            <!-- Contact has no portrait -->
-          </div>
-          <div class="col-8 float-right">
-            <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
-            {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
-            <p class="notranslate">
-              {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
-              {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
-              {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
+              {%- if contact.fax -%}Fax: {{ contact.fax }}{% endif %}
+              {%- if contact.bio == true -%}<button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
             </p>
           </div>
         </div>
@@ -60,10 +44,37 @@
           {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
           {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
           {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
+          {% if contact.bio == true %}<button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
         </p>
       </div>
-      {% endif %}
-      {% endfor %}
+      {%- endif -%}
+      {%- endfor -%}
     </div>
   </div>
 </section>
+{% for contact in sorted_contacts %}
+{%- if contact.bio == true -%}
+<!-- Modal -->
+<div class="modal fade" id="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}" tabindex="-1" aria-labelledby="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="typography__h6" id="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}-label">{{ contact.name }} Bio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if contact.portrait_image != 'For departments with no contact photos, do not change this field.' and contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" class="img-fluid float-left mr-2 mb-2" alt="Photo of {{ contact.name }} KCC's {{ contact.contacts_title }}">{% endif %}
+        <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
+        {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
+        {{ contact.content }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+{% endfor %}
