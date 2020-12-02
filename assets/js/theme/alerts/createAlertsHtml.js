@@ -15,7 +15,6 @@ const BOOTSTRAP_CLOSE_CLASS = 'close';  // Class used in Bootstrap 4
 const TRUE_FROM_SHEETS = 'TRUE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
 const FALSE_FROM_SHEETS = 'FALSE';  // Because Google Sheets does 'TRUE' & 'FALSE' in all caps, unlike JavaScript
 const BOOTSTRAP_ALERT_CLASS_ARRAY = ['alert', 'alert-warning']; // BS4 classes for alerts
-const PARAGRAPH_CLASS_ARRAY = ['typography__alert', 'mb-0']; // KCC Gem Theme & Bootstrap 4 class strings in an array
 const ALERTS_VISIBLE_CLASS = 'position__offset-alert--visible';
 
 function addClassesToEl(el, classArr) {
@@ -82,6 +81,9 @@ function checkAlertPages(SHEET_DATA) {
 }
 
 function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
+  if ( ! document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING) )
+    return;
+
   // This is where the cell values hide in the response object from the Google API.
   const SHEET_CELL_VALUES_ARRAY = response.result.values; // `values` is an array consisting of an array for each row (i.e an array of arrays)
   const SHEET_DATA = SHEET_CELL_VALUES_ARRAY[2]; // Selecting the third row of the values array. This is where all the important options/data are in the Google Sheet
