@@ -72,9 +72,10 @@ function initTabs() {
 }
 
 function makeTabsLinkable() {
-  if ( document.querySelector('#accordion') || document.querySelector('.nav.nav-tabs') ) {
-    initTabs();
-  }
+  if (!document.querySelector('#accordion') && !document.querySelector('.nav.nav-tabs'))
+    return;
+    
+  initTabs();
 }
 
 export default makeTabsLinkable;

@@ -5,6 +5,7 @@
 // JS module to build alert message using data from Google Sheets API v4
 //
 // This exported module requires you pass it's default-function the `response` object from the API call, as the only argument
+import makeTabsLinkable from './tabLink.js';
 import parseMarkdownToHTML from './parseMarkdownToHTML.js';
 //
 const CAMPUS_ALERTS_DIV_ID_STRING = 'emergencyAlerts';  // ID of the div to house campus alerts - already built into the page.
@@ -82,7 +83,7 @@ function checkAlertPages(SHEET_DATA) {
 
 function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
   if ( ! document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING) )
-    return;
+    return makeTabsLinkable();
 
   // This is where the cell values hide in the response object from the Google API.
   const SHEET_CELL_VALUES_ARRAY = response.result.values; // `values` is an array consisting of an array for each row (i.e an array of arrays)

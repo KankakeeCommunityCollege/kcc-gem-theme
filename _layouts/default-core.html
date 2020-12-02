@@ -14,7 +14,7 @@
 {% include scripts/google-noscript.html %}
 {% if site.translate == true %}{% include translate.html %}{% endif %}
 {% include header-global.html %}
-{% if site.core_root != true %}{% include emergency-alerts.html %}{% endif %}
+{% if site.core_root != true and page.no_alert != true %}{% include emergency-alerts.html %}{% endif %}
 {{ content }}
 {% include footer.html %}
 {% include scripts/vendor-cdn.html %}
