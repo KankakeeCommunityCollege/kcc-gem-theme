@@ -15,6 +15,7 @@
 </ul>
 <div class="tab-content mt-3 px-1" id="{{ page.title | replace: ' ', '-' | downcase }}-content">
   {% for tab in tab_collection %}
+  {% assign tab_id = tab.name | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
   <div class="tab-pane fade{% if forloop.first == true %} show active{% endif %}" id="{{ tab_id }}" role="tabpanel" aria-labelledby="{{ tab_id }}-tab">
     {{ tab.content }}
   </div>
