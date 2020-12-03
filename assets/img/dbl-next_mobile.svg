@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 25 25" style="enable-background:new 0 0 25 25;" xml:space="preserve">
-<style type="text/css">
-	.st0{opacity:0.75;fill:#231F20;enable-background:new    ;}
-	.st1{fill:#FFFFFF;}
-</style>
-<g>
-	<ellipse class="st0" cx="12.5" cy="12.5" rx="12.06" ry="12.05"/>
-	<path class="st1" d="M13.63,12.14L7.4,5.86c-0.2-0.2-0.52-0.2-0.72,0L5.84,6.7c-0.2,0.2-0.2,0.52,0,0.72l5.03,5.08l-5.03,5.08
-		c-0.2,0.2-0.2,0.52,0,0.72l0.84,0.84c0.2,0.2,0.52,0.2,0.72,0l6.23-6.28C13.83,12.66,13.83,12.34,13.63,12.14z M20.43,12.86
-		l-6.23,6.28c-0.2,0.2-0.52,0.2-0.72,0l-0.84-0.84c-0.2-0.2-0.2-0.52,0-0.72l5.03-5.08l-5.03-5.08c-0.2-0.2-0.2-0.52,0-0.72
-		l0.84-0.84c0.2-0.2,0.52-0.2,0.72,0l6.23,6.28C20.63,12.34,20.63,12.66,20.43,12.86L20.43,12.86z"/>
-</g>
-</svg>
+<svg enable-background="new 0 0 25 25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"><ellipse cx="12.5" cy="12.5" fill="#231f20" opacity=".75" rx="12.06" ry="12.05"/><path d="m13.63 12.14-6.23-6.28c-.2-.2-.52-.2-.72 0l-.84.84c-.2.2-.2.52 0 .72l5.03 5.08-5.03 5.08c-.2.2-.2.52 0 .72l.84.84c.2.2.52.2.72 0l6.23-6.28c.2-.2.2-.52 0-.72zm6.8.72-6.23 6.28c-.2.2-.52.2-.72 0l-.84-.84c-.2-.2-.2-.52 0-.72l5.03-5.08-5.03-5.08c-.2-.2-.2-.52 0-.72l.84-.84c.2-.2.52-.2.72 0l6.23 6.28c.2.2.2.52 0 .72z" fill="#fff"/></svg>
