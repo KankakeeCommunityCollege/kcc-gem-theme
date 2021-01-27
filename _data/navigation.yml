@@ -23,7 +23,7 @@
 - link_text:  Admissions
   link_href: admissions
   image:
-    source: 'assets/img/2016-senior-viewbook.jpg'
+    source: 'assets/img/admissions-navigation-menu.jpg'
     alt: 'Take the first step to achieving your goals, dreams & ambitions'
   dropdown:
     - text: Placement Testing
