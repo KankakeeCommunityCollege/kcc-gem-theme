@@ -224,9 +224,16 @@
   & .st0 {
     fill: none;
   }
+  transition: all .5s ease-in-out;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1040px) { // the KCC word logo needs to shrink a little bit at these screen sizes
+  .header-global__brand--svg {
+    height: 22px;
+  }
+}
+
+@media screen and (min-width: 1041px) {
   .header-global__brand--svg {
     height: 26px;
   }
