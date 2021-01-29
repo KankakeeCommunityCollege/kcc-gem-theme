@@ -1,16 +1,17 @@
 const { series, parallel, watch } = require('gulp');
 const gulp = require('gulp');
 const del = require('del');
-const fs = require('fs');
-const yaml = require('js-yaml');
+//const fs = require('fs');
+//const yaml = require('js-yaml');
 const spawn = require('cross-spawn');
 const yargs = require('yargs');
-const sitemap = require('gulp-sitemap');
+//const sitemap = require('gulp-sitemap');
 const gulpif = require('gulp-if');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync');
 const hashsum = require('gulp-hashsum');
@@ -34,13 +35,14 @@ function jekyllBuild(done) {
 // Compile main.css file from sass modules
 function mainScss() {
   const PRODUCTION = !!(yargs.argv.production);
+  const cssNanoConfig = [cssnano({ zindex: false })];
 
   return gulp.src(config.sass.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
     .pipe(autoprefixer()) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
     .pipe(hashsum({filename: './_data/cache_bust_css.yml', hash: 'md5'}))
-    .pipe(gulpif(PRODUCTION, cssnano({ zindex: false }))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
+    .pipe(gulpif(PRODUCTION, postcss(cssNanoConfig)))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(config.sass.dest.jekyllRoot))
     .pipe(gulp.dest(config.sass.dest.buildDir))
@@ -50,12 +52,13 @@ function mainScss() {
 // Compile main.css file from sass modules
 function translateScss() {
   const PRODUCTION = !!(yargs.argv.production);
+  const cssNanoConfig = [cssnano({ zindex: false })];
 
   return gulp.src(config.translateSass.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
     .pipe(autoprefixer()) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
-    .pipe(gulpif(PRODUCTION, cssnano({ zindex: false }))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
+    .pipe(gulpif(PRODUCTION, postcss(cssNanoConfig))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(config.translateSass.dest.jekyllRoot))
     .pipe(gulp.dest(config.translateSass.dest.buildDir))
