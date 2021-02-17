@@ -1,0 +1,32 @@
+
+.breadcrumbs {
+  background-color: transparent; // Override the Bootstrap 4 grey background-color for the breadcrumb component.
+  border-bottom-color: rgba(0,0,0,.25);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  margin-bottom: 1.5rem;
+  &--margin-top {
+    margin-top: 125px;
+  }
+  &--home {
+    vertical-align: bottom;
+    &--house {
+      fill: none;
+      stroke: $grey-1;
+      stroke-width: 1.5;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+    &--border {
+      fill: none;
+    } 
+  }
+}
+
+// This is a Bootstrap 4 override to customize the breadcrumb divider
+.breadcrumb-item+.breadcrumb-item::before { // Breadcrumb divider is a CSS pseudo-element
+  content: url('/assets/img/keyboard_arrow_right.svg');
+  opacity: .5;
+}

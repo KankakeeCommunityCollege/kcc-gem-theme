@@ -81,3 +81,41 @@
     color: $primary-red;
   }
 }
+
+.buttons__action {
+  color: $white;
+  background-color: $primary-red;
+  border-color: $color-red-darker;
+  font-family: $font-family-headings;
+  font-size: 1.3rem;
+  font-weight: $font-weight-bolder; //dash
+  line-height: 36px;
+  letter-spacing: .075rem;
+  width: 100%;
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $primary-blue;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .buttons__action {
+    font-size: 1.75rem;
+    line-height: 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .buttons__action {
+    font-size: 1.3rem;
+    line-height: 36px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .buttons__action {
+    font-size: 1.75rem;
+    line-height: 48px;
+  }
+}
