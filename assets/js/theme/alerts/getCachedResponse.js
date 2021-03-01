@@ -8,7 +8,7 @@
 // 2. Then we pass our mock-sheet response object to the `createAlertsHtml` module to
 //    build and inject the alert into the DOM.
 import createAlertsHtml from './createAlertsHtml.js';
-import makeTabsLinkable from './tabLink.js';
+import contentHashLink from './contentHashLink.js';
 const cache = window.sessionStorage;
 
 function processCachedResponse(response, callback) {
@@ -26,14 +26,14 @@ function createCachedResponseObject() {
       ]
     }
   }
-  processCachedResponse(cachedResponse, makeTabsLinkable);
+  processCachedResponse(cachedResponse, contentHashLink);
 }
 
 function getCachedResponse() {
   try {
     createCachedResponseObject();
   } catch (error) {
-    makeTabsLinkable();
+    contentHashLink();
     console.error(`Error retrieving cached response in sessionStorage:\nName: ${error.name}\nMessage: ${error.message}\n${error}`);
   }
 }

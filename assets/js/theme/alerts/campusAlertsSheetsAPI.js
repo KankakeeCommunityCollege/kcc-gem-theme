@@ -5,12 +5,12 @@
 //  1. Execute Google API call to grab Google Sheet data from:
 //     https://docs.google.com/spreadsheets/d/1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs/edit#gid=0
 //  2. Build & inject the alert message into the page
-//  3. Run the `tabLink.js` module after alert has painted into DOM (and altered documents hight)
+//  3. Run the `contentHashLink` module after alert has painted into DOM (and altered documents hight)
 //  4. Cache the API response in sessionStorage
 // =================================================== //
 import setSheetParameters from './simpleSetSheetParameters.js';
 import createAlertsHtml from './createAlertsHtml.js';
-import makeTabsLinkable from './tabLink.js';
+import contentHashLink from './contentHashLink.js';
 import cacheResponse from './cacheResponse.js';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs';
@@ -29,17 +29,17 @@ function init() {
     createAlertsHtml(response); // Build the html & inject it into the DOM
     return response;
   }).then((response) => {
-    makeTabsLinkable();  // Handle hash & query URI's to target accordion and tabbed-nav content
+    contentHashLink();  // Handle hash & query URI's to target accordion and tabbed-nav content
     cacheResponse(response); // Cache the Google API response for subsequent page loads in the site
   }, (err)=> {
     console.error("Execute error", err);
-    makeTabsLinkable();
+    contentHashLink();
   });
 }
 
 function start() {
   if ( ! document.getElementById(EMERGENCY_ALERT_DIV_ID) )
-    return makeTabsLinkable();
+    return contentHashLink();
 
   init();
   //var t1 = performance.now();

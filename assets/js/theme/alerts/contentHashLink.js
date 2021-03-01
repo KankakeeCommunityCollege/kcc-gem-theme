@@ -14,19 +14,29 @@ const idRegex = /^id=/g; // Lets just cache these reused regex's here
 const queryStartRegex = /^\?/g;
 const endingSlashRegex = /\/$/g;
 
+function focusElement(el) {
+  el.scrollIntoView();
+  el.focus
+}
+
 function processIdQuery(query, hash) {
   let id = query.replace(idRegex, '');
   const parentEl = document.querySelector(hash);
   const heading = parentEl.querySelector(`#${id}`);
 
-  heading.scrollIntoView()
-  heading.focus();
+  focusElement(heading);
 }
 
 function checkForQuery(query, hash) {
   query.search(idRegex) !== -1 ?
     processIdQuery(query, hash)
   : null;
+}
+
+function findContentTarget(hash) {
+  const target = document.querySelector(hash);
+
+  focusElement(target);
 }
 
 function checkForMatchingTabOrAccordion(hash) {
@@ -39,6 +49,7 @@ function checkForMatchingTabOrAccordion(hash) {
           checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
           : null; })
       .tab('show');  // Bootstrap 4 Tab method
+    findContentTarget(hash);
   } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS4 collapse element
     let card = $(hash);  // **SIGH**, BS4 requires JQuery
 
@@ -48,10 +59,7 @@ function checkForMatchingTabOrAccordion(hash) {
           checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
         : null; })
       .collapse('show'); // Bootstrap 4 Collapse method
-      const target = document.querySelector(hash);
-      
-      target.scrollIntoView();
-      target.focus(); // For screen readers
+    findContentTarget(hash);
   }
 }
 
@@ -66,16 +74,16 @@ function checkForHash(e) {
   return;
 }
 
-function initTabs() {
+function initContentHashLink() {
   checkForHash();
   window.addEventListener('hashchange', checkForHash, false);
 }
 
-function makeTabsLinkable() {
+function contentHashLink() {
   if (!document.querySelector('#accordion') && !document.querySelector('.nav.nav-tabs'))
     return;
     
-  initTabs();
+  initContentHashLink();
 }
 
-export default makeTabsLinkable;
+export default contentHashLink;
