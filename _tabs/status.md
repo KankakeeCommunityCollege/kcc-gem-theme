@@ -1,6 +1,6 @@
 ---
 name: Check Financial Aid Status
-tabs_page: Financial Aid
+tabs_page: Accordion
 ---
 
 FAFSA Status

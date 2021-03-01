@@ -1,6 +1,6 @@
 ---
 name: Financial Aid FAQ
-tabs_page: Financial Aid
+tabs_page: Accordion
 ---
 
 What Is a Financial Aid Eligibility Date?
