@@ -17,7 +17,7 @@
     background-color: $primary-blue;
     border-radius: 50%;
     color: #fff;
-    content: ' \002D';
+    content: '\002D';
     display: inline-block;
     font-family: $font-family-paragraph;
     font-size: 2rem;
@@ -25,6 +25,7 @@
     height: 30px;
     line-height: 30px;
     margin-right: 10px;
+    position: relative; // Safari doesn't want to render this pseudo-element without `position: relative;`
     text-align: center;
     text-decoration: none !important;
     text-indent: 0;
@@ -32,7 +33,7 @@
     width: 30px;
   }
   &__button.collapsed::before {
-    content: ' \002B';
+    content: '\002B';
   }
 }
 
