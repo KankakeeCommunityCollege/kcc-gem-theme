@@ -7,7 +7,7 @@
   {% assign page_title = page.title %}
   {% assign accordion_collection = site.accordions | where: "accordion_page", page_title | sort: "order" %}
   {% for item in accordion_collection %}
-  {% assign this_accordion_id = item.card_heading | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
+  {% assign this_accordion_id = item.card_heading | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
   <div class="card">
     <div class="card-header px-0" id="card-header-{{ this_accordion_id }}">
       <h2 class="mb-0 accordion__typography--card-header accordion__typography--hover">

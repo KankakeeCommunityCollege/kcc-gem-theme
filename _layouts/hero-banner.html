@@ -1,0 +1,17 @@
+---
+layout: default-core
+---
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="{{ page.baseurl }}{{ page.hero_banner }}" alt="{{ page.hero_banner_alt }}" class="img-fluid my-3 img__full-width{% if page.hero_banner_border == true %} border__light{% endif %}">
+        {% include breadcrumbs.html %}
+        <h2 class="typography__h2">{{ page.title }}</h2>
+        <div class="editable">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

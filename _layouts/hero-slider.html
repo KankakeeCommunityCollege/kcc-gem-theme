@@ -1,0 +1,17 @@
+---
+layout: default-core
+---
+<main>
+  <div class="container">
+    {% include hero-slider.html %}
+    <div class="row">
+      <div class="col">
+        {% include breadcrumbs.html %}
+        <h2 class="typography__h2">{{ page.title }}</h2>
+        <div class="editable">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
