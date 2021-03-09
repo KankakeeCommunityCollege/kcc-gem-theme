@@ -15,7 +15,9 @@
 .links__offset {  // Pointer-events is needed to prevent the .links__offset::before pseudo-element
   pointer-events: none;  // from "blocking" any anchor tag above from being clicked.
   & a,
-  & button {  // HOWEVER, if there is a child anchor, or button, element,
+  & button,
+  & iframe,
+  & .card-body {  // HOWEVER, if there is a child anchor, or button, element,
     pointer-events: auto; // it obviously needs to be clickable.
   }
 }
