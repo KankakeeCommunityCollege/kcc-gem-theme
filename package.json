@@ -66,5 +66,19 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "regenerator-runtime": "^0.13.5"
+  },
+  "comments": {
+    "babel": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "Set 'useBuiltIns': 'usage' for polyfilling es6 only by what is used and according to the browserlist settings.",
+            "debug": "Set 'debug': true, to see verbose '@babel/preset-env' output at terminal."
+          }
+        ]
+      ]
+    },
+    "browserslist": "Sets compatibility for JS polyfilling and CSS autoprefixing. IF YOU CHANGE BROWSERLIST SETTINGS, you must kill the build if its running (control + c), and restart the build to see changes!"
   }
 }
