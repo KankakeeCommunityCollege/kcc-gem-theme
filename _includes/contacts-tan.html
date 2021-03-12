@@ -22,7 +22,14 @@
       <div class="col-md-6 contacts__col-bottom-margin">
         <div class="row">
           <div class="col-4 contacts__col--img">
-            {% if contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" alt="Photo of {{ contact.name }}" class="img-fluid contacts__portrait" />{% endif %}
+            {% if contact.portrait_image != 'none' %}<img
+              src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
+              height="150px"
+              width="150px"
+              data-src="{{ page.baseurl }}{{ contact.portrait_image }}"
+              alt="Photo of {{ contact.name }}"
+              class="img-fluid contacts__portrait"
+            />{% endif %}
           </div>
           <div class="col-8 float-right">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
@@ -65,7 +72,14 @@
         </button>
       </div>
       <div class="modal-body">
-        {% if contact.portrait_image != 'For departments with no contact photos, do not change this field.' and contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" class="img-fluid float-left mr-2 mb-2" alt="Photo of {{ contact.name }} KCC's {{ contact.contacts_title }}">{% endif %}
+        {% if contact.portrait_image != 'For departments with no contact photos, do not change this field.' and contact.portrait_image != 'none' %}<img
+          src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
+          height="150px"
+          width="150px"
+          data-src="{{ page.baseurl }}{{ contact.portrait_image }}"
+          class="img-fluid float-left mr-2 mb-2"
+          alt="Photo of {{ contact.name }} KCC's {{ contact.contacts_title }}"
+        >{% endif %}
         <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
         {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
         {{ contact.content }}
