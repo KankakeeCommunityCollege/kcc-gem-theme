@@ -465,3 +465,13 @@
     margin-top: .3125rem;
   }
 }
+
+.header-global__row--max-width {
+  min-width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .header-global__col--column-count {
+    column-count: 2;
+  }
+}

@@ -13,9 +13,9 @@
               <div class="dropdown-menu header-global__dropdown-menu--full-width py-3 px-3 px-lg-5"
                 aria-labelledby="{{ item.link_text | downcase | replace: ' ', '-' | replace: '&', 'and' }}-dropdown">
                 <div class="container">
-                  <div class="row">
+                  <div class="row header-global__row--max-width">
                     {%- if item.image -%}
-                    <div class="col-auto padding__col--mobile-none mr-lg-3">
+                    <div class="col-lg-3 offset-lg-1 padding__col--mobile-none">
                       <img src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
                         data-src="{{ page.baseurl }}{{ item.image.source }}"
                         width="280px"
@@ -23,7 +23,7 @@
                         class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
                     </div>{% endif %}
-                    <div class="col ml-lg-1">
+                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' %} header-global__col--column-count{% endif %}">
                       {%- if item.link_href -%}
                       {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
                       <a class="dropdown-item" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ item.link_href }}{% endif %}">{{ item.link_text }}</a>

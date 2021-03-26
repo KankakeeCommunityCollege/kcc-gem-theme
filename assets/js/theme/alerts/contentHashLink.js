@@ -13,10 +13,20 @@
 const idRegex = /^id=/g; // Lets just cache these reused regex's here
 const queryStartRegex = /^\?/g;
 const endingSlashRegex = /\/$/g;
+const PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY = 'userPrefersReducedMotion'; // This localStorage key is set by module: './checkForPrefersReducedMotion.js'
+const scrollIntoViewOptionsObject = {
+  behavior: 'smooth',
+  block: 'center'
+}
+const reducedMotionscrollIntoViewOptionsObject = {
+  block: 'center'
+}
 
 function focusElement(el) {
-  el.scrollIntoView();
-  el.focus
+  const prefersReducedMotion = window.localStorage.getItem(PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY);
+
+  prefersReducedMotion == 'true' ? el.scrollIntoView(reducedMotionscrollIntoViewOptionsObject) : el.scrollIntoView(scrollIntoViewOptionsObject);
+  return el.focus();
 }
 
 function processIdQuery(query, hash) {
@@ -64,8 +74,6 @@ function checkForMatchingTabOrAccordion(hash) {
 }
 
 function checkForHash(e) {
-  // Select the node that will be observed for mutations
-
   if (window.location.hash) {
     let hash = window.location.hash.replace(endingSlashRegex, '');
 
