@@ -242,7 +242,7 @@
 @media screen and (min-width: 992px) {
   .header-global__brand {
     top: 3.125rem;
-    right: unset;  // gotta unset this, otherwise it blocks the other navbar links
+    right: auto; // gotta set this to "auto" otherwise, it blocks the other navbar links
   }
 }
 
