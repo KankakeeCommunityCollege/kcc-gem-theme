@@ -4,8 +4,6 @@
     source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg'
     alt: 'Student working in an electrical technology lab'
   dropdown:
-    - text: Courses & Areas of Study
-      href: 'courses'
     - text: Class Schedule
       href: 'schedule'
     - text: Academic Calendar
@@ -20,11 +18,13 @@
       href: 'final-exams'
     - text: Register for Classes
       href: 'register'
+    - text: Academic Catalog
+      href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
 - link_text:  Admissions
   link_href: admissions
   image:
     source: 'assets/img/admissions-navigation-menu.jpg'
-    alt: 'Take the first step to achieving your goals, dreams & ambitions'
+    alt: "Student posing in front of the metal sculpture in KCC's courtyard"
   dropdown:
     - text: Placement Testing
       href: 'testing'
@@ -38,7 +38,9 @@
       href: 'cav-day'
     - text: 'Start in High School'
       href: 'high-school'
-    - text: Veteran Services
+    - text: Request KCC Transcripts
+      href: '#request-your-transcript'
+    - text: 'Veterans Services'
       href: 'veterans'
 - link_text:  Tuition & Aid
   link_href: 'tuition-and-aid'
@@ -50,6 +52,14 @@
       href: 'financial-aid'
     - text: Net Price Calculator
       href: 'net-price-calculator'
+    - text: 'Cost to Attend KCC'
+      href: '#cost-to-attend'
+    - text: 'Tuition Payment & Deadlines'
+      href: '#tuition-payment-and-deadlines'
+    - text: 'Financial Aid Forms'
+      href: 'financial-aid/#financial-aid-forms'
+    - text: 'Student Employment'
+      href: 'financial-aid/#student-employment'
 - link_text: Student Resources
   link_href: 'student-resources'
   image:
@@ -60,40 +70,52 @@
       href: 'http://books.kcc.edu'
     - text: Clubs & Organizations
       href: 'clubs'
+    - text: 'Center for Equity, Diversity & Inclusion'
+      href: 'edi'
     - text: Fitness Center
       href: 'https://athletics.kcc.edu/facilities/fitness-center'
     - text: Advising
       href: 'advising'
+    - text: Transfer Services
+      href: 'transfer'
     - text: 'Counseling & Referral Services'
       href: 'counseling-and-referral-services'
-    - text: Social Services
-      href: 'social-services'
     - text: Disability Services
       href: 'disability-services'
     - text: Student Representatives
       href: 'student-representatives'
     - text: Student Complaint Policy
       href: 'student-complaint-policy'
-    - text: Career Resources
-      href: 'career-resources'
-    - text: Food Pantry
+    - text: Start the Semester Right
+      href: 'welcome'
+    - text: KCC Food Pantry
       href: 'food-pantry'
+    - text: Tutoring
+      href: 'https://library.kcc.edu/tutoring/'
+    - text: TRIO Student Support Services
+      href: 'trio'
+    - text: Career Services
+      href: 'https://continuinged.kcc.edu/career-services/'
+    - text: Food Services
+      href: 'food-services'
+    - text: Workforce Services
+      href: 'https://wioa.kcc.edu/'
 - link_text: Community
   link_href: 'community'
   image:
     source: 'assets/img/go_cavs_20171002_193828-web.jpg'
     alt: 'Group photo of students holding Cavalier signs'
   dropdown:
-    - text: Testing Services
-      href: 'testing-services'
+    - text: Adult & Community Education
+      href: 'https://adulted.kcc.edu/'
     - text: Continuing Education
       href: 'https://continuinged.kcc.edu'
     - text: Sustainability
       href: 'sustainability'
-    - text: Speakers Bureau
-      href: 'speakers-bureau'
     - text: Arts & Culture
       href: 'arts-and-culture'
+    - text: Workforce Services
+      href: 'https://wioa.kcc.edu/'
 - link_text: About KCC
   link_href: 'about'
   image:
@@ -101,16 +123,32 @@
     alt: 'The new Advanced Technology Education Center building'
   dropdown:
     - text: Newsroom
-      href: 'https://newsroom.kcc.edu'
+      href: 'https://news.kcc.edu'
     - text: Leadership
       href: 'leadership'
-    - text: 'Police & Safety'
-      href: 'police-and-safety'
+    - text: Board of Trustees
+      href: board-of-trustees
     - text: Human Resources
       href: 'human-resources'
-    - text: ITS
+    - text: Job Openings
+      href: 'human-resources/job-openings'
+    - text: Directories
+      href: 'directories'
+    - text: Information Technology Services
       href: 'its'
     - text: Marketing
       href: 'marketing'
     - text: 'Institutional Effectiveness'
       href: 'institutional-effectiveness'
+    - text: 'Police & Safety'
+      href: 'police-and-safety'
+    - text: 'Student Code of Conduct'
+      href: 'code-of-conduct'
+    - text: 'Title IX'
+      href: 'title-ix'
+    - text: 'Contact Us'
+      href: 'contact-us'
+    - text: Web Services
+      href: 'marketing/web-services'
+    - text: Consumer Info and Disclosures
+      href: 'consumer-info'

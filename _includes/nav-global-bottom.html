@@ -23,7 +23,7 @@
                         class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
                     </div>{% endif %}
-                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' %} header-global__col--column-count{% endif %}">
+                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
                       {%- if item.link_href -%}
                       {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
                       <a class="dropdown-item" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ item.link_href }}{% endif %}">{{ item.link_text }}</a>
