@@ -32,7 +32,7 @@ const config = {
     ]
   },
   plugins: [
-    new HashPlugin({ path: './_data/', fileName: 'theme_hash.yml' }), // HASH IS USED TO KICK-OFF JEKYLL
+    new HashPlugin({ path: './_includes/hash/', fileName: 'theme_hash.yml' }), // HASH IS USED TO KICK-OFF JEKYLL
     new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
   ],
   resolve: {
