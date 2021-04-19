@@ -1,6 +1,6 @@
           <ul id="navGlobalBottom" class="navbar-nav header-global__nav-bottom justify-content-end header-global__navbar-nav--divider">
             {% for item in site.data.navigation %}
-            <li data-nav="{{ item.link_text | downcase | replace: ' ', '-' | replace: '&', 'and' }}" class="nav-item dropdown header-global__dropdown header-global__dropdown--position">
+            <li data-nav="{% if item.link_nav %}{{ item.link_nav }}{% else %}{{ item.link_text | downcase | replace: ' ', '-' | replace: '&', 'and' }}{% endif %}" class="nav-item dropdown header-global__dropdown header-global__dropdown--position">
               <a href="#"
                 id="{{ item.link_text | downcase | replace: ' ', '-' | replace: '&', 'and' }}-dropdown"
                 role="button"
