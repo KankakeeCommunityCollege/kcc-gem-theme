@@ -13,10 +13,10 @@ import createAlertsHtml from './createAlertsHtml.js';
 import contentHashLink from './contentHashLink.js';
 import cacheResponse from './cacheResponse.js';
 
-const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs';
-const SHEET_TAB_NAME = 'Alerts';
+const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs'; // Corresponds to the ID of the Google Sheet
+const SHEET_TAB = 'Alerts Testing'; // Corresponds to the tab of workbook: either  'Alerts' or 'Alerts Testing' unless you make a new one.
 const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
-const SHEET_PARAMS = setSheetParameters(SHEET_KEY, SHEET_TAB_NAME);
+const SHEET_PARAMS = setSheetParameters(SHEET_KEY, SHEET_TAB);  // Configures the Object used for `sheets.spreadsheets.values.get()` parameters
 const API_PARAMS = { // This is configuration for API call with spreadsheets that are setup as readonly
   'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
   'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
@@ -29,7 +29,6 @@ function init() {
     createAlertsHtml(response); // Build the html & inject it into the DOM
     return response;
   }).then((response) => {
-    contentHashLink();  // Handle hash & query URI's to target accordion and tabbed-nav content
     cacheResponse(response); // Cache the Google API response for subsequent page loads in the site
   }, (err)=> {
     console.error("Execute error", err);

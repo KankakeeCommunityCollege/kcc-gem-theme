@@ -1,5 +1,3 @@
-
-
 function checkForPrefersReduceMotion() {
   const reducedMotionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const userAgent = window.navigator.userAgent;
