@@ -14,7 +14,7 @@ import contentHashLink from './contentHashLink.js';
 import cacheResponse from './cacheResponse.js';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs'; // Corresponds to the ID of the Google Sheet
-const SHEET_TAB = 'Alerts Testing'; // Corresponds to the tab of workbook: either  'Alerts' or 'Alerts Testing' unless you make a new one.
+const SHEET_TAB = 'Alerts'; // Corresponds to the tab of workbook: either  'Alerts' or 'Alerts Testing' unless you make a new one.
 const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
 const SHEET_PARAMS = setSheetParameters(SHEET_KEY, SHEET_TAB);  // Configures the Object used for `sheets.spreadsheets.values.get()` parameters
 const API_PARAMS = { // This is configuration for API call with spreadsheets that are setup as readonly
