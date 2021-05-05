@@ -1,0 +1,241 @@
+$dark-mode-background: #191f25;
+$dark-mode-foreground: #7e848f;
+$dark-mode-foreground-lighter: #abaeb3;
+
+.dark-mode body {
+  background-color: $dark-mode-background;
+}
+
+.dark-mode {
+  background-color: $dark-mode-background;
+  & p,
+  & ol,
+  & ul:not(.navbar-nav),
+  & .typography__h2,
+  & .typography__h5,
+  & .typography__h6 {
+    color: $dark-mode-foreground;
+  }
+  & .typography__h4 {
+    color: #e46181;
+  }
+  & .accordion__typography--card-header .btn-link,
+  .typography__h3 {
+    color: #9bb7dd;
+  }
+  & .footer-icons,
+  & .buttons__action,
+  & .header-global,
+  & iframe[title="calendar"],
+  & .hero-slider__slider,
+  & #emergencyAlerts {
+    filter: brightness(.75);
+  }
+  & .buttons__action:hover {
+    background-color: #002348;
+    border-color: rgba(255,255,255,.4);
+  }
+  & footer {
+    background-color: #14191d;
+    border-top-color: rgba(256,256,256,.5);
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  & .breadcrumbs {
+    border-bottom-color: rgba(256,256,256,.5)
+  }
+  & .background__color--tan {
+    background-color: #302c24;
+  }
+  & .benefits__background-color {
+    background-color: #354d53;
+  }
+  & .news__h3 {
+    color: $dark-mode-foreground-lighter;
+  }
+  & .header-global .dropdown-menu {
+    background-color: #151a1e;
+    & .dropdown-item {
+      color: #ccc;
+    }
+    & .dropdown-item:hover,
+    & .dropdown-item:focus {
+      background-color: #000;
+      color: #efefef
+    }
+  }
+  & .benefits__typography--img-cap {
+    color: $dark-mode-foreground-lighter;
+  }
+  & .news__li {
+    border-bottom-color: $dark-mode-foreground-lighter;
+  }
+  & .svg--fill-blue {
+    stroke: $dark-mode-foreground-lighter;
+  }
+  & .svg__fill--blue {
+    fill: $dark-mode-foreground-lighter;
+  }
+  & .benefits__borders--circle-img {
+    border-color: #000;
+    filter: drop-shadow(5px 5px 12px rgba(0,0,0,.5)) brightness(.75);
+  }
+  & .news__span {
+    box-shadow: inset 0 0 0 1.4px $dark-mode-foreground;
+  }
+  & .news__div--img {
+    border: solid thin #ccc;
+    filter: brightness(.75);
+  }
+  & .btn-primary {
+    background-color: #002348;
+    border-color: #8db2e5;
+    &:hover {
+      background-color: #8db2e5;
+      color: #002348 !important;
+    }
+  }
+  & .alert-warning {
+    background-color: #664d03;
+    border-color: #fff3cd;
+    & p {
+      color: #fff3cd;
+    }
+  }
+  & a:not(.nav-link),
+  & .links__darker-link {
+    color: #8db2e5;
+  }
+  & a:not(.btn):hover,
+  & .links__darker-link:hover {
+    color: #bfd7f9;
+  }
+  & iframe[title="calendar"] {
+    filter: contrast(0.5);
+  }
+  & .header-global__nav-top {
+    background-color: #002348;
+  }
+  & .header-global__nav-bottom {
+    background-color: #80132e;
+  }
+  & .buttons__action {
+    color: $white !important;
+    background-color: #80132e;
+  }
+  & img {
+    filter: brightness(.75);
+  }
+  & .card {
+    background-color: #151a1c;
+    border-color: rgba(256,256,256,.4);
+  }
+  & .card-body {
+    background-color: #192125;
+  }
+  & .accordion>.card>.card-header {
+    margin-bottom: 0;
+    border-bottom-color: rgba(256,256,256,.125);
+  }
+  & .accordion__button::before {
+    border-style: solid;
+    border-color: rgba(256,256,256,.25);
+    border-width: thin;
+  }
+  & .nav-tabs .nav-link {
+    border-left-color: rgba(256,256,256,.325);
+    border-right-color: rgba(256,256,256,.325);
+    border-top-color: rgba(256,256,256,.325);
+    border-bottom-color: rgba(256,256,256,.5);
+    background-color: #151a1c;
+  }
+  & .nav-tabs .nav-link.active {
+    border-color: rgba(256,256,256,.6) !important;
+    background-color: #192125;
+    border-bottom: thin solid #192125 !important;
+  }
+  & .nav-tabs {
+    border-bottom-color: rgba(256,256,256,.5);
+  }
+  & .nav-tabs .nav-item.show .nav-link,
+  & .nav-tabs .nav-link.active {
+    color: $dark-mode-foreground-lighter;
+  }
+  & .tab-pane {
+    background-color: #192125;
+    border-bottom: thin solid rgba(256,256,256,.5);
+    border-left: thin solid rgba(256,256,256,.5);
+    border-right: thin solid rgba(256,256,256,.5);
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    padding: .5rem;
+  }
+  & td,
+  & th,
+  & thead th {
+    border-color: #454d55;
+  }
+  & .table {
+    background-color: #262a2e;
+    color: $dark-mode-foreground-lighter
+  }
+  & .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255,255,255,.05);
+  }
+  & .table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,.125);
+  }
+  & .modal-content {
+    background-color: #2a2f34;
+    border-color: rgba(255,255,255,.4);
+  }
+  & .modal-header {
+    border-bottom-color: rgba(256,256,256,.5);
+    color: $dark-mode-foreground-lighter
+  }
+  & .modal-footer {
+    border-bottom-color: rgba(256,256,256,.5)
+  }
+  & .close {
+    color: $dark-mode-foreground-lighter;
+    &:hover,
+    &:focus {
+      color: rgba(256,256,256,.6);
+    }
+  }
+  & .header-global__navbar--toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  & .header-global__navbar--toggler {
+    border-color: rgba(256,256,256,.5);
+  }
+  & #headerGlobalNavbarContent.collapse.show .navbar-nav,
+  & #headerGlobalNavbarContent.collapsing .navbar-nav {
+    background-color: #14181d;
+  }
+  & #___gcse_0 {
+    filter: invert(1);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .dark-mode .header-global__navbar--search-toggle:before {
+    background-color: #002348;
+  }
+  .dark-mode .header-global__nav-bottom .dropdown:hover {
+      background-color: #0f1417;
+  }
+  .dark-mode .header-global .dropdown-menu {
+    border: thin solid rgba(255,255,255,.325);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .dark-mode .header-global__core:after {
+    background-color: #272b30;
+    border-top: 1px solid #b1b1b1;
+  }
+  .dark-mode .header-global .dropdown-menu {
+    border: thin solid rgba(255,255,255,.325);
+  }
+}

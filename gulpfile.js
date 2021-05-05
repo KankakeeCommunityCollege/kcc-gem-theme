@@ -49,21 +49,21 @@ function mainScss() {
     .pipe(browserSync.stream());
 }
 
-// Compile main.css file from sass modules
-function translateScss() {
-  const PRODUCTION = !!(yargs.argv.production);
-  const cssNanoConfig = [cssnano({ zindex: false })];
+// // Compile main.css file from sass modules
+//function translateScss() {
+//   const PRODUCTION = !!(yargs.argv.production);
+//   const cssNanoConfig = [cssnano({ zindex: false })];
 
-  return gulp.src(config.translateSass.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
-    .pipe(autoprefixer()) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
-    .pipe(gulpif(PRODUCTION, postcss(cssNanoConfig))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
-    .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(gulp.dest(config.translateSass.dest.jekyllRoot))
-    .pipe(gulp.dest(config.translateSass.dest.buildDir))
-    .pipe(browserSync.stream());
-}
+//   return gulp.src(config.translateSass.src)
+//     .pipe(sourcemaps.init())
+//     .pipe(sass().on('error', sass.logError)) // errors shown in terminal for when you screw up your SASS
+//     .pipe(autoprefixer()) // Automatically prefix any CSS that is not compatible with the browsers defined in the gulpconfig
+//     .pipe(gulpif(PRODUCTION, postcss(cssNanoConfig))) // {zindex:false} to prevent override of z-index values -- higher z-index's are needed in our projects to bring objects above bootstrap's default z-index values
+//     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+//     .pipe(gulp.dest(config.translateSass.dest.jekyllRoot))
+//     .pipe(gulp.dest(config.translateSass.dest.buildDir))
+//     .pipe(browserSync.stream());
+// }
 
 // copy static assets/**/* !except for SCSS, CSS, or JS files
 // JS is handled by webpack. CSS and SCSS are handled by other gulp tasks.
@@ -112,7 +112,7 @@ function watchFiles() {
     config.watch.sass,
     series(
       mainScss,
-      translateScss,
+      // translateScss,
       browserSyncReload
     )
   );
@@ -133,7 +133,7 @@ const build = series( // Series items need to be executed in a specific order (n
   jekyllBuild,
   parallel( // These parallel tasks require the '_site' to be built, but it doesnt really matter what order they execute.
     mainScss,
-    translateScss,
+    // translateScss,
     copy
   ),
 );

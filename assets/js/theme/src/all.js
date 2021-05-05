@@ -2,9 +2,10 @@ import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-import watchForMenuClicks from './translate.js';
+//import watchForMenuClicks from './translate.js';
 import wrapPowerText from './wrapPowerText.js';
 import addClassToOpenNavbar from './addClassToOpenNavbar.js';
+import watchForMenuClicks from './translate';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
 
@@ -16,6 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
   lazyLoad();
   watchForMenuClicks();
   addClassToOpenNavbar();
+  if (document.getElementById('google_translate_element')) {
+    import(/* webpackChunkName: 'translate' */ './translate').then(({default: watchForMenuClicks}) => {
+      watchForMenuClicks();
+    });
+  }
+  if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
+    import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
+      return darkMode;
+    }).then(darkMode => {
+      import(/* webpackChunkName: 'darkModeStyling' */ '../../../scss/darkMode.scss').then(() => {
+        darkMode();
+      });
+    })
+  }
 
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
   if (!Element.prototype.matches) {

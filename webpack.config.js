@@ -1,6 +1,7 @@
 process.traceDeprecation = true;
 const path = require('path');
 const HashPlugin = require('hash-webpack-plugin'); // HASH IS USED TO KICK-OFF JEKYLL (BY DEFAULT: JEKYLL UPDATES THE `_site` BUILD WHENEVER THERES A CHANGE IN ITS `_data` DIR!!!)
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
@@ -16,7 +17,8 @@ const config = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist')
+    path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist'),
+    publicPath: '/assets/js/theme/dist/'
   },
   module: {
     rules: [
@@ -28,12 +30,22 @@ const config = {
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
     ]
   },
   plugins: [
     new HashPlugin({ path: './_includes/hash/', fileName: 'theme_hash.yml' }), // HASH IS USED TO KICK-OFF JEKYLL
-    new CleanWebpackPlugin({ path: './assets/js/theme/dist/' })
+    new CleanWebpackPlugin({ path: './assets/js/theme/dist/' }),
+    new MiniCssExtractPlugin()
   ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']

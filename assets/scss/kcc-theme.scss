@@ -4,7 +4,6 @@
 @import '0-tools/cloudcannon';
 @import '0-tools/gsc-overrides';
 @import '0-tools/targetx-overrides';
-@import '0-tools/google-translate-overrides';
 
 // Base items
 @import '1-base/typography';
@@ -36,6 +35,7 @@
 @import '2-modules/nav-local';
 @import '2-modules/yt-embed';
 @import '2-modules/breadcrumbs';
+@import '2-modules/setting';
 
 // Layout items
 // @import "3-layout/...";
