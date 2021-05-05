@@ -1,0 +1,61 @@
+---
+layout: default-core
+title: 'Settings'
+baseurl: ../
+description: ''
+---
+
+<main class="container">
+  <div class="row">
+    <div class="col">
+      {% include breadcrumbs.html %}
+      <h2 class="typography__h2">{{ page.title }}</h2>
+      <div class="editable">
+        <p>Adjust the user settings below to customize the look and functionality of this website. <strong>User settings will
+            not persist if using a <em>guest</em> or <em>incognito</em> window.</strong></p>
+        <p>For best results, use a modern browser like <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Google Chrome</a> and setup a
+          user profile (See <a href="https://support.google.com/chrome/answer/2364824#7110673" target="_blank" rel="noopener noreferrer">Add a person or profile</a> on
+          the chrome support page.) It is possible to have your settings persist across devices if you are
+          using the same profile and browser to view the page.</p>
+      </div>
+      <br>
+      <hr>
+      <div class="row mt-5">
+        <div class="col-9">
+          <p>
+            <strong id="videoSettingLabel">Play video on homepage</strong> - This setting controls the download and display of the
+            video on <a href="/">https://www.kcc.edu</a>. The video is <em>"on"</em> by default for non-mobile users. Switching to
+            <em>"off"</em> will prevent downloading and playing plus improve homepage loading speeds.
+          </p>
+        </div>
+        <div class="col-3">
+          <button
+            id="videoButton"
+            data-setting="playVideoOnHomePageSetting"
+            data-value="true"
+            type="button"
+            class="btn btn-link setting__button setting__button--on"
+            aria-labelledby="videoSettingLabel">
+            <span class="sr-only">Turn setting off</span>
+          </button>
+        </div>
+        <div class="col-9">
+          <p>
+            <strong id="darkModeSettingLabel">Dark mode</strong> - This setting is <em>"off"</em> by default. Turn dark mode <em>"on"</em> to enable a dark color theme that may be easier on the eyes.
+          </p>
+        </div>
+        <div class="col-3">
+          <button
+            id="darkModeButton"
+            data-setting="darkModeSetting"
+            data-value="false"
+            type="button"
+            class="btn btn-link setting__button setting__button--off"
+            aria-labelledby="darkModeSettingLabel">
+            <span class="sr-only">Turn setting on</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

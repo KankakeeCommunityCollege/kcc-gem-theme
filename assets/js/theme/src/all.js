@@ -2,10 +2,8 @@ import footerDate from './footerDate.js';
 import lazyLoad from './lazyLoad.js';
 import walkText from './walkText.js';
 import initSliders from './sliders.js';
-//import watchForMenuClicks from './translate.js';
 import wrapPowerText from './wrapPowerText.js';
 import addClassToOpenNavbar from './addClassToOpenNavbar.js';
-import watchForMenuClicks from './translate';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
 
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   walkText(document.body);
   footerDate();
   lazyLoad();
-  watchForMenuClicks();
   addClassToOpenNavbar();
   if (document.getElementById('google_translate_element')) {
     import(/* webpackChunkName: 'translate' */ './translate').then(({default: watchForMenuClicks}) => {
