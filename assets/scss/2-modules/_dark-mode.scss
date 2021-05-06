@@ -1,6 +1,13 @@
 $dark-mode-background: #191f25;
 $dark-mode-foreground: #7e848f;
 $dark-mode-foreground-lighter: #abaeb3;
+$dark-mode-text-link-hover: #bfd7f9;
+$dark-mode-text-primary-blue: #9bb7dd;
+$dark-mode-text-primary-blue-darker: #8db2e5;
+$dark-mode-text-primary-red: #e46181;
+$dark-mode-bg-primary-blue: #002348;
+$dark-mode-bg-primary-red: #80132e;
+
 
 .dark-mode body {
   background-color: $dark-mode-background;
@@ -17,11 +24,11 @@ $dark-mode-foreground-lighter: #abaeb3;
     color: $dark-mode-foreground;
   }
   & .typography__h4 {
-    color: #e46181;
+    color: $dark-mode-text-primary-red;
   }
   & .accordion__typography--card-header .btn-link,
   .typography__h3 {
-    color: #9bb7dd;
+    color: $dark-mode-text-primary-blue;
   }
   & .footer-icons,
   & .buttons__action,
@@ -32,7 +39,7 @@ $dark-mode-foreground-lighter: #abaeb3;
     filter: brightness(.75);
   }
   & .buttons__action:hover {
-    background-color: #002348;
+    background-color: $dark-mode-bg-primary-blue;
     border-color: rgba(255,255,255,.4);
   }
   & footer {
@@ -88,11 +95,11 @@ $dark-mode-foreground-lighter: #abaeb3;
     filter: brightness(.75);
   }
   & .btn-primary {
-    background-color: #002348;
-    border-color: #8db2e5;
+    background-color: $dark-mode-bg-primary-blue;
+    border-color: $dark-mode-text-primary-blue-darker;
     &:hover {
-      background-color: #8db2e5;
-      color: #002348 !important;
+      background-color: $dark-mode-text-primary-blue-darker;
+      color: $dark-mode-bg-primary-blue !important;
     }
   }
   & .alert-warning {
@@ -104,24 +111,24 @@ $dark-mode-foreground-lighter: #abaeb3;
   }
   & a:not(.nav-link),
   & .links__darker-link {
-    color: #8db2e5;
+    color: $dark-mode-text-primary-blue-darker;
   }
   & a:not(.btn):hover,
   & .links__darker-link:hover {
-    color: #bfd7f9;
-  }
+    color: $dark-mode-text-link-hover;
+   }
   & iframe[title="calendar"] {
     filter: contrast(0.5);
   }
   & .header-global__nav-top {
-    background-color: #002348;
+    background-color: $dark-mode-bg-primary-blue;
   }
   & .header-global__nav-bottom {
-    background-color: #80132e;
+    background-color: $dark-mode-bg-primary-red;
   }
   & .buttons__action {
     color: $white !important;
-    background-color: #80132e;
+    background-color: $dark-mode-bg-primary-red;
   }
   & img {
     filter: brightness(.75);
@@ -220,7 +227,7 @@ $dark-mode-foreground-lighter: #abaeb3;
 
 @media screen and (min-width: 992px) {
   .dark-mode .header-global__navbar--search-toggle:before {
-    background-color: #002348;
+    background-color: $dark-mode-bg-primary-blue;
   }
   .dark-mode .header-global__nav-bottom .dropdown:hover {
       background-color: #0f1417;
@@ -238,4 +245,29 @@ $dark-mode-foreground-lighter: #abaeb3;
   .dark-mode .header-global .dropdown-menu {
     border: thin solid rgba(255,255,255,.325);
   }
+}
+
+// Styles for the BOT page.
+.dark-mode #board-of-trustees {  // on about/BOT page
+  border: none !important;
+}
+.dark-mode #agendas-and-minutes {  // on about/BOT page
+  border: none !important;
+}
+
+.dark-mode #v-pills-tabContent .tab-pane { // on about/BOT page
+  border: none;
+}
+
+.dark-mode .sub-nav__navbar {
+  background-color: #141a1c !important;
+}
+
+.dark-mode .sub-nav__nav-link {
+  color: $dark-mode-text-primary-blue-darker;
+}
+
+.dark-mode .typography__sub-nav--red-h2,
+.dark-mode .typography__section--heading {
+  color: $dark-mode-text-primary-red;
 }
