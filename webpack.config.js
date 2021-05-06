@@ -9,16 +9,16 @@ const config = {
   watch: true,
   //entry: path.join(__dirname, 'webpack', 'main'),
   entry: {
-    'kcc-theme': './assets/js/theme/src/all.js',
-    'kcc-theme-landing': './assets/js/theme/landing/landing.js',
-    'kcc-nav': './assets/js/theme/nav/nav/nav.js',
-    'kcc-mega-nav': './assets/js/theme/nav/megaNav/megaNav.js',
-    'alerts': './assets/js/theme/alerts/alerts.js'
+    'kcc-theme': './assets/js/src/all.js',
+    'kcc-theme-landing': './assets/js/landing/landing.js',
+    'kcc-nav': './assets/js/nav/nav/nav.js',
+    'kcc-mega-nav': './assets/js/nav/megaNav/megaNav.js',
+    'alerts': './assets/js/alerts/alerts.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'assets', 'js', 'theme', 'dist'),
-    publicPath: '/assets/js/theme/dist/'
+    path: path.resolve(__dirname, 'assets', 'js', 'dist'),
+    publicPath: '/assets/js/dist/'
   },
   module: {
     rules: [
@@ -44,7 +44,12 @@ const config = {
   },
   plugins: [
     new HashPlugin({ path: './_includes/hash/', fileName: 'theme_hash.yml' }), // HASH IS USED TO KICK-OFF JEKYLL
-    new CleanWebpackPlugin({ path: './assets/js/theme/dist/' }),
+    new CleanWebpackPlugin({
+      path: './assets/js/dist/',
+      exclude: [
+        "./assets/js/dist/main.bundle.js"
+      ]
+    }),
     new MiniCssExtractPlugin()
   ],
   resolve: {

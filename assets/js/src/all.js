@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
       return darkMode;
     }).then(darkMode => {
-      import(/* webpackChunkName: 'darkModeStyling' */ '../../../scss/darkMode.scss').then(() => {
+      import(/* webpackChunkName: 'darkModeStyling' */ '../../scss/darkMode.scss').then(() => {
         darkMode();
       });
     })

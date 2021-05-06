@@ -1,3 +1,24 @@
+.setting__button {
+  height: 50px;
+  position: relative;
+  width: 62px;
+  &::before {
+    content: ' ';
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    top: 6px;
+    left: 12px;
+  }
+  &--on::before {
+    background-image: url('/assets/img/toggle-off.svg');
+  }
+  &--off::before {
+    background-image: url('/assets/img/toggle-on.svg');
+    opacity: .75;
+  }
+}
+
 .setting__video {
   background-color: transparent;
   border: none;
