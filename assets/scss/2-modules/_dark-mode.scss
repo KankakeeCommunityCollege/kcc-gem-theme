@@ -271,3 +271,11 @@ $dark-mode-bg-primary-red: #80132e;
 .dark-mode .typography__section--heading {
   color: $dark-mode-text-primary-red;
 }
+
+.dark-mode .error__main-heading {
+  color: $dark-mode-text-primary-red;
+}
+
+.dark-mode .error__sub-heading {
+  color: $dark-mode-text-primary-blue;
+}
