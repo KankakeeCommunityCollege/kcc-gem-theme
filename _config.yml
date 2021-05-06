@@ -4,6 +4,7 @@ public-url: "http://www.kcc.edu"
 url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
 timezone: America/Chicago
 google-tag_key: Google Tag Manager key goes here
+theme_config: true # This key should only be in the theme's _config.yml file and nowhere else # Otherwise you will get JS errors
 core_site: true
 #translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 nav_config:

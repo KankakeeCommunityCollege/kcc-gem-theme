@@ -1,6 +1,7 @@
-    <div id="emergencyAlerts" class="position__offset-alert{% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}">
+    <div id="emergencyAlerts" class="position__offset-alert{% if site.core_site == true %} position__offset-alert-core{% endif %}{% if site.core_root == true %} position__offset-alert-core--root{% endif %}{% if page.title == 'Settings' %} positioning__offset--settings{% endif %}">
       <!-- Alerts get built here via JS if they are set to be active -->
       {%- comment -%}
+      <!--  Example HTML structure of the alert -->
       <div class="container position__offset-alert">
         <div class="row">
           <div class="col">
