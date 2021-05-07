@@ -4,6 +4,7 @@ import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import wrapPowerText from './wrapPowerText.js';
 import addClassToOpenNavbar from './addClassToOpenNavbar.js';
+import toggleSettingVisibilityOnScrollBottom from './toggleSettingVisibilityOnScrollBottom';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
 
@@ -14,11 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   lazyLoad();
   addClassToOpenNavbar();
-  if (document.getElementById('google_translate_element')) {
-    import(/* webpackChunkName: 'translate' */ './translate').then(({default: watchForMenuClicks}) => {
-      watchForMenuClicks();
-    });
-  }
+  toggleSettingVisibilityOnScrollBottom();
   if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
     import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
       return darkMode;
@@ -27,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         darkMode();
       });
     })
+  }
+  if (document.getElementById('google_translate_element')) {
+    import(/* webpackChunkName: 'translate' */ './translate').then(({default: watchForMenuClicks}) => {
+      watchForMenuClicks();
+    });
   }
 
   // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)

@@ -27,7 +27,8 @@ $dark-mode-bg-primary-red: #80132e;
     color: $dark-mode-text-primary-red;
   }
   & .accordion__typography--card-header .btn-link,
-  .typography__h3 {
+  & .typography__h3,
+  & .typography__header-global--nav-top {
     color: $dark-mode-text-primary-blue;
   }
   & .footer-icons,
