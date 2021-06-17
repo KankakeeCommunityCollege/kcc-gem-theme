@@ -9,10 +9,11 @@
           aria-label="Open Search"
           aria-hidden="false"
           tabindex="0">
-          <span id="searchImg"
-          style="background-image: url('{{ page.baseurl }}assets/img/search.svg')"
-          class="header-global__nav--search-icon"
-          alt="Search icon"></span>
+          <span
+            style="background-image: url('{{ page.baseurl }}assets/img/search.svg')"
+            class="header-global__nav--search-icon"
+            alt="Search icon">
+          </span>
         </button>
         <div id="searchCollapse" aria-hidden="true" class="header-global__search-collapse">
           <gcse:searchbox-only resultsUrl="{{ page.baseurl }}search/"></gcse:searchbox-only>
@@ -23,7 +24,11 @@
           aria-label="Close Search"
           aria-hidden="true"
           tabindex="-1">
-            <span id="searchImg" style="background-image: url('{{ page.baseurl }}assets/img/x.svg')" class="header-global__nav--close-icon" alt="Close icon"></span>
+            <span
+              style="background-image: url('{{ page.baseurl }}assets/img/x.svg')"
+              class="header-global__nav--close-icon"
+              alt="Close icon">
+            </span>
         </button>
         <button class="navbar-toggler ml-auto header-global__navbar--toggler"
           type="button"
