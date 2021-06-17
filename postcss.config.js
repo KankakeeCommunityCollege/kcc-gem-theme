@@ -1,14 +1,5 @@
 module.exports = {
   plugins: [
-    [
-      {
-        // Options
-        plugins: [
-          [
-            "autoprefixer"
-          ]
-        ]
-      },
-    ],
-  ],
-};
+    require('autoprefixer')
+  ]
+}
