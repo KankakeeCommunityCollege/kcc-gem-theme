@@ -19,7 +19,7 @@
   }
 }
 
-.setting__video {
+.setting__link {
   background-color: transparent;
   border: none;
   display: block;
@@ -44,13 +44,13 @@
   } 
 }
 
-.setting__video:hover,
-.setting__video:focus {
+.setting__link:hover,
+.setting__link:focus {
   opacity: 1 !important;
 }
 
 @media screen and (min-width: 400px) {
-  .setting__video {
+  .setting__link {
     height: 56px;
     width: 68px;
     &::before {
@@ -62,19 +62,17 @@
 }
 
 @media screen and (min-width: 768px) {
-  .setting__video {
+  .setting__link {
     top: -3px;
   } 
 }
 
 @media screen and (min-width: 1024px) {
-  .setting__video {
+  .setting__link {
     top: -5px;
   } 
 }
 
-@media screen and (max-width: 992px) {
-  .setting__video.setting__video--visible {
-    opacity: 1;
-  }
+.setting__link.setting__link--visible {
+  opacity: 1;
 }
