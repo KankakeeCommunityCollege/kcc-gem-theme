@@ -26,7 +26,7 @@ function clean(done) {
 // Run Jekll
 function jekyllBuild(done) {
   browserSync.notify(config.jekyll.notification);
-  return spawn('jekyll', ['build'], {
+  return spawn('bundle', ['exec', 'jekyll', 'build'], {
     stdio: 'inherit'
   })
   .on('close', done);
