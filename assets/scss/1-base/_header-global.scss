@@ -168,7 +168,7 @@
     height: .125rem;
     opacity: 0;
     position: absolute;
-    transition: opacity 0.3s,transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
     width: calc(100% - 1.8rem); // The `- 1.8rem` in `calc (100% - 1.8rem)` offsets the padding-left/right: .9rem on the links
   }
   a.header-global__nav-top--nav-link:hover::after,
@@ -200,7 +200,7 @@
     margin-left: 0;
     opacity: 0;
     position: absolute;
-    transition: opacity 0.3s,transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
     width: calc(100% - 1rem); // The `- 1.8rem` in `calc (100% - 1.8rem)` offsets the padding-left/right: .5rem on the links
   }
   a.header-global__nav-bottom--nav-link.header-global__nav-bottom--underlined::after {
@@ -224,7 +224,6 @@
   & .st0 {
     fill: none;
   }
-  transition: all .5s ease-in-out;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1040px) { // the KCC word logo needs to shrink a little bit at these screen sizes
