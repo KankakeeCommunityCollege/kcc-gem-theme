@@ -4,7 +4,6 @@ import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import wrapPowerText from './wrapPowerText.js';
 import addClassToOpenNavbar from './addClassToOpenNavbar.js';
-import toggleSettingVisibilityOnScrollBottom from './toggleSettingVisibilityOnScrollBottom';
 //import ytEmbed from './ytEmbed.js';
 //import test from './test.js';
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
   footerDate();
   lazyLoad();
   addClassToOpenNavbar();
-  toggleSettingVisibilityOnScrollBottom();
   if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
     import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
       return darkMode;
