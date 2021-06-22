@@ -1,8 +1,12 @@
+    {% if jekyll.environment == "production" or jekyll.environment == "publish" %}
     <!-- Custom CSS for the KCC Theme -->
-    <link rel="stylesheet" href="{{page.baseurl}}assets/css/kcc-theme.css?version={% include hash/theme_hash.yml %}">
+    <link rel="stylesheet" href="{{page.baseurl}}assets/js/dist/kcc-theme.{% include hash/theme_hash.yml %}.css">
+    {% if site.theme_config != true %}
     <!-- Link to this site's main stylesheet -->
-    <link rel="stylesheet" href="{{page.baseurl}}assets/css/main.css{% if site.data.cache_bust_css %}?version={{ site.data.cache_bust_css | truncate: 32, '' }}{% endif %}">
+    <link rel="stylesheet" href="{{page.baseurl}}assets/js/dist/main{% if site.data.hash %}.{{ site.data.hash }}{% endif %}.css">
+    {% endif %}
+    {% endif %}
     {%- if site.translate == true -%}
     <!-- Link to this site's custom google translate stylesheet -->
-    <link rel="stylesheet" href="{{page.baseurl}}assets/css/translate.css">
+    <link rel="stylesheet" href="{{page.baseurl}}assets/js/dist/translate.{% include hash/theme_hash.yml %}.css">
     {%- endif -%}

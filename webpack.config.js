@@ -1,61 +1,74 @@
 process.traceDeprecation = true;
 const path = require('path');
-const WebpackHashFilePlugin = require('./buildtools/WebpackHashFilePlugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackHashFilePlugin = require('./buildtools/WebpackHashFilePlugin'); // Our custom plugin found in `/buildtools`
+const devMode = process.env.NODE_ENV !== 'production';
+
+const plugins = [
+  new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: devMode ? '[name].css' : '[name].[fullhash].css',
+    chunkFilename: devMode ? '[id].css' : '[id].[fullhash].css',
+  }),
+  new WebpackHashFilePlugin({
+    path: '../_includes/hash/',
+    fileName: 'theme_hash.yml'
+  }), // HASH IS USED TO KICK-OFF JEKYLL
+];
 
 const config = {
-  mode: 'production',
-  watch: true,
-  //entry: path.join(__dirname, 'webpack', 'main'),
+  mode: devMode ? 'development' : 'production',
+  plugins,
   entry: {
     'kcc-theme': './assets/js/src/all.js',
     'kcc-theme-landing': './assets/js/landing/landing.js',
     'kcc-nav': './assets/js/nav/nav/nav.js',
     'kcc-mega-nav': './assets/js/nav/megaNav/megaNav.js',
-    'alerts': './assets/js/alerts/alerts.js'
+    'alerts': './assets/js/alerts/alerts.js',
+    'translate': './assets/js/src/translate.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'dist'),
     publicPath: '/assets/js/dist/',
-  },
-  optimization: {
-    namedModules: true,
-    namedChunks: true,
+    clean: true,
   },
   module: {
     rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {  // Do not let css-loader resolve `url()`s
+              url: false, // Will throw errors when trying to resolve url() for local assets if set to default (true)
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
       {
         test: /\.js$/,
         exclude: [
           path.resolve(__dirname, 'node_modules')
         ],
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true, // Cache the babel compilation // Cached files are stored & gzipped in `/node_modules/.cache/babel-loader/`
+            // Set a custom `cacheIdentifier: '<my_custom_cache_identifier>',` SHOULD you need to manually bust the babel-loader cache.
+          },
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/i,
+        type: 'asset/resource'
       },
     ]
   },
-  plugins: [
-    new WebpackHashFilePlugin({
-      path: '../_includes/hash/',
-      fileName: 'theme_hash.yml'
-    }), // HASH IS USED TO KICK-OFF JEKYLL
-    new CleanWebpackPlugin({
-      path: './assets/js/dist/',
-    }),
-    new MiniCssExtractPlugin()
-  ],
   resolve: {
     extensions: ['.json', '.js', '.jsx']
   }

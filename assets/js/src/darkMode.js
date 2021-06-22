@@ -6,7 +6,7 @@ function darkModeClickHandler(e) {
 }
 
 function darkMode() {
-  console.log('Dark Mode (is the best)!');
+  console.info('Dark Mode (is the best)!');
   window.localStorage.getItem('darkModeSetting') === 'true' ? htmlElement.classList.add('dark-mode') : null;
   if (window.location.pathname !== '/settings/') return;
   const darkModeButton = document.getElementById(DARK_MODE_BUTTON_ID);

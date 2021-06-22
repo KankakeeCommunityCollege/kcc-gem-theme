@@ -2,6 +2,7 @@ title: "KCC"
 site_name: KCC Gem Theme
 public-url: "http://www.kcc.edu"
 url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
+port: 3000
 timezone: America/Chicago
 google-tag_key: Google Tag Manager key goes here
 theme_config: true # This key should only be in the theme's _config.yml file and nowhere else # Otherwise you will get JS errors
@@ -98,6 +99,8 @@ exclude:
   - "gulp-tasks/"
   - "install.sh"
   - "ruby-version.txt"
+  - "buildtools/"
+  - "postcss.config.js"
 
 uploads_dir: # specifies the default uploads directory for CloudCannon
   - "uploads/"

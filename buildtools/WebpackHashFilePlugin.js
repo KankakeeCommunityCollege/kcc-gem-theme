@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const colors = require('colors');
+const colors = require('colors'); // For nicer looking console output
 
-function getFilesizeInBytes(filename) {
+function getFilesizeInBytes(filename) { // Small function to get the size of the output hash data using Node.js `fs.statSync()`
   const stats = fs.statSync(filename);
   const fileSizeInBytes = stats.size;
   return fileSizeInBytes;

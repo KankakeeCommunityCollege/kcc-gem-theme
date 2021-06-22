@@ -4,8 +4,7 @@ import walkText from './walkText.js';
 import initSliders from './sliders.js';
 import wrapPowerText from './wrapPowerText.js';
 import addClassToOpenNavbar from './addClassToOpenNavbar.js';
-//import ytEmbed from './ytEmbed.js';
-//import test from './test.js';
+import '../../scss/kcc-theme.scss';
 
 document.addEventListener('DOMContentLoaded', function() {
   wrapPowerText();
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
   if (document.getElementById('google_translate_element')) {
-    import(/* webpackChunkName: 'translate' */ './translate').then(({default: watchForMenuClicks}) => {
+    import(/* webpackChunkName: 'translateScript' */ './translateScript').then(({default: watchForMenuClicks}) => {
       watchForMenuClicks();
     });
   }
