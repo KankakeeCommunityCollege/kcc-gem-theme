@@ -1,4 +1,18 @@
-
+/**
+*
+*  Custom overrides for Google Search search-results page
+*  Author: Wesley Zajicek - https://github.com/wdzajicek
+*
+*/
+// ===================================================== //
+//  IMPORTANT! (pun intended):                           //
+//                                                       //
+//    Assume that ANY `!important` used in this file is  //
+//    required for the styling to work correctly!        //
+//                                                       //
+//    i.e. DO NOT DELETE ANY `!important;`'s BELLOW      //
+//                                                       //
+// ===================================================== //
 $color-link-visited: #3600b3;
 // The pagination of the search results (at the bottom)
 .gsc-results .gsc-cursor-box .gsc-cursor-page {
@@ -143,9 +157,13 @@ $color-link-visited: #3600b3;
 }
 // Parent div of the pagination buttons
 .gsc-cursor-box.gs-bidi-start-align {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem !important;
 }
-
+// ======================================= //
+//   Styling adjustments/additions to      //
+//   search-page styling for darkMode      //
+// ======================================= //
+// .dark-mode gets added to <html> element 
 .dark-mode {
   // Description of the search result
   .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
