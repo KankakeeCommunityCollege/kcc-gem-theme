@@ -1,0 +1,257 @@
+
+$color-link-visited: #3600b3;
+// The pagination of the search results (at the bottom)
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  background-color: rgba(0,0,0,0.09) !important;
+  border-width: thin;
+  border-style: solid;
+  border-color: #666;
+  border-radius: 5px;
+  color: $grey-1 !important;
+  padding: .25rem 1rem;
+}
+// The active page in the search result pagination
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+  background-color: rgba(0,0,0,0.25) !important;
+  color: $black !important;
+  text-decoration: underline !important;
+}
+// One of the outer-most elements of the search results
+.gsc-control-cse {
+  font-family: $font-family-paragraph !important;
+  counter-reset: result;
+}
+// Outermost div for each search result
+.gsc-webResult.gsc-result {
+  border-bottom: solid thin #0b0e10 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 630px;
+  padding-left: .75rem !important;
+  padding-right: .75rem !important;
+}
+// Parent element of the search result's title
+.gsc-thumbnail-inside {
+  margin-left: 32px;
+}
+// Custom styling to make a counter before each title (like in newsroom)
+.gsc-thumbnail-inside::before {
+  background-color: $primary-blue;
+  border-radius: 50%;
+  border-color: #0b0e10;
+  border-style: solid;
+  border-width: 1px;
+  color: $white;
+  counter-increment: result;
+  content: counter(result);
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  height: 26px;
+  margin-left: -32px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  width: 26px;
+}
+// Font size for smaller text—description pagination
+.gsc-control-cse,
+.gsc-control-cse .gsc-table-result {
+  font-size: .99rem !important;
+}
+// Larger font-sizes
+.gsc-control-cse .gs-spelling,
+.gsc-control-cse .gs-result .gs-title,
+.gsc-control-cse .gs-result .gs-title * {
+  font-size: 1.125rem !important;
+}
+// Title of the page/doc that is clicked
+.gs-result .gs-title,
+.gs-result .gs-title *,
+.gs-result .gs-title a.gs-title b,
+.gcsc-find-more-on-google {
+  color: $color-blue-reboot !important;
+}
+// Hover effect for the search results title/link
+.gs-result .gs-title a.gs-title:hover,
+.gs-result .gs-title a.gs-title:hover b {
+  color: $color-blue-reboot-hover !important;
+  text-decoration: underline !important;
+}
+// Visited styles for the search results title/link
+.gs-result .gs-title a.gs-title:visited,
+.gs-result .gs-title a.gs-title:visited b {
+  color: $color-link-visited !important;
+}
+// The little magnifying glass svg on the bottom-right
+// of the results that says "🔍 Search for <SEARCH_TERM> on Google"
+.gcsc-find-more-on-google-magnifier {
+  fill: $color-blue-reboot !important;
+}
+// Breadcrumb for each search result
+.gs-webResult div.gs-visibleUrl {
+  color: $color-green-emerald !important;
+}
+// The parent element for the results breadcrumb
+.gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
+  display: inline-block;
+  border: thin solid rgba(0,0,0,0.125);
+  padding: 0 .25rem;
+  border-radius: 5px;
+  margin-top: .25rem;
+}
+// Description text for the search results
+.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+.gs-fileFormatType {
+  color: $grey-1 !important;
+  margin-top: 6px;
+  font-family: $font-family-paragraph !important;
+}
+.gs-bidi-start-align.gs-snippet b {
+  font-weight: 700;
+}
+// Preview image for the search result
+.gs-web-image-box .gs-image,
+.gs-promotion-image-box .gs-promotion-image {
+  height: 93px;
+  margin-left: -18.25px;
+  max-width: unset !important;
+}
+// Parent element of the preview image for search result
+.gs-web-image-box,
+.gs-promotion-image-box {
+  background-color: $grey-1;
+  border-radius: 50%;
+  border-color: #ebebeb;
+  border-style: solid;
+  border-width: thin;
+  float: right !important;
+  height: 93px;
+  margin-top: .25rem;
+  margin-left: 1rem !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: relative;
+  bottom: 20px;
+  width: 93px !important;
+}
+// Specific styles for portrait oriented images
+.gs-web-image-box-portrait .gs-image {
+  height: 93px;
+  margin-left: calc(100% / -16);
+  transform: scale(1.2);
+}
+// Parent div of the pagination buttons
+.gsc-cursor-box.gs-bidi-start-align {
+  margin-top: 1.5rem;
+}
+
+.dark-mode {
+  // Description of the search result
+  .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+  .gs-fileFormatType {
+    color: #969ca5 !important;
+  }
+  // Pagination buttons for extra results
+  .gs-bidi-start-align.gs-visibleUrl.gs-visibleUrl-breadcrumb {
+    border-color: rgba(255,255,255,.25);
+  }
+  // The little magnifying glass svg on the bottom-right
+  // of the results that says "🔍 Search for <SEARCH_TERM> on Google"
+  .gcsc-find-more-on-google-magnifier {
+    fill: #9fc0ed !important;
+  }
+  // Title/link of the search result
+  .gs-result .gs-title,
+  .gs-result .gs-title *,
+  .gs-result .gs-title a.gs-title b,
+  .gcsc-find-more-on-google {
+    color: #9fc0ed !important;
+  }
+  // Title/link hover effect
+  .gs-result .gs-title a.gs-title:hover,
+  .gs-result .gs-title a.gs-title:hover b {
+    color: #b0d1ff !important;
+  }
+  // Visited title links
+  .gs-result .gs-title a.gs-title:visited,
+  .gs-result .gs-title a.gs-title:visited b {
+    color: #7382d7 !important;
+  }
+  // Top bar that shows the number of results and Sort by:...
+  .gsc-above-wrapper-area {
+    border-bottom-color: rgba(255,255,255,0.5)
+  }
+  // One of the outer-most parent elements of the results
+  .gsc-control-cse.gsc-control-cse-en {
+    background-color: transparent;
+    border-color: rgba(255,255,255,0.25);
+    border-radius: 5px;
+  }
+  // Outer-most element for each search result
+  .gsc-webResult.gsc-result,
+  .gsc-results .gsc-imageResult {
+    background-color: #191d1f;
+    border-color: rgba(255,255,255,0.125);
+  }
+  // Result stats: # of results and time
+  .gsc-result-info,
+  .gsc-orderby-label {
+    color: #bababa;
+  }
+  // Pagination buttons of the extra results
+  .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    background-color: #0b0e10;
+    border-color: rgba(255,255,255,0.25);
+    border-style: solid;
+  }
+  // Current page-button in the paginated results
+  .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    color: #ebebeb !important;
+    background-color: rgba(0,0,0,0.5) !important;
+  }
+  // Hover effect when mouse hovers a search result
+  .gsc-webResult.gsc-result:hover {
+    background-color: rgba(255,255,255,0.0125) !important;
+  }
+  // Outer-most element of each search result
+  .gsc-webResult.gsc-result {
+    border-bottom: solid 1px $white !important;
+  }
+  // Custom counter-circles to number results
+  .gsc-thumbnail-inside::before {
+    background-color: #9bb7dd;
+    border-color: $white;
+    color: #0b0e10;
+  }
+  // The "Sort by:" button
+  .gsc-selected-option-container {
+    background-color: #9fc0ed;
+    border-radius: 4px;
+    border-color: $white;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 13px !important;
+    padding-bottom: 1.75rem;
+    padding-left: .75rem !important;
+    padding-right: 32px;
+  }
+  // The little carrot icon in the "Sort by:" button
+  .gsc-control-cse .gsc-option-selector {
+    right: 8px;
+    top: 13px;
+    transform: scale(1.5);
+  }
+  // The "Sort by:" menu
+  .gsc-control-cse .gsc-option-menu {
+    background-color: #0b0e10;
+  }
+  // Current selection in the "Sort by:" menu
+  .gsc-option-menu-item-highlighted {
+    background-color: #282828;
+    color: $white;
+  }
+  .gs-bidi-start-align.gs-snippet b {
+    color: #c4c4c4;
+  }
+}

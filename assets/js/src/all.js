@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     })
   }
+  if (window.location.pathname == "/search/") {
+    import(/* webpackChunkName: 'searchPageOverrides' */ '../../scss/searchPageOverrides.scss').then(() => {
+      console.info('Search page overrides styling loaded');
+    }).catch( err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err) );
+  }
   if (document.getElementById('google_translate_element')) {
     import(/* webpackChunkName: 'translateScript' */ './translateScript').then(({default: watchForMenuClicks}) => {
       watchForMenuClicks();
