@@ -224,6 +224,15 @@ $dark-mode-bg-primary-red: #80132e;
   & #___gcse_0 {
     filter: invert(1);
   }
+  & pre {
+    background-color: #272934;
+    border-radius: 8px;
+    color: #0f0;
+    padding-top: 1rem;
+  }
+  & hr {
+    border-top-color: rgba(255,255,255,.325);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -245,15 +254,6 @@ $dark-mode-bg-primary-red: #80132e;
   }
   .dark-mode .header-global .dropdown-menu {
     border: thin solid rgba(255,255,255,.325);
-  }
-  pre {
-    background-color: #272934;
-    border-radius: 8px;
-    color: #0f0;
-    padding-top: 1rem;
-  }
-  hr {
-    border-top-color: rgba(255,255,255,.325);
   }
 }
 
