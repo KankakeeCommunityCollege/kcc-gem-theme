@@ -50,11 +50,11 @@ nav_links:
 #
 collections:
   tabs:
-    output: false
+    people: false
   accordions:
-    output: false
+    people: false
   contacts:
-    output: false
+    people: true
 defaults:
 - scope:
     path: ''
