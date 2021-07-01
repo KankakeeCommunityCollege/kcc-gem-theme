@@ -7,15 +7,13 @@ import addClassToOpenNavbar from './addClassToOpenNavbar.js';
 import '../../scss/kcc-theme.scss';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const path = window.location.pathname
-
   wrapPowerText();
   initSliders();
   walkText(document.body);
   footerDate();
   lazyLoad();
   addClassToOpenNavbar();
-  if (window.localStorage.getItem('darkModeSetting') == 'true' || path == '/settings/') {
+  if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
     import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
       return darkMode;
     }).then(darkMode => {
@@ -24,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     })
   }
-  if (path == "/search/") {
+  if (window.location.pathname == "/search/") {
     import(/* webpackChunkName: 'searchPageOverrides' */ '../../scss/searchPageOverrides.scss').then(() => {
       console.info('Search page overrides styling loaded');
     }).catch( err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err) );
