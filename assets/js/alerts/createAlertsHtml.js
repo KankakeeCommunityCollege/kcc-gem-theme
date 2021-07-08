@@ -5,7 +5,8 @@
 // JS module to build alert message using data from Google Sheets API v4
 //
 // This exported module requires you pass it's default-function the `response` object from the API call, as the only argument
-import contentHashLink from './contentHashLink.js';
+//
+import checkForAccordionOrTab from './checkForAccordionOrTab.js';
 import parseMarkdownToHTML from './parseMarkdownToHTML.js'; // Parses a simplified markdown into html & creates the paragraph el's with appropriate class
 //
 const CAMPUS_ALERTS_DIV_ID_STRING = 'emergencyAlerts';  // ID of the div to house campus alerts - already built into the page.
@@ -20,7 +21,7 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
   // This is where the cell values hide in the response object from the Google API.
 
   let [visibility, allPages, content, expire, start, end] = response.result.values[2];  // The 3rd row has our table's data
-  if (visibility === 'FALSE') return contentHashLink(); // Predefined dropdown options in the Sheet are `'TRUE'` & `'FALSE'`
+  if (visibility === 'FALSE') return checkForAccordionOrTab(); // Predefined dropdown options in the Sheet are `'TRUE'` & `'FALSE'`
 
   const TARGET = document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING); // This targets an element built into the DOM that we inject everything into.
   let d = new Date;
@@ -41,7 +42,7 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
 
   [d,s,e].map(d => d.setHours(0, 0, 0, 0));
   alertIsActive && indexPageOnly ? injectAlert(TARGET, alert) : null;
-  return contentHashLink();
+  return checkForAccordionOrTab();
 }
 
 export default createAlertsHtml;

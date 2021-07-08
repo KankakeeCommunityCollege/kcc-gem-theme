@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: default-core
 title: Accordion
 baseurl: ../
 accordion_expanded: true
+#no_alert: true
 ---
 
 <main class="container">
@@ -10,8 +11,10 @@ accordion_expanded: true
     <div class="col">
       <h2 class="typography__h2">Accordions!!!</h2>
       {% include accordion.html %}
+      {% include tabbed-content.html %}
+      {% comment %}
       <div class="mt-5">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs navTabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
           </li>
@@ -88,6 +91,7 @@ accordion_expanded: true
           </tr>
         </tbody>
       </table>
+      {% endcomment %}
       <div class="mt-5">
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">

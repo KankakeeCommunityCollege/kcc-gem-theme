@@ -3,7 +3,7 @@
     <a href="cloudcannon:collections/_tabs/" class="btn btn-success editor-button">Edit Tabs Collection</a>
   </div>
 </div>
-<ul class="nav nav-tabs" id="{{ page.title | replace: ' ', '-' | downcase }}" role="tablist">
+<ul class="nav nav-tabs navTabs" id="{{ page.title | replace: ' ', '-' | downcase }}" role="tablist">
   {% assign page_title = page.title %}
   {% assign tab_collection = site.tabs | where: "tabs_page", page_title | sort: "order" %}
   {% for tab in tab_collection %}

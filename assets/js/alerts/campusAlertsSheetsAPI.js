@@ -8,9 +8,9 @@
 //  3. Run the `contentHashLink` module after alert has painted into DOM (and altered documents hight)
 //  4. Cache the API response in sessionStorage
 // =================================================== //
+import checkForAccordionOrTab from './checkForAccordionOrTab.js';
 import setSheetParameters from './simpleSetSheetParameters.js';
 import createAlertsHtml from './createAlertsHtml.js';
-import contentHashLink from './contentHashLink.js';
 import cacheResponse from './cacheResponse.js';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs'; // Corresponds to the ID of the Google Sheet
@@ -32,13 +32,13 @@ function init() {
     cacheResponse(response); // Cache the Google API response for subsequent page loads in the site
   }, (err)=> {
     console.error("Execute error", err);
-    contentHashLink();
+    checkForAccordionOrTab();
   });
 }
 
 function start() {
   if ( ! document.getElementById(EMERGENCY_ALERT_DIV_ID) )
-    return contentHashLink();
+    return checkForAccordionOrTab();
 
   init();
   //var t1 = performance.now();

@@ -69,11 +69,11 @@ function checkForMatchingTabOrAccordion(hash) {
           checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
         : null; })
       .collapse('show'); // Bootstrap 4 Collapse method
-    findContentTarget(hash);
+    findContentTarget(`button[data-target="${hash}"]`);
   }
 }
 
-function checkForHash(e) {
+function checkForHash() {
   if (window.location.hash) {
     let hash = window.location.hash.replace(endingSlashRegex, '');
 
@@ -92,6 +92,10 @@ function contentHashLink() {
     return;
     
   initContentHashLink();
+
+  import(/* webpackChunkName: 'addAccordionOrTabHistoryStates' */ './addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
+    addAccordionOrTabHistoryStates();
+  });
 }
 
 export default contentHashLink;
