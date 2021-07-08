@@ -30,11 +30,16 @@ function tabHandler(e) {
 }
 
 function addAccordionOrTabHistoryStates() {
-  const accordion = document.getElementById(ACCORDION_ID);
-  const tabs = document.querySelector(TABS_SELECTOR);
+  if (document.getElementById(ACCORDION_ID)) {
+    const accordion = document.getElementById(ACCORDION_ID);
 
-  accordion.addEventListener('click', accordionHandler);
-  tabs.addEventListener('click', tabHandler);
+    accordion.addEventListener('click', accordionHandler);
+  }
+  if (document.querySelector(TABS_SELECTOR)) {
+    const tabs = document.querySelector(TABS_SELECTOR);
+  
+    tabs.addEventListener('click', tabHandler);
+  }
 }
 
 export default addAccordionOrTabHistoryStates;
