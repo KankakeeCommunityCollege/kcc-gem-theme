@@ -2,7 +2,7 @@
 export default function checkForAccordionOrTab() {
   if (
     document.querySelector('#accordion') ||
-    document.querySelector('.nav.nav-tabs')
+    document.querySelector('.navTabs')
   ) {
     import(/* webpackChunkName: 'contentHashLink' */ './contentHashLink').then(({default: contentHashLink}) => {
       contentHashLink();
