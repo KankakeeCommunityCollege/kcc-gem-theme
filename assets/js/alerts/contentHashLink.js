@@ -88,7 +88,7 @@ function initContentHashLink() {
 }
 
 function contentHashLink() {
-  if (!document.querySelector('#accordion') && !document.querySelector('.nav.nav-tabs'))
+  if (!document.querySelector('#accordion') && !document.querySelector('.navTabs'))
     return;
     
   initContentHashLink();

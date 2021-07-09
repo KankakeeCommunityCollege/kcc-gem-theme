@@ -29,16 +29,20 @@ function tabHandler(e) {
   addHistoryState(e.target, targetHref)
 }
 
+function watchElementForEvent(el, event, handler) {
+  el.addEventListener(event, handler);
+}
+
 function addAccordionOrTabHistoryStates() {
-  if (document.getElementById(ACCORDION_ID)) {
+  if (document.getElementById('accordion')) {
     const accordion = document.getElementById(ACCORDION_ID);
 
-    accordion.addEventListener('click', accordionHandler);
+    watchElementForEvent(accordion, 'click', accordionHandler);
   }
-  if (document.querySelector(TABS_SELECTOR)) {
+  if (document.querySelector('.navTabs')) {
     const tabs = document.querySelector(TABS_SELECTOR);
   
-    tabs.addEventListener('click', tabHandler);
+    watchElementForEvent(tabs, 'click', tabHandler);
   }
 }
 
