@@ -31,7 +31,7 @@ const config = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'dist'),
-    publicPath: '/assets/js/dist/',
+    publicPath: 'auto',
     clean: true,
   },
   module: {
