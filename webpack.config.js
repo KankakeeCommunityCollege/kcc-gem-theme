@@ -31,7 +31,7 @@ const config = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'dist'),
-    publicPath: 'auto',
+    publicPath: 'auto', // MUST BE 'auto' FOR THEME!! Otherwise, bundles will alway's point to the root's JS and not local
     clean: true,
   },
   module: {

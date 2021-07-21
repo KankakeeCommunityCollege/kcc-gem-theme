@@ -4,6 +4,8 @@
     source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg'
     alt: 'Student working in an electrical technology lab'
   dropdown:
+    - text: Academic Programs
+      href: 'academics'
     - text: Class Schedule
       href: 'schedule'
     - text: Academic Calendar
@@ -26,6 +28,8 @@
     source: 'assets/img/admissions-navigation-menu.jpg'
     alt: "Student posing in front of the metal sculpture in KCC's courtyard"
   dropdown:
+    - text:  Admissions
+      href: admissions
     - text: Placement Testing
       href: 'testing'
     - text: Apply
@@ -48,6 +52,8 @@
     source: 'assets/img/fafsa-early-bird-banner-18.jpg'
     alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
   dropdown:
+    - text:  Tuition & Aid
+      href: 'tuition-and-aid'
     - text: Financial Aid
       href: 'financial-aid'
     - text: Net Price Calculator
@@ -66,6 +72,8 @@
     source: 'assets/img/DSC_5650_helpful.jpg'
     alt: 'Receptionist answering the phone'
   dropdown:
+    - text: Student Resources
+      href: 'student-resources'
     - text: Bookstore
       href: 'http://books.kcc.edu'
     - text: Clubs & Organizations
@@ -106,6 +114,8 @@
     source: 'assets/img/go_cavs_20171002_193828-web.jpg'
     alt: 'Group photo of students holding Cavalier signs'
   dropdown:
+    - text: Community
+      href: 'community'
     - text: Adult & Community Education
       href: 'https://adulted.kcc.edu/'
     - text: Continuing Education
@@ -122,6 +132,8 @@
     source: 'assets/img/ATEC-DSC_1033.jpeg'
     alt: 'The new Advanced Technology Education Center building'
   dropdown:
+    - text: About KCC
+      href: 'about'
     - text: Newsroom
       href: 'https://news.kcc.edu'
     - text: Leadership

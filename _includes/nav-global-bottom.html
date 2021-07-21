@@ -24,11 +24,12 @@
                         alt="{{ item.image.alt }}">
                     </div>{% endif %}
                     <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
-                      {%- if item.link_href -%}
-                      {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
-                      <a class="dropdown-item" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ item.link_href }}{% endif %}">{{ item.link_text }}</a>
+                      {%- if item.dropdown[0] -%}
+                      {% assign sub_site = item.dropdown[0] %}
+                      <a class="dropdown-item" href="{{ page.baseurl }}{{ sub_site.href }}">{{ sub_site.text }}</a>
                       {%- endif -%}
-                      {% assign alphabetical_links = item.dropdown | sort: "text" %}
+                      {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
+                      {% assign alphabetical_links = item.dropdown | slice: 1, item.dropdown.size | sort: "text" %}
                       {% for link in alphabetical_links %}
                       {% if item.link_href contains site_name_lowercase %}
                       <a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>

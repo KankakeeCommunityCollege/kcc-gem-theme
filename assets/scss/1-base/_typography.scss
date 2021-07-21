@@ -637,3 +637,7 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup { // Make superscripts within hea
 .typography__header-global--nav-bottom:hover {
   cursor: default;
 }
+
+.dark-mode .typography__header-global--nav-bottom {
+  color: #9bb7dd;
+}
