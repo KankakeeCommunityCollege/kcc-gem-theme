@@ -8,46 +8,6 @@ google-tag_key: Google Tag Manager key goes here
 theme_config: true # This key should only be in the theme's _config.yml file and nowhere else # Otherwise you will get JS errors
 core_site: true
 #translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
-nav_config:
-  smaller_brand: true
-nav_links:
-  - link_text: Home
-    link_href: ''
-    button: false
-  - link_text: Landing Page
-    link_href: 'landing-page'
-    button: false
-  - link_text: accordion
-    link_href: 'accordion'
-    button: false
-  - link_text: Tabbed Navigation
-    link_href: 'tabbed-nav'
-    button: false
-  - link_text: Enroll
-    dropdown:
-      - text: Community Literacy
-        href: 'programs/community-literacy'
-      - text: English as a Second Language
-        href: 'programs/esl'
-      - text: GED/High School Equivalency
-        href: 'programs/ged'
-#  - link_text: Example External Link
-#    link_href: 'https://example-external-link.com'
-#    button: false
-#    external: true  <---- #### Add the `external: true` key & value to make an external link ####
-#
-#### Example sub-nav configuration below #### =============================================================== #
-##                                                                                                           ##
-##   `link_href:` values must have a single '/' in the link (no '/' in the begining or end of the string)    ##
-##                                                                                                           ##
-## ========================================================================================================== #
-#
-#sub-nav_links:
-#  - link_text: Sheets
-#    link_href: 'reference/gsheets'
-#  - link_text: CloudCannon
-#    link_href: 'reference/cloudcannon'
-#
 collections:
   tabs:
     people: false
@@ -55,16 +15,6 @@ collections:
     people: false
   contacts:
     people: true
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    layout: post
-    title: ''
-    permalink: /:categories/:title/
-    baseurl: ../../../
-    categories: news
 permalink: pretty
 description: > # this means to ignore newlines until "baseurl:"
 # Delete this comment and place description on this line
@@ -83,7 +33,6 @@ include:
   - "_tabs/"
 
 exclude:
-  - "gulpfile.js"
   - "node_modules"
   - "npm-debug.log"
   - "package.json"
@@ -91,24 +40,189 @@ exclude:
   - "README.md"
   - "Gemfile"
   - "Gemfile.lock"
-  - "gulpconfig.yml"
   - "LICENSE.txt"
   - "webpack.config.js"
   - "*.gem"
   - "*.gemspec"
-  - "gulp-tasks/"
-  - "install.sh"
   - "ruby-version.txt"
   - "buildtools/"
   - "postcss.config.js"
 
-uploads_dir: # specifies the default uploads directory for CloudCannon
+uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
 
-_comments:
-  layout: Do NOT modify layouts. It may break things.
-  baseurl: Do NOT modify baseurl. It WILL break all page links.
-  categories: "FOR CATEGORIES <br/>SPORTS-SPECIFIC: <br/>1.) First enter the sport's category from this list <br/>2.) followed by the \"news\" category. <br/>(e.g. mens-basketball news) <br/>GENERAL NEWS: <br/>1.) Enter \"news\" category first <br/>2.) followed by the \"general\" category. <br/>(e.g. news general)"
-  sport_category: Sport for which news item pertains. Gets pulled into news rollup.
-  news_thumb_image: Must be 16:9 ratio image. Preferably 200px wide.
-  description: "Descriptions are seen by search engines like Google and displayed in search results"
+## Global/Main Navigation configuration for kcc.edu
+navigation: ## Add a navigation key to any project using kcc-gem-theme to locally override these settings
+  - link_text: Academics # @link_text becomes the main navigational categories
+    link_href: 'academics'
+    image: # The image element built into each dropdown menu
+      source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg' # Points to the image file
+      alt: 'Student working in an electrical technology lab' # YOU ALWAYS NEED ALT TEXT!!!
+    dropdown: # Defines the 'academics' items in the dropdown
+## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
+##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.
+      - text: Academic Programs ## Text for the first dropdown item (stays at the top)
+        href: 'academics' ## Relative link that the first dropdown item should point to
+      - text: Class Schedule 
+        href: 'schedule' # Relative link with hashes and queries work too 'page/#hash' or 'page/?id=some-heading#hash'
+      - text: Academic Calendar
+        href: 'calendar'
+      - text: Continuing Education
+        href: 'https://continuinged.kcc.edu/' ## Absolute URL with protocol works too
+      - text: High School Equivalency (GED/HiSET)
+        href: 'https://adulted.kcc.edu/programs/ged/'
+      - text: Commencement
+        href: 'commencement'
+      - text: Final Exam Schedule
+        href: 'final-exams'
+      - text: Register for Classes
+        href: 'register'
+      - text: Academic Catalog
+        href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
+  - link_text:  Admissions
+    link_href: admissions
+    image:
+      source: 'assets/img/admissions-navigation-menu.jpg'
+      alt: "Student posing in front of the metal sculpture in KCC's courtyard"
+    dropdown:
+      - text:  Admissions
+        href: admissions
+      - text: Placement Testing
+        href: 'testing'
+      - text: Apply
+        href: 'https://kccedu.force.com/portal/TX_SiteLogin?startURL=%2Fportal%2FTargetX_Base__Portal'
+      - text: Request Information
+        href: 'https://info.kcc.edu/'
+      - text: Visit/Explore
+        href: 'https://visit.kcc.edu'
+      - text: Cav Day
+        href: 'cav-day'
+      - text: 'Start in High School'
+        href: 'high-school'
+      - text: Request KCC Transcripts
+        href: '#request-your-transcript'
+      - text: 'Veterans Services'
+        href: 'veterans'
+  - link_text:  Tuition & Aid
+    link_href: 'tuition-and-aid'
+    image:
+      source: 'assets/img/fafsa-early-bird-banner-18.jpg'
+      alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
+    dropdown:
+      - text:  Tuition & Aid
+        href: 'tuition-and-aid'
+      - text: Financial Aid
+        href: 'financial-aid'
+      - text: Net Price Calculator
+        href: 'net-price-calculator'
+      - text: 'Cost to Attend KCC'
+        href: '#cost-to-attend'
+      - text: 'Tuition Payment & Deadlines'
+        href: '#tuition-payment-and-deadlines'
+      - text: 'Financial Aid Forms'
+        href: 'financial-aid/#financial-aid-forms'
+      - text: 'Student Employment'
+        href: 'financial-aid/#student-employment'
+  - link_text: Student Resources
+    link_href: 'student-resources'
+    image:
+      source: 'assets/img/DSC_5650_helpful.jpg'
+      alt: 'Receptionist answering the phone'
+    dropdown:
+      - text: Student Resources
+        href: 'student-resources'
+      - text: Bookstore
+        href: 'http://books.kcc.edu'
+      - text: Clubs & Organizations
+        href: 'clubs'
+      - text: 'Center for Equity, Diversity & Inclusion'
+        href: 'edi'
+      - text: Fitness Center
+        href: 'https://athletics.kcc.edu/facilities/fitness-center'
+      - text: Advising
+        href: 'advising'
+      - text: Transfer Services
+        href: 'transfer'
+      - text: 'Counseling & Referral Services'
+        href: 'counseling-and-referral-services'
+      - text: Disability Services
+        href: 'disability-services'
+      - text: Student Representatives
+        href: 'student-representatives'
+      - text: Student Complaint Policy
+        href: 'student-complaint-policy'
+      - text: Start the Semester Right
+        href: 'welcome'
+      - text: KCC Food Pantry
+        href: 'food-pantry'
+      - text: Tutoring
+        href: 'https://library.kcc.edu/tutoring/'
+      - text: TRIO Student Support Services
+        href: 'trio'
+      - text: Career Services
+        href: 'https://continuinged.kcc.edu/career-services/'
+      - text: Food Services
+        href: 'food-services'
+      - text: Workforce Services
+        href: 'https://wioa.kcc.edu/'
+      - text: Student Handbook
+        href: handbook
+  - link_text: Community
+    link_href: 'community'
+    image:
+      source: 'assets/img/go_cavs_20171002_193828-web.jpg'
+      alt: 'Group photo of students holding Cavalier signs'
+    dropdown:
+      - text: Community
+        href: 'community'
+      - text: Adult & Community Education
+        href: 'https://adulted.kcc.edu/'
+      - text: Continuing Education
+        href: 'https://continuinged.kcc.edu'
+      - text: Sustainability
+        href: 'sustainability'
+      - text: Arts & Culture
+        href: 'arts-and-culture'
+      - text: Workforce Services
+        href: 'https://wioa.kcc.edu/'
+  - link_text: About KCC
+    link_href: 'about'
+    link_nav: 'about'
+    image:
+      source: 'assets/img/ATEC-DSC_1033.jpeg'
+      alt: 'The new Advanced Technology Education Center building'
+    dropdown:
+      - text: About KCC
+        href: 'about'
+      - text: Newsroom
+        href: 'https://news.kcc.edu'
+      - text: Leadership
+        href: 'leadership'
+      - text: Board of Trustees
+        href: board-of-trustees
+      - text: Human Resources
+        href: 'human-resources'
+      - text: Job Openings
+        href: 'human-resources/job-openings'
+      - text: Directories
+        href: 'directories'
+      - text: Information Technology Services
+        href: 'its'
+      - text: Marketing
+        href: 'marketing'
+      - text: 'Institutional Effectiveness'
+        href: 'institutional-effectiveness'
+      - text: 'Police & Safety'
+        href: 'police-and-safety'
+      - text: 'Student Code of Conduct'
+        href: 'code-of-conduct'
+      - text: 'Title IX'
+        href: 'title-ix'
+      - text: 'Contact Us'
+        href: 'contact-us'
+      - text: Web Services
+        href: 'marketing/web-services'
+      - text: Consumer Info and Disclosures
+        href: 'consumer-info'
+      - text: ICCB Salary and Benefits Portal
+        href: 'http://iccbdbsrv.iccb.org/salarysearch/home.cfm'
