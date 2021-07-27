@@ -9,6 +9,7 @@ function addHistoryState(target, hashTarget) {
   };
   const title = '';
 
+  url.search = ''; // Remove any searchParams/queries from the URL (e.g. /?id=heading#page)
   url.hash = hashTarget;
   window.history.pushState(state, title, url);
 }
