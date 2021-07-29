@@ -79,6 +79,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'register'
       - text: Academic Catalog
         href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
+      - text: "Exam Make-ups"
+        href: exam-makeups
   - link_text:  Admissions
     link_href: admissions
     image:
@@ -185,6 +187,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'arts-and-culture'
       - text: Workforce Services
         href: 'https://wioa.kcc.edu/'
+      - text: Specialized Testing
+        href: specialized-testing
   - link_text: About KCC
     link_href: 'about'
     link_nav: 'about'
