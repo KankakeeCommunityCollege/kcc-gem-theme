@@ -187,8 +187,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'arts-and-culture'
       - text: Workforce Services
         href: 'https://wioa.kcc.edu/'
-      - text: Specialized Testing
-        href: specialized-testing
+      - text: Community Testing Center
+        href: testing-center
   - link_text: About KCC
     link_href: 'about'
     link_nav: 'about'
