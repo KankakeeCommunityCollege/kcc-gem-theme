@@ -20,7 +20,8 @@ $dark-mode-bg-primary-red: #80132e;
   & ul:not(.navbar-nav),
   & .typography__h2,
   & .typography__h5,
-  & .typography__h6 {
+  & .typography__h6,
+  & .typography__contacts--title {
     color: $dark-mode-foreground;
   }
   & .typography__h4 {
@@ -28,7 +29,8 @@ $dark-mode-bg-primary-red: #80132e;
   }
   & .accordion__typography--card-header .btn-link,
   & .typography__h3,
-  & .typography__header-global--nav-top {
+  & .typography__header-global--nav-top,
+  & .typography__contacts--name {
     color: $dark-mode-text-primary-blue;
   }
   & .footer-icons,
@@ -191,7 +193,8 @@ $dark-mode-bg-primary-red: #80132e;
     background-color: rgba(255,255,255,.05);
   }
   & .table-hover tbody tr:hover {
-    background-color: rgba(0,0,0,.125);
+    background-color: rgba(255,255,255,.25);
+    color: $white;
   }
   & .modal-content {
     background-color: #2a2f34;
