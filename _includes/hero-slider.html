@@ -7,9 +7,9 @@
     <div>
       <a
         {% if slide.url contains "https://" or slide.url contains "http://" %}href="{{ slide.url }}"
-        {% elsif url_first_char == '.' or url_first_char == '/' %}href="{{ slide.url }}"
-        {% else %}href="{{ page.baseurl }}{{ slide.url }}{% endif %}"
-        {% if slide.new_tab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
+        {% elsif url_first_char == '.' or url_first_char == '/' or slide.url == '#' %}href="{{ slide.url }}"
+        {% else %}href="{{ page.baseurl }}{{ slide.url }}"{%- endif -%}
+        {% if slide.new_tab == true %} target="_blank" rel="noopener noreferrer"{%- endif -%}>
         <img src="{{page.baseurl}}{{slide.image}}"
           class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}"
           alt="{{slide.alt-text}}" />
@@ -18,15 +18,15 @@
       <div class="hero-slider__slider--heading-container text-center">
         <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
       </div>
-      {%- endif -%}
+      {% endif %}
     </div>
-    {% else %}
+    {%- else -%}
     <div>
       <a
         {% if slide.url contains "https://" or slide.url contains "http://" %}href="{{ slide.url }}"
-        {% elsif url_first_char == "." or url_first_char == "/" %}href="{{ slide.url }}"
-        {% else %}href="{{ page.baseurl }}{{ slide.url }}{% endif %}"
-        {% if slide.new_tab == true %} target="_blank" rel="noopener noreferrer"{% endif %}>
+        {% elsif url_first_char == "." or url_first_char == "/" or slide.url == '#' %}href="{{ slide.url }}"
+        {% else %}href="{{ page.baseurl }}{{ slide.url }}"{%- endif -%}
+        {% if slide.new_tab == true %} target="_blank" rel="noopener noreferrer"{%- endif -%}>
         <img src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
           data-src="{{page.baseurl}}{{slide.image}}"
           class="img-fluid hero-slider__slider--slide-img {% if slide.white_background %} hero-slider__slide-img--border{% endif %}"
@@ -37,6 +37,6 @@
       </div>{% endif %}
     </div>
     {% endif %}
-  {% endfor %}
+  {%- endfor -%}
   </div>
 </div>
