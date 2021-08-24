@@ -1,18 +1,27 @@
-import footerDate from './footerDate.js';
-import lazyLoad from './lazyLoad.js';
-import walkText from './walkText.js';
-import initSliders from './sliders.js';
-import wrapPowerText from './wrapPowerText.js';
-import addClassToOpenNavbar from './addClassToOpenNavbar.js';
 import '../../scss/kcc-theme.scss';
 
+function loadModule(...moduleArgs) {
+  const module = moduleArgs[0];
+  let defaultFunc;
+  let funcArg = undefined;
+  
+  moduleArgs.length > 1 ? defaultFunc = moduleArgs[1] : defaultFunc = moduleArgs[0];
+  moduleArgs.length > 2 ? funcArg = moduleArgs[2] : null;
+
+  import(`./${module}`).then(({ default: defaultFunc }) => {
+    funcArg = undefined ? defaultFunc() : defaultFunc(funcArg);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  wrapPowerText();
-  initSliders();
-  walkText(document.body);
-  footerDate();
-  lazyLoad();
-  addClassToOpenNavbar();
+  location.hostname.search(/\.kcc\.edu/) !== -1 ? loadModule('loadClarusCorpScript') : null;
+  loadModule('wrapPowerText');
+  loadModule('sliders', 'initSliders');
+  loadModule('walkText', 'walkText', document.body);
+  loadModule('footerDate');
+  loadModule('lazyLoad');
+  loadModule('addClassToOpenNavbar');
+
   if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
     import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
       return darkMode;
@@ -27,31 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
       console.info('Search page overrides styling loaded');
     }).catch( err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err) );
   }
-  if (document.getElementById('google_translate_element')) {
-    import(/* webpackChunkName: 'translateScript' */ './translateScript').then(({default: watchForMenuClicks}) => {
-      watchForMenuClicks();
-    });
-  }
-  if (document.getElementById('errorPageSearch')) {
-    import(/* webpackChunkName: 'errorPageSearch' */ './errorPageSearch').then(({default: errorPageSearch}) => {
-      errorPageSearch();
-    });
-  }
-
-  // polyfill for Element.closest() b/c IE can't handle an anchor.match() when the anchor has another element inside it (Like spans used for BS4 menu toggler)
-  if (!Element.prototype.matches) {
-    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-  }
-
-  if (!Element.prototype.closest) {
-    Element.prototype.closest = function(s) {
-      var el = this;
-
-      do {
-        if (el.matches(s)) return el;
-        el = el.parentElement || el.parentNode;
-      } while (el !== null && el.nodeType === 1);
-      return null;
-    };
-  }
+  document.getElementById('google_translate_element') ? loadModule('translateScript', 'watchForMenuClicks') : null;
+  document.getElementById('errorPageSearch') ? loadModule('errorPageSearch', 'errorPageSearch') : null;
 });

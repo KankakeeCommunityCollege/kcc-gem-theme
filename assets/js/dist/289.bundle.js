@@ -1,0 +1,1 @@
+(self.webpackChunkkcc_gem_theme=self.webpackChunkkcc_gem_theme||[]).push([[289],{1289:function(e,c,t){"use strict";t.r(c),c.default=function(){var e=document.createElement("script"),c=document.head;e.src="https://tag.simpli.fi/sifitag/6089e310-26f9-0136-e8b0-06659b33d47c",e.async=!0,e.referrerPolicy="no-referrer-when-downgrade",c.appendChild(e)}}}]);
