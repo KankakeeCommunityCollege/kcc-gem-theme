@@ -14,7 +14,7 @@ function loadModule(...moduleArgs) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  location.hostname.search(/\.kcc\.edu/) !== -1 ? loadModule('loadClarusCorpScript') : null;
+  window.location.hostname.search(/\.kcc\.edu/) !== -1 ? loadModule('loadClarusCorpScript') : null;
   loadModule('wrapPowerText');
   loadModule('sliders', 'initSliders');
   loadModule('walkText', 'walkText', document.body);
