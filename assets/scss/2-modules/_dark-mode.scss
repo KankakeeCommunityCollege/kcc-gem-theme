@@ -41,6 +41,9 @@ $dark-mode-bg-primary-red: #80132e;
   & #emergencyAlerts {
     filter: brightness(.75);
   }
+  .buttons__action {
+    border-color: rgba(255,255,255,.65);
+  }
   & .buttons__action:hover {
     background-color: $dark-mode-bg-primary-blue;
     border-color: rgba(255,255,255,.4);
@@ -55,10 +58,10 @@ $dark-mode-bg-primary-red: #80132e;
     border-bottom-color: rgba(256,256,256,.5)
   }
   & .background__color--tan {
-    background-color: #302c24;
+    background-color: #1e1b15;
   }
   & .benefits__background-color {
-    background-color: #354d53;
+    background-color: #1c282c;
   }
   & .news__h3 {
     color: $dark-mode-foreground-lighter;
