@@ -57,9 +57,9 @@ function checkForMatchingTabOrAccordion(hash) {
       .on('shown.bs.tab', () => {  // Bootstrap 4 method for tab events // Must be defined before the tab is activated
         window.location.search ?
           checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
-          : null; })
+          : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
+        })
       .tab('show');  // Bootstrap 4 Tab method
-    findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
   } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS4 collapse element
     let card = $(hash);  // **SIGH**, BS4 requires JQuery
 
@@ -67,9 +67,9 @@ function checkForMatchingTabOrAccordion(hash) {
       .on('shown.bs.collapse', () => {  // Bootstrap 4 Collapse method // Must be defined before the collapse is activated
         window.location.search ?
           checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
-        : null; })
+        : findContentTarget(`button[data-target="${hash}"]`);
+      })
       .collapse('show'); // Bootstrap 4 Collapse method
-    findContentTarget(`button[data-target="${hash}"]`);
   }
 }
 

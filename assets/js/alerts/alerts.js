@@ -7,7 +7,6 @@ import createAlertsHtml from './createAlertsHtml';
 import cacheResponse from './cacheResponse';
 import getCachedResponse from './getCachedResponse';
 import checkForPrefersReducedMotion from './checkForPrefersReducedMotion';
-import checkForAccordionOrTab from './checkForAccordionOrTab';
 
 const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs'; // Corresponds to the ID of the Google Sheet
 const SHEET_TAB = 'Alerts'; // Corresponds to the tab of workbook: either  'Alerts' or 'Alerts Testing' unless you make a new one.
@@ -45,10 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       getCachedResponse(resolve); // Promise is resolved after HTML alert is built
     }
-    // ! window.sessionStorage.getItem('Alert-Content') ? // Checks if our cached alert is already in sessionStorage
-    //     gapi.load('client', start) // If not, build the alert from a new Google API response
-    // : getCachedResponse(); // Otherwise, build the alert from our cached response
-  }).then(() => {
-      loadModule('refreshAlertButton')
-    }); // Allow user to refresh the alert (and check for changes/updates)
+  }).then(() => loadModule('checkForAccordionOrTab'))
+    .then(() => loadModule('refreshAlertButton')) // Allow user to refresh the alert (and check for changes/updates)
 });
