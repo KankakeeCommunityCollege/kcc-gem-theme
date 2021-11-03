@@ -71,4 +71,22 @@
 
 // End BS4 dropdown-menu carot modifications.
 
+// Customizations to alert color-schemes
+// Creates a more visible border around the alerts
+// BS4 default alert border-colors are almost imperceivable
+.alert-warning {
+  border-color: $color-alert-warning-border;
+}
+
+.alert-danger {
+  border-color: $color-alert-danger-border;
+}
+
+.alert-info {
+  border-color: $color-alert-info-border;
+}
+
+.alert-primary {
+  border-color: $color-alert-primary-border;
+}
 

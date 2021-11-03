@@ -1,5 +1,5 @@
 /*
-// Custom JS | written by https://github.com/wdzajicek
+// Custom JS | written by https://github.com/wdzajicek for,
 // © 2020 Kankakee Community College
 // =================================================== */
 // Modules' default function stores our Google Sheet response in sessionStorage to be retrieved later
@@ -15,7 +15,7 @@ function cacheResponse(response) { // response from Google API's spreadsheet.val
     const cell = TABLE_BODY_ROW[i];
     const column = TABLE_HEADER_ROW[i];
 
-    window.sessionStorage.setItem(column.replace(' ', '-'), cell);
+    window.sessionStorage.setItem(column.replace(/\s/g, '-'), cell);
   }
   //window.sessionStorage.clear();
 }

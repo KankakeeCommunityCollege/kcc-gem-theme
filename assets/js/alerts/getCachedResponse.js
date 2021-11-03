@@ -8,16 +8,10 @@
 // 2. Then we pass our mock-sheet response object to the `createAlertsHtml` module to
 //    build and inject the alert into the DOM.
 import createAlertsHtml from './createAlertsHtml.js';
-import checkForAccordionOrTab from './checkForAccordionOrTab.js';
 
 const cache = window.sessionStorage;
 
-function processCachedResponse(response, callback) {
-  createAlertsHtml(response);
-  return callback();
-}
-
-function createCachedResponseObject() {
+function createCachedResponseObject(resolve) {
   let cachedResponse = {  // Reconstructing our own Google Sheet-like response from the sessionStorage items
     result: {
       values: [
@@ -29,19 +23,19 @@ function createCachedResponseObject() {
           cache.getItem('Alert-Content'),
           cache.getItem('Alert-Expiration'),
           cache.Start,
-          cache.End
+          cache.End,
+          cache.getItem('Alert-type/Color-scheme')
         ]
       ]
     }
   }
-  processCachedResponse(cachedResponse, checkForAccordionOrTab);
+  createAlertsHtml(cachedResponse, resolve);
 }
 
-function getCachedResponse() {
+function getCachedResponse(resolve) {
   try {
-    createCachedResponseObject();
+    createCachedResponseObject(resolve);
   } catch (error) {
-    checkForAccordionOrTab();
     console.error(`Error retrieving cached response in sessionStorage:\nName: ${error.name}\nMessage: ${error.message}\n${error}`);
   }
 }

@@ -5,10 +5,9 @@
 //  1. Execute Google API call to grab Google Sheet data from:
 //     https://docs.google.com/spreadsheets/d/1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs/edit#gid=0
 //  2. Build & inject the alert message into the page
-//  3. Run the `contentHashLink` module after alert has painted into DOM (and altered documents hight)
+//  3. Run the `contentHashLink` module after alert has painted into DOM (and altered document's height)
 //  4. Cache the API response in sessionStorage
 // =================================================== //
-import checkForAccordionOrTab from './checkForAccordionOrTab.js';
 import setSheetParameters from './simpleSetSheetParameters.js';
 import createAlertsHtml from './createAlertsHtml.js';
 import cacheResponse from './cacheResponse.js';
@@ -22,7 +21,7 @@ const API_PARAMS = { // This is configuration for API call with spreadsheets tha
   'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
 };
 
-function init() {
+function start(resolve) {
   gapi.client.init(API_PARAMS).then(() => { // Executes an API request, and returns a Promise.
     return gapi.client.sheets.spreadsheets.values.get(SHEET_PARAMS)
   }).then((response) => {
@@ -32,17 +31,7 @@ function init() {
     cacheResponse(response); // Cache the Google API response for subsequent page loads in the site
   }, (err)=> {
     console.error("Execute error", err);
-    checkForAccordionOrTab();
   });
-}
-
-function start() {
-  if ( ! document.getElementById(EMERGENCY_ALERT_DIV_ID) )
-    return checkForAccordionOrTab();
-
-  init();
-  //var t1 = performance.now();
-  //console.info("Call to 'init' took " + (t1 - t0) + " milliseconds.");
 }
 // Loads the JavaScript client library and invokes `start` afterwards.
 //    Usage:

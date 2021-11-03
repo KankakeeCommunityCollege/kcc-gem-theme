@@ -77,3 +77,15 @@
     width: 48px;
   }
 }
+
+
+
+.svg__sync {
+  fill: $color-blue-reboot;
+  transition: fill ease-in-out .2s;
+}
+
+button:hover .svg__sync,
+button:focus .svg__sync {
+  fill: $color-blue-reboot-hover;
+}

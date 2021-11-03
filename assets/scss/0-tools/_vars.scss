@@ -52,7 +52,19 @@ $grey-8: #d9d9d9;
 
 $white: #fff;
 
-$color-alert: #856404;
+$color-alert-warning-text: #856404; // BS4 color for alert-warning text-color
+$color-alert-info-text: #0c5460; // BS4 color for alert-info text-color
+$color-alert-primary-text: #004085; // BS4 color for alert-primary text-color
+$color-alert-danger-text: #721c24;
+// Create custom border-colors for the BS4 alerts we use:
+$color-alert-warning-border: $color-alert-warning-text;
+$color-alert-info-border: $color-alert-info-text;
+$color-alert-primary-border: $color-alert-primary-text;
+$color-alert-danger-border: $color-alert-danger-text;
+
+
+
+$color-alert: $color-alert-warning-text;
 $color-blue-reboot: #007bff;        // link color specified in reboot
 $color-blue-reboot-hover: #0056b3;  // link:hover color specified in reboot
 $color-green-emerald: #148ba9;
