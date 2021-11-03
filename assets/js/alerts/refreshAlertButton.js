@@ -17,10 +17,10 @@ function syncHandler(e) {
 }
 
 function showButtonOnInitialLoad(button) {
-  button.classList.add('buttons--sync--visible');
+  button.classList.add('buttons--sync--preview');
   window.setTimeout(() => {
-    button.classList.remove('buttons--sync--visible');
-  }, 2000);
+    button.classList.remove('buttons--sync--preview');
+  }, 3000);
 }
 
 function refreshAlertButton() {

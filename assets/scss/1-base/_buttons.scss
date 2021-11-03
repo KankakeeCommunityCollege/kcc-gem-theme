@@ -146,6 +146,30 @@
   }
 }
 
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.buttons--sync--preview {
+  animation-name: show;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
 .alert:hover .buttons--sync,
 .alert:focus .buttons--sync {
   opacity: 1;
