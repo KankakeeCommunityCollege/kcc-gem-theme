@@ -121,6 +121,27 @@ $dark-mode-bg-primary-red: #80132e;
       color: #fff3cd;
     }
   }
+  & .alert-primary {
+    background-color: #003670;
+    border-color: #cce5ff;
+    & p {
+      color: #cce5ff;
+    }
+  }
+  & .alert-info {
+    background-color: #0a4752;
+    border-color: #d1ecf1;
+    & p {
+      color: #d1ecf1;
+    }
+  }
+  & .alert-danger {
+    background-color: #461116;
+    border-color: #f8d7da;
+    & p {
+      color: #f8d7da;
+    }
+  }
   & a:not(.nav-link),
   & .links__darker-link {
     color: $dark-mode-text-primary-blue-darker;
@@ -244,6 +265,12 @@ $dark-mode-bg-primary-red: #80132e;
   }
   & hr {
     border-top-color: rgba(255,255,255,.325);
+  }
+  & div.dt-button-collection { // Adjustments to datatables buttons/searchPanes styling
+    filter: invert(1) brightness(2.5);
+  }
+  & div.dataTables_scrollBody { // Adjustments to datatables buttons/searchPanes styling
+    filter: brightness(.95);
   }
 }
 
