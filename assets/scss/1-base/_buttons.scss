@@ -137,14 +137,13 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  .buttons--sync:hover,
-  .buttons--sync:focus {
-    border-color: rgba(0, 86, 179, .65);
-    border-style: solid;
-    border-width: 1px;
-  }
+.buttons--sync:hover,
+.buttons--sync:focus {
+  border-color: rgba(0, 86, 179, .65);
+  border-style: solid;
+  border-width: 1px;
 }
+
 
 @keyframes show {
   0% {

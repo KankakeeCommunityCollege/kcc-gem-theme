@@ -328,3 +328,19 @@ $dark-mode-bg-primary-red: #80132e;
 .dark-mode .error__sub-heading {
   color: $dark-mode-text-primary-blue;
 }
+
+.dark-mode .svg__sync {
+  fill: #8db2e5;
+}
+
+.dark-mode button:hover .svg__sync,
+.dark-mode button:focus .svg__sync {
+  fill: #bfd7f9;
+}
+
+.buttons--sync:hover,
+.buttons--sync:focus {
+  border-color: rgba(141, 178, 229, .75);
+  border-style: solid;
+  border-width: 1px;
+}
