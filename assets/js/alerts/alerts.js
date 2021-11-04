@@ -2,7 +2,6 @@
 // Custom JS | written by https://github.com/wdzajicek
 // © 2020 Kankakee Community College
 // =================================================== */
-// import start from './campusAlertsSheetsAPI.js';
 import createAlertsHtml from './createAlertsHtml';
 import cacheResponse from './cacheResponse';
 import getCachedResponse from './getCachedResponse';
@@ -44,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       getCachedResponse(resolve); // Promise is resolved after HTML alert is built
     }
-  }).then(() => loadModule('checkForAccordionOrTab'))
+  }).then(() => loadModule('checkForAccordionOrTab')) // Run accordion/tab JS, which includes a `scrollTo()`, after alert has painted
     .then(() => loadModule('refreshAlertButton')) // Allow user to refresh the alert (and check for changes/updates)
 });
