@@ -170,8 +170,15 @@
 }
 
 .alert:hover .buttons--sync,
-.alert:focus .buttons--sync {
+.alert:focus .buttons--sync,
+.buttons--sync:focus,
+.buttons--sync:focus-visible {
   opacity: 1;
+}
+
+.buttons--sync:focus-visible,
+.buttons__action:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 .buttons--sync--visible {
