@@ -29,7 +29,8 @@
     "jekyll-production": "JEKYLL_ENV=production bundle exec jekyll serve --livereload",
     "jekyll-development": "bundle exec jekyll serve --livereload",
     "webpack-production": "npx webpack --watch --node-env production",
-    "webpack-dev": "npx webpack --watch --node-env development"
+    "webpack-dev": "npx webpack --watch --node-env development",
+    "browserslist": "npx browserslist@latest --update-db"
   },
   "author": "https://github.com/wdzajicek",
   "license": "ISC",
@@ -41,10 +42,10 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^5.2.4",
     "mini-css-extract-plugin": "^1.5.1",
-    "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.4",
     "postcss-loader": "^5.2.0",
+    "sass": "^1.44.0",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
