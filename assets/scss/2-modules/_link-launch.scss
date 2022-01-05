@@ -1,0 +1,41 @@
+/**
+*
+*  This module provides a `.links_launch` class can be added to a link to create a launch-icon.
+*    - This icon is a pseudo-element with an SVG in an encoded data-URI as its content.
+*    - The launch icon gives users a visual indicator that the link will launch in a new tab
+*    - The anchor needs at least following attributes: 
+*      `<a target="_blank" rel="noopener noreferrer" class="links__launch">`
+*
+*  @author Wesley Zajicek | <https://github.com/wdzajicek>
+*
+*  @requires sass:string - the "sass:string" sass module
+*  @function launchSvg - takes a single param
+*  @param $color {string} - a hex-color-code for the SVG's fill color
+*
+*/
+
+@use "sass:string";
+
+@function launchSvg($color) {
+  @return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23#{string.slice($color, 2, 7)}" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>';
+}
+
+.links__dropdown-toggle--custom::after {
+  margin-left: .75rem;
+}
+
+[aria-expanded='true'].links__dropdown-toggle--custom::after {
+  transform: rotate(-180deg);
+}
+
+.links__launch {
+  &::after {
+    content: url(launchSvg('#007bff'));
+    margin-left: .375rem;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  &:hover::after {
+    content: url(launchSvg('#0056b3'));
+  }
+}

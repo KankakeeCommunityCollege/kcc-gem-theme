@@ -81,6 +81,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
       - text: "Exam Make-ups"
         href: exam-makeups
+## Admissions ##
   - link_text:  Admissions
     link_href: admissions
     image:
@@ -105,6 +106,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: '#request-your-transcript'
       - text: 'Veterans Services'
         href: 'veterans'
+## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
     image:
@@ -125,6 +127,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'financial-aid/#financial-aid-forms'
       - text: 'Student Employment'
         href: 'financial-aid/#student-employment'
+## Student Resources ##
   - link_text: Student Resources
     link_href: 'student-resources'
     image:
@@ -169,6 +172,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://wioa.kcc.edu/'
       - text: Student Handbook
         href: handbook
+      - text: Childcare Discount
+        href: childcare
+## Community ##
   - link_text: Community
     link_href: 'community'
     image:
@@ -189,6 +195,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://wioa.kcc.edu/'
       - text: Community Testing Center
         href: testing-center
+## About KCC ##
   - link_text: About KCC
     link_href: 'about'
     link_nav: 'about'

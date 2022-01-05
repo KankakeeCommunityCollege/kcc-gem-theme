@@ -9,33 +9,39 @@ function loadModule(...moduleArgs) {
   moduleArgs.length > 2 ? funcArg = moduleArgs[2] : null;
 
   import(`./${module}`).then(({ default: defaultFunc }) => {
-    funcArg = undefined ? defaultFunc() : defaultFunc(funcArg);
+    return funcArg = undefined ? defaultFunc() : defaultFunc(funcArg);
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  window.location.hostname.search(/\.kcc\.edu/) !== -1 ? loadModule('loadClarusCorpScript') : null;
-  loadModule('wrapPowerText');
-  loadModule('sliders', 'initSliders');
-  loadModule('walkText', 'walkText', document.body);
-  loadModule('footerDate');
-  loadModule('lazyLoad');
-  loadModule('addClassToOpenNavbar');
+// Modules that load before window.onload
+window.addEventListener('load', () => {
+  loadModule('walkText', 'walkText', document.body)
+  document.querySelector('img[data-src]') ? loadModule('lazyLoad') : null;
+  loadModule('footerDate')
+  loadModule('addClassToOpenNavbar')
+  document.getElementById('errorPageSearch') ? loadModule('errorPageSearch', 'errorPageSearch') : null;
+});
 
+// Modules that load before DOMContentLoaded happens
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.hero-slider__slider')) {
+    Promise.resolve()
+      .then(() => loadModule('wrapPowerText'))
+      .then(() => loadModule('sliders', 'initSliders'))
+      .catch((err) => console.error(`Error loading slider modules :${err}`, err))
+  }
   if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
-    import(/* webpackChunkName: 'darkMode' */ './darkMode').then(({ default: darkMode }) => {
+    import('./darkMode').then(({ default: darkMode }) => {
       return darkMode;
     }).then(darkMode => {
-      import(/* webpackChunkName: 'darkModeStyling' */ '../../scss/darkMode.scss').then(() => {
-        darkMode();
+      import('../../scss/darkMode.scss').then(() => {
+        return darkMode();
       });
     })
   }
   if (window.location.pathname == "/search/") {
-    import(/* webpackChunkName: 'searchPageOverrides' */ '../../scss/searchPageOverrides.scss').then(() => {
-      console.info('Search page overrides styling loaded');
-    }).catch( err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err) );
+    import('../../scss/searchPageOverrides.scss')
+      .catch(err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err));
   }
   document.getElementById('google_translate_element') ? loadModule('translateScript', 'watchForMenuClicks') : null;
-  document.getElementById('errorPageSearch') ? loadModule('errorPageSearch', 'errorPageSearch') : null;
 });
