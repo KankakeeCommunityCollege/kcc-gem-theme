@@ -82,18 +82,11 @@ function checkForHash() {
   return;
 }
 
-function initContentHashLink() {
+function contentHashLink() {
   checkForHash();
   window.addEventListener('hashchange', checkForHash, false);
-}
 
-function contentHashLink() {
-  if (!document.querySelector('#accordion') && !document.querySelector('.navTabs'))
-    return;
-    
-  initContentHashLink();
-
-  import(/* webpackChunkName: 'addAccordionOrTabHistoryStates' */ './addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
+  import('./addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
     addAccordionOrTabHistoryStates();
   });
 }

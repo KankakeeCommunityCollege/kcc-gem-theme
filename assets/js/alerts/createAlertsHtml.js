@@ -12,10 +12,9 @@ const CAMPUS_ALERTS_DIV_ID_STRING = 'emergencyAlerts';  // ID of the div to hous
 const ALERTS_VISIBLE_CLASS = 'position__offset-alert--visible';
 const TARGET = document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING); // This targets an element built into the DOM that we inject everything into.
 
-function injectAlert(target, alert, resolve) {
+function injectAlert(target, alert) {
   target.innerHTML = alert;
-  target.classList.add(ALERTS_VISIBLE_CLASS);
-  return resolve != undefined ? resolve() : null;
+  return target.classList.add(ALERTS_VISIBLE_CLASS);
 }
 
 function checkAlertType(type) {
@@ -25,7 +24,7 @@ function checkAlertType(type) {
   : 'warning';
 }
 
-function createAlertsHtml(response, resolve) {  // Incoming response from our Google Sheet via the Sheets API
+function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
   let [visibility, allPages, content, expire, start, end, type] = response.result.values[2];  // The 3rd row has our table's data
   if (visibility === 'FALSE') // Predefined dropdown options in the Sheet are `'TRUE'` & `'FALSE'`
     return;
@@ -68,7 +67,7 @@ function createAlertsHtml(response, resolve) {  // Incoming response from our Go
 </div>`;
 
   [d,s,e].map(d => d.setHours(0, 0, 0, 0));
-  alertIsActive && indexPageOnly ? injectAlert(TARGET, alert, resolve) : null;
+  return alertIsActive && indexPageOnly ? injectAlert(TARGET, alert) : null;
 }
 
 export default createAlertsHtml;

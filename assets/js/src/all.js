@@ -15,6 +15,12 @@ function loadModule(...moduleArgs) {
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
+  if (document.querySelector('.hero-slider__slider')) {
+    Promise.resolve()
+      .then(() => loadModule('wrapPowerText'))
+      .then(() => loadModule('sliders', 'initSliders'))
+      .catch((err) => console.error(`Error loading slider modules :${err}`, err))
+  }
   loadModule('walkText', 'walkText', document.body)
   document.querySelector('img[data-src]') ? loadModule('lazyLoad') : null;
   loadModule('footerDate')
@@ -24,12 +30,6 @@ window.addEventListener('load', () => {
 
 // Modules that load before DOMContentLoaded happens
 document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.hero-slider__slider')) {
-    Promise.resolve()
-      .then(() => loadModule('wrapPowerText'))
-      .then(() => loadModule('sliders', 'initSliders'))
-      .catch((err) => console.error(`Error loading slider modules :${err}`, err))
-  }
   if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
     import('./darkMode').then(({ default: darkMode }) => {
       return darkMode;

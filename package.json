@@ -18,10 +18,7 @@
     ]
   },
   "browserslist": [
-    "defaults",
-    "ie >=11",
-    "not ie <= 8",
-    "not ie_mob <= 8"
+    "defaults"
   ],
   "scripts": {
     "production": "run-p jekyll-production webpack-production",
