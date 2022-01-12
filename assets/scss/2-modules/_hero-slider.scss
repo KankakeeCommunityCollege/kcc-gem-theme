@@ -63,7 +63,7 @@
   }
 }
 
-.hero-slider__heading--bold {
+.hero-slider__heading--bold { // ?????????????
   color: $white;
   filter: drop-shadow(2px 2px 5px #000);
   font-family: $font-family-power;
@@ -110,7 +110,6 @@
   padding-left: 5px;
   position: absolute;
   top: 55%;
-  width: 10%;
   z-index: 4444;
 }
 
@@ -146,12 +145,36 @@
   }
 }
 
-.hero-slider__slides-4 {
+.hero-slider__slides-1 .hero-slider__slider--heading-container  {
+  width: 100%;
+}
+
+.hero-slider__slides-2 .hero-slider__slider--heading-container {
+  width: 18.5%;
+}
+
+.hero-slider__slides-3 .hero-slider__slider--heading-container {
+  width: 13%;
+}
+
+.hero-slider__slides-4 .hero-slider__slider--heading-container {
   width: 10%;
 }
 
-.hero-slider__slides-8 {
-  width: 5%;
+.hero-slider__slides-5 .hero-slider__slider--heading-container {
+  width: 8%;
+}
+
+.hero-slider__slides-6 .hero-slider__slider--heading-container {
+  width: 6.65%;
+}
+
+.hero-slider__slides-7 .hero-slider__slider--heading-container {
+  width: 5.75%;
+}
+
+.hero-slider__slides-8 .hero-slider__slider--heading-container {
+  width: 4.85%;
 }
 
 
@@ -236,10 +259,14 @@
   padding-right: 0;
 }
 
-.hero-slider__slide-img--border {
-  border-color: $grey-8;
+.hero-slider__slider--slide-img {
   border-style: solid;
-  border-width: thin;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.hero-slider__slide-img--border {
+  border-color: rgba(0,0,0,.25);
 }
 
 .hero-slider__slider {   // prevents all slides from displaying vertically before slick has initialized
