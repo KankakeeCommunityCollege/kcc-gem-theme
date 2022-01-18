@@ -2,12 +2,13 @@ import toggleMenuOnWindowResize from './toggleMenuOnWindowResize.js';
 import toggleDropdownOnWindowResize from './toggleDropdownOnWindowResizeTwo.js';
 import googleCustomSearchInit from './googleCustomSearch.js';
 import closeMenuOnClick from './closeMegaNavOnClick.js';
-import underlineCurrentSite from './underlineCurrentSite.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+export default function megaNav() {
   googleCustomSearchInit();
-  underlineCurrentSite();
+  if (window.location.pathname == '/') {
+    import('./underlineCurrentSite').then(({default: underlineCurrentSite}) => underlineCurrentSite())
+  }
   toggleMenuOnWindowResize();
   toggleDropdownOnWindowResize();
   closeMenuOnClick();
-});
+}

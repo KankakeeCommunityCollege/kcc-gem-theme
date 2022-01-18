@@ -7,7 +7,7 @@ timezone: America/Chicago
 google-tag_key: Google Tag Manager key goes here
 theme_config: true # This key should only be in the theme's _config.yml file and nowhere else # Otherwise you will get JS errors
 core_site: true
-#translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
+# translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 collections:
   tabs:
     people: false

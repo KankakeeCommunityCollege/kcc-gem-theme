@@ -82,15 +82,11 @@ function clickEventHandler(event) {
   }
 }
 
-function addClickEventListener() {
-  document.addEventListener('click', clickEventHandler);
-}
-
 function initSearchToggle() {
   if ( ! document.getElementById('openSearchButton') )
     return;
 
-  addClickEventListener();
+    document.addEventListener('click', clickEventHandler);
 }
 
 export default initSearchToggle;

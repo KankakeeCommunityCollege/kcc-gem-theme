@@ -9,8 +9,6 @@
 <link rel="preconnect" href="https://www.google.com">
 <!-- Google API -->
 <link rel="preconnect" as="script" href="https://apis.google.com/js/api.js">
-<!-- Custom theme JS -->
-<link rel="preconnect" as="script" href="{{page.baseurl}}assets/js/dist/kcc-theme.bundle.js?version={% include hash/theme_hash.yml %}">
 {%- if site.theme_config != true -%}
 <link rel="preconnect" as="script" href="{{page.baseurl}}assets/js/dist/main{% if site.data.hash %}.{{ site.data.hash }}{% endif %}.bundle.js">
 {%- endif -%}

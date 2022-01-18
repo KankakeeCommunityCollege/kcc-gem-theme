@@ -21,7 +21,7 @@ function loadModule(module) {
   return import(`./${module}`).then(({default: module}) => module())
 }
 
-window.addEventListener('load', () => {
+export default function alerts() {
   checkForPrefersReducedMotion();
 
   if (!document.getElementById(EMERGENCY_ALERT_DIV_ID)) {
@@ -54,4 +54,4 @@ window.addEventListener('load', () => {
     }, 100)
   }) // Run accordion/tab JS, which includes a `scrollTo()`, after alert has painted
     .then(() => loadModule('refreshAlertButton')) // Allow user to refresh the alert (and check for changes/updates)
-});
+}

@@ -4,47 +4,19 @@ const MENU_COLLAPSE = 'headerGlobalNavbarContent';  // ID from the HTML
 const HIDE = 'hide';  // Bootstrap 4 class
 const SHOW = 'show';  // Bootstrap 4 class
 
-function hideBootstrapMenu() {
-  MENU_COLLAPSE_JQUERY.collapse(HIDE);
-}
-
-function checkIfMenuIsOpen() {
-  if ( document.getElementById(MENU_COLLAPSE).classList.contains(SHOW) ) {
-    return true;
-  }
-  return false;
-}
-
-function hideMenuIfOpen(menuIsOpen) {
-  if ( menuIsOpen ) {
-    hideBootstrapMenu();
-  } else {
-    return;
-  }
-}
-
 function clickHandlerFunction(e) {
-  if ( !e.target.matches(NAV_LINKS_SELECTOR) )  // Bail out of the rest of the code if the click event's target is not what we want!
+  if ( !e.target.matches(NAV_LINKS_SELECTOR) || e.target.classList.contains('dropdown-toggle') )  // Bail out of the rest of the code if the click event's target is not what we want!
     return;
 
-  if ( e.target.classList.contains('dropdown-toggle') )
-    return;
+  const menuIsOpen = document.getElementById(MENU_COLLAPSE).classList.contains(SHOW) ? true : false;
 
-
-  const menuIsOpen = checkIfMenuIsOpen();
-
-  hideMenuIfOpen(menuIsOpen);
-}
-
-function addEventListenerFunction(element, clickEvent) {
-  element.addEventListener(clickEvent, clickHandlerFunction, false);
+  if (menuIsOpen) {
+    MENU_COLLAPSE_JQUERY.collapse(HIDE);
+  }
 }
 
 function closeMenuOnClick() {
-  const clickEvent = 'click';
-  const element = document;
-
-  addEventListenerFunction(element, clickEvent);
+  document.addEventListener('click', clickHandlerFunction);
 }
 
 export default closeMenuOnClick;

@@ -22,14 +22,10 @@ const config = {
   plugins,
   entry: {
     'kcc-theme': './assets/js/src/all.js',
-    'kcc-theme-landing': './assets/js/landing/landing.js',
-    'kcc-nav': './assets/js/nav/nav/nav.js',
-    'kcc-mega-nav': './assets/js/nav/megaNav/megaNav.js',
-    'alerts': './assets/js/alerts/alerts.js',
     'translate': './assets/js/src/translate.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[fullhash].bundle.js',
     path: path.resolve(__dirname, 'assets', 'js', 'dist'),
     publicPath: 'auto', // MUST BE 'auto' FOR THEME!! Otherwise, bundles will alway's point to the root's JS and not local
     clean: true,
@@ -72,6 +68,6 @@ const config = {
   resolve: {
     extensions: ['.json', '.js', '.jsx']
   }
-};
+}
 
 module.exports = config;

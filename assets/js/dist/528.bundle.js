@@ -1,1 +1,0 @@
-(self.webpackChunkkcc_gem_theme=self.webpackChunkkcc_gem_theme||[]).push([[528],{6528:function(e,c,t){"use strict";t.r(c),c.default=function(e,c){var t,n={};return n.spreadsheetId=e,t=c,n.range=t,n}}}]);
