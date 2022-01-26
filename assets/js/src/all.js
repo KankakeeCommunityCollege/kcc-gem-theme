@@ -72,18 +72,5 @@ window.addEventListener('load', () => {
         return watchForMenuClicks();
       })
     }
-
-
-  // if (document.querySelector('.hero-slider__slider')) {
-  //   Promise.resolve()
-  //     .then(() => loadModule('wrapPowerText'))
-  //     .then(() => loadModule('sliders', 'initSliders'))
-  //     .catch((err) => console.error(`Error loading slider modules :${err}`, err))
-  // }
-  // loadModule('walkText', 'walkText', document.body)
-  // document.querySelector('img[data-src]') ? loadModule('lazyLoad') : null;
-  // loadModule('footerDate')
-  // loadModule('addClassToOpenNavbar')
-  // document.getElementById('errorPageSearch') ? loadModule('errorPageSearch', 'errorPageSearch') : null;
 });
 
