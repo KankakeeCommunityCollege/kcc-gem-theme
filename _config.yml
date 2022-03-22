@@ -51,7 +51,9 @@ exclude:
 uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
 
-## Global/Main Navigation configuration for kcc.edu
+## ================================================ ##
+## Global/Main Navigation configuration for kcc.edu ##
+## ================================================ ##
 navigation: ## Add a navigation key to any project using kcc-gem-theme to locally override these settings
   - link_text: Academics # @link_text becomes the main navigational categories
     link_href: 'academics'
@@ -106,6 +108,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: '#request-your-transcript'
       - text: 'Veterans Services'
         href: 'veterans'
+      - text: 'Credit for Prior Learning'
+        href: 'credit-for-prior-learning'
 ## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
