@@ -46,7 +46,6 @@ window.addEventListener('load', () => {
       document.querySelector('img[data-src]') ? loadModule('lazyLoad') : null;
       loadModule('footerDate')
       loadModule('addClassToOpenNavbar')
-      document.getElementById('errorPageSearch') ? loadModule('errorPageSearch', 'errorPageSearch') : null;
     })
     .then(async () => {
       const { default: megaNav } = await import('../nav/megaNav/megaNav');
@@ -71,6 +70,9 @@ window.addEventListener('load', () => {
       import('./translateScript').then(({ default: watchForMenuClicks }) => {
         return watchForMenuClicks();
       })
+    }
+    if (document.getElementById('SearchTermForm')) {
+      return import('./watchForWebsiteSearch').then(({ default: init }) => init()); 
     }
 });
 

@@ -1,1 +1,0 @@
-(self.webpackChunkkcc_gem_theme=self.webpackChunkkcc_gem_theme||[]).push([[862],{6862:function(e,t,c){"use strict";c.r(t),t.default=function(){var e=document.getElementById("errorPageSearch"),t=document.getElementById("openSearchButton");e.addEventListener("click",(function(e){e.preventDefault(),t.click()}))}}}]);
