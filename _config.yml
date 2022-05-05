@@ -58,8 +58,11 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Academics # @link_text becomes the main navigational categories
     link_href: 'academics'
     image: # The image element built into each dropdown menu
-      source: 'assets/img/e-tech_a-roberts_mar2016_D41_6690.jpg' # Points to the image file
-      alt: 'Student working in an electrical technology lab' # YOU ALWAYS NEED ALT TEXT!!!
+      source: 'assets/img/menu-academics.jpg' # Points to the image file
+      # YOU ALWAYS NEED ALT TEXT!!!
+      alt: >-
+        Student in an electrical technology lab standing 
+        in front of electrical equipment mounted to a wall
     dropdown: # Defines the 'academics' items in the dropdown
 ## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
 ##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.
@@ -87,8 +90,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text:  Admissions
     link_href: admissions
     image:
-      source: 'assets/img/admissions-navigation-menu.jpg'
-      alt: "Student posing in front of the metal sculpture in KCC's courtyard"
+      source: 'assets/img/menu-admission.jpg'
+      alt: 'Smiling student inside the KCC main entrance'
     dropdown:
       - text:  Admissions
         href: admissions
@@ -114,8 +117,10 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
     image:
-      source: 'assets/img/fafsa-early-bird-banner-18.jpg'
-      alt: 'The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov. More details and workshop info at www.kcc.edu/finaid'
+      source: 'assets/img/menu-fafsa-early-bird-banner-18.jpg'
+      alt: >-
+        The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov.
+        More details and workshop info at www.kcc.edu/finaid
     dropdown:
       - text:  Tuition & Aid
         href: 'tuition-and-aid'
@@ -135,8 +140,11 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Student Resources
     link_href: 'student-resources'
     image:
-      source: 'assets/img/DSC_5650_helpful.jpg'
-      alt: 'Receptionist answering the phone'
+      source: 'assets/img/menu-student-resources.jpg'
+      alt: >-
+        KCC Veteran Services staff from left-to-right; 
+        Kendra Souligne, Hassel Hernandez, Jason Rodriguez, 
+        and Megan Ponton.
     dropdown:
       - text: Student Resources
         href: 'student-resources'
@@ -182,8 +190,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Community
     link_href: 'community'
     image:
-      source: 'assets/img/go_cavs_20171002_193828-web.jpg'
-      alt: 'Group photo of students holding Cavalier signs'
+      source: 'assets/img/menu-community.jpg'
+      alt: 'The Criminal Justice Club posing on the metal sculpture in front of the KCC main entrance'
     dropdown:
       - text: Community
         href: 'community'
@@ -204,8 +212,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     link_href: 'about'
     link_nav: 'about'
     image:
-      source: 'assets/img/ATEC-DSC_1033.jpeg'
-      alt: 'The new Advanced Technology Education Center building'
+      source: 'assets/img/menu-about-kcc.jpg'
+      alt: 'Two students posing in front of the KCC main entrance'
     dropdown:
       - text: About KCC
         href: 'about'
