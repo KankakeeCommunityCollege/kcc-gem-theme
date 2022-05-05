@@ -25,6 +25,9 @@ $dark-mode-white-darker: #bfbfbf;
   & .header-global__brand--svg {
     color: $dark-mode-white-darker;
   }
+  & .header-global__drodpown-menu--img {
+    border-color: $color-white-5;
+  }
   & p,
   & ol,
   & ul:not(.navbar-nav),

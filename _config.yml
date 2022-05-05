@@ -10,11 +10,11 @@ core_site: true
 # translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 collections:
   tabs:
-    people: false
+    output: false
   accordions:
-    people: false
+    output: false
   contacts:
-    people: true
+    output: true
 permalink: pretty
 description: > # this means to ignore newlines until "baseurl:"
 # Delete this comment and place description on this line

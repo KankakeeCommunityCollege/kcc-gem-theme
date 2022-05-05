@@ -444,12 +444,12 @@
   }
 }
 
+
 @media screen and (min-width: 992px) {
   .header-global__drodpown-menu--img {
     width: 280px;
-    &--border {
-      border: thin solid $grey-8;
-    }
+    border: thin solid $color-black-125;
+    border-radius: 4px;
   }
 }
 
