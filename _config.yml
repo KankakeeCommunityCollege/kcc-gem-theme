@@ -103,8 +103,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://info.kcc.edu/'
       - text: Visit/Explore
         href: 'https://visit.kcc.edu'
-      - text: Cav Day
-        href: 'cav-day'
       - text: 'Start in High School'
         href: 'high-school'
       - text: Request KCC Transcripts
