@@ -17,8 +17,10 @@ const API_PARAMS = { // This is configuration for API call with spreadsheets tha
 };
 const pageHasAccordionOrTabs = (document.querySelector('#accordion') || document.querySelector('.navTabs')) ? true : false;
 
-function loadModule(module) {
-  return import(`./${module}`).then(({default: module}) => module())
+async function loadModule(module) {
+  const { default: module_func } = await import(`./${module}`);
+
+  return module_func();
 }
 
 export default function alerts() {
@@ -53,5 +55,10 @@ export default function alerts() {
       return pageHasAccordionOrTabs ? loadModule('contentHashLink') : null;
     }, 100)
   }) // Run accordion/tab JS, which includes a `scrollTo()`, after alert has painted
-    .then(() => loadModule('refreshAlertButton')) // Allow user to refresh the alert (and check for changes/updates)
+    .then(() => {
+      if (!document.getElementById('syncAlert'))
+        return;
+
+      return loadModule('refreshAlertButton')
+    }) // Allow user to refresh the alert (and check for changes/updates)
 }
