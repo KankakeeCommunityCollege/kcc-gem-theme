@@ -17,13 +17,13 @@
     background-color: $primary-blue;
     border-radius: 50%;
     color: #fff;
-    content: '\002D';
+    content: '\2212';
     display: inline-block;
     font-family: $font-family-paragraph;
     font-size: 2rem;
     font-weight: 400;
     height: 30px;
-    line-height: 30px;
+    line-height: 28px;
     margin-right: 10px;
     position: relative; // Safari doesn't want to render this pseudo-element without `position: relative;`
     text-align: center;
