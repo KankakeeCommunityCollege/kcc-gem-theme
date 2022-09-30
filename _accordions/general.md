@@ -1,11 +1,14 @@
 ---
 accordion_page: Accordion
-card_heading: 'The Power of Giving'
+card_heading: 'West Elevator Repair &mdash; Fall 2022'
+alternate_id: west-elevator-repair-fall-2022
 order: 1
 ---
 
 ## The POWER of Giving
 {: .typography__h2 id="giving" }
+
+[Planned Giving](#planned-giving){: .btn.btn-primary }
 
 ##### IMPORTANT: If you have a heading that matches the accordion's toggle-button it will generate the same ID causing issues in the BS4 (and 5) Collapse functionality
 {: .typography__h5 }

@@ -4,14 +4,18 @@
   </div>
 </div>
 <div id="accordion" class="accordion pt-2 pb-3 mb-3">
-  {% assign page_title = page.title %}
-  {% assign accordion_collection = site.accordions | where: "accordion_page", page_title | sort: "order" %}
-  {% for item in accordion_collection %}
+{%- assign page_title = page.title -%}
+{%- assign accordion_collection = site.accordions | where: "accordion_page", page_title | sort: "order" -%}
+{%- for item in accordion_collection -%}
+{%- if item.alternate_id -%}
+  {%- assign this_accordion_id = item.alternate_id -%}
+{%- else -%}
   {%- comment -%}
     In the liquid `assign` below, the second `| remove: '—'` statement is 
     an em-dash character that will look like another hyphen (monospace code editor font.)
   {%- endcomment -%}
-  {% assign this_accordion_id = item.card_heading | downcase | remove: '-' | remove: '&mdash;' | remove: '—' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | replace: 'é', 'e' | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
+  {%- assign this_accordion_id = item.card_heading | downcase | remove: '-' | remove: '&mdash;' | remove: '—' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | replace: 'é', 'e' | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' -%}
+{%- endif -%}
   <div class="card">
     <div class="card-header px-0" id="card-header-{{ this_accordion_id }}">
       <h2 class="mb-0 accordion__typography--card-header accordion__typography--hover">
@@ -31,7 +35,6 @@
         <!-- Editor Link -->
         <a href="cloudcannon:collections/{{ item.path }}" class="btn btn-success mb-4 editor-button">Edit This Accordion
           Item</a>
-
         {{ item.content }}
       </div>
     </div>
