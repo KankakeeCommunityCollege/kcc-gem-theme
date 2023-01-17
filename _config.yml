@@ -74,7 +74,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'calendar'
       - text: Continuing Education
         href: 'https://continuinged.kcc.edu/' ## Absolute URL with protocol works too
-      - text: High School Diploma (GED)
+      - text: Illinois High School Diploma (GED)
         href: 'https://adulted.kcc.edu/programs/ged/'
       - text: Commencement
         href: 'commencement'
