@@ -5,18 +5,24 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{page.title}} - {{site.title}}</title>
-    <meta name="description" content="{{page.description}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
+    <!-- Required Bootstrap 4 viewport meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% include preconnect.html %}
     <!-- ==============================
       KCC GEM THEME
       A Jekyll gem-based theme for Kankakee Community College's websites
-      Theme & theme's build-process coded and developed by Wesley Zajicek for KCC 2019-2020
+      Theme & theme's build-process coded and developed by Wesley Zajicek for © KCC 2019-{{ 'now' | date: '%Y' }}
       Author: Wesley Zajicek | https://github.com/wdzajicek
       -->
     {% if site.humans_file == true %}
     <!-- The human's, the human's!! -->
     <link rel="author" type="text/plain" href="/humans.txt" />
     {%- endif -%}
+    {%- if jekyll.environment == 'publish' -%}
+    <link rel="manifest" href="/site.webmanifest">
+    {%- endif -%}
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="theme-color" content="#b8babc">
     <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{page.baseurl}}favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>

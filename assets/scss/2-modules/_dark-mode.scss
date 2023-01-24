@@ -155,7 +155,7 @@ $dark-mode-white-darker: #bfbfbf;
       color: #f8d7da;
     }
   }
-  & a:not(.nav-link),
+  & a:not(.nav-link, .btn),
   & .links__darker-link {
     color: $dark-mode-text-primary-blue-darker;
   }
