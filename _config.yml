@@ -247,3 +247,5 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'consumer-info'
       - text: ICCB Salary and Benefits Portal
         href: 'http://iccbdbsrv.iccb.org/salarysearch/home.cfm'
+      - text: COVID-19 Response
+        href: 'https://coronavirus.kcc.edu'
