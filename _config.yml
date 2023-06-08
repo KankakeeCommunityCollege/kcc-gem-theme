@@ -184,6 +184,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: handbook
       - text: Childcare Discount
         href: childcare
+      - text: Support Resources
+        href: support-resources
 ## Community ##
   - link_text: Community
     link_href: 'community'
