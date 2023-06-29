@@ -207,6 +207,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://wioa.kcc.edu/'
       - text: Community Testing Center
         href: testing-center
+      - text: Wheels of Opportunity
+        href: 'wheels'
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'
