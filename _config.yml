@@ -1,6 +1,6 @@
 title: "KCC"
 site_name: KCC Gem Theme
-public-url: "http://www.kcc.edu"
+public-url: "https://www.kcc.edu"
 url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
 port: 3000
 timezone: America/Chicago
