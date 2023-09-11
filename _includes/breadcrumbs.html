@@ -55,7 +55,7 @@
       {% if forloop.last %}
     <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
       {% else %}
-    <li class="breadcrumb-item"><a href="../">{{ item | capitalize }}</a></li>
+    <li class="breadcrumb-item"><a href="../">{{ item | split: '-' | join: ' ' | capitalize }}</a></li>
       {% endif %}
     {% endif %}
     {% endfor %}

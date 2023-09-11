@@ -23,6 +23,9 @@
       fill: none;
     } 
   }
+  & li {
+    text-transform: capitalize;
+  }
 }
 
 // This is a Bootstrap 4 override to customize the breadcrumb divider
