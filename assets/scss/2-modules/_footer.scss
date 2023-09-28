@@ -45,6 +45,13 @@ a.footer-link {
   width: 33px;
 }
 
+@media screen and (min-width: 330px) {
+  .footer-icons {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 @media screen and (min-width: 360px) {
   .footer-icons {
     height: 40px;
@@ -55,40 +62,35 @@ a.footer-link {
 
 @media screen and (min-width: 412px) {
   .footer-icons {
-    height: 40px;
-    width: 40px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .footer-icons {
     height: 45px;
     width: 45px;
   }
 }
 
+@media screen and (min-width: 576px) {
+  .footer-icons {
+    height: 50px;
+    width: 50px;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .footer-icons {
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    margin: 3px;
+    width: 45px;
   }
 }
 
 @media screen and (min-width: 1053px) {
   .footer-icons {
     height: 45px;
+    margin: 5px;
     width: 45px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .footer-icons {
-    height: 45px;
-    width: 45px;
-  }
-}
-
-@media screen and (min-width: 1400px) {
   .footer-icons {
     height: 50px;
     width: 50px;
