@@ -115,9 +115,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
     image:
-      source: 'assets/img/menu-fafsa-early-bird-banner-18.jpg'
+      source: 'assets/img/menu_fafsa-early-bird-web-banner-23.jpg'
       alt: >-
-        The early bird gets the money. FAFSA available Oct. 1. Apply at fafsa.gov.
+        The early bird gets the money. FAFSA available before Dec. 31. Apply at fafsa.gov.
         More details and workshop info at www.kcc.edu/finaid
     dropdown:
       - text:  Tuition & Aid
