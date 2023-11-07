@@ -10,8 +10,7 @@
 //  This JS will allow us to link to a specific area of content in a page where a traditional hash link wouldn't work
 //  In this case hash links won't work because the element with he matching ID is "stuck" in a closed accordion or tab.
 //
-const idRegex = /^id=/g; // Lets just cache these reused regex's here
-const queryStartRegex = /^\?/g;
+const idRegex = /.*[\?&]id=([^&]+).*$/; // Lets just cache these reused regex's here
 const endingSlashRegex = /\/$/g;
 const PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY = 'userPrefersReducedMotion'; // This localStorage key is set by module: './checkForPrefersReducedMotion.js'
 const scrollIntoViewOptionsObject = {
@@ -30,7 +29,7 @@ function focusElement(el) {
 }
 
 function processIdQuery(query, hash) {
-  let id = query.replace(idRegex, '');
+  let id = query.replace(idRegex, `$1`);
   const parentEl = document.querySelector(hash);
   const heading = parentEl.querySelector(`#${id}`);
 
@@ -56,7 +55,7 @@ function checkForMatchingTabOrAccordion(hash) {
     tab
       .on('shown.bs.tab', () => {  // Bootstrap 4 method for tab events // Must be defined before the tab is activated
         window.location.search ?
-          checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
+          checkForQuery(window.location.search, hash)
           : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
         })
       .tab('show');  // Bootstrap 4 Tab method
@@ -66,7 +65,7 @@ function checkForMatchingTabOrAccordion(hash) {
     card
       .on('shown.bs.collapse', () => {  // Bootstrap 4 Collapse method // Must be defined before the collapse is activated
         window.location.search ?
-          checkForQuery(window.location.search.replace(queryStartRegex, ''), hash)
+          checkForQuery(window.location.search, hash)
         : findContentTarget(`button[data-target="${hash}"]`);
       })
       .collapse('show'); // Bootstrap 4 Collapse method
