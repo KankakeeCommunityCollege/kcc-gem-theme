@@ -1,6 +1,6 @@
 {% assign slide_collection = page.slides %}
 <div class="row">
-  <div class="col hero-slider__slider hero-slider__slides-{{ slide_collection.size }}">
+  <div class="col hero-slider__slider hero-slider__slides-{{ slide_collection.size }}{% if page.slider_extra_classes %} {{ page.slider_extra_classes | join: ' ' }}{% endif %}">
   {% for slide in slide_collection %}
   {% assign url_first_char = slide.url | slice: 0 %}
     {% if forloop.first == true %}
