@@ -85,7 +85,7 @@
 .buttons__action {
   color: $white;
   background-color: $primary-red;
-  border-color: $color-red-darker;
+  border-color: rgba(0, 0, 0, .35);
   font-family: $font-family-headings;
   font-size: 1.3rem;
   font-weight: $font-weight-bolder; //dash
