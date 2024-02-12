@@ -5,10 +5,6 @@
 ## Prevent CloudCannon Errors
 .ruby-version
 
-### Ignore the Gemfile to keep it out of cloudcannon ###
-#Gemfile
-Gemfile.lock
-
 ### General Apple things to ignore ###
 .DS_Store
 .AppleDouble
@@ -42,24 +38,6 @@ _site
 
 ### Nodejs Stuffs
 node_modules/
-# Avoid win/mac/linux discrepencies
-package-lock.json
-
-# Ignore gem lock to avoid mac/windows discrepencies
-#Gemfile.lock
-
-# Ignore adobe directory containing working illustrator, photoshop,
-assets/adobe/
-assets/adobe/*
-/adobe/
-adobe/*
-
-# Yarn error log
-yarn-error.log
-
-# Ye Olde Gulp tasks from an API long, long ago, in a galaxy far, far away:
-old-gulp-tasks/
-old.gulpfile.js
 
 # Jekyll 4's caching dir
 .jekyll-cache/
