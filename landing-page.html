@@ -1,9 +1,15 @@
 ---
 layout: landing-page
 targetx_form: true
+landing_page_js: true
 baseurl: '../'
 title: Landing Page
 description: ''
+_inputs:
+  landing_page_js:
+    comment: Include custom JS for landing pages with TargetX forms
 ---
 
 {% include header.html %}
+{% include benefits.html %}
+{% include bottom-action-call.html %}

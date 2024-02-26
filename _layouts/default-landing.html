@@ -16,12 +16,12 @@
   {% if site.translate == true %}{% include translate.html %}{% endif %}
   {% include nav-landing.html %}
   {{ content }}
-  {% include benefits.html %}
-  {% include bottom-action-call.html %}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
   {% include scripts/kcc-theme.html %}
+  {% if page.landing_page_js %} 
   {% include scripts/kcc-theme-landing.html %}
+  {% endif %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}

@@ -23,6 +23,7 @@ const config = {
   entry: {
     'kcc-theme': './assets/js/src/all.js',
     'translate': './assets/js/src/translate.js',
+    'kcc-theme-landing': './assets/js/landing/main.js'
   },
   output: {
     filename: '[name].[fullhash].bundle.js',
