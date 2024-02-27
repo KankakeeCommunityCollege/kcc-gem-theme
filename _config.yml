@@ -182,8 +182,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://wioa.kcc.edu/'
       - text: Student Handbook
         href: handbook
-      - text: Childcare Discount
-        href: childcare
       - text: Support Resources
         href: support-resources
 ## Community ##
