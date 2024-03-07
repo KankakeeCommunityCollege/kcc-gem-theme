@@ -184,6 +184,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: handbook
       - text: Support Resources
         href: support-resources
+      - text: Student Life Events Calendar
+        href: events-calendar
 ## Community ##
   - link_text: Community
     link_href: 'community'
