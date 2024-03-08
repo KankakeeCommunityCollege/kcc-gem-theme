@@ -66,7 +66,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown: # Defines the 'academics' items in the dropdown
 ## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
 ##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.
-      - text: Academic Programs ## Text for the first dropdown item (stays at the top)
+      - text: Academic Programs Home ## Text for the first dropdown item (stays at the top)
         href: 'academics' ## Relative link that the first dropdown item should point to
       - text: Class Schedule 
         href: 'schedule' # Relative link with hashes and queries work too 'page/#hash' or 'page/?id=some-heading#hash'
@@ -93,7 +93,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       source: 'assets/img/menu-admission.jpg'
       alt: 'Smiling student inside the KCC main entrance'
     dropdown:
-      - text:  Admissions
+      - text:  Admissions Home
         href: admissions
       - text: Placement Testing
         href: 'testing'
@@ -120,7 +120,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         The early bird gets the money. FAFSA available before Dec. 31. Apply at fafsa.gov.
         More details and workshop info at www.kcc.edu/finaid
     dropdown:
-      - text:  Tuition & Aid
+      - text:  Tuition & Aid Home
         href: 'tuition-and-aid'
       - text: Financial Aid
         href: 'financial-aid'
@@ -144,7 +144,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         Kendra Souligne, Hassel Hernandez, Jason Rodriguez, 
         and Megan Ponton.
     dropdown:
-      - text: Student Resources
+      - text: Student Resources Home
         href: 'student-resources'
       - text: Bookstore
         href: 'http://books.kcc.edu'
@@ -193,7 +193,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       source: 'assets/img/menu-community.jpg'
       alt: 'The Criminal Justice Club posing on the metal sculpture in front of the KCC main entrance'
     dropdown:
-      - text: Community
+      - text: Community Home
         href: 'community'
       - text: Adult & Community Education
         href: 'https://adulted.kcc.edu/'
@@ -217,7 +217,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       source: 'assets/img/menu-about-kcc.jpg'
       alt: 'Two students posing in front of the KCC main entrance'
     dropdown:
-      - text: About KCC
+      - text: About KCC Home
         href: 'about'
       - text: Newsroom
         href: 'https://news.kcc.edu'
