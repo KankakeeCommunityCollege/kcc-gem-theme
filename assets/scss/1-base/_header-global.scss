@@ -224,12 +224,8 @@
 }
 
 .header-global__brand--svg {
-  fill: $white;
   height: 28px;
   max-width: 100%;
-  & .st0 {
-    fill: none;
-  }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1040px) { // the KCC word logo needs to shrink a little bit at these screen sizes
