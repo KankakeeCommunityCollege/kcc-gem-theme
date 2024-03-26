@@ -148,7 +148,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Student Resources Home
         href: 'student-resources'
       - text: Bookstore
-        href: 'http://books.kcc.edu'
+        href: 'https://books.kcc.edu'
       - text: Clubs & Organizations
         href: 'clubs'
       - text: 'Center for Equity, Diversity & Inclusion'
@@ -251,6 +251,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Consumer Info and Disclosures
         href: 'consumer-info'
       - text: ICCB Salary and Benefits Portal
-        href: 'http://iccbdbsrv.iccb.org/salarysearch/home.cfm'
+        href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
       - text: COVID-19 Response
         href: 'https://coronavirus.kcc.edu'
