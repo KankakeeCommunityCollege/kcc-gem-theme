@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{page.title}} - {{site.title}}</title>
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
+    <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
     <!-- Required Bootstrap 4 viewport meta-tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% include preconnect.html %}
