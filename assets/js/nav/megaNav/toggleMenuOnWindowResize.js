@@ -1,22 +1,22 @@
-// Custom JS to Close the Navigation menu, if its open, & if the screen goes above 992px wide (Bootstrap 4 'lg' devices)
+// Custom JS to Close the Navigation menu, if its open, & if the screen goes above 992px wide (Bootstrap 5 'lg' devices)
 const NAVBAR_COLLAPSE_ID = 'headerGlobalNavbarContent'; // ID built into the sites' HTML
 
-function checkNavbarCollapseState(menuEl) {
+function checkNavbarCollapseState(menuEl, Collapse) {
   if ( menuEl.classList.contains('show') ) { // 'show' is a Bootstrap 4 class that makes `.collapse` items visible. // Checking to see if the Menu is open
-    $(menuEl).collapse('hide'); // Bootstrap 4 `.collapse()` method.
+    const bsCollapse = new Collapse(menuEl, {toggle: false});
+
+    bsCollapse.hide()
   }
 }
 
-function windowResizeHandler() {
-  if ( window.innerWidth >= 992 ) {
-    const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
+function toggleMenuOnWindowResize(Collapse) {
+  window.addEventListener('resize', _e => {
+    if ( window.innerWidth >= 992 ) {
+      const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
 
-    checkNavbarCollapseState(menuCollapseElement);
-  }
-}
-
-function toggleMenuOnWindowResize() {
-  window.addEventListener('resize', windowResizeHandler);
+      checkNavbarCollapseState(menuCollapseElement, Collapse);
+    }
+  });
 }
 
 export default toggleMenuOnWindowResize;

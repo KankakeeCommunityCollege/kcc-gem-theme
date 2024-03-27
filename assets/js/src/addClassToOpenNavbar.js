@@ -8,11 +8,11 @@ function addClassToOpenNavbar() {
   const collapse = document.getElementById(NAVBAR_COLLAPSE_ID);
   const header = document.querySelector(HEADER_GLOBAL);
 
-  $(collapse).on('show.bs.collapse', (e) => {
+  collapse.addEventListener('show.bs.collapse', _e => {
     header.classList.add('header-global__open');
   });
 
-  $(collapse).on('hide.bs.collapse', (e) => {
+  collapse.addEventListener('hide.bs.collapse', _e => {
     header.classList.remove('header-global__open');
   });
 }

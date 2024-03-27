@@ -1,5 +1,5 @@
     <!-- Custom CSS Stylesheet for CloudCannon -->
     <link rel="stylesheet" href="{{page.baseurl}}assets/css/content.css">
   </head>
-  <body{% if page.homepage == true %} id="homePage"{% endif %}>
-    <h1 class="sr-only">{%- if page.outline_title -%}{{ page.outline_title }}{% else %}{{ page.title }}{%- endif -%}</h1>
+  <body data-bs-no-jquery="true" {% if page.homepage == true %} id="homePage"{% endif %}>
+    <h1 class="visually-hidden">{%- if page.outline_title -%}{{ page.outline_title }}{% else %}{{ page.title }}{%- endif -%}</h1>

@@ -48,42 +48,46 @@ function findContentTarget(hash) {
   focusElement(target);
 }
 
-function checkForMatchingTabOrAccordion(hash) {
+function checkForMatchingTabOrAccordion(hash, Collapse, Tab) {
   if ( document.querySelector(`.nav-tabs a[href="${hash}"]`) ) {  // Looks for a matching BS4 tab element
-    let tab = $(`.nav-tabs a[href="${hash}"]`);  // **SIGH**, BS4 requires JQuery
+    // let tab = $(`.nav-tabs a[href="${hash}"]`);  // **SIGH**, BS4 requires JQuery
+    const tab = document.querySelector(`.nav-tabs a[href="${hash}"]`);
+    const bsTab = new Tab(tab);
 
-    tab
-      .on('shown.bs.tab', () => {  // Bootstrap 4 method for tab events // Must be defined before the tab is activated
-        window.location.search ?
-          checkForQuery(window.location.search, hash)
-          : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
-        })
-      .tab('show');  // Bootstrap 4 Tab method
+    tab.addEventListener('shown.bs.tab', _e => {
+      window.location.search ?
+        checkForQuery(window.location.search, hash)
+      : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
+    });
+    bsTab.show();
   } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS4 collapse element
-    let card = $(hash);  // **SIGH**, BS4 requires JQuery
+    // let card = $(hash);  // **SIGH**, BS4 requires JQuery
+    const card = document.querySelector(hash);
+    const bsCard = new Collapse(card, {toggle: false});
 
-    card
-      .on('shown.bs.collapse', () => {  // Bootstrap 4 Collapse method // Must be defined before the collapse is activated
-        window.location.search ?
-          checkForQuery(window.location.search, hash)
-        : findContentTarget(`button[data-target="${hash}"]`);
-      })
-      .collapse('show'); // Bootstrap 4 Collapse method
+    card.addEventListener('shown.bs.collapse', _e => {
+      window.location.search ?
+        checkForQuery(window.location.search, hash)
+      : findContentTarget(`button[data-bs-target="${hash}"]`);
+    });
+    bsCard.show();
   }
 }
 
-function checkForHash() {
+function checkForHash(Collapse, Tab) {
   if (window.location.hash) {
     let hash = window.location.hash.replace(endingSlashRegex, '');
 
-    checkForMatchingTabOrAccordion(hash);
+    checkForMatchingTabOrAccordion(hash, Collapse, Tab);
   }
   return;
 }
 
-function contentHashLink() {
-  checkForHash();
-  window.addEventListener('hashchange', checkForHash, false);
+function contentHashLink(Collapse, Tab) {
+  checkForHash(Collapse, Tab);
+  window.addEventListener('hashchange', _e => {
+    checkForHash(Collapse, Tab);
+  }, false);
 
   import('./addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
     addAccordionOrTabHistoryStates();

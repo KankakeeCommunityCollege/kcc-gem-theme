@@ -3,10 +3,13 @@ name: Financial Aid FAQ 2
 tabs_page: Accordion
 ---
 
-What Is a Financial Aid Eligibility Date?
+**What Is a Financial Aid Eligibility Date?**
+
 The financial aid he financial aid eligibility date, is the day that the Office of Financial Aid takes a “snapshot” of your total enrollment to determine your Title IV* federal award eligibility for the semester. This “snapshot” locks in the number of eligible credit hours upon which your financial aid award is based.
 The eligibility date applies to all courses, even those beginning later in the semester.
-When Is The Eligibility Date?
+
+**When Is The Eligibility Date?**
+
 Upcoming eligibility dates
 Fall 2019: Sept. 6, 2019
 Spring 2020: Jan. 31, 2020

@@ -21,7 +21,7 @@
       <h2 class="mb-0 accordion__typography--card-header accordion__typography--hover">
         <button
           class="btn btn-link buttons__no-decoration accordion__button{% if forloop.first != true %} collapsed{% endif %}{% if forloop.first == true and page.accordion_expanded == false %} collapsed{% endif %}"
-          type="button" data-target="#{{ this_accordion_id }}" data-toggle="collapse"
+          type="button" data-bs-target="#{{ this_accordion_id }}" data-bs-toggle="collapse"
           aria-expanded="{% if forloop.first == true and page.accordion_expanded != false %}true{% else %}false{% endif %}"
           aria-controls="{{ this_accordion_id }}">
           {{ item.card_heading }}

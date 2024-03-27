@@ -6,47 +6,40 @@ const NAVBAR_ELEMENT = document.getElementById(NAV_ELEMENT_ID_STRING);  // The <
 const BOOTSTRAP_COLLAPSE_SHOW_CLASS_STRING = 'show';
 const BOOTSTRAP_DROPDOWN_TOGGLER_CLASS = '.dropdown-toggle'; // Class specific to Bootstrap 4 code
 
-function openNavigationCollapse() {
-
-  if ( NAVBAR_ELEMENT.navbar_toggled === true )  // Track if the navbar has already been toggled
-    return; // Bail-out to prevent repetitive calls to the code below (without this the code is called many, many, many times while the screen is resizing)
-
-  const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
-
-  NAVBAR_ELEMENT.navbar_toggled = true;
-  $(menuCollapseElement).collapse(BOOTSTRAP_COLLAPSE_SHOW_CLASS_STRING);  // BOOTSTRAP 4 METHOD (requires jQuery (yuck!).)!!! Official BS4 docs on `.collapse()` https://getbootstrap.com/docs/4.4/components/collapse/#via-javascript
-}
-
-function checkForOpenDropdownMenus(menuItem) {
-  const dropdown = menuItem.parentElement;
-
-  if ( dropdown.classList.contains(BOOTSTRAP_COLLAPSE_SHOW_CLASS_STRING) ) {
-    openNavigationCollapse();
-  }
-}
-
-function loopOverDropdownItems(nodeList) {
-  let len = nodeList.length;
-
-  for (var i = 0; i < len; i++) {
-    checkForOpenDropdownMenus(nodeList[i]);
-  }
-}
-
-function windowResizeHandler() {
-  const dropdownToggleNodeList = document.getElementById(GLOBAL_NAVIGATION_ITEMS).querySelectorAll(BOOTSTRAP_DROPDOWN_TOGGLER_CLASS);
-
-  if ( window.innerWidth <= 992 ) {
-    loopOverDropdownItems(dropdownToggleNodeList);
-  } else {
-    NAVBAR_ELEMENT.navbar_toggled = false;
-  }
-}
-
-function toggleDropdownOnWindowResize() {
+function toggleDropdownOnWindowResize(Collapse) {
 
   if ( ! NAVBAR_ELEMENT )
     return;
+
+  function openNavigationCollapse() {
+
+    if ( NAVBAR_ELEMENT.navbar_toggled === true )  // Track if the navbar has already been toggled
+      return; // Bail-out to prevent repetitive calls to the code below (without this the code is called many, many, many times while the screen is resizing)
+
+    const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
+    const bsCollapse = new Collapse(menuCollapseElement, {toggle: false});
+
+    NAVBAR_ELEMENT.navbar_toggled = true;
+    bsCollapse.show();
+  }
+
+  function checkForOpenDropdownMenus(menuItem) {
+    const dropdown = menuItem.parentElement;
+
+    if ( dropdown.classList.contains(BOOTSTRAP_COLLAPSE_SHOW_CLASS_STRING) ) {
+      openNavigationCollapse();
+    }
+  }
+
+  function windowResizeHandler() {
+    const dropdownToggleNodeList = document.getElementById(GLOBAL_NAVIGATION_ITEMS).querySelectorAll(BOOTSTRAP_DROPDOWN_TOGGLER_CLASS);
+
+    if ( window.innerWidth <= 992 ) {
+      dropdownToggleNodeList.forEach(checkForOpenDropdownMenus);
+    } else {
+      NAVBAR_ELEMENT.navbar_toggled = false;
+    }
+  }
 
   window.addEventListener('resize', windowResizeHandler);
 }

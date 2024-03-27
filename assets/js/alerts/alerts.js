@@ -23,11 +23,14 @@ async function loadModule(module) {
   return module_func();
 }
 
-export default function alerts() {
+export default function alerts(Collapse, Tab) {
   checkForPrefersReducedMotion();
 
   if (!document.getElementById(EMERGENCY_ALERT_DIV_ID)) {
-    return pageHasAccordionOrTabs ? loadModule('contentHashLink') : null;
+    // return pageHasAccordionOrTabs ? loadModule('contentHashLink') : null;
+    if (pageHasAccordionOrTabs) {
+      import('./contentHashLink').then(({default: contentHashLink}) => contentHashLink(Collapse, Tab));
+    }
   }
 
   new Promise((resolve, reject) => { // First build the alert, whether by cache or API call
@@ -52,7 +55,9 @@ export default function alerts() {
     }
   }).then(() => {
     window.setTimeout(() => {
-      return pageHasAccordionOrTabs ? loadModule('contentHashLink') : null;
+      if (pageHasAccordionOrTabs) {
+        import('./contentHashLink').then(({default: contentHashLink}) => contentHashLink(Collapse, Tab));
+      }
     }, 100)
   }) // Run accordion/tab JS, which includes a `scrollTo()`, after alert has painted
     .then(() => {

@@ -1,17 +1,6 @@
 import '../../scss/kcc-theme.scss';
-
-function loadModule(...moduleArgs) {
-  const module = moduleArgs[0];
-  let defaultFunc;
-  let funcArg = undefined;
-  
-  moduleArgs.length > 1 ? defaultFunc = moduleArgs[1] : defaultFunc = moduleArgs[0];
-  moduleArgs.length > 2 ? funcArg = moduleArgs[2] : null;
-
-  import(`./${module}`).then(({ default: defaultFunc }) => {
-    return funcArg = undefined ? defaultFunc() : defaultFunc(funcArg);
-  });
-}
+import './bootstrap';
+import { Collapse, Tab } from 'bootstrap';
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
@@ -34,22 +23,24 @@ window.addEventListener('load', () => {
 // 10.) document.getElementById('google_translate_element') ? loadModule('translateScript', 'watchForMenuClicks') : null;
   
   import('../alerts/alerts')
-    .then(({ default: alerts }) => alerts())
+    .then(({ default: alerts }) => alerts(Collapse, Tab))
     .then(() => {
       if (document.querySelector('.hero-slider__slider')) {
         Promise.resolve()
-          .then(() => loadModule('wrapPowerText'))
-          .then(() => loadModule('sliders', 'initSliders'))
+          .then(() => import('./wrapPowerText').then(({default: wrapPowerText}) => wrapPowerText()))
+          .then(() => import('./sliders').then(({ default: initSliders }) => initSliders()))
           .catch((err) => console.error(`Error loading slider modules :${err}`, err))
       }
-      loadModule('walkText', 'walkText', document.body)
-      document.querySelector('img[data-src]') ? loadModule('lazyLoad') : null;
-      loadModule('footerDate')
-      loadModule('addClassToOpenNavbar')
+      import('./walkText').then(({ default: walkText }) => walkText(document.body));
+      if (document.querySelector('img[data-src]')) {
+        import('./lazyLoad').then(({ default: lazyLoad }) => lazyLoad());
+      }
+      import('./footerDate').then(({ default: footerDate }) => footerDate());
+      import('./addClassToOpenNavbar').then(({ default: addClassToOpenNavbar }) => addClassToOpenNavbar());
     })
     .then(async () => {
       const { default: megaNav } = await import('../nav/megaNav/megaNav');
-      return megaNav();
+      return megaNav(Collapse);
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))
   

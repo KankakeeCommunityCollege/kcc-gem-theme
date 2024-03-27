@@ -9,7 +9,7 @@
   {% for tab in tab_collection %}
   {% assign tab_id = tab.name | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
   <li class="nav-item">
-    <a class="nav-link{% if forloop.first == true %} active{% endif %}" id="{{ tab_id }}-label" data-toggle="tab" href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" aria-selected="{% if forloop.first == true %}true{% else %}false{% endif %}">{{ tab.name }}</a>
+    <a class="nav-link{% if forloop.first == true %} active{% endif %}" id="{{ tab_id }}-label" data-bs-toggle="tab" href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" aria-selected="{% if forloop.first == true %}true{% else %}false{% endif %}">{{ tab.name }}</a>
   </li>
   {% endfor %}
 </ul>

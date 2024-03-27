@@ -3,12 +3,9 @@ import toggleDropdownOnWindowResize from './toggleDropdownOnWindowResizeTwo.js';
 import googleCustomSearchInit from './googleCustomSearch.js';
 import closeMenuOnClick from './closeMegaNavOnClick.js';
 
-export default function megaNav() {
+export default function megaNav(Collapse) {
   googleCustomSearchInit();
-  if (window.location.pathname == '/') {
-    import('./underlineCurrentSite').then(({default: underlineCurrentSite}) => underlineCurrentSite())
-  }
-  toggleMenuOnWindowResize();
-  toggleDropdownOnWindowResize();
+  toggleMenuOnWindowResize(Collapse);
+  toggleDropdownOnWindowResize(Collapse);
   closeMenuOnClick();
 }
