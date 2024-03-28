@@ -153,3 +153,8 @@
 .buttons--sync--visible {
   opacity: 1;
 }
+
+.buttons__no-decoration:hover,
+.buttons__no-decoration:focus {
+  text-decoration: none;
+}
