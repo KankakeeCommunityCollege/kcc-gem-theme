@@ -1,5 +1,7 @@
 import '../../scss/kcc-theme.scss';
-import { Collapse, Tab, Dropdown } from 'bootstrap';
+// import { Collapse, Tab, Dropdown } from 'bootstrap';
+import Collapse from 'bootstrap/js/dist/collapse';
+import Dropdown from 'bootstrap/js/dist/dropdown';
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
@@ -22,7 +24,7 @@ window.addEventListener('load', () => {
 // 10.) document.getElementById('google_translate_element') ? loadModule('translateScript', 'watchForMenuClicks') : null;
   
   import('../alerts/alerts')
-    .then(({ default: alerts }) => alerts(Collapse, Tab))
+    .then(({ default: alerts }) => alerts(Collapse))
     .then(() => {
       if (document.querySelector('.hero-slider__slider')) {
         Promise.resolve()

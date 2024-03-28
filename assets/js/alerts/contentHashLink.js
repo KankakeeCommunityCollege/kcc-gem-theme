@@ -10,6 +10,8 @@
 //  This JS will allow us to link to a specific area of content in a page where a traditional hash link wouldn't work
 //  In this case hash links won't work because the element with he matching ID is "stuck" in a closed accordion or tab.
 //
+import Tab from 'bootstrap/js/dist/tab'; // Import Tab from Bootstrap 5
+
 const idRegex = /.*[\?&]id=([^&]+).*$/; // Lets just cache these reused regex's here
 const endingSlashRegex = /\/$/g;
 const PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY = 'userPrefersReducedMotion'; // This localStorage key is set by module: './checkForPrefersReducedMotion.js'
@@ -48,7 +50,7 @@ function findContentTarget(hash) {
   focusElement(target);
 }
 
-function checkForMatchingTabOrAccordion(hash, Collapse, Tab) {
+function checkForMatchingTabOrAccordion(hash, Collapse) {
   if ( document.querySelector(`.nav-tabs a[href="${hash}"]`) ) {  // Looks for a matching BS4 tab element
     // let tab = $(`.nav-tabs a[href="${hash}"]`);  // **SIGH**, BS4 requires JQuery
     const tab = document.querySelector(`.nav-tabs a[href="${hash}"]`);
@@ -74,19 +76,19 @@ function checkForMatchingTabOrAccordion(hash, Collapse, Tab) {
   }
 }
 
-function checkForHash(Collapse, Tab) {
+function checkForHash(Collapse) {
   if (window.location.hash) {
     let hash = window.location.hash.replace(endingSlashRegex, '');
 
-    checkForMatchingTabOrAccordion(hash, Collapse, Tab);
+    checkForMatchingTabOrAccordion(hash, Collapse);
   }
   return;
 }
 
-function contentHashLink(Collapse, Tab) {
-  checkForHash(Collapse, Tab);
+function contentHashLink(Collapse) {
+  checkForHash(Collapse);
   window.addEventListener('hashchange', _e => {
-    checkForHash(Collapse, Tab);
+    checkForHash(Collapse);
   }, false);
 
   import('./addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
