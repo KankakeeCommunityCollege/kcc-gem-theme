@@ -1,6 +1,5 @@
 import '../../scss/kcc-theme.scss';
-import './bootstrap';
-import { Collapse, Tab } from 'bootstrap';
+import { Collapse, Tab, Dropdown } from 'bootstrap';
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
@@ -40,7 +39,7 @@ window.addEventListener('load', () => {
     })
     .then(async () => {
       const { default: megaNav } = await import('../nav/megaNav/megaNav');
-      return megaNav(Collapse);
+      return megaNav(Collapse, Dropdown);
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))
   
