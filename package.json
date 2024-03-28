@@ -23,8 +23,8 @@
   "scripts": {
     "production": "run-p jekyll-production webpack-production",
     "development": "run-p jekyll-development webpack-dev",
-    "jekyll-production": "JEKYLL_ENV=production bundle exec jekyll serve --livereload",
-    "jekyll-development": "bundle exec jekyll serve --livereload",
+    "jekyll-production": "sleep 7 && JEKYLL_ENV=production bundle exec jekyll serve --livereload",
+    "jekyll-development": "sleep 7 && bundle exec jekyll serve --livereload",
     "webpack-production": "npx webpack --watch --node-env production",
     "webpack-dev": "npx webpack --watch --node-env development",
     "browserslist": "npx browserslist@latest --update-db"
