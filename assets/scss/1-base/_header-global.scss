@@ -427,9 +427,9 @@
 
 @media screen and (min-width: 992px) {
   .header-global__dropdown-menu--full-width {
-    left: .75rem;
+    left: .75rem !important; // !important needed to override BS5 style
     right: .75rem;
-    top: 5.77rem;
+    top: 5.77rem !important; // !important needed to override BS5 style
   }
 }
 
