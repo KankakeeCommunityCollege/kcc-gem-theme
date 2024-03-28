@@ -112,12 +112,6 @@ body {
   margin-bottom: .2rem;
 }
 
-.typography__orange-h4  {
-  color: $orange-heading;
-  font-family: $font-family-oswald;
-  font-size: 2.4rem;
-}
-
 .typography__sub-nav--red-h2 {
   color: $primary-red;
   font-family: $font-family-oswald;
@@ -189,26 +183,6 @@ body {
     margin-left: 5px;
     margin-right: 5px;
   }
-}
-
-.typography__nav-link {
-  color: $white;
-  font-family: $font-family-oswald;
-  font-size: 1.05rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-}
-
-.typography__nav-local--nav-link {
-  font-family: $font-family-oswald;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.typography__nav-local--color {
-  color: $primary-blue;
 }
 
 // "The POWER of Community" text
@@ -307,51 +281,6 @@ body {
   .typography__phone--span {
     font-size: 1.5rem;
   }
-}
-
-.typography__p--bold {
-  color: $color-grey-heading;
-  font-family: $font-family-headings;
-  font-weight: $font-weight-bold;
-  font-size: 1.25rem;
-  line-height: 1.2;
-}
-
-.typography__stories--quote {
-  color: $primary-blue;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-}
-
-@media screen and (min-width: 488px) {
-  .typography__stories--quote {
-    font-size: 1.3rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .typography__stories--quote {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .typography__stories--quote {
-    font-size: 1.4rem;
-  }
-}
-
-.typography__col--heading-underline {
-  background-image: url(/assets/img/heading-bg-underline.png);
-  background-repeat: no-repeat;
-  background-position: 0 50px;
-}
-
-.typography__col--heading-underline-tan {
-  background-image: url(/assets/img/heading-bg-underline-tan.png);
-  background-repeat: no-repeat;
-  background-position: 0 50px;
 }
 
 // Other font styles
@@ -454,22 +383,6 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup { // Make superscripts within hea
   }
 }
 
-.typography__register--caption {
-  color: $white;
-  font-family: $font-family-oswald;
-  font-size: 1rem;
-  font-weight: $font-weight-boldish;
-  letter-spacing: .07rem;
-  position: absolute;
-  bottom: 15px;
-}
-
-@media screen and (min-width: 1200px) {
-  .typography__register--caption {
-    font-size: 1.2rem;
-  }
-}
-
 .typography__register-h4 {
   font-family: $font-family-oswald;
   font-size: 1.6rem;
@@ -532,42 +445,12 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup { // Make superscripts within hea
   display: block;
 }
 
-.typography__register-itransfer {
-  font-size: 1.7rem;
-  font-weight: 600;
-  line-height: 1;
-  position: absolute;
-  top: 4rem;
-  margin-left: -20px;
-}
-
-@media screen and (min-width: 400px) {
-  .typography__register-itransfer {
-    font-size: 1.8rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .typography__register-itransfer {
-    font-size: 1.9rem;
-  }
-}
-
 .typography__register--h6 {
   color: $primary-red;
   font-family: $font-family-saira;
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: .03rem;
-}
-
-#page-top::before {
-  display: block;
-  content: " ";
-  margin-top: -60px;
-  height: 60px;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .typography__larger-p {

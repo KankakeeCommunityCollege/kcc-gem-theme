@@ -1,2 +1,8 @@
+    {% if jekyll.environment == 'development' %}
+    <!-- boostrap.[hash].bundle.js should only be included in development!
+         Webpack uses this file in development to inject the Bootstrap styles
+         into the document's <head>. JS file is empty in production! -->
+    <script type="text/javascript" src="{{page.baseurl}}assets/js/dist/bootstrap.{% include hash/theme_hash.yml %}.bundle.js" defer></script>
+    {% endif %}
     <!-- custom compiled and minified javascript -->
     <script type="text/javascript" src="{{page.baseurl}}assets/js/dist/kcc-theme.{% include hash/theme_hash.yml %}.bundle.js" defer></script>

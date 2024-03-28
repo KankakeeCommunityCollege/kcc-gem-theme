@@ -1,4 +1,6 @@
     {% if jekyll.environment == "production" or jekyll.environment == "publish" %}
+    <!-- Bootstrap 5 styles (only used components/utilities)  -->
+    <link rel="stylesheet" href="{{page.baseurl}}assets/js/dist/bootstrap.{% include hash/theme_hash.yml %}.css">
     <!-- Custom CSS for the KCC Theme -->
     <link rel="stylesheet" href="{{page.baseurl}}assets/js/dist/kcc-theme.{% include hash/theme_hash.yml %}.css">
     {% if site.theme_config != true %}

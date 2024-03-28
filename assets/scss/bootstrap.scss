@@ -8,7 +8,7 @@ $link-hover-decoration: underline;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/variables-dark';
+// @import '../../node_modules/bootstrap/scss/variables-dark';
 @import '../../node_modules/bootstrap/scss/maps';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import '../../node_modules/bootstrap/scss/root';
@@ -23,25 +23,21 @@ $link-hover-decoration: underline;
 @import '../../node_modules/bootstrap/scss/helpers';
 @import '../../node_modules/bootstrap/scss/transitions';
 @import '../../node_modules/bootstrap/scss/navbar';
-@import '../../node_modules/bootstrap/scss/list-group';
-@import '../../node_modules/bootstrap/scss/accordion';
+// @import '../../node_modules/bootstrap/scss/accordion';
 @import '../../node_modules/bootstrap/scss/alert';
 @import '../../node_modules/bootstrap/scss/breadcrumb';
 @import '../../node_modules/bootstrap/scss/buttons';
 @import '../../node_modules/bootstrap/scss/card';
 @import '../../node_modules/bootstrap/scss/close';
 @import '../../node_modules/bootstrap/scss/dropdown';
-@import '../../node_modules/bootstrap/scss/forms';
 @import '../../node_modules/bootstrap/scss/modal';
 @import '../../node_modules/bootstrap/scss/nav';
-@import '../../node_modules/bootstrap/scss/popover';
 @import '../../node_modules/bootstrap/scss/tables';
-@import '../../node_modules/bootstrap/scss/tooltip';
 
 // All Bootstrap 5 scss partial files:
 //  * items in use start with single line comment (//)
 //  * items not yet used are /* multi-line comments */
-// _accordion.scss
+/* _accordion.scss */
 // _alert.scss
 /* _badge.scss */
 // _breadcrumb.scss
@@ -52,12 +48,12 @@ $link-hover-decoration: underline;
 // _close.scss
 // _containers.scss
 // _dropdown.scss
-// _forms.scss
+/* _forms.scss */
 // _functions.scss
 // _grid.scss
 // _helpers.scss
 // _images.scss
-// _list-group.scss
+/* _list-group.scss */
 /* _maps.scss */
 // _mixins.scss
 // _modal.scss
@@ -66,14 +62,14 @@ $link-hover-decoration: underline;
 /* _offcanvas.scss */
 /* _pagination.scss */
 /* _placeholders.scss */
-// _popover.scss
+/* _popover.scss */
 /* _progress.scss */
 // _reboot.scss
 // _root.scss
 /* _spinners.scss */
 // _tables.scss
 /* _toasts.scss */
-// _tooltip.scss
+/* _tooltip.scss */
 // _transitions.scss
 // _type.scss
 // _utilities.scss

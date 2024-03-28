@@ -6,24 +6,6 @@
   }
 }
 
-.buttons__yt-subscribe {
-  display: inline-block;
-  height: 1rem;
-  margin-top: -4px;
-  margin-right: 5px;
-  transform: scale(1.8,1.8);
-  vertical-align: middle;
-  width: 1rem;
-}
-
-.buttons__custom-danger {
-  margin-right: 20px;
-}
-
-.buttons__btn-margin-top {
-  margin-top: 20px;
-}
-
 .btn-primary {
   background-color: $btn-primary-bg;
   border-color: $btn-primary-border;
@@ -34,20 +16,7 @@
   border-color: $btn-hover-border;
 }
 
-.buttons__no-decoration {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-  &:focus {
-    text-decoration: none;
-  }
-  &:visited {
-    text-decoration: none;
-  }
-}
-
-.buttons{
+.buttons {
   display: inline-block;
   padding-left: .9rem;
   padding-right: .9rem;

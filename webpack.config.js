@@ -21,6 +21,7 @@ const config = {
   mode: devMode ? 'development' : 'production',
   plugins,
   entry: {
+    'bootstrap': './assets/js/src/bootstrap.js',
     'kcc-theme': './assets/js/src/all.js',
     'translate': './assets/js/src/translate.js',
     'kcc-theme-landing': './assets/js/landing/main.js'
