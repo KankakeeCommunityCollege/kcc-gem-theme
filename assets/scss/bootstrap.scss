@@ -2,7 +2,15 @@
 @import '../../node_modules/bootstrap/scss/functions';
 
 // 2. Include any default variable overrides here
-// @import './0-tools/bootstrap-sass-overrides';
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px
+);
+
 $link-decoration: none;
 $link-hover-decoration: underline;
 
