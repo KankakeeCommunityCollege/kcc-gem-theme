@@ -1,7 +1,6 @@
 import '../../scss/kcc-theme.scss';
 // import { Collapse, Tab, Dropdown } from 'bootstrap';
 import Collapse from 'bootstrap/js/dist/collapse';
-import Dropdown from 'bootstrap/js/dist/dropdown';
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
@@ -40,10 +39,13 @@ window.addEventListener('load', () => {
       import('./addClassToOpenNavbar').then(({ default: addClassToOpenNavbar }) => addClassToOpenNavbar());
     })
     .then(async () => {
+      if (document.querySelector('.dropdown-toggle')) {
+        const { default: Dropdown } = await import('bootstrap/js/dist/dropdown'); // Just importing BS5 Collapse enables them to work in a page
+      }
       if (document.getElementById('headerGlobalNavbarContent')) {
         const { default: megaNav } = await import('../nav/megaNav/megaNav');
 
-        return megaNav(Collapse, Dropdown);
+        return megaNav(Collapse);
       }
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))

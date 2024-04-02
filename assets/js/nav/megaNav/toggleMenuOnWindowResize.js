@@ -1,21 +1,35 @@
-// Custom JS to Close the Navigation menu if its open and the screen width is resized
-// above 992px wide (Bootstrap 5 'lg' devices)
-const NAVBAR_COLLAPSE_ID = 'headerGlobalNavbarContent'; // ID built into the sites' HTML
+// Custom JS to toggle the navigation menu if a dropdown item is open
+// and the screen is resized to mobile sized nav. Otherwise, the dropdown
+// will stay open while the menu is collapsed causing it to look broken.
+const globalNavBottom = document.getElementById('navGlobalBottom');  // built into the site's HTML
+const menuCollapseElement = document.getElementById('headerGlobalNavbarContent');
 
-function checkNavbarCollapseState(menuEl, Collapse) {
+function hideOpenMenu(menuEl, bsCollapse) {
   if ( menuEl.classList.contains('show') ) { // 'show' is a Bootstrap 4 class that makes `.collapse` items visible. // Checking to see if the Menu is open
-    const bsCollapse = new Collapse(menuEl, {toggle: false});
-
-    bsCollapse.hide();
+    bsCollapse.hide(); // BS5 Collapse.hide() method
   }
 }
 
-function toggleMenuOnWindowResize(Collapse) {
-  window.addEventListener('resize', _e => {
-    if ( window.innerWidth >= 992 ) {
-      const menuCollapseElement = document.getElementById(NAVBAR_COLLAPSE_ID);
+function openMenu(bsCollapse) {
+  bsCollapse.show(); // BS5 Collapse.show() method
+}
 
-      checkNavbarCollapseState(menuCollapseElement, Collapse);
+/**
+ * 
+ * @param {function} Collapse Bootstrap 5 Collapse plugin
+ * @see https://getbootstrap.com/docs/5.3/components/collapse/#via-javascript
+ */
+function toggleMenuOnWindowResize(Collapse) {
+  const bsCollapse = new Collapse(menuCollapseElement, { toggle: false });
+
+  window.addEventListener('resize', _e => {
+    // 992px and up is bootstrap breakpoint for "lg"
+    if ( window.innerWidth >= 992 ) {
+      hideOpenMenu(menuCollapseElement, bsCollapse);
+    } else {
+      if (globalNavBottom.querySelector('.dropdown-toggle.show')) {
+        openMenu(bsCollapse);
+      }
     }
   });
 }
