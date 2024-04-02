@@ -4,6 +4,22 @@
 
 Notes on specific BS utilities, classes, components, JS, and other items that we use which have changed in Bootstrap 5.
 
+## Grid System
+
+BS5 introduces a new `xxl` breakpoint at viewports with an innerWidth ≥ 1400px.
+At this breakpoint, `.container` is allowed a max width of 1320px. To avoid layout
+issues, this can be override to match BS4 using the following default variable override.
+
+```scss
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px
+);
+```
+
 ## Classes
 
 * classes, mixins, utilities using `left` and `right` are now `start` and `end`.
@@ -14,6 +30,11 @@ Notes on specific BS utilities, classes, components, JS, and other items that we
 * `.text-muted` is now `.text-body-secondary`
 * `.close` is now `.btn-close`
 * Accordions no longer use `.card` classes
+
+Regular Expression to find deprecated BS4 classes:
+```javascript
+const deprecatedClassRegExp = /([pm][lr](?:-(?:sm|md|lg|xl))?-[0-5]|(?:text|float)(?:-(?:sm|md|lg|xl))?-(?:left|right)|sr-only|text-muted|close)/g;
+```
 
 ## Dropdowns
 
@@ -38,3 +59,11 @@ This allows us to only import he items we use and dynamically import JS when nee
 We should consider customizing BS5 and eliminating the excessive amount of custom style rules
 and style overrides to reduce asset sizes.
 For example, instead of using `.typography__h2` we should customize the BS5 h2 style rules.
+
+## Audit site for deprecated BS4 items
+
+To look for deprecated BS4 classes in a project run `node look-for-deprecated-bs4-classes.mjs` and then manually check any files that are logged to the console from running the script.
+
+To look for JS that may need to be updated run `node look-for-deprecated-bs4-js.mjs` and then manually check any files logged to the console:
+* Use of jQuery is usually a good indicator (e.g. `$(...)`) of BS4 methods, however, slick slider uses jQuery too.
+* Data-attributes may also require updating. BS4 `data-<attr>` have been updated to `data-bs-<attr>`
