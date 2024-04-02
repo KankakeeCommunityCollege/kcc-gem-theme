@@ -40,8 +40,11 @@ window.addEventListener('load', () => {
       import('./addClassToOpenNavbar').then(({ default: addClassToOpenNavbar }) => addClassToOpenNavbar());
     })
     .then(async () => {
-      const { default: megaNav } = await import('../nav/megaNav/megaNav');
-      return megaNav(Collapse, Dropdown);
+      if (document.getElementById('headerGlobalNavbarContent')) {
+        const { default: megaNav } = await import('../nav/megaNav/megaNav');
+
+        return megaNav(Collapse, Dropdown);
+      }
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))
   
