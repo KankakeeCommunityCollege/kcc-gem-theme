@@ -52,7 +52,6 @@ function findContentTarget(hash) {
 
 function checkForMatchingTabOrAccordion(hash, Collapse) {
   if ( document.querySelector(`.nav-tabs a[href="${hash}"]`) ) {  // Looks for a matching BS4 tab element
-    // let tab = $(`.nav-tabs a[href="${hash}"]`);  // **SIGH**, BS4 requires JQuery
     const tab = document.querySelector(`.nav-tabs a[href="${hash}"]`);
     const bsTab = new Tab(tab);
 
@@ -63,7 +62,6 @@ function checkForMatchingTabOrAccordion(hash, Collapse) {
     });
     bsTab.show();
   } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS4 collapse element
-    // let card = $(hash);  // **SIGH**, BS4 requires JQuery
     const card = document.querySelector(hash);
     const bsCard = new Collapse(card, {toggle: false});
 

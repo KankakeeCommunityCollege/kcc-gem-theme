@@ -15,7 +15,7 @@ collections:
   accordions:
     output: false
   contacts:
-    output: true
+    output: false
 permalink: pretty
 description: > # this means to ignore newlines until "baseurl:"
 # Delete this comment and place description on this line
