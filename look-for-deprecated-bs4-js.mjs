@@ -11,6 +11,8 @@ const jsFileRegExp = /.+\.js/;
 // BS5 ditched jQuery and `data-attr` have changed to `data-bs-attr`
 const deprecatedJSRegExp = /(\$\([^\)]+\)|\.dataset|data-)/;
 
+console.log(`\n==== [SEARCHING in: ${path}] ====`);
+
 readdir(path, options, (err, files) => {
   if (err) {
     console.error("Could not list the directory.", err);
@@ -28,9 +30,13 @@ readdir(path, options, (err, files) => {
         process.exit(1);
       }
 
-      if ( data.search(deprecatedJSRegExp) !== -1 ) {
-        console.log(`[FOUND]: jQuery or data-attributes in ${file}`);
+      if (data.search(deprecatedJSRegExp) !== -1) {
+        const matches = data.match(deprecatedJSRegExp);
+
+        matches.forEach(match => console.log(`[FOUND]: "${match}" in ${file}`));
       }
     });
   });
 })
+
+console.log(`\n====   [RESULTS]    ====`);

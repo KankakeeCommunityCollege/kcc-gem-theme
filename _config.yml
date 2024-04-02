@@ -49,6 +49,8 @@ exclude:
   - "buildtools/"
   - "postcss.config.js"
   - "notes-on-bs5-migration.md"
+  - "look-for-deprecated-bs4-classes.mjs"
+  - "look-for-deprecated-bs4-js.mjs"
 
 uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
