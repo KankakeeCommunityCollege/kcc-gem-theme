@@ -14,6 +14,11 @@ $container-max-widths: (
 $link-decoration: none;
 $link-hover-decoration: underline;
 
+$navbar-padding-x: 1rem;
+
+$breadcrumb-padding-y: .75rem;
+$breadcrumb-padding-x: 1rem;
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import '../../node_modules/bootstrap/scss/variables';
 // @import '../../node_modules/bootstrap/scss/variables-dark';
