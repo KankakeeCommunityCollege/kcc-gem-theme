@@ -27,18 +27,18 @@
               height="150px"
               width="150px"
               data-src="{{ page.baseurl }}{{ contact.portrait_image }}"
-              alt="Photo of {{ contact.name }}"
+              alt="{{ contact.name }}"
               class="img-fluid contacts__portrait"
             />{% endif %}
           </div>
-          <div class="col-8 float-right">
+          <div class="col-8">
             <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
             {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
             <p class="notranslate">
               {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
               {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
               {%- if contact.fax -%}Fax: {{ contact.fax }}{% endif %}
-              {%- if contact.bio == true -%}<button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
+              {%- if contact.bio == true -%}<button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@
           {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link">{{ contact.phone }}</a><br>{% endif %}
           {% if contact.email %}<a class="links__darker-link" target="_blank" href="https://secure.jotform.com/90435102482954?to[first]={{ first }}&amp;to[last]={{ last }}&amp;submitEmail={{ contact.email | remove: '@kcc.edu' }}%40kcc.edu">Email</a><br>{% endif %}
           {% if contact.fax %}Fax: {{ contact.fax }}{% endif %}
-          {% if contact.bio == true %}<button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
+          {% if contact.bio == true %}<button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}">View Bio</button>{% endif %}
         </p>
       </div>
       {%- endif -%}
@@ -67,9 +67,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="typography__h6" id="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}-label">{{ contact.name }} Bio</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         {% if contact.portrait_image != 'For departments with no contact photos, do not change this field.' and contact.portrait_image != 'none' %}<img
@@ -77,15 +75,15 @@
           height="150px"
           width="150px"
           data-src="{{ page.baseurl }}{{ contact.portrait_image }}"
-          class="img-fluid float-left mr-2 mb-2"
-          alt="Photo of {{ contact.name }} KCC's {{ contact.contacts_title }}"
+          class="img-fluid float-start me-2 mb-2"
+          alt="{{ contact.name }}"
         >{% endif %}
         <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
         {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
         {{ contact.content }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
