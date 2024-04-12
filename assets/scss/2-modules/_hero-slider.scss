@@ -111,6 +111,7 @@
   position: absolute;
   top: 55%;
   z-index: 4444;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 488px) {

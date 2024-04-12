@@ -6,6 +6,7 @@
     {% if forloop.first == true %}
     <div>
       <a
+        class="ga_slider_link"
         {% if slide.url contains "https://" or slide.url contains "http://" %}href="{{ slide.url }}"
         {% elsif url_first_char == '.' or url_first_char == '/' or slide.url == '#' %}href="{{ slide.url }}"
         {% else %}href="{{ page.baseurl }}{{ slide.url }}"{%- endif -%}
@@ -23,6 +24,7 @@
     {%- else -%}
     <div>
       <a
+        class="ga_slider_link"
         {% if slide.url contains "https://" or slide.url contains "http://" %}href="{{ slide.url }}"
         {% elsif url_first_char == "." or url_first_char == "/" or slide.url == '#' %}href="{{ slide.url }}"
         {% else %}href="{{ page.baseurl }}{{ slide.url }}"{%- endif -%}
