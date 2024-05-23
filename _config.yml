@@ -29,9 +29,9 @@ future: true
 # Build settings
 markdown: kramdown
 
-include:
-  - "_accordions/"
-  - "_tabs/"
+# include:
+  # - "_accordions/"
+  # - "_tabs/"
 
 exclude:
   - "node_modules"
@@ -51,6 +51,7 @@ exclude:
   - "notes-on-bs5-migration.md"
   - "look-for-deprecated-bs4-classes.mjs"
   - "look-for-deprecated-bs4-js.mjs"
+  - "look-for-string-in-project-files.mjs"
 
 uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
