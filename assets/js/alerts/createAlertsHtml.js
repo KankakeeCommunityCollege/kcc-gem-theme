@@ -32,7 +32,6 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
   const d = new Date;
   const s = new Date(start);
   const e = new Date(end);
-  const alertTypeClass = checkAlertType(type);
   const alertType = checkAlertType(type);
   const alertIsActive = expire === 'FALSE' || expire === 'TRUE' && s.getTime() <= d.getTime() && e.getTime() > d.getTime();
   const indexPageOnly = allPages === 'TRUE' || allPages === 'FALSE' && window.location.pathname == '/';
@@ -49,7 +48,7 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
           title="Refresh the alert"
           id="syncAlert"
           type="button"
-          class="btn btn-link buttons--sync ml-auto">
+          class="btn btn-link buttons--sync ms-auto">
           <svg xmlns="http://www.w3.org/2000/svg"
             class="svg__sync"
             height="24px"

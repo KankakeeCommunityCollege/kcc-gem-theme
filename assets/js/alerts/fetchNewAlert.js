@@ -1,10 +1,10 @@
 // Custom JS to make a Google API call to the alerts spreadsheet
 // Then paint the alert into the DOM using module `./createAlertsHtml.js`
 //
-const SHEET_KEY = '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs'; // Corresponds to the ID of the Google Sheet
-const SHEET_TAB = 'Alerts'; // Corresponds to the tab of workbook: either  'Alerts' or 'Alerts Testing' unless you make a new one.
-const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
-const SHEET_PARAMS = {spreadsheetId: SHEET_KEY, range: SHEET_TAB};  // Configures the Object used for `sheets.spreadsheets.values.get()` parameters
+const SHEET_PARAMS = {
+  spreadsheetId: '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs',
+  range: 'Alerts'
+};  // Configures the Object used for `sheets.spreadsheets.values.get()` parameters
 const API_PARAMS = { // This is configuration for API call with spreadsheets that are setup as readonly
   'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
   'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']

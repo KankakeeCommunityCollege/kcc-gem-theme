@@ -296,6 +296,26 @@
   }
 }
 
+.hero-slider__slider div:first-child {
+  margin-bottom: 30px;
+}
+
+.slick-initialized div:first-child {
+  margin-bottom: 0;
+}
+
+.hero-slider__slider div:not(:first-child) {
+  // prevents all slides from displaying vertically before slick has initialized
+  visibility: hidden;
+  display: none;
+}
+
+.slick-initialized div:not(:first-child) {
+  // makes slides visible again once slick has initialized
+  visibility: visible;
+  display: block;
+}
+
 .hero-slider__button--toggle {
   background: transparent;
   border: none;
