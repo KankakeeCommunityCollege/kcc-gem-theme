@@ -2,9 +2,6 @@
 *.gem
 .bundle
 
-## Prevent CloudCannon Errors
-.ruby-version
-
 ### General Apple things to ignore ###
 .DS_Store
 .AppleDouble

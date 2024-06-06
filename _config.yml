@@ -53,6 +53,17 @@ exclude:
   - "look-for-deprecated-bs4-js.mjs"
   - "look-for-string-in-project-files.mjs"
 
+# Settings for the compress.html layout
+## See https://jch.penibelst.de/ for more info
+compress_html:
+  clippings: all           # Array of elements to clip whitespace around or `all`
+  comments: all            # Comments to strip out
+  endings: all             # Array of elements with optional end tags or `all`
+  ignore:
+    envs: ['development']  # Array of environments to not compress in (from JEKYLL_ENV)
+  # startings: [head, body]  # Array of elements with optional start tags
+  # profile: true            # Generate a table of compression/savings stats
+
 uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
 
