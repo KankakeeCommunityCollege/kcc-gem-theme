@@ -180,8 +180,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'disability-services'
       - text: Student Representatives
         href: 'student-representatives'
-      - text: Student Complaint Policy
-        href: 'student-complaint-policy'
+      - text: Student Complaint Procedures
+        href: 'student-complaint-procedures'
       - text: Start the Semester Right
         href: 'welcome'
       - text: KCC Food Pantry
