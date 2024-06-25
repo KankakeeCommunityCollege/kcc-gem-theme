@@ -7,13 +7,7 @@
     <title>{{page.title}} - {{site.title}}</title>
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
     {%- if site.canonical_baseurl %}
-    {% assign path = page.url %}
-    {% assign length_minus_one = path | size | minus: 1 %}
-    {% assign last_char = path | slice: length_minus_one, 1 %}
-    {% if last_char == '/' %}
-      {% assign path = path | slice: 0, length_minus_one %}
-    {% endif %}
-    <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ path }}{% endif %}">
+    <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
     {%- endif %}
     <!-- Required Bootstrap 4 viewport meta-tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
