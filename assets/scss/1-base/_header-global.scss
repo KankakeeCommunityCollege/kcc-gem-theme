@@ -130,8 +130,76 @@
   }
 }
 
+// `.header-global__navbar--search-toggle` is added when the search icon is clicked
+//  and search is visible — shifts the nav-bar down when search is open
 #headerGlobalNavbar.header-global__navbar--search-toggle {
-  top: 3.5rem;
+  top: 18rem;
+}
+
+@media screen and (min-width: 768px) {
+  #headerGlobalNavbar.header-global__navbar--search-toggle {
+    top: 13rem;
+  }
+}
+
+.header-global__navbar--search-toggle {
+  top: 50px;
+}
+
+.header-global__navbar--search-toggle::before {
+  background-color: $primary-red;
+  content: '';
+  display: block;
+  height: 295px;
+  position: absolute;
+  top: -290px;
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .header-global__navbar--search-toggle::before {
+    background-color: $primary-blue;
+  }
+}
+
+// "Trending Searches" label above search suggestions
+.header-global__trending-label {
+  color: #fff;
+  margin-left: 0;
+}
+
+@media screen and (min-width: 360px) {
+  .header-global__trending-label {
+    margin-left: .5rem;
+  }
+}
+
+// List of search suggestions in 2 or 3 columns depending on screen width
+.header-global__search-suggestions {
+  padding-left: .25rem;
+  list-style-type: none;
+  columns: 2;
+  max-width: 715px;
+}
+
+@media screen and (min-width: 360px) {
+  .header-global__search-suggestions {
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-global__search-suggestions {
+    columns: 3;
+  }
+}
+
+// Change the link color of search suggestions to contrast against background
+.header-global__search-suggestions a {
+  color: rgba(255,255,255,.75);
+  &:hover {
+    color: rgba(255,255,255,1);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -303,13 +371,15 @@
   width: 20px;
 }
 
+// `.header-global__search-collapse` is the immediate parent that
+//  wraps the Google Programmable Search elements.
 .header-global__search-collapse {
   left: .5rem;
   margin-left: auto;
   margin-right: auto;
   position: absolute;
   right: 2rem;
-  top: -56px;
+  top: -290px; // Negative top positioning keeps it above the viewport before being clicked
   width: 95%;
 }
 
@@ -343,38 +413,26 @@
   }
 }
 
+// `.header-global__search-collapse--visible` changes the top positioning to make
+//  the search visible from the top of the screen.
 .header-global__search-collapse.header-global__search-collapse--visible {
-  top: -46px;
+  top: -275px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-global__search-collapse.header-global__search-collapse--visible {
+    top: -195px;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .header-global__search-collapse.header-global__search-collapse--visible {
-    top: -40px;
-  }
-}
-
-.header-global__navbar--search-toggle {
-  top: 50px;
-}
-
-.header-global__navbar--search-toggle::before {
-  background-color: $primary-red;
-  content: '';
-  display: block;
-  height: 64px;
-  position: absolute;
-  top: -60px;
-  width: 100%;
-}
-
-@media screen and (min-width: 992px) {
-.header-global__navbar--search-toggle::before {
-    background-color: $primary-blue;
+    top: -190px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .header-global__dropdown.show {
+  .header-global__dropdown.show { // `.show` is a BS class added when dropdowns are open
     background-color: $color-blue-light-nav;
   }
 }
@@ -388,6 +446,7 @@
   }
 }
 
+// Make mega-nav menu's show on hover (on larger screens only).
 @media screen and (min-width: 992px) {
   .header-global__nav-bottom .dropdown:hover .dropdown-menu,
   .header-global__nav-bottom .dropdown .dropdown-menu:hover {

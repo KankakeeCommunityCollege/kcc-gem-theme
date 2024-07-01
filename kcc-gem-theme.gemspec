@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "kcc-gem-theme"
-  spec.version       = "3.2.3"
+  spec.version       = "3.3.0"
 
   spec.authors       = ["wdzajicek"]
   spec.email         = ["wdzajicek@gmail.com"]
