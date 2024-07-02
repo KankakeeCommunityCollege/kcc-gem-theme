@@ -102,6 +102,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
       - text: "Exam Make-ups"
         href: exam-makeups
+      - text: "Online Learning"
+        href: online-learning
 ## Admissions ##
   - link_text:  Admissions
     link_href: admissions
