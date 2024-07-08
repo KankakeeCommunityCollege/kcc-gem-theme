@@ -197,6 +197,7 @@
 // Change the link color of search suggestions to contrast against background
 .header-global__search-suggestions a {
   color: rgba(255,255,255,.75);
+  text-decoration: underline;
   &:hover {
     color: rgba(255,255,255,1);
   }
