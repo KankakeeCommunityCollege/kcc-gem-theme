@@ -1,0 +1,39 @@
+// ============================================== //
+// Styles for print layouts                       //
+// ============================================== //
+
+@media print {
+  // Hide the global-header (mega-nav)
+  .header-global {
+    display: none;
+  }
+
+  // Hide emergency alerts
+  #emergencyAlerts {
+    display: none;
+  }
+
+  // Hide slick-sliders
+  .hero-slider__slider {
+    display: none;
+  }
+
+  // Hide the call to action buttons above the footer
+  .buttons__action {
+    display: none;
+  }
+  // Hide the footer
+  .footer {
+    display: none;
+  }
+
+  // Make text darker
+  .typography__p,
+  p,
+  ul:not(.navbar-nav),
+  ol,
+  .btn-primary {
+    color: $color-black !important;
+  }
+}
+
