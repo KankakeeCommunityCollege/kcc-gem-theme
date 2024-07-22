@@ -180,14 +180,10 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'counseling-and-referral-services'
       - text: Disability Services
         href: 'disability-services'
-      - text: Student Representatives
-        href: 'student-representatives'
       - text: Student Complaint Procedures
         href: 'student-complaint-procedures'
       - text: Start the Semester Right
         href: 'welcome'
-      - text: KCC Food Pantry
-        href: 'food-pantry'
       - text: Tutoring
         href: 'https://library.kcc.edu/tutoring/'
       - text: TRIO Student Support Services
@@ -198,12 +194,10 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'food-services'
       - text: Workforce Services
         href: 'https://wioa.kcc.edu/'
-      - text: Student Handbook
-        href: handbook
       - text: Support Resources
         href: support-resources
-      - text: Student Life Events Calendar
-        href: events-calendar
+      - text: Student Life
+        href: student-life
 ## Community ##
   - link_text: Community
     link_href: 'community'
