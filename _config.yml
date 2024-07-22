@@ -166,8 +166,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'student-resources'
       - text: Bookstore
         href: 'https://books.kcc.edu'
-      - text: Clubs & Organizations
-        href: 'clubs'
       - text: 'Center for Equity, Diversity & Inclusion'
         href: 'edi'
       - text: Fitness Center
