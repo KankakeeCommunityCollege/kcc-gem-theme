@@ -79,6 +79,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       alt: >-
         Student in an electrical technology lab standing 
         in front of electrical equipment mounted to a wall
+    button:
+      text: 'Explore Program Pathways'
+      href: '/academics/'
     dropdown: # Defines the 'academics' items in the dropdown
 ## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
 ##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.

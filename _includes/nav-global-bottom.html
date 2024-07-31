@@ -17,13 +17,15 @@
                 <div class="container">
                   <div class="row header-global__row--max-width">
                     {%- if item.image -%}
-                    <div class="col-lg-3 offset-lg-1 padding__col--mobile-none">
+                    <div class="col-lg-3 offset-lg-1 text-center padding__col--mobile-none">
                       <img src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
                         data-src="{{ page.baseurl }}{{ item.image.source }}"
                         width="280px"
                         height="157px"
                         class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
+                      {%- if item.button -%}
+                      <a href="{{ item.button.href }}" class="btn btn-primary mt-3 d-none d-lg-inline-block">{{ item.button.text }}</a>{% endif %}
                     </div>{% endif %}
                     <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
                       {%- if item.dropdown[0] -%}
