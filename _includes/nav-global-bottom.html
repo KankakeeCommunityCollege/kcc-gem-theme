@@ -25,20 +25,20 @@
                         class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
                       {%- if item.button -%}
-                      <a href="{{ item.button.href }}" class="btn btn-primary mt-3 d-none d-lg-inline-block">{{ item.button.text }}</a>{% endif %}
+                      <a href="{{ item.button.href }}" class="btn btn-primary mt-3 d-none d-lg-inline-block ga_menu_link">{{ item.button.text }}</a>{% endif %}
                     </div>{% endif %}
                     <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
                       {%- if item.dropdown[0] -%}
                       {% assign sub_site = item.dropdown[0] %}
-                      <a class="dropdown-item" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ sub_site.href }}{% endif %}">{{ sub_site.text }}</a>
+                      <a class="dropdown-item ga_menu_link" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ sub_site.href }}{% endif %}">{{ sub_site.text }}</a>
                       {%- endif -%}
                       {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
                       {% assign alphabetical_links = item.dropdown | slice: 1, item.dropdown.size | sort: "text" %}
                       {% for link in alphabetical_links %}
                       {% if item.link_href contains site_name_lowercase %}
-                      <a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>
+                      <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>
                       {%- else -%}
-                      <a class="dropdown-item" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>
+                      <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>
                       {%- endif -%}
                       {%- endfor -%}
                     </div>
