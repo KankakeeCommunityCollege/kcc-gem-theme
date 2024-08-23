@@ -1,18 +1,15 @@
-.goog-te-gadget-simple {
-  white-space: nowrap;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 5px;
-  height: 100%;
-}
+// Custom styling for Google Translate
+// ====================================================== //
 
+// Top-most element of the Google Translate menu
 #google_translate_element {
   position: fixed;
   bottom: .25rem;
   right: .25rem!important;
   z-index: 99999;
 }
+
+// First child of translate element
 .goog-te-gadget {
   font-family: Roboto, 'Open Sans', sans-serif!important;
   text-transform: uppercase;
@@ -21,52 +18,61 @@
     color: $white;
   }
 }
+
+// Second child of translate element
 .goog-te-gadget-simple  {
   background-color: rgba(255,255,255,0.85)!important;
   border: 1px solid rgba(0,0,0,0.95) !important;
-  padding: 8px!important;
   border-radius: 4px!important;
-  font-size: 1rem!important;
-  line-height:2rem!important;
-  display: inline-block;
-  transition: background-color .2s;
   cursor: pointer;
+  display: inline-block;
+  font-size: 1rem!important;
+  height: 100%;
+  line-height:2rem!important;
+  margin-right: 5px;
+  padding: 8px!important;
+  transition: background-color .2s;
+  white-space: nowrap;
   zoom: 1;
-  &:hover {
+  &:hover { // Adds a hover effect
     background-color: rgba(0, 123, 255, 0.85)!important;
   }
   &:focus {
     background-color: rgba(0, 123, 255, 0.85)!important;
   }
 }
-.goog-te-menu2 {
-  max-width: 100%;
-  width: 100%;
-}
-.goog-te-gadget-simple:hover .goog-te-menu-value {
+
+// Adds a hover effect
+.goog-te-gadget-simple:hover .VIpgJd-ZVi9od-xl07Ob-lTBxed {
   color: $white !important;
 }
-.goog-te-menu-value {
+
+// Adds a nice icon from "Material Icons" icons
+.VIpgJd-ZVi9od-xl07Ob-lTBxed {
   color: #000 !important;
   text-decoration: none !important;
     &:before {
-    font-family: 'Material Icons';
-    content: "\E927";
+    font-family: 'Material Icons'; // <https://fonts.google.com/icons?selected=Material+Icons>
+    content: "\E927"; // G translate icon <https://fonts.google.com/icons?selected=Material+Icons&icon.query=translate>
     margin-right: 16px;
     font-size: 2rem;
     vertical-align: -10px;
     // width:32px!important;
   }
 }
-.goog-te-menu-value span:nth-child(5) {
+
+// Hide span that messes up layout
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span:nth-child(5) {
   display:none;
 }
-.goog-te-menu-value span:nth-child(3) {
+
+// Use a nicer looking dropdown arrow/carrot than the default
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span:nth-child(3) {
   border:none!important;
   font-family: 'Material Icons';
   &:after {
     font-family: 'Material Icons';
-    content: "\E5C5";
+    content: "\E5C5"; // <https://fonts.google.com/icons?selected=Material+Icons&icon.query=arrow>
     font-size: 1.5rem;
     vertical-align: -6px;
   }
@@ -83,32 +89,39 @@
 }
 
 // ============ HIDE TOP BAR ============
-.goog-te-banner-frame.skiptranslate {display: none!important;}
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {display: none!important;}
 body {top: 0px!important;}
 
 /* ================================== *\
     Mediaqueries
 \* ================================== */
 @media (max-width: 667px) {
-	#google_translate_element {
-		bottom: .25rem;
-		left: 16px!important;
-		width: 100%!important;
-		goog-te-gadget {
-			width:100%!important;
-		}
-		.skiptranslate {
-			width:100%!important;
-		}
-		.goog-te-gadget-simple {
-			width: calc(100% - 32px)!important;
-			text-align: center;
-		}
-	}
+  #google_translate_element {
+    bottom: .25rem;
+    left: 16px!important;
+    width: 100%!important;
+    .goog-te-gadget {
+      width:100%!important;
+    }
+    .skiptranslate {
+      width:100%!important;
+    }
+    .goog-te-gadget-simple {
+      width: calc(100% - 32px)!important;
+      text-align: center;
+    }
+  }
 }
-a.goog-te-menu-value {
+
+// Prevent underlining when hovered
+a.VIpgJd-ZVi9od-xl07Ob-lTBxed {
   text-decoration: none !important;
   &:hover {
     text-decoration: none !important;
   }
+}
+
+// Removes the blue border surrounding the entire translate menu (when opened)
+.VIpgJd-ZVi9od-vH1Gmf {
+  border: none !important;
 }
