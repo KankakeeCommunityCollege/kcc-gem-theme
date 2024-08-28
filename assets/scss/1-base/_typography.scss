@@ -140,10 +140,18 @@ body {
   font-family: $font-family-oswald;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.05rem;
   padding-bottom: .25rem;
   padding-top: .25rem;
+}
+
+.typography__header-global--nav-top,
+.typography__header-global--nav-bottom {
+  letter-spacing: 0.05rem;
   text-transform: capitalize;
+}
+
+.typography__header-global--nav-local {
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 992px) {
@@ -177,12 +185,20 @@ body {
 @media screen and (min-width: 992px) {
   .typography__header-global--nav-local {
     font-size: 1rem;
-    font-weight: 400;
   }
   .nav-link:not([role=tab]) {
     margin-left: 5px;
     margin-right: 5px;
   }
+}
+
+.typography__header-global--nav-local-button {
+  color: $white;
+}
+
+// .navbar-nav and .show needed to override BS5 styles
+.navbar-nav .typography__header-global--nav-local-button.show {
+  color: $white;
 }
 
 // "The POWER of Community" text

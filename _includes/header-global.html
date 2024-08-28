@@ -43,7 +43,7 @@
         <a href="https://my.kcc.edu"
           target="_blank"
           rel="noopener"
-          class="nav-link header-global__nav-top--nav-link typography__header-global--nav-top btn buttons__my-kcc buttons__my-kcc--mobile typography__my-kcc d-block d-lg-none">
+          class="nav-link header-global__nav-top--nav-link typography__header-global--nav-top btn buttons__my-kcc buttons__my-kcc--mobile typography__my-kcc{% if site.core_site != true %} d-none{% else %} d-block d-lg-none{% endif %}">
           My KCC
         </a>
           <div class="collapse navbar-collapse flex-column{% if site.core_site == true %} header-global__core{% endif %}" id="headerGlobalNavbarContent">

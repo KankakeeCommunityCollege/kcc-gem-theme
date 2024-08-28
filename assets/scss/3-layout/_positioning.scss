@@ -282,6 +282,12 @@
   }
 }
 
+@media screen and (min-width: 992px) {
+  .position__offset-alert--non-core {
+    padding-top: 180px;
+  }
+}
+
 // Used on the 404 error page
 .positioning__max-width-600 {
   max-width: 600px;
