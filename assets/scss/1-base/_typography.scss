@@ -154,6 +154,11 @@ body {
   text-transform: uppercase;
 }
 
+.typography__header-global--nav-local:hover,
+.typography__header-global--nav-local:focus {
+  color: $primary-red;
+}
+
 @media screen and (min-width: 992px) {
   .typography__header-global--nav-top {
     color: $color-blue-light-nav;
@@ -193,12 +198,7 @@ body {
 }
 
 .typography__header-global--nav-local-button {
-  color: $white;
-}
-
-// .navbar-nav and .show needed to override BS5 styles
-.navbar-nav .typography__header-global--nav-local-button.show {
-  color: $white;
+  color: $white !important; // Important is needed to override BS5 styles
 }
 
 // "The POWER of Community" text
