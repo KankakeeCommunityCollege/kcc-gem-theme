@@ -52,6 +52,7 @@ exclude:
   - "look-for-deprecated-bs4-classes.mjs"
   - "look-for-deprecated-bs4-js.mjs"
   - "look-for-string-in-project-files.mjs"
+  - "look-for-string.mjs"
 
 # Settings for the compress.html layout
 ## See https://jch.penibelst.de/ for more info
