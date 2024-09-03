@@ -4,7 +4,11 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% if site.subsection_title %}
+    <title>{{page.title}} - {{site.subsection_title}}</title>
+    {% else %}
     <title>{{page.title}} - {{site.title}}</title>
+    {% endif %}
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
     {%- if site.canonical_baseurl %}
     <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
