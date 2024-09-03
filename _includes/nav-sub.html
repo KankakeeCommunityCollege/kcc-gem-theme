@@ -7,8 +7,14 @@
         {% assign section = page.sub-nav_section | downcase | append: "/" %}
         {% for nav in site.sub-nav_links %}
           {% if nav.link_href contains section %}
+          {% assign last_char = nav.link_href | slice: -1, 1 %}
+          {% if last_char == '/' or nav.link_href contains '#contact' %}
+            {% assign link = nav.link_href %}
+          {% else %}
+            {% assign link = nav.link_href | append: '/' %}
+          {% endif %}
           <li class="nav-item js-sub-nav-item">
-            <a href="{{ page.baseurl }}{{ nav.link_href }}" class="nav-link sub-nav__nav-link">{{ nav.link_text }}</a>
+            <a href="{{ page.baseurl }}{{ link }}" class="nav-link sub-nav__nav-link">{{ nav.link_text }}</a>
           </li>
           {% endif %}
         {% endfor %}
