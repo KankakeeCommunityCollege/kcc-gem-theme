@@ -7,7 +7,7 @@ const options = {
 
 const htmlFileRegExp = /.+\.(html|md|markdown|xml)$/;
 // const jsFileRegExp = /.+\.(js)$/;
-const stringRegExp = /\{\{\s?site\.url\s?\}\}/;
+const stringRegExp = /\{\{\s?site\.title\s?\}\}/;
 const stringRegExpGlobal = new RegExp(stringRegExp, 'g');
 
 console.log(`\n==== [SEARCHING in: ${path}] ====`);
