@@ -93,7 +93,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Academic Calendar
         href: 'calendar'
       - text: Continuing Education
-        href: 'https://continuinged.kcc.edu/' ## Absolute URL with protocol works too
+        href: 'https://www.kcc.edu/continuinged/' ## Absolute URL with protocol works too
       - text: Illinois High School Diploma (GED)
         href: 'https://www.kcc.edu/adulted/programs/ged/'
       - text: Commencement
@@ -212,7 +212,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Adult & Community Education
         href: 'https://www.kcc.edu/adulted/'
       - text: Continuing Education
-        href: 'https://continuinged.kcc.edu'
+        href: 'https://www.kcc.edu/continuinged/'
       - text: Sustainability
         href: 'sustainability'
       - text: Arts & Culture
