@@ -318,7 +318,14 @@
 
 #headerGlobalNavbarContent.collapse.show .typography__nav-heading,
 #headerGlobalNavbarContent.collapsing .typography__nav-heading {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 360px) {
+  #headerGlobalNavbarContent.collapse.show .typography__nav-heading,
+  #headerGlobalNavbarContent.collapsing .typography__nav-heading {
+    font-size: 1.3rem;
+  }
 }
 
 #headerGlobalNavbarContent.collapse.show .navbar-nav,
