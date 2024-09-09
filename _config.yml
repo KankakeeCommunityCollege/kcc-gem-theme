@@ -87,27 +87,27 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
 ## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
 ##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.
       - text: Academic Programs Home ## Text for the first dropdown item (stays at the top)
-        href: 'academics' ## Relative link that the first dropdown item should point to
+        href: 'academics/' ## Relative link that the first dropdown item should point to
       - text: Class Schedule 
-        href: 'schedule' # Relative link with hashes and queries work too 'page/#hash' or 'page/?id=some-heading#hash'
+        href: 'schedule/' # Relative link with hashes and queries work too 'page/#hash' or 'page/?id=some-heading#hash'
       - text: Academic Calendar
-        href: 'calendar'
+        href: 'calendar/'
       - text: Continuing Education
         href: 'https://www.kcc.edu/continuinged/' ## Absolute URL with protocol works too
       - text: Illinois High School Diploma (GED)
         href: 'https://www.kcc.edu/adulted/programs/ged/'
       - text: Commencement
-        href: 'commencement'
+        href: 'commencement/'
       - text: Final Exam Schedule
-        href: 'final-exams'
+        href: 'final-exams/'
       - text: Register for Classes
-        href: 'register'
+        href: 'register/'
       - text: Academic Catalog
         href: 'https://kcc.smartcatalogiq.com/current/Academic-Catalog'
       - text: "Exam Make-ups"
-        href: exam-makeups
+        href: exam-makeups/
       - text: "Online Learning"
-        href: online-learning
+        href: online-learning/
 ## Admissions ##
   - link_text:  Admissions
     link_href: admissions
@@ -116,9 +116,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       alt: 'Smiling student inside the KCC main entrance'
     dropdown:
       - text:  Admissions Home
-        href: admissions
+        href: admissions/
       - text: Placement Testing
-        href: 'testing'
+        href: 'testing/'
       - text: Apply
         href: 'https://apply.kcc.edu'
       - text: Request Information
@@ -126,13 +126,13 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Visit/Explore
         href: 'https://visit.kcc.edu'
       - text: 'Start in High School'
-        href: 'high-school'
+        href: 'high-school/'
       - text: Request KCC Transcripts
         href: '#request-your-transcript'
       - text: 'Veterans Services'
-        href: 'veterans'
+        href: 'veterans/'
       - text: 'Credit for Prior Learning'
-        href: 'credit-for-prior-learning'
+        href: 'credit-for-prior-learning/'
 ## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
@@ -143,11 +143,11 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         More details and workshop info at www.kcc.edu/finaid
     dropdown:
       - text:  Tuition & Aid Home
-        href: 'tuition-and-aid'
+        href: 'tuition-and-aid/'
       - text: Financial Aid
-        href: 'financial-aid'
+        href: 'financial-aid/'
       - text: Net Price Calculator
-        href: 'net-price-calculator'
+        href: 'net-price-calculator/'
       - text: 'Cost to Attend KCC'
         href: '#cost-to-attend'
       - text: 'Tuition Payment & Deadlines'
@@ -167,39 +167,39 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         and Megan Ponton.
     dropdown:
       - text: Student Resources Home
-        href: 'student-resources'
+        href: 'student-resources/'
       - text: Bookstore
         href: 'https://books.kcc.edu'
       - text: 'Center for Equity, Diversity & Inclusion'
-        href: 'edi'
+        href: 'edi/'
       - text: Fitness Center
-        href: 'https://athletics.kcc.edu/facilities/fitness-center'
+        href: 'https://athletics.kcc.edu/facilities/fitness-center/'
       - text: Advising
-        href: 'advising'
+        href: 'advising/'
       - text: Transfer Services
-        href: 'transfer'
+        href: 'transfer/'
       - text: 'Counseling & Referral Services'
-        href: 'counseling-and-referral-services'
+        href: 'counseling-and-referral-services/'
       - text: Disability Services
-        href: 'disability-services'
+        href: 'disability-services/'
       - text: Student Complaint Procedures
-        href: 'student-complaint-procedures'
+        href: 'student-complaint-procedures/'
       - text: Start the Semester Right
-        href: 'welcome'
+        href: 'welcome/'
       - text: Tutoring
         href: 'https://library.kcc.edu/tutoring/'
       - text: TRIO Student Support Services
-        href: 'trio'
+        href: 'trio/'
       - text: Career Services
-        href: 'career-services'
+        href: 'career-services/'
       - text: Food Services
-        href: 'food-services'
+        href: 'food-services/'
       - text: Workforce Services
         href: 'https://wioa.kcc.edu/'
       - text: Support Resources
-        href: support-resources
+        href: support-resources/
       - text: Student Life
-        href: student-life
+        href: student-life/
 ## Community ##
   - link_text: Community
     link_href: 'community'
@@ -208,21 +208,21 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       alt: 'The Criminal Justice Club posing on the metal sculpture in front of the KCC main entrance'
     dropdown:
       - text: Community Home
-        href: 'community'
+        href: 'community/'
       - text: Adult & Community Education
         href: 'https://www.kcc.edu/adulted/'
       - text: Continuing Education
         href: 'https://www.kcc.edu/continuinged/'
       - text: Sustainability
-        href: 'sustainability'
+        href: 'sustainability/'
       - text: Arts & Culture
-        href: 'arts-and-culture'
+        href: 'arts-and-culture/'
       - text: Workforce Services
         href: 'https://wioa.kcc.edu/'
       - text: Community Testing Center
-        href: testing-center
+        href: testing-center/
       - text: Wheels of Opportunity
-        href: 'wheels'
+        href: 'wheels/'
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'
@@ -232,37 +232,37 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       alt: 'Two students posing in front of the KCC main entrance'
     dropdown:
       - text: About KCC Home
-        href: 'about'
+        href: 'about/'
       - text: Newsroom
         href: 'https://news.kcc.edu'
       - text: Leadership
-        href: 'leadership'
+        href: 'leadership/'
       - text: Board of Trustees
-        href: board-of-trustees
+        href: board-of-trustees/
       - text: Human Resources
-        href: 'human-resources'
+        href: 'human-resources/'
       - text: Job Openings
-        href: 'human-resources/job-openings'
+        href: 'human-resources/job-openings/'
       - text: Directories
-        href: 'directories'
+        href: 'directories/'
       - text: Information Technology Services
-        href: 'its'
+        href: 'its/'
       - text: Marketing
-        href: 'marketing'
+        href: 'marketing/'
       - text: 'Institutional Effectiveness'
-        href: 'institutional-effectiveness'
+        href: 'institutional-effectiveness/'
       - text: 'Police & Safety'
-        href: 'police-and-safety'
+        href: 'police-and-safety/'
       - text: 'Student Code of Conduct'
-        href: 'code-of-conduct'
+        href: 'code-of-conduct/'
       - text: 'Title IX'
-        href: 'title-ix'
+        href: 'title-ix/'
       - text: 'Contact Us'
-        href: 'contact-us'
+        href: 'contact-us/'
       - text: Web Services
-        href: 'marketing/web-services'
+        href: 'marketing/web-services/'
       - text: Consumer Info and Disclosures
-        href: 'consumer-info'
+        href: 'consumer-info/'
       - text: ICCB Salary and Benefits Portal
         href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
       - text: COVID-19 Response
