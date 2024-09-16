@@ -79,6 +79,11 @@ window.addEventListener('load', () => {
     // do NOT on the support-resources page. This page already uses the
     // modal plugin and we don't want duplicate imports.
     import('bootstrap/js/dist/modal').then(({ default: Modal }) => Modal);
-    }
+  }
+
+  if (document.getElementById('navLocal')) {
+    import('./highlightNavItems')
+      .then(({ default: highlightNavItems }) => highlightNavItems());
+  }
 });
 

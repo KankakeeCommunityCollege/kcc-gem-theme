@@ -12,11 +12,26 @@
   }
 }
 
-.nav-item.active .sub-nav__nav-link {
-  border-bottom-color: $primary-red;
-  border-bottom-style: solid;
-  border-bottom-width: thick;
-  padding-bottom: 0;
+.sub-nav__navbar .nav-item {
+  position: relative; // Needed so that underline from .active  class is the correct width/placement
+}
+
+// Create an underline when a .nav-item has the .active class (added via custom JS: `highlightLocalNav.js`)
+.nav-item.active .sub-nav__nav-link::after {
+  --underline-offset: 30px; // reduce width to account for margins and padding
+  background-color: #c61f48;
+  bottom: 6px;
+  content: "";
+  display: block;
+  height: .225rem;
+  position: absolute;
+  width: calc(100% - var(--underline-offset));
+}
+
+@media screen and (min-width: 992px) {
+  .nav-item.active .sub-nav__nav-link::after {
+    --underline-offset: 20px;
+  }
 }
 
 .sub-nav__navbar {

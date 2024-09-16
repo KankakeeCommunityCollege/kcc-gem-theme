@@ -86,13 +86,13 @@
 }
 
 
-.links__phone--span:focus:after,
-.links__phone--span:hover:after { // mouse-hover effect for phone # in landing pages
+.links__phone--span:focus::after,
+.links__phone--span:hover::after { // mouse-hover effect for phone # in landing pages
   opacity: 1;  // Make the underline fade in
   transform: translateY(-.2em); // Move the underline up (along the Y-axis) as it fades-in
 }
 
-.links__phone--span:after { // Pseudo-element to unerline the phone # on mouse-hover
+.links__phone--span::after { // Pseudo-element to unerline the phone # on mouse-hover
     background-color: $color-orange;
     bottom: - .325rem;
     content: "";
@@ -120,7 +120,7 @@
     bottom: .125rem;
     content: '';
     display: block;
-    height: .145rem;
+    height: .225rem;
     position: absolute;
     width: calc(100% - 1rem);
   }
