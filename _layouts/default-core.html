@@ -27,6 +27,9 @@ layout: compress
 {%- if page.sheet_key or page.include_datatables -%}
 {% include scripts/table-cdn.html %}{% endif %}
 {% include scripts/custom.html %}
+{% if page.include_facebook_sdk %}
+{% include scripts/facebook-js-sdk.html %}
+{% endif %}
 {%- if site.translate == true -%}<!-- Link to this site's custom google translate stylesheet -->
 {% include scripts/translate.html %}{% endif %}
 {% include foot.html %}
