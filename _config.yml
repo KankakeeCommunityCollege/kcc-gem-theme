@@ -187,7 +187,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Start the Semester Right
         href: 'welcome/'
       - text: Tutoring
-        href: 'https://library.kcc.edu/tutoring/'
+        href: 'tutoring/library/'
       - text: TRIO Student Support Services
         href: 'trio/'
       - text: Career Services
