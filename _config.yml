@@ -195,7 +195,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Food Services
         href: 'food-services/'
       - text: Workforce Services
-        href: 'https://wioa.kcc.edu/'
+        href: 'https://www.kcc.edu/workforceservices/'
       - text: Support Resources
         href: support-resources/
       - text: Student Life
@@ -218,7 +218,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Arts & Culture
         href: 'arts-and-culture/'
       - text: Workforce Services
-        href: 'https://wioa.kcc.edu/'
+        href: 'https://www.kcc.edu/workforceservices/'
       - text: Community Testing Center
         href: testing-center/
       - text: Wheels of Opportunity
