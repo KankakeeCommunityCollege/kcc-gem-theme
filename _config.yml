@@ -223,6 +223,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: testing-center/
       - text: Wheels of Opportunity
         href: 'wheels/'
+      - text: Giving
+        href: 'https://foundation.kcc.edu'
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'

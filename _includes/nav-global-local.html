@@ -1,7 +1,7 @@
 <ul id="navLocal" class="navbar-nav header-global__nav-local justify-content-end align-items-lg-center bg-light">
   <li class="nav-item me-auto">
     <a href="{{ page.baseurl }}" class="nav-link navbar-brand header-global__nav-local--navbar-brand">
-      <h1 class="typography__nav-heading">{{ site.site_name }}</h1>
+      <h1 class="typography__nav-heading{% if site.nav_config.smaller_brand == true %} typography__nav-heading--smaller{% endif %}">{{ site.site_name }}</h1>
     </a>
   </li>
   {% for link in site.nav_links %}
