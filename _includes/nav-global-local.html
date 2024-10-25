@@ -16,13 +16,13 @@
   <li class="nav-item dropdown">
     <a
       class="nav-link dropdown-toggle btn btn-primary buttons__dropdown btn--base-align typography__header-global--nav-local typography__header-global--nav-local-button"
-      href="#" id="{{ link.link_text | downcase }}NavbarDropdown"
+      href="#" id="{{ link.link_text | downcase | replace: ' ', '-' }}-navbar-dropdown"
       role="button"
       data-bs-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded="false"
     >{{ link.link_text }}</a>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ link.link_text | downcase }}NavbarDropdown">
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ link.link_text | downcase | replace: ' ', '-' }}-navbar-dropdown">
       {% for item in link.dropdown %}
       <a class="dropdown-item" href="{{ page.baseurl }}{{ item.href }}">{{ item.text }}</a>
       {% endfor %}
