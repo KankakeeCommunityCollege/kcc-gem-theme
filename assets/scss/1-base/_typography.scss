@@ -41,6 +41,9 @@ body {
 @media screen and (min-width:410px) {
   .typography__nav-heading {
     font-size: 2rem;
+    &--smaller {
+      font-size: 1.6rem;
+    }
   }
 }
 

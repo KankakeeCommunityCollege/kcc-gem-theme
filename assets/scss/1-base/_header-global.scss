@@ -543,3 +543,10 @@
     column-count: 2;
   }
 }
+
+// Fix buttons showing through collapsed nav-global-local on tablet sized screens
+@media screen and (max-width: 991px) {
+  #headerGlobalNavbarContent.collapse:not(.show) #navLocal .btn.btn-primary:not(.dropdown-toggle) {
+    display: none;
+  }
+}
