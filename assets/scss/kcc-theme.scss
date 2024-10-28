@@ -1,47 +1,45 @@
-// Variables
-@import '0-tools/vars';
-@import '0-tools/bootstrap-overrides';
-@import '0-tools/cloudcannon';
-@import '0-tools/gsc-overrides';
-@import '0-tools/targetx-overrides';
-@import '0-tools/print';
+// Tools & Utilities
+// @use '0-tools/vars';
+@use '0-tools/bootstrap-overrides';
+@use '0-tools/cloudcannon';
+@use '0-tools/gsc-overrides';
+@use '0-tools/targetx-overrides';
+@use '0-tools/print';
 
-// Base items
-@import '1-base/typography';
-@import '1-base/links';
-@import '1-base/buttons';
-@import '1-base/img';
-@import '1-base/header-global';
-@import '1-base/background';
-@import '1-base/svg';
-@import '1-base/html';
+// // Base items
+@use '1-base/typography';
+@use '1-base/links';
+@use '1-base/buttons';
+@use '1-base/img';
+@use '1-base/header-global';
+@use '1-base/background';
+@use '1-base/svg';
+@use '1-base/html';
 
-// Modular components
-@import '2-modules/header';
-@import '2-modules/footer';
-@import '2-modules/social-icons';
-@import '2-modules/nav-landing'; // Styles for the navbar in landing pages.
-@import '2-modules/nav-global';  // Remove after implimenting the new header-global with mega-nav.
-@import '2-modules/error';
-@import '2-modules/benefits';
-@import '2-modules/hero-slider';
-@import '2-modules/sub-nav';
-@import '2-modules/contacts';
-@import '2-modules/accordion';
-@import '2-modules/loader';
-@import '2-modules/nav-global';
-@import '2-modules/yt-embed';
-@import '2-modules/breadcrumbs';
+// // Modular components
+@use '2-modules/header';
+@use '2-modules/footer';
+@use '2-modules/social-icons';
+@use '2-modules/nav-landing'; // Styles for the navbar in landing pages.
+@use '2-modules/nav-global';  // Remove after implementing the new header-global with mega-nav.
+@use '2-modules/error';
+@use '2-modules/benefits';
+@use '2-modules/hero-slider';
+@use '2-modules/sub-nav';
+@use '2-modules/contacts';
+@use '2-modules/accordion';
+@use '2-modules/loader';
+@use '2-modules/yt-embed';
+@use '2-modules/breadcrumbs';
 
-// Layout items
-// @import "3-layout/...";
-@import '3-layout/positioning';
-@import '3-layout/margins';
-@import '3-layout/padding';
-@import '3-layout/tables';
-@import '3-layout/section';
-@import '3-layout/background';
-@import '3-layout/thank-you';
+// // Layout items
+// // @use "3-layout/...";
+@use '3-layout/positioning';
+@use '3-layout/margins';
+@use '3-layout/padding';
+@use '3-layout/tables';
+@use '3-layout/section';
+@use '3-layout/thank-you';
 
-// Page specific styling
-// @import "4-pages/...";
+// // Page specific styling
+// // @use "4-pages/...";

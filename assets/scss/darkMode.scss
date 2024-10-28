@@ -1,5 +1,4 @@
 // This file is compiled by Webpack and NOT Gulp
 // The styles here are dynamically loaded (after DOMContentLoaded event has fired)
 // only if the user has the localStorage.darkModeSetting = 'true'
-@import './0-tools/vars';
-@import './2-modules/dark-mode';
+@use './2-modules/dark-mode';
