@@ -1,6 +1,7 @@
+@use '../0-tools/vars' as *;
+@use '../2-modules/link-launch';
 // Rules for styling links
 // =========================================
-@import '../2-modules/link-launch';
 
 .links__kcc-logo {
   display: inline;

@@ -1,4 +1,6 @@
+@use '../0-tools/vars' as *;
 // Styles for <img>'s
+
 .img__responsive--svg {
   height: auto;
   max-width: 100%;

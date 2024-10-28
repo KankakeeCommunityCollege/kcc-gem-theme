@@ -1,3 +1,5 @@
+@use '../0-tools/vars' as *;
+
 .navbar-light .navbar-nav .nav-link.buttons__btn-primary-custom {
   background-color: $primary-red;
   color: $white;
