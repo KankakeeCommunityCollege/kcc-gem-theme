@@ -13,6 +13,18 @@
 // use the 'link__offset' class to offset jump-links via CSS only method.
 // Links need to be offset to clear the fixed navigation bar at the top.
 // =========================================
+.links__offset {
+  // Pointer-events is needed to prevent the .links__offset::before pseudo-element
+  pointer-events: none; // from "blocking" any anchor tag above from being clicked.
+
+  & a,
+  & button,
+  & iframe,
+  & .card-body {
+    // HOWEVER, if there is a child anchor, or button, element,
+    pointer-events: auto; // it obviously needs to be clickable.
+  }
+}
 
 .links__offset::before {
   // mobile devices get slightly different offset b/c of different sized fixed header
