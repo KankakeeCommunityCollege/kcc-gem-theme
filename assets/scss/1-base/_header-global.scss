@@ -446,6 +446,18 @@
   }
 }
 
+// Prevent Trending Searches list of links from gaining keyboard focus
+//  while search is collapsed. Otherwise, console errors are thrown trying
+//  to focus elements with a parent that has `aria-hidden="true"`.
+.header-global__search-suggestions {
+  visibility: hidden;
+}
+
+// Make visible (and focusable) when search collapse is opened
+.header-global__search-collapse--visible .header-global__search-suggestions {
+  visibility: visible;
+}
+
 @keyframes meganav {
   0% {
     opacity: 0;

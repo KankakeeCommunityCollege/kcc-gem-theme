@@ -53,6 +53,19 @@
   }
 }
 
+// Visit & Apply button styles (.buttons__action):
+// Set BS5 variables for .buttons__action so that background color is correct when clicked
+.buttons__action:active {
+  --bs-btn-active-color: #{$white};
+  --bs-btn-active-bg: #{$primary-blue};
+}
+
+// Set BS5 variables for .buttons__action so that background color is correct when clicked
+.buttons__action:focus-visible {
+  --bs-btn-hover-color: #{$white};
+  --bs-btn-hover-bg: #{$primary-blue};
+}
+
 .buttons__action {
   color: $white;
   background-color: $primary-red;
