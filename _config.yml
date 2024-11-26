@@ -180,7 +180,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'transfer/'
       - text: 'Counseling & Referral Services'
         href: 'counseling-and-referral-services/'
-      - text: Disability Services
+      - text: Office of Disability Services
         href: 'disability-services/'
       - text: Student Complaint Procedures
         href: 'student-complaint-procedures/'
