@@ -1,6 +1,8 @@
 ---
-name: Financial Aid FAQ 2
+name: Financial Aid FAQ
 tabs_page: Accordion
+order: 2
+alternate_id: financial-aid-faq-2
 ---
 
 **What Is a Financial Aid Eligibility Date?**
