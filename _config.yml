@@ -133,6 +133,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'veterans/'
       - text: 'Credit for Prior Learning'
         href: 'credit-for-prior-learning/'
+      - text: DACA/Undocumented Students
+        href: 'undocumented/'
 ## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
