@@ -14,3 +14,14 @@
 .cms-editor-active .editor-button {
   display: inline-block;
 }
+
+// CloudCannon likes to inject paragraph elements inside list-items.
+// Since Bootstrap adds a margin-bottom to paragraph elements it causes weird list-item spacing.
+//   Code example:
+//     <li>
+//       <p>My list-item text that CloudCannon wrapped in a paragraph element!</p>
+//     </li>
+// This rule eliminates the large gaps between list items:
+li > p {
+  margin-bottom: 0;
+}

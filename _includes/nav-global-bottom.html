@@ -25,7 +25,7 @@
                         class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
                       {%- if item.button -%}
-                      <a href="{{ item.button.href }}" class="btn btn-primary mt-3 d-none d-lg-inline-block ga_menu_link">{{ item.button.text }}</a>{% endif %}
+                      <a href="{{ item.button.href }}" class="btn btn-primary mt-0 mt-lg-3 mb-2 d-inline-block ga_menu_link">{{ item.button.text }}</a>{% endif %}
                     </div>{% endif %}
                     <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
                       {%- if item.dropdown[0] -%}

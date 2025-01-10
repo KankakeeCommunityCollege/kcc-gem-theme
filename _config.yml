@@ -143,6 +143,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       alt: >-
         The early bird gets the money. FAFSA available before Dec. 31. Apply at fafsa.gov.
         More details and workshop info at www.kcc.edu/finaid
+    button:
+      text: 'Financial Support Opportunities'
+      href: '/tuition-and-aid/financial-support/'
     dropdown:
       - text:  Tuition & Aid Home
         href: 'tuition-and-aid/'
