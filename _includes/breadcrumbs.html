@@ -4,7 +4,7 @@
   {% if site.core_root == true %}  
     {% if page.title != '404' and page.title != 'Settings' %} 
     <li class="breadcrumb-item">
-      <svg id="home-icon" role="image" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
+      <svg id="home-icon" role="img" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
         <title lang="en" id="home-icon-title">Home</title>
         <path class="breadcrumbs--home--border" d="M0,0h24v24H0V0z"/>
         <polygon class="breadcrumbs--home--house" points="14.5,19.5 14.5,13.5 9.5,13.5 
@@ -14,7 +14,7 @@
     {% else if page.title == '404' or page.title == 'Settings' %}
     <li class="breadcrumb-item">
       <a href="../">
-        <svg id="home-icon" role="image" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
+        <svg id="home-icon" role="img" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
           <title lang="en" id="home-icon-title">Home</title>
           <path class="breadcrumbs--home--border" d="M0,0h24v24H0V0z"/>
           <polygon class="breadcrumbs--home--house" points="14.5,19.5 14.5,13.5 9.5,13.5 
@@ -28,7 +28,7 @@
     {% if page.url == "/" %}
     <li class="breadcrumb-item">
       <a href="../">
-        <svg id="home-icon" role="image" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
+        <svg id="home-icon" role="img" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
           <title lang="en" id="home-icon-title">Home</title>
           <path class="breadcrumbs--home--border" d="M0,0h24v24H0V0z"/>
           <polygon class="breadcrumbs--home--house" points="14.5,19.5 14.5,13.5 9.5,13.5 
@@ -41,7 +41,7 @@
     {% assign url_arr = page.url | split: "/" %}
     <li class="breadcrumb-item">
       <a href="../{{ page.baseurl }}">
-        <svg id="home-icon" role="image" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
+        <svg id="home-icon" role="img" class="breadcrumbs--home" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="home-icon-title">
           <title lang="en" id="home-icon-title">Home</title>
           <path class="breadcrumbs--home--border" d="M0,0h24v24H0V0z"/>
           <polygon class="breadcrumbs--home--house" points="14.5,19.5 14.5,13.5 9.5,13.5 
