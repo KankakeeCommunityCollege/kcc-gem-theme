@@ -128,3 +128,18 @@
     width: calc(100% - 1rem);
   }
 }
+
+// Make sure the "Jump to main content" link is above the nav and
+//  visible against the dark-blue nav-bar.
+.links__skip-nav {
+  background-color: $primary-blue;
+  color: #fff;
+  left: 2px; // Leave room for outline when focused
+  padding-bottom: .25rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .25rem;
+  position: absolute;
+  top: 2px; // Leave room for outline when focused
+  z-index: 2000;
+}
