@@ -139,7 +139,7 @@
   padding-left: .5rem;
   padding-right: .5rem;
   padding-top: .25rem;
-  position: absolute;
+  position: fixed;
   top: 2px; // Leave room for outline when focused
   z-index: 2000;
 }
