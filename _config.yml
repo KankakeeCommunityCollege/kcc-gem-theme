@@ -229,7 +229,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       - text: Wheels of Opportunity
         href: 'wheels/'
       - text: Giving
-        href: 'https://foundation.kcc.edu'
+        href: 'https://www.kcc.edu/foundation/'
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'
