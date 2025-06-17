@@ -7,7 +7,7 @@ port: 3000
 timezone: America/Chicago
 google-tag_key: Google Tag Manager key goes here
 theme_config: true # This key should only be in the theme's _config.yml file and nowhere else # Otherwise you will get JS errors
-core_site: true
+core_site: true # Do not push or publish the theme with `core_site: false` (however, projects that use the gem should use `core_site: false` in their `_config.yml`)
 # translate: true ## Uncomment to activate Google Translate Powers (unfortunately no cowpowers)!!
 collections:
   tabs:
@@ -274,3 +274,61 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
       - text: COVID-19 Response
         href: 'https://coronavirus.kcc.edu'
+
+## =================================================================== ##
+##  Local Nav and Sub Nav configuration for testing those components.  ##
+##         Do not publish Local or Sub nav configuration...            ##
+##         ...comment-out prior to pushing                             ##
+## =================================================================== ##
+### Set `core_site: false` (above) to test local and sub nav (navigate to /events/ page) ##
+# nav_links:
+#   - link_text: About
+#     link_href: 'about/'
+#     button: false
+#   - link_text: Events
+#     link_href: 'events/'
+#     button: false
+#   - link_text: Alumni
+#     link_href: 'alumni/'
+#     button: false
+#   - link_text: Scholarships
+#     link_href: 'scholarships/'
+#     button: false
+#   - link_text: Contact
+#     link_href: '#contact'
+#     button: false
+#   - link_text: Give
+#     link_href: 'give/'
+#     button: true
+### This is just an example for configuring an external link: ###
+# #  - link_text: Example External Link
+# #    link_href: 'https://example-external-link.com'
+# #    button: false
+# #    external: true  <---- #### Add the `external: true` key & value to make an external link ####
+# sub-nav_links:
+#   - link_text: 'Foundation Board'
+#     link_href: 'about/foundation-board'
+#   - link_text: "President's Circle Dinner"
+#     link_href: 'events/presidents-circle-dinner/'
+#   - link_text: "Women's Giving Circle"
+#     link_href: 'events/womens-giving-circle'
+#   - link_text: Alumni Event
+#     link_href: 'events/alumni-event'
+#   - link_text: 'Distinguished Alumni Award'
+#     link_href: 'alumni/distinguished-alumni-award/'
+#   - link_text: 'Alumni Stories'
+#     link_href: 'alumni/alumni-stories/'
+#   - link_text: 'Staff/Retiree Alumni Stories'
+#     link_href: 'alumni/staff-stories/'
+#   - link_text: 'Century Scholars'
+#     link_href: 'scholarships/century-scholars/'
+#   - link_text: 'Create a Scholarship'
+#     link_href: scholarships/create-a-scholarship/
+#   - link_text: "Employee Giving"
+#     link_href: 'give/employee-giving/'
+#   - link_text: "Planned Giving"
+#     link_href: 'give/planned-giving/'
+#   - link_text: "President's Circle"
+#     link_href: 'give/presidents-circle/'
+#   - link_text: "Women's Giving Circle"
+#     link_href: 'give/womens-giving-circle/'
