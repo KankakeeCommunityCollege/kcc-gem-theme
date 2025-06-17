@@ -51,8 +51,8 @@ function findContentTarget(hash) {
 }
 
 function checkForMatchingTabOrAccordion(hash, Collapse) {
-  if ( document.querySelector(`.nav-tabs a[href="${hash}"]`) ) {  // Looks for a matching BS4 tab element
-    const tab = document.querySelector(`.nav-tabs a[href="${hash}"]`);
+  if ( document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`) ) {  // Looks for a matching BS5 tab element
+    const tab = document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`);
     const bsTab = new Tab(tab);
 
     tab.addEventListener('shown.bs.tab', _e => {
@@ -61,7 +61,7 @@ function checkForMatchingTabOrAccordion(hash, Collapse) {
       : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
     });
     bsTab.show();
-  } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS4 collapse element
+  } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS5 collapse element
     const card = document.querySelector(hash);
     const bsCard = new Collapse(card, {toggle: false});
 

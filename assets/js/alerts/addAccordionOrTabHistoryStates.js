@@ -1,5 +1,5 @@
-const ACCORDION_ID = 'accordion';
-const TABS_SELECTOR = '.navTabs';
+const accordionId = 'accordion';
+const tabsSelector = '.navTabs';
 
 function addHistoryState(target, hashTarget) {
   let url = new URL(window.location);
@@ -24,20 +24,19 @@ function accordionHandler(e) {
 }
 
 function tabHandler(e) {
-  let target = e.target;
-  let targetHref = target.hash;
+  let tabTarget = e.target.dataset.bsTarget;
 
-  addHistoryState(e.target, targetHref)
+  addHistoryState(e.target, tabTarget);
 }
 
 function addAccordionOrTabHistoryStates() {
   if (document.getElementById('accordion')) {
-    const accordion = document.getElementById(ACCORDION_ID);
+    const accordion = document.getElementById(accordionId);
 
     accordion.addEventListener('click', accordionHandler);
   }
   if (document.querySelector('.navTabs')) {
-    const tabs = document.querySelector(TABS_SELECTOR);
+    const tabs = document.querySelector(tabsSelector);
   
     tabs.addEventListener('click', tabHandler);
   }
