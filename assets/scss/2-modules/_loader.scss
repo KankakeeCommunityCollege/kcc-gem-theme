@@ -23,3 +23,21 @@
   animation-iteration-count: infinite;
   transform-origin: center;
 }
+
+// Styles for new loader.svg
+@keyframes spin-animation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader--animate {
+  animation-name: spin-animation;
+  animation-duration: 1s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+}

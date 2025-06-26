@@ -85,5 +85,9 @@ window.addEventListener('load', () => {
     import('./highlightNavItems')
       .then(({ default: highlightNavItems }) => highlightNavItems());
   }
+
+  if (document.getElementById('hlcIframeParent')) {
+    import('./createHLCIframe').then(({ default: createHLCIframe }) => createHLCIframe());
+  }
 });
 
