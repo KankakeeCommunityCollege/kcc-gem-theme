@@ -186,6 +186,10 @@
   color: $color-text-darker;
 }
 
+.benefits__blue-section a {
+  color: $color-blue-darker-link;
+}
+
 .benefits__card--spacing {
   margin-bottom: 40px;
 }
@@ -199,6 +203,10 @@
 
 .benefits__first-section--marg p {
   color: $color-text-darker;
+}
+
+.benefits__first-section--marg a {
+  color: $color-blue-darker-link;
 }
 
 @media screen and (min-width: 1200px) {
