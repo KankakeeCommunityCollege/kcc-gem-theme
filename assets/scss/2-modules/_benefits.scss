@@ -182,6 +182,10 @@
   padding-top: 25px;
 }
 
+.benefits__blue-section p {
+  color: $color-text-darker;
+}
+
 .benefits__card--spacing {
   margin-bottom: 40px;
 }
@@ -191,6 +195,10 @@
   background-color: $color-blue-light;
   padding-bottom: 25px;
   padding-top: 25px;
+}
+
+.benefits__first-section--marg p {
+  color: $color-text-darker;
 }
 
 @media screen and (min-width: 1200px) {
