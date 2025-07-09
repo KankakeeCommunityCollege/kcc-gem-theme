@@ -19,6 +19,10 @@
   border-bottom-color: $grey-5;
 }
 
+.nav-tabs .nav-link:not(.active) {
+  color: $color-blue-darker-link;
+}
+
 .nav-tabs .nav-link.active {
   border-color: $grey-5 $grey-5 $white;
 }
