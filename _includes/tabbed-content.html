@@ -3,7 +3,12 @@
     <a href="cloudcannon:collections/_tabs/" class="btn btn-success editor-button">Edit Tabs Collection</a>
   </div>
 </div>
-<ul class="nav nav-tabs navTabs" id="{{ page.title | replace: ' ', '-' | downcase }}" role="tablist">
+{% if include.tabpanel_id %}
+  {% assign tabpanel_id = include.tabpanel_id %}
+{% else %}
+  {% assign tabpanel_id = page.title | replace: ' ', '-' | downcase %}
+{% endif %}
+<ul class="nav nav-tabs navTabs" id="{{ tabpanel_id }}" role="tablist">
   {% assign page_title = page.title %}
   {% assign tab_collection = site.tabs | where: "tabs_page", page_title | sort: "order" %}
   {% for tab in tab_collection %}
@@ -17,7 +22,7 @@
   </li>
   {% endfor %}
 </ul>
-<div class="tab-content mt-3 px-1" id="{{ page.title | replace: ' ', '-' | downcase }}-content">
+<div class="tab-content mt-3 px-1" id="{{ tabpanel_id }}-content">
   {% for tab in tab_collection %}
   {% if tab.alternate_id %}
     {% assign tab_id = tab.alternate_id %}
