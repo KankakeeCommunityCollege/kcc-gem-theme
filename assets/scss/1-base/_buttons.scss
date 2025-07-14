@@ -30,10 +30,21 @@
     padding-bottom: .125rem;
     margin-top: 0.25rem;
     margin-bottom: .375rem;
+    &:hover {
+      border-color: $black;
+    }
+    &:active {
+      color: $color-blue-grey !important;
+      border-color: $color-blue-grey;
+    }
     &--mobile {
       position: absolute;
       bottom: .65rem;
       left: 1rem;
+      &:hover,
+      &:focus-visible {
+        border-color: #9ea1a3;
+      }
     }
   }
 }
