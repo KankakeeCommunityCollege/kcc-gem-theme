@@ -71,6 +71,12 @@ compress_html:
 uploads_dir: # specifies the default uploads directory for uploads in CloudCannon
   - "uploads/"
 
+# Hide page.schema_json_partial setting from CloudCannon
+## Non-developers should never touch this setting!
+_inputs:
+  schema_json_partial:
+    hidden: true
+
 ## ================================================ ##
 ## Global/Main Navigation configuration for kcc.edu ##
 ## ================================================ ##

@@ -9,7 +9,12 @@
     {% else %}
     <title>{{page.title}} - {{site.title}}</title>
     {% endif %}
+    {% if page.schema_json_partial and page.schema_json_partial != '' %}
+    {% include {{ page.schema_json_partial }} %}
+    {% endif %}
+    {% if page.description and page.description != '' %}
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
+    {% endif %}
     {%- if site.canonical_baseurl %}
     <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
     {%- endif %}
