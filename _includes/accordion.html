@@ -16,9 +16,14 @@
   {%- endcomment -%}
   {%- assign this_accordion_id = item.card_heading | downcase | remove: '-' | remove: '&mdash;' | remove: '—' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | replace: 'é', 'e' | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' -%}
 {%- endif -%}
+{%- if include.alternate_heading_level -%}
+  {%- assign heading_level = include.alternate_heading_level -%}
+{%- else -%}
+  {%- assign heading_level = 'h2' -%}
+{%- endif -%}
   <div class="card">
     <div class="card-header px-0" id="card-header-{{ this_accordion_id }}">
-      <h2 class="mb-0 accordion__typography--card-header accordion__typography--hover">
+      <{{ heading_level }} class="mb-0 accordion__typography--card-header accordion__typography--hover">
         <button
           class="btn btn-link buttons__no-decoration accordion__button{% if forloop.first != true %} collapsed{% endif %}{% if forloop.first == true and page.accordion_expanded == false %} collapsed{% endif %}"
           type="button" data-bs-target="#{{ this_accordion_id }}" data-bs-toggle="collapse"
@@ -26,7 +31,7 @@
           aria-controls="{{ this_accordion_id }}">
           {{ item.card_heading }}
         </button>
-      </h2>
+      </{{ heading_level }}>
     </div>
     <div id="{{ this_accordion_id }}"
       class="collapse links__offset{% if forloop.first == true and page.accordion_expanded != false %} show{% endif %}"
