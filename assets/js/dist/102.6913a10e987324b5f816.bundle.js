@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkcc_gem_theme=self.webpackChunkkcc_gem_theme||[]).push([[102],{102:function(e,n){const t=document.getElementById("currentYear");n.default=function(){const e=(new Date).getFullYear();t.innerHTML!==`${e}`&&(t.innerHTML=e)}}}]);
