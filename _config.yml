@@ -196,8 +196,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'counseling-and-referral-services/'
       - text: Office of Disability Services
         href: 'disability-services/'
-      - text: Student Complaint Procedures
-        href: 'student-complaint-procedures/'
       - text: Start the Semester Right
         href: 'welcome/'
       - text: Tutoring
@@ -283,6 +281,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
       - text: COVID-19 Response
         href: 'https://coronavirus.kcc.edu'
+      - text: Report a Concern
+        href: 'report-a-concern/'
 
 ## =================================================================== ##
 ##  Local Nav and Sub Nav configuration for testing those components.  ##
