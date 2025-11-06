@@ -11,6 +11,11 @@ baseurl: ../
     <div class="col">
       {% include breadcrumbs.html %}
       <h2 class="typography__h2">Accordions!!!</h2>
+      <p>Override the default heading levels of the accordion component using include parameters.</p>
+      <p>The following include would change the clickable accordion headings to h2:</p>
+      <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+        <code>{% raw %}{% include accordion.html alternate_heading_level="h2" %}{% endraw %}</code>
+      </pre>
       {% include accordion.html alternate_heading_level="h3" %}
       {% include tabbed-content.html tabpanel_id="finaid-faq" %}
     </div>

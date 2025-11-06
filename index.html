@@ -113,8 +113,20 @@ schema_json_partial:
         <a href=""><img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{ page.baseurl }}assets/img/itransfer.png" alt="Some alt text." /></a>
       </div>
     </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+      <div class="col">
+        <p>Override the default heading levels of the contacts section (below) using include parameters.</p>
+        <p>The following include would change the main "Contacts" heading to an h2 and the name and job-title headings to h3 and h4 respectively:</p>
+        <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+          <code>{% raw %}{% include contacts.html section_heading_level="h2" name_heading_level="h3" title_heading_level="h4" %}{% endraw %}</code>
+        </pre>
+      </div>
+    </div>
   </div>
-  {% include contacts.html %}
+  {% include contacts.html section_heading_level="h3" name_heading_level="h4" title_heading_level="h5" %}
 </main>
 
 <section class="mt-5">

@@ -1,9 +1,24 @@
       {%- assign sorted_contacts = site.contacts | sort: "display_order" -%}
+      {%- if include.section_heading_level -%}
+        {%- assign heading_level = include.section_heading_level -%}
+      {%- else -%}
+        {%- assign heading_level = 'h3' -%}
+      {%- endif -%}
+      {%- if include.name_heading_level -%}
+        {%- assign name_heading_level = include.name_heading_level -%}
+      {%- else -%}
+        {%- assign name_heading_level = 'h4' -%}
+      {%- endif -%}
+      {%- if include.title_heading_level -%}
+        {%- assign title_heading_level = include.title_heading_level -%}
+      {%- else -%}
+        {%- assign title_heading_level = 'h5' -%}
+      {%- endif -%}
       <section>
         <div class="container">
           <div class="row">
             <div class="col mt-1 section__heading-underline--transparent">
-              <h3 id="contact" class="typography__section--heading margins__heading--btm links__offset">Contacts</h3>
+              <{{ heading_level }} id="contact" class="typography__section--heading margins__heading--btm links__offset">Contacts</{{ heading_level }}>
             </div>
           </div>
         {% if page.contacts_background_tan == true %}</div>
@@ -29,8 +44,8 @@
                 {% if contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" width="150px" height="150px" alt="{{ contact.name }}" class="img-fluid contacts__portrait" itemprop="image" />{% endif %}
                 </div>
                 <div class="col-8">
-                  <h5 class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</h5>
-                  {% if contact.contacts_title %}<h6 class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</h6>{% endif %}
+                  <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
+                  {% if contact.contacts_title %}<{{ title_heading_level }} class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</{{ title_heading_level }}>{% endif %}
                   <p class="notranslate">
                     {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link" itemprop="telephone">{{ contact.phone }}</a><br>{% endif %}
                     {% if contact.general %}
@@ -51,8 +66,8 @@
             {% else %}
             <div itemscope itemtype="https://schema.org/Person" class="col-sm-6 col-md-4 mb-3">
             {% endif %}
-              <h5 class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</h5>
-              {% if contact.contacts_title %}<h6 class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</h6>{% endif %}
+              <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
+              {% if contact.contacts_title %}<{{ title_heading_level }} class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</{{ title_heading_level }}>{% endif %}
               <p class="notranslate">
                 {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link" itemprop="telephone">{{ contact.phone }}</a><br>{% endif %}
                 {% if contact.general %}
