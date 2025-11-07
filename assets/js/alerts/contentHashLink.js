@@ -50,6 +50,16 @@ function findContentTarget(hash) {
   focusElement(target);
 }
 
+function openAllAccordions(Collapse) {
+  const accordions = document.querySelectorAll('#accordion .collapse');
+
+  [...accordions].forEach(el => {
+    const bsCollapse = new Collapse(el, { toggle: false });
+
+    bsCollapse.show();
+  })
+}
+
 function checkForMatchingTabOrAccordion(hash, Collapse) {
   if ( document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`) ) {  // Looks for a matching BS5 tab element
     const tab = document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`);
@@ -71,6 +81,8 @@ function checkForMatchingTabOrAccordion(hash, Collapse) {
       : findContentTarget(`button[data-bs-target="${hash}"]`);
     });
     bsCard.show();
+  } else if (hash === '#please-open-all-accordions') {
+    openAllAccordions(Collapse);
   }
 }
 
