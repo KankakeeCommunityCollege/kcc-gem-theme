@@ -1,4 +1,9 @@
 {% assign slide_collection = page.slides %}
+{% if include.alternate_heading_level %}
+  {% assign headings = include.alternate_heading_level %}
+{% else %}
+  {% assign headings = 'h3' %}
+{% endif %}
 <div class="row{% if page.slider_parent_classes %} {{ page.slider_parent_classes | join: ' ' }}{% endif %}">
   <div class="col hero-slider__slider hero-slider__slides-{{ slide_collection.size }}">
   {% for slide in slide_collection %}
@@ -21,7 +26,7 @@
       {% endif %}
       {% if slide.text and slide.text != '' %}
       <div class="hero-slider__slider--heading-container text-center">
-        <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+        <{{ headings }} class="hero-slider__slider--slide-heading{% if include.additional_heading_classes %} {{ include.additional_heading_classes }}{% endif %}">{{slide.text}}</{{ headings }}>
       </div>
       {% endif %}
     </div>
@@ -43,7 +48,7 @@
       </a>
       {% endif %}
       {% if slide.text and slide.text != "" %}<div class="hero-slider__slider--heading-container text-center">
-      <h3 class="hero-slider__slider--slide-heading">{{slide.text}}</h3>
+      <{{ headings }} class="hero-slider__slider--slide-heading{% if include.additional_heading_classes %} {{ include.additional_heading_classes }}{% endif %}">{{slide.text}}</{{ headings }}>
       </div>{% endif %}
     </div>
     {% endif %}
