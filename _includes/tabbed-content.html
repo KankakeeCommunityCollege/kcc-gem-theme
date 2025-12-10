@@ -29,7 +29,7 @@
   {% else %}
     {% assign tab_id = tab.name | downcase | remove: '-' | replace: '&', 'and' | replace: ' ', '-' | remove: "'" | replace: "/", "-" | remove: '’' | remove: '0' | remove: '1' | remove: '2' | remove: '3' | remove: '4' | remove: '5' | remove: '6' | remove: '7' | remove: '8' | remove: '9' | remove: '?' | remove: '!' | remove: '#' | remove: '$'  | remove: '.' | remove: ',' | remove: '(' | remove: ')' | remove: '®' | remove: '©' %}
   {% endif %}  
-  <div class="tab-pane fade links__offset{% if forloop.first == true %} show active{% endif %}" id="{{ tab_id }}" role="tabpanel" aria-labelledby="{{ tab_id }}-label" tabindex="0">
+  <div class="tab-pane fade{% unless include.disable_links_offset and include.disable_links_offset == 'true' %} links__offset{% endunless %}{% if forloop.first == true %} show active{% endif %}" id="{{ tab_id }}" role="tabpanel" aria-labelledby="{{ tab_id }}-label" tabindex="0">
     {{ tab.content }}
   </div>
   {% endfor %}
