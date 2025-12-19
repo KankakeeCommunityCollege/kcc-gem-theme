@@ -37,19 +37,6 @@ schema_json_partial:
   </div>
   <div class="container">
     <div class="row">
-      <div class="col margins__col--top section__heading-underline--transparent">
-        <h3 class="typography__section--heading margins__heading--btm">Announcements</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h3 class="typography__h3">Example Anouncement Title</h3>
-        <p>Example anouncement text.</p>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
       <div class="col">
         <br>
         <h2 class="typography__h2">Welcome to the KCC gem-based theme project!</h2>
@@ -70,10 +57,25 @@ schema_json_partial:
         <h5 class="typography__h5">Heading Level 5</h5>
         <h6 class="typography__h6">Heading Level 6</h6>
         <p class="mt-4">Paragraph text with a <a class="links__launch" href="#" target="_blank" rel="noopener noreferrer">
-          Link that launches in a new tab</a> using the <code>links__launch</code> class:
+          Link that launches in a new tab<span class="visually-hidden"> (opens in new tab/window)</span></a> using the <code>links__launch</code> class.
+          Links that open in a new tab or window should also contain screen reader links text (<code>&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;</code>):
         </p>
         <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
-          <code>&lt;a class="links__launch" href="#" target="_blank" rel="noopener noreferrer"&gt;Link that launches in a new tab&lt;/a&gt;</code>
+          <code>&lt;a class="links__launch" href="#" target="_blank" rel="noopener noreferrer"&gt;
+            Link text&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;
+          &lt;/a&gt;</code>
+        </pre>
+        <p>
+          Double hyphens are automatically converted to em-dashes using JS -- like this. Triple hyphens (---) are left alone.<br>
+          If you need to keep the double hyphens as-is (like in code examples) escape it using a backslash:
+        </p>
+        <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+          <code>.positioning\--max-width-600 {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          </code>
         </pre>
         <ul>
           <li>Unordered List</li>

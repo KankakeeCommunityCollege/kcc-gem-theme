@@ -2,12 +2,20 @@
 // Use a replacer function to omit any occurences of triple-hyphens which appear in our documentation.
 // For example, YAML Front - matter's opening and closing triple-hyphens
 // Without the replacer funciton, triple-hyphens get replaced with an em-dash and a hyphen.
-const emDashOrTripleHyphensRegex = /---?/g;
+const emDashOrTripleHyphensRegex = /\\?---?/g; // Escaping a double hyphen with a backslash prevents replacement.
 const tripleHyphenRegex = /---/;
 const emDashReplacement = '—' // This is an em-dash, however, it looks like a hyphen in monospace text editor font!
 
 function replacerFunction(match) {
-  return match.search(tripleHyphenRegex) === -1 ? emDashReplacement : match;
+  let replacement;
+  
+  if (match.search(/\\--/g) !== -1) {
+    return replacement = '--';
+  } else if (match.search(tripleHyphenRegex) === -1) {
+    return replacement = emDashReplacement;
+  } else {
+    return replacement = match;
+  }
 }
 function walkText(node) {
   if (node.nodeType == 3) {
