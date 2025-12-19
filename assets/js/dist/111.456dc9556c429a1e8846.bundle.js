@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkcc_gem_theme=self.webpackChunkkcc_gem_theme||[]).push([[111],{111:function(e,c){const n=/\\?---?/g,t=/---/;function a(e){return-1!==e.search(/\\--/g)?"--":-1===e.search(t)?"—":e}c.default=function e(c){if(3==c.nodeType&&(c.data=c.data.replace(n,a)),1==c.nodeType&&"SCRIPT"!=c.nodeName)for(var t=0;t<c.childNodes.length;t++)e(c.childNodes[t])}}}]);

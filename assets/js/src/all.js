@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
           .then(() => import('./sliders').then(({ default: initSliders }) => initSliders()))
           .catch((err) => console.error(`Error loading slider modules :${err}`, err))
       }
-      import('./walkText').then(({ default: walkText }) => walkText(document.body));
+      import('./replaceEmDashes').then(({ default: replaceEmDashes }) => replaceEmDashes(document.body));
       if (document.querySelector('img[data-src]')) {
         import('./lazyLoad').then(({ default: lazyLoad }) => lazyLoad());
       }
