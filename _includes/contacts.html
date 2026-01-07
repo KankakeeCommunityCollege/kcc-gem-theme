@@ -44,8 +44,14 @@
                 {% if contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" width="150px" height="150px" alt="{{ contact.name }}" class="img-fluid contacts__portrait" itemprop="image" />{% endif %}
                 </div>
                 <div class="col-8">
+                  {% if contact.contacts_title and contact.contacts_title != '' %}
+                  <hgroup>
+                    <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
+                    <p class="typography__contacts--title typography--heading-line-height" itemprop="jobTitle">{{ contact.contacts_title }}</p>
+                  </hgroup>
+                  {% else %}
                   <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
-                  {% if contact.contacts_title %}<{{ title_heading_level }} class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</{{ title_heading_level }}>{% endif %}
+                  {% endif %}
                   <p class="notranslate">
                     {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link" itemprop="telephone">{{ contact.phone }}</a><br>{% endif %}
                     {% if contact.general %}
@@ -66,8 +72,14 @@
             {% else %}
             <div itemscope itemtype="https://schema.org/Person" class="col-sm-6 col-md-4 mb-3">
             {% endif %}
+              {% if contact.contacts_title and contact.contacts_title != '' %}
+              <hgroup>
+                <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
+                <p class="typography__contacts--title typography--heading-line-height" itemprop="jobTitle">{{ contact.contacts_title }}</p>
+              </hgroup>
+              {% else %}
               <{{ name_heading_level }} class="typography__contacts--name notranslate"{% unless contact.general %} itemprop="name"{% endunless %}>{{ contact.name }}</{{ name_heading_level }}>
-              {% if contact.contacts_title %}<{{ title_heading_level }} class="typography__contacts--title" itemprop="jobTitle">{{ contact.contacts_title }}</{{ title_heading_level }}>{% endif %}
+              {% endif %}
               <p class="notranslate">
                 {% if contact.phone %}<a href="tel:1{{ contact.phone | remove: '-' }}" class="links__darker-link" itemprop="telephone">{{ contact.phone }}</a><br>{% endif %}
                 {% if contact.general %}
@@ -92,13 +104,19 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="typography__h6" id="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}-label">{{ contact.name }} Bio</h5>
+              <h1 class="typography__h6" id="{{ contact.name | downcase | replace: ' ', '-' | remove: '.' | remove: '/' | remove: "'" | remove: '’' }}-label">{{ contact.name }} Bio</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               {% if contact.portrait_image != 'For departments with no contact photos, do not change this field.' and contact.portrait_image != 'none' %}<img src="{{ page.baseurl }}assets/img/placeholder_square.jpg" data-src="{{ page.baseurl }}{{ contact.portrait_image }}" class="img-fluid float-start me-2 mb-2" width="150px" height="150px" alt="{{ contact.name }}">{% endif %}
-              <h5 class="typography__contacts--name notranslate">{{ contact.name }}</h5>
-              {% if contact.contacts_title %}<h6 class="typography__contacts--title">{{ contact.contacts_title }}</h6>{% endif %}
+              {% if contact.contacts_title and contact.contacts_title != '' %}
+              <hgroup>
+                <h2 class="typography__contacts--name notranslate">{{ contact.name }}</h2>
+                <p class="typography__contacts--title typography--heading-line-height">{{ contact.contacts_title }}</p>
+              </hgroup>
+              {% else %}
+              <h2 class="typography__contacts--name notranslate">{{ contact.name }}</h2>
+              {% endif %}
               {{ contact.content }}
             </div>
             <div class="modal-footer">
