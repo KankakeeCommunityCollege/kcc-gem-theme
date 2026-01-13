@@ -60,7 +60,7 @@ schema_json_partial:
           Link that launches in a new tab<span class="visually-hidden"> (opens in new tab/window)</span></a> using the <code>links__launch</code> class.
           Links that open in a new tab or window should also contain screen reader links text (<code>&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;</code>):
         </p>
-        <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+        <pre tabindex="0" class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
           <code>&lt;a class="links__launch" href="#" target="_blank" rel="noopener noreferrer"&gt;
             Link text&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;
           &lt;/a&gt;</code>
@@ -69,7 +69,7 @@ schema_json_partial:
           Double hyphens are automatically converted to em-dashes using JS -- like this. Triple hyphens (---) are left alone.<br>
           If you need to keep the double hyphens as-is (like in code examples) escape it using a backslash:
         </p>
-        <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+        <pre tabindex="0" class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
           <code>.positioning\--max-width-600 {
             max-width: 600px;
             margin-left: auto;
@@ -122,13 +122,13 @@ schema_json_partial:
       <div class="col">
         <p>Override the default heading levels of the contacts section (below) using include parameters.</p>
         <p>The following include would change the main "Contacts" heading to an h2 and the name and job-title headings to h3 and h4 respectively:</p>
-        <pre class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
-          <code>{% raw %}{% include contacts.html section_heading_level="h2" name_heading_level="h3" title_heading_level="h4" %}{% endraw %}</code>
+        <pre tabindex="0" class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
+          <code>{% raw %}{% include contacts.html section_heading_level="h2" name_heading_level="h3" %}{% endraw %}</code>
         </pre>
       </div>
     </div>
   </div>
-  {% include contacts.html section_heading_level="h3" name_heading_level="h4" title_heading_level="h5" %}
+  {% include contacts.html section_heading_level="h3" name_heading_level="h4" %}
 </main>
 
 <section class="mt-5">
