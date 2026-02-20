@@ -71,13 +71,8 @@ window.addEventListener('load', () => {
     if (document.getElementById('SearchTermForm')) {
       return import('./watchForWebsiteSearch').then(({ default: init }) => init()); 
     }
-  if (
-    document.querySelector('.modal') &&
-    window.location.pathname.indexOf('/support-resources/') === -1
-  ) {
-    // Conditionally import BS5 Modal plugin in pages with a modal, but
-    // do NOT on the support-resources page. This page already uses the
-    // modal plugin and we don't want duplicate imports.
+  if (document.querySelector('.modal')) {
+    // Conditionally import BS5 Modal plugin in pages with a modal.
     import('bootstrap/js/dist/modal').then(({ default: Modal }) => Modal);
   }
 
