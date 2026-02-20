@@ -1,5 +1,8 @@
     <!-- Custom CSS Stylesheet for CloudCannon -->
     <link rel="stylesheet" href="{{page.baseurl}}assets/css/content.css">
+    {% if page.schema_json_partial and page.schema_json_partial != '' %}
+    {% include {{ page.schema_json_partial }} %}
+    {% endif %}
   </head>
   <body data-bs-no-jquery{% if page.homepage == true %} id="homePage"{% endif %}>
     {% unless site.exclude_nav_skip_link == true or page.exclude_nav_skip_link == true %}<a class="visually-hidden-focusable links__skip-nav" href="#content">Jump to main content</a>{% endunless %}

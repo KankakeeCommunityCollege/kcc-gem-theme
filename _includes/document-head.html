@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if site.subsection_title %}
     <title>{{page.title}} - {{site.subsection_title}}</title>
     {% else %}
     <title>{{page.title}} - {{site.title}}</title>
-    {% endif %}
-    {% if page.schema_json_partial and page.schema_json_partial != '' %}
-    {% include {{ page.schema_json_partial }} %}
     {% endif %}
     {% if page.description and page.description != '' %}
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
@@ -18,8 +14,6 @@
     {%- if site.canonical_baseurl %}
     <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
     {%- endif %}
-    <!-- Required Bootstrap 4 viewport meta-tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% include preconnect.html %}
     <!-- ==============================
       KCC GEM THEME
@@ -38,3 +32,4 @@
     <meta name="theme-color" content="#b8babc">
     <!-- Standard Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    
