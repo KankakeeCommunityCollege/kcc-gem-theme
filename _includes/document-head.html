@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,9 @@
     {% endif %}
     {% if page.description and page.description != '' %}
     <meta name="description" content="{{ page.description | replace: '"', '&quot;' }}">
+    {% endif %}
+    {% if page.extra_meta_tags and page.extra_meta_tags != '' %}
+    {% include {{ page.extra_meta_tags }} %}
     {% endif %}
     {%- if site.canonical_baseurl %}
     <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
