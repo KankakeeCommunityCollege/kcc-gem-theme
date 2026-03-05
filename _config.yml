@@ -285,6 +285,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         href: 'https://coronavirus.kcc.edu'
       - text: Report a Concern
         href: 'report-a-concern/'
+      - text: Freedom of Information
+        href: 'https://www.kcc.edu/about/uploads/docs/freedom-of-information-act.pdf'
 
 ## =================================================================== ##
 ##  Local Nav and Sub Nav configuration for testing those components.  ##
