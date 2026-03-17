@@ -45,6 +45,9 @@
 
 .links__darker-link {
   color: $darker-link;
+  &:hover {
+    color: #004794;
+  }
 }
 
 // Rules to override bootstrap 4's "nav-link" color

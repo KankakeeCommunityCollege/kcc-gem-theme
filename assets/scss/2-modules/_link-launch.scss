@@ -30,12 +30,12 @@
 
 .links__launch {
   &::after {
-    content: url(launchSvg('#007bff'));
+    content: url(launchSvg('#006ce0'));
     margin-left: .375rem;
     vertical-align: middle;
     line-height: 1;
   }
   &:hover::after {
-    content: url(launchSvg('#0056b3'));
+    content: url(launchSvg('#004794'));
   }
 }
