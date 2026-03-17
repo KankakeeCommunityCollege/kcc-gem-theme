@@ -13,6 +13,8 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_data|_includes|LICENSE|README|_config\.yml)!i) }
 
+  spec.required_ruby_version = ">= 4.0.0"
+
   spec.add_runtime_dependency "jekyll", "~> 4"
 
   spec.add_development_dependency "bundler", "~> 2"
