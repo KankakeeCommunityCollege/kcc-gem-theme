@@ -25,8 +25,8 @@
     "development": "run-p jekyll-development webpack-dev",
     "jekyll-production": "sleep 7 && JEKYLL_ENV=production bundle exec jekyll serve --livereload",
     "jekyll-development": "sleep 7 && bundle exec jekyll serve --livereload",
-    "webpack-production": "npx webpack --watch --node-env production",
-    "webpack-dev": "npx webpack --watch --node-env development",
+    "webpack-production": "npx webpack --watch --mode production",
+    "webpack-dev": "npx webpack --watch --mode development",
     "browserslist": "npx browserslist@latest --update-db"
   },
   "author": "https://github.com/wdzajicek",
@@ -47,7 +47,7 @@
     "style-loader": "^4.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.102.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^7.0.2"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",

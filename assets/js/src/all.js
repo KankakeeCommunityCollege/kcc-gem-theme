@@ -4,7 +4,8 @@ import Collapse from 'bootstrap/js/dist/collapse';
 
 // Modules that load before window.onload
 window.addEventListener('load', () => {
-
+  console.log(`Hwllo`);
+  
 //  1.) Import hero slider JS modules
 // './wrapPowerText'
 // 'sliders', 'initSliders'
