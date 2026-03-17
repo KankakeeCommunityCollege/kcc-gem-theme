@@ -1,0 +1,63 @@
+# This workflow builds the Jekyll site and runs Pa11y accessibility checks.
+name: Jekyll Build and Pa11y Accessibility Check
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events to any branch
+  push:
+    branches:
+      - master # Or your default branch, e.g., 'master', 'gh-pages'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_and_check:
+    runs-on: ubuntu-latest # Specifies the operating system for the job
+
+    steps:
+      # Step 1: Checks out your repository under $GITHUB_WORKSPACE
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Ruby environment for Jekyll
+      # This step now reads the Ruby version from the .ruby-version file
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version # Reads the Ruby version from this file
+          bundler-cache: true # Caches installed gems for faster builds
+
+      # Step 3: Install Jekyll and its dependencies
+      - name: Install Jekyll and dependencies
+        run: bundle install
+
+      # Step 4: Build the Jekyll site
+      # The site will be built into the _site directory by default
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      # Step 5: Set up Node.js environment for Pa11y
+      # This step now reads the Node.js version from the .nvmrc file
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc # Reads the Node.js version from this file
+
+      # Step 6: Install Pa11y globally
+      - name: Install Pa11y
+        run: npm install -g pa11y
+
+      # Step 7: Run Pa11y accessibility checks on the built site
+      # This step finds all HTML files in the _site directory and runs Pa11y on each.
+      # If any accessibility issues are found, the workflow will fail.
+      - name: Run Pa11y accessibility checks
+        run: |
+          # Find all HTML files recursively within the _site directory
+          # and loop through each file
+          find _site -name "*.html" | while read file; do
+            echo "::group::Checking accessibility for: $file" # Start a collapsible group in logs
+            # Run Pa11y on the current HTML file
+            pa11y "$file" --config ./pa11y.actions.json
+            echo "::endgroup::" # End the collapsible group
+          done
