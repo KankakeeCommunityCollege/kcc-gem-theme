@@ -19,14 +19,14 @@ Your username is created within one business day after your application is submi
 Email for KCC students is hosted through Google.
 
 * The address format is&nbsp;**username@student.kcc.edu**
-* Access Student Email through {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
+* Access Student Email through {% include svg/mykcc-inline.html %} \- [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
 
 #### Accessing Online Courses
 {: .typography__h4.links__offset}
 
 Online courses are hosted through Canvas.&nbsp;
 
-* Access online courses through {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
+* Access online courses through [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
 * Courses are accessible through Canvas by 8 a.m. the first day of the course.
 
 #### Register Online
@@ -40,14 +40,14 @@ Notes: A Master Academic Plan is required for degree seeking students. To regist
 
 For step-by-step information on how to register online, go to [www.kcc.edu/register](https://www.kcc.edu/academics/register/){: target="_blank" rel="noopener noreferrer"}
 
-When you are ready to register, go to {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}&nbsp;
+When you are ready to register, go to [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}&nbsp;
 
 After registering, check your KCC email account for registration confirmation.
 
 ### Pay for Classes
 {: .typography__h3.links__offset}
 
-1. Go to {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
+1. Go to [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
 2. In the "College Applications" section, choose "Student Self-Service."
 3. Click on "Student Finance."
    * To pay in full, click on "View Account" and "Make Payments."
@@ -59,7 +59,7 @@ After registering, check your KCC email account for registration confirmation.
 
 **Enroll in Self-Service Password Reset**
 
-1. Go to {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
+1. Go to [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
 2. In "Bookmarks and Links" section, choose "Self Service Password Reset."
 3. Sign in with your KCC email address **(****username@student.kcc.edu)&nbsp;**and password.
 4. Verify or update the authentication methods listed.
@@ -67,7 +67,7 @@ After registering, check your KCC email account for registration confirmation.
 ### Opt-In for Emergency and Information Text Alerts
 {: .typography__h3.links__offset}
 
-1. Go to {% include svg/mykcc.html %} - [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
+1. Go to [https://my.kcc.edu](https://my.kcc.edu){: target="_blank" rel="noopener noreferrer"}
 2. Under College Applications, choose Self-Service.
 3. Under the main menu, choose User Options.
 4. Click User Profile.
