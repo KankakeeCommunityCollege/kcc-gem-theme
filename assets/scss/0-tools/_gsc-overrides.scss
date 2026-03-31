@@ -13,9 +13,30 @@
   padding-left: .5rem;
   border: solid thin $grey-5;
   line-height: 1;
-  padding-top: 3px;
+  padding-top: 0; // Padding reduced after 2026 GCS update to fit in red bar
   padding-bottom: 3px;
+  height: 2.5rem; // height needed after 2026 GCS update causing the search bar to overflow the red bar
 }
+
+// START new styles added to counteract 2026 GCS update
+#gs_id50 {
+  height: 2.5rem; // height needed after 2026 GCS update causing the search bar to overflow the red bar
+}
+
+#gs_tti50 {
+  height: auto; // height needed after 2026 GCS update causing the search bar to overflow the red bar
+  padding: 0 10px 0 56px; // Padding reduced after 2026 GCS update to fit in red bar
+}
+
+.gsib_b {
+  height: auto !important; // height needed after 2026 GCS update causing the search bar to overflow the red bar
+  padding: 0 4px 4px 0 !important; // Padding reduced after 2026 GCS update to fit in red bar
+}
+
+#gsc-i-id1 {
+  background: none !important; // Needed to remove the stupid "Enhanced by Google" text after 2026 GCS update
+}
+// END new styles added to counteract 2026 GCS update
 
 .header-global__search-collapse .gsc-search-button-v2 {
   background-color: transparent !important;
