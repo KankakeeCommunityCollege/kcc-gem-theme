@@ -1,39 +1,39 @@
 const hlcIframeParent = document.getElementById('hlcIframeParent');
 
 // Original embed HTML provided to web services for adding the HLC verification iframe //
-// const iframeHTML = `<iframe
-//   title="Higher Learning Commission Accreditation Status"
-//   width="150"
-//   height="166"
-//   src="https://cdn.yoshki.com/iframe/54732.html"
-//   frameborder="0"
-//   scrolling="no"
-//   allowtransparency="allowtransparency"
-//   style="border-width: 0px; border-style: initial; border-color: initial; padding: 0px; margin: 0px;"
-// ></iframe>`;
+// const iframeHTML = `<!-- Start of HLC Accreditation Mark Digital Badge code -->
+// <div class="mx-auto" style="width:100%;max-width:150px;max-height:166px;">
+//   <div style="position: relative;padding-bottom: 110.67%;height: auto;overflow: hidden;">
+//     <iframe
+//       id="HLC"
+//       src="https://cdn2.yoshki.com/badgeframe?34"
+//       style="overflow: hidden;border:0px; margin:0px; padding:0px; background-color:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;"
+//       title="Higher Learning Commission Accreditation Status"
+//     ></iframe>
+//   </div>
+// </div>
+// <!-- End of HLC Accreditation Mark Digital Badge code -->`;
 
-// NOTE on HLC iframe accessibility fix:
-//   The HLC iframe has 2 links with no href nor link text (an obvious WCAG 2.1 AA violation).
-//   To resolve this accessibility issue, we nee do hide the offending iframe and offer a link
-//    to our HLC accreditation page to accomplish the same functionality for users of screen readers.
-//   The parent element is given aria-hidden="true" to hide it and the iframe tabindex="-1" to prevent focus.
-//   The `_includes/footer.html` has a link to our HLC status page.
 function createHLCIframe() {
+  const startComment = document.createComment('Start of HLC Accreditation Mark Digital Badge code');
+  const endComment = document.createComment('End of HLC Accreditation Mark Digital Badge code');
+  const div1 = document.createElement('div');
+  const div2 = document.createElement('div');
   const frame = document.createElement('iframe');
 
-  frame.title = 'Higher Learning Commission Accreditation Status';
-  frame.width = '150';
-  frame.height = '166';
-  frame.setAttribute('frameborder', '0');
-  frame.setAttribute('scrolling', 'no');
-  frame.setAttribute('allowtransparency', 'allowtransparency');
-  frame.style.cssText = 'border-width: 0px; border-style: initial; border-color: initial; padding: 0px; margin: 0px;';
-  frame.tabIndex = -1; // Prevent focus of iframe since it has accessibility issues
-  frame.src = 'https://cdn.yoshki.com/iframe/54732.html';
+  div1.classList.add('mx-auto');
+  div1.style.cssText = 'width:100%;max-width:150px;max-height:166px;';
 
-  hlcIframeParent.innerHTML = ''; // remove the spinning loader image already in the DOM
-  hlcIframeParent.appendChild(frame);
-  hlcIframeParent.setAttribute('aria-hidden', 'true'); // Hide the iframe from screen readers since it has accessibility issues
+  div2.style.cssText = 'position: relative;padding-bottom: 110.67%;height: auto;overflow: hidden;';
+
+  frame.id = 'HLC';
+  frame.style.cssText = 'overflow: hidden;border:0px; margin:0px; padding:0px; background-color:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;';
+  frame.title = 'Higher Learning Commission Accreditation Status';
+  frame.src = 'https://cdn2.yoshki.com/badgeframe?34';
+
+  div2.append(frame);
+  div1.append(div2);
+  hlcIframeParent.replaceChildren(startComment, div1, endComment);
 }
 
 export default createHLCIframe;
