@@ -17,10 +17,10 @@ const endingSlashRegex = /\/$/g;
 const PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY = 'userPrefersReducedMotion'; // This localStorage key is set by module: './checkForPrefersReducedMotion.js'
 const scrollIntoViewOptionsObject = {
   behavior: 'smooth',
-  block: 'center'
+  block: 'start'
 }
 const reducedMotionscrollIntoViewOptionsObject = {
-  block: 'center'
+  block: 'start'
 }
 
 function focusElement(el) {
