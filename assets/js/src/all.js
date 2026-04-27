@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
       }
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))
-  
+
     if (window.localStorage.getItem('darkModeSetting') == 'true' || window.location.pathname == '/settings/') {
       import('./darkMode').then(({ default: darkMode }) => {
         return darkMode;
