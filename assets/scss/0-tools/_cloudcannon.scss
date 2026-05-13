@@ -21,7 +21,8 @@
 //     <li>
 //       <p>My list-item text that CloudCannon wrapped in a paragraph element!</p>
 //     </li>
-// This rule eliminates the large gaps between list items:
-li > p {
+// This rule eliminates the large gaps between list items while allowing complex list items
+//  that can contain a multi-paragraph layout:
+li > p:only-child {
   margin-bottom: 0;
 }
