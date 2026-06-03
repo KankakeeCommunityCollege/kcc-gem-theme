@@ -145,9 +145,30 @@ function createAlertsHtml(response) {  // Incoming response from our Google Shee
 
   // Listen for dismissal of alerts so that we can save in history
   [...activeAlertList].forEach((alert, i) => {
-    alert.addEventListener('closed.bs.alert', e => { // 'closed.bs.alert' is a BS5 event
-
-      saveDismissal(e.target.dataset.alertId);
+    alert.addEventListener('close.bs.alert', e => { // 'close.bs.alert' is a BS5 event
+      const currentAlert = e.target;
+      
+      // Save in history the alerts we've already dismissed.
+      saveDismissal(currentAlert.dataset.alertId);
+      
+      // We need to handle focus since the alert HTML gets destroyed by BS5's JS
+      // Look for the next alert directly below this one
+      const nextSibling = currentAlert.nextElementSibling;
+      // If a next alert exists, make it the target. Otherwise, default to #content (the main element).
+      const nextTarget = (nextSibling && nextSibling.classList.contains('jsDismissibleAlert'))
+        ? nextSibling
+        : document.getElementById('content');
+      
+      // Move focus cleanly after the fade animation
+      if (nextTarget) {
+        if (!nextTarget.hasAttribute('tabindex')) { // Ensure the element can be focused
+          nextTarget.setAttribute('tabindex', '-1');
+        }
+        
+        setTimeout(() => {
+          nextTarget.focus();
+        }, 150); 
+      }
     });
   })
 }
