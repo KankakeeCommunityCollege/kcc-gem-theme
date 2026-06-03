@@ -95,6 +95,15 @@
   border-color: $color-alert-primary-border;
 }
 
+.alert a {
+  color: #0257d4;
+}
+
+.alert a:hover,
+.alert a:focus {
+  color: #02419c;
+}
+
 table.table-responsive {
   display: block;
   width: 100%;
