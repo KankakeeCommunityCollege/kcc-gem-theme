@@ -46,14 +46,14 @@ jobs:
 
       # Step 6: Install Pa11y globally
       - name: Install Pa11y
-        run: |
-          npm install -g pa11y
-          npx puppeteer browsers install chrome
+        run: npm install -g pa11y
 
       # Step 7: Run Pa11y accessibility checks on the built site
       # This step finds all HTML files in the _site directory and runs Pa11y on each.
       # If any accessibility issues are found, the workflow will fail.
       - name: Run Pa11y accessibility checks
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
         run: |
           # Find all HTML files recursively within the _site directory
           # and loop through each file
