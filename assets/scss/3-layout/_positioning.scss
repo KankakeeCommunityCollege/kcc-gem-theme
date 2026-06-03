@@ -200,10 +200,6 @@
   }
 }
 
-.positioning__offset-global-nav {
-  margin-top: 60px;
-}
-
 
 @media screen and (min-width: 768px) {
   .position__col--min-height {
@@ -223,76 +219,13 @@
   }
 }
 
-.position__offset-core-nav {
-  margin-top: 99px;
-}
-
-.position__offset-core-nav.position__campus-alerts--open {
-  margin-top: 109px;
-}
-
-@media screen and (min-width: 992px) {
-  .position__offset-core-nav {
-    margin-top: 80px;
-  }
-  .position__offset-core-nav.position__campus-alerts--open {
-    margin-top: 93px;
-  }
-}
-
-.position__offset-alert {
-  margin-top: 0;
-  padding-top: 125px;
-  height: 1px;
-  &--visible {
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .position__offset-alert {
-    padding-top: 135px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .position__offset-alert {
-      padding-top: 140px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .position__offset-alert {
-      padding-top: 145px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .position__offset-alert {
-      padding-top: 150px;
-  }
-}
-
-.position__offset-alert.position__offset-alert-core {
-  margin-top: 0;
-  padding-top: 115px;
-}
-
-@media screen and (min-width: 992px) {
-  .position__offset-alert.position__offset-alert-core {
-    padding-top: 110px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .position__offset-alert--non-core {
-    padding-top: 180px;
-  }
-}
-
 // Used on the 404 error page
 .positioning__max-width-600 {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.positioning__offset-global-header {
+  padding-top: 110px;
 }
