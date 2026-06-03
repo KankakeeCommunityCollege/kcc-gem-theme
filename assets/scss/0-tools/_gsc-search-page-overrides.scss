@@ -61,7 +61,7 @@ $color-link-visited: #3600b3;
   counter-increment: result;
   content: counter(result);
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   height: 26px;
   margin-left: -32px;
@@ -150,6 +150,7 @@ $color-link-visited: #3600b3;
   position: relative;
   bottom: 20px;
   width: 93px !important;
+  top: 0;
 }
 // Specific styles for portrait oriented images
 .gs-web-image-box-portrait .gs-image {
@@ -160,6 +161,18 @@ $color-link-visited: #3600b3;
 // Parent div of the pagination buttons
 .gsc-cursor-box.gs-bidi-start-align {
   margin-top: 1.5rem !important;
+}
+
+// The default styling cuts off the outline when the element has focus
+// This ensures a fully visible focus ring for accessibility
+div.gs-title {
+  overflow: visible !important; // This ensures the outline is not cut off
+}
+
+// Make the focus ring stand out a little bit more
+a.gs-title:focus-visible {
+  outline-offset: 3px !important;
+  outline-width: 2px !important;
 }
 // ======================================= //
 //   Styling adjustments/additions to      //
