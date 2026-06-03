@@ -1,72 +1,155 @@
 /*
 // Custom JS | written by https://github.com/wdzajicek
-// © 2020 Kankakee Community College
 // =================================================== */
 // JS module to build alert message using data from Google Sheets API v4
 //
 // This exported module requires you pass it's default-function the `response` object from the API call, as the only argument
 //
 import parseMarkdownToHTML from './parseMarkdownToHTML.js'; // Parses a simplified markdown into html & creates the paragraph el's with appropriate class
-//
-const CAMPUS_ALERTS_DIV_ID_STRING = 'emergencyAlerts';  // ID of the div to house campus alerts - already built into the page.
-const ALERTS_VISIBLE_CLASS = 'position__offset-alert--visible';
-const TARGET = document.getElementById(CAMPUS_ALERTS_DIV_ID_STRING); // This targets an element built into the DOM that we inject everything into.
 
-function injectAlert(target, alert) {
-  target.innerHTML = alert;
-  return target.classList.add(ALERTS_VISIBLE_CLASS);
-}
+const parent = document.getElementById('emergencyAlerts'); // This targets an element built into the DOM that we inject everything into.
 
+// returns the BS5 color class depending on the choice in the Google Sheet
 function checkAlertType(type) {
   return type == 'SCHOOL EMERGENCY/CLOSURE - red' ? 'danger'
+  : type == 'SCHOOL WARNING - yellow' ? 'warning'
   : type == 'SCHOOL INFO - blue' ? 'primary'
   : type == 'SCHOOL INFO - cyan' ? 'info'
   : 'warning';
 }
 
-function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
-  let [visibility, allPages, content, expire, start, end, type] = response.result.values[2];  // The 3rd row has our table's data
-  if (visibility === 'FALSE') // Predefined dropdown options in the Sheet are `'TRUE'` & `'FALSE'`
-    return;
+// Since the alert systems is rarely used we can get away with a simplified hashing function.
+// There's a tiny possibility of hash clashing but it's not likely and alerts are used a few times a year.
+// If hashes end up clashing a more formal hashing function (from external library) may be needed but will come with bloat.
+function generateAlertKey(alertText) {
+  let hash = 0;
+  
+  for (let i = 0; i < alertText.length; i++) {
+    const char = alertText.charCodeAt(i);
+    // Simple bitwise shifting math to scramble the integer uniquely
+    hash = (hash << 5) - hash + char;
+    hash |= 0; // Convert to 32bit integer
+  }
+  
+  // Math.abs ensures we get a clean positive string ID like "college_alert_293847"
+  return `college_alert_${Math.abs(hash)}`;
+}
 
-  const d = new Date;
+// return true if the alert was dismissed already:
+function isAlertDismissed(alertId) {
+  // 1. Grab the history object (default to empty object if it doesn't exist)
+  const storage = JSON.parse(localStorage.getItem('alert_history') || '{}');
+
+  // 2. Check if the specific alertId exists as a key in that object
+  // This returns true if found, false if not.
+  return alertId in storage;
+}
+
+// Returns alert HTML or false if the alert is not current or was dismissed already:
+function createAlert(alertData) {
+  const [visibility, allPages, content, expire, start, end, type, today] = alertData;
+  if (visibility === 'FALSE') // Predefined dropdown options in the Sheet are `'TRUE'` & `'FALSE'`
+    return false;
+  
+  // Generate a unique key/ID for the alert
+  const key = generateAlertKey(content);
+
+  if (isAlertDismissed(key))
+    return false;
+  
+  const isEmergencyAlert = type == 'SCHOOL EMERGENCY/CLOSURE - red';
+  // By letting Google Sheets define today's date (and the Sheet is locked to Chicago time),
+  //  we need to worry about JS date nonsense and edge cases
+  const d = new Date(today);
   const s = new Date(start);
   const e = new Date(end);
-  const alertType = checkAlertType(type);
-  const alertIsActive = expire === 'FALSE' || expire === 'TRUE' && s.getTime() <= d.getTime() && e.getTime() > d.getTime();
+
+  [d, s, e].forEach(d => d.setHours(0, 0, 0, 0));
+  
+  const alertType = checkAlertType(type); // Get the suffix for the BS5 class depending on the alert type
+  const isCurrent = s.getTime() <= d.getTime() && e.getTime() >= d.getTime();
+  const alertIsActive = expire === 'FALSE' || expire === 'TRUE' && isCurrent;
   const indexPageOnly = allPages === 'TRUE' || allPages === 'FALSE' && window.location.pathname == '/';
   let alert = `
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div role="alert" class="alert alert-${alertType} d-lg-flex align-items-center pr-lg-1">
-        <div class="typography__last-p--mb0">
-          ${parseMarkdownToHTML(content)}
-        </div>
-        <button
-          aria-label="Refresh the alert"
-          title="Refresh the alert"
-          id="syncAlert"
-          type="button"
-          class="btn btn-link buttons--sync ms-auto">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="svg__sync"
-            height="24px"
-            width="24px"
-            viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 
-            12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 
-            4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
-          </svg>
-        </button>
-        </div>
-    </div>
+<div data-alert-id="${key}" class="jsDismissibleAlert alert alert-${alertType} alert-dismissible fade show">
+  <div class="typography__last-p--mb0">
+    ${parseMarkdownToHTML(content)}
   </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>`;
 
-  [d,s,e].map(d => d.setHours(0, 0, 0, 0));
-  return alertIsActive && indexPageOnly ? injectAlert(TARGET, alert) : null;
+  if (alertIsActive && indexPageOnly) {
+    return alert;
+  } else {
+    return false;
+  }
+}
+
+function saveDismissal(alertId) {
+  const now = Date.now();
+  // 1. Get the existing object or a fresh one
+  const storage = JSON.parse(localStorage.getItem('alert_history') || '{}');
+
+  // 2. Add the new alert with a timestamp
+  storage[alertId] = now;
+
+  // 3. CLEANUP: Remove any alerts older than 30 days
+  const thirtyDays = 30 * 24 * 60 * 60 * 1000;
+  for (const id in storage) {
+    if (now - storage[id] > thirtyDays) {
+      delete storage[id];
+    }
+  }
+
+  // 4. Save back to localStorage
+  localStorage.setItem('alert_history', JSON.stringify(storage));
+}
+
+function initAlertDismissal(activeAlertList) {
+  // This BS5 module provides the alert dismissing functionality.
+  // No need to call any functions, just importing it registers the proper listeners.
+  import('bootstrap/js/dist/alert.js');
+
+  // Listen for dismissal of alerts so that we can save in history
+  [...activeAlertList].forEach((alert, i) => {
+    alert.addEventListener('closed.bs.alert', e => { // 'closed.bs.alert' is a BS5 event
+
+      saveDismissal(e.target.dataset.alertId);
+    });
+  })
+}
+
+function createAlertsHtml(response) {  // Incoming response from our Google Sheet via the Sheets API
+  // row 1 and 2 are instructions and a header row (index 0 and 1)
+  // row 3, 4, and 5 can contain an alert (index 2, 3, and 4)
+  const alertsHTML = [response[2], response[3], response[4]]
+    .map(createAlert)
+    .filter(Boolean)
+    .join('');
+  
+  if (!alertsHTML) return;
+
+  parent.insertAdjacentHTML('beforeend', alertsHTML);
+  parent.removeAttribute('aria-hidden');
+
+  // Must happen after alert injection so that we can use it to check for presence of alerts
+  const activeAlertList = document.querySelectorAll('.jsDismissibleAlert');
+
+  // No need to go any further if there are not alerts in the page
+  if (activeAlertList.length === 0)
+    return;
+
+  // This BS5 module provides the alert dismissing functionality.
+  // No need to call any functions, just importing it registers the proper listeners.
+  import('bootstrap/js/dist/alert.js');
+
+  // Listen for dismissal of alerts so that we can save in history
+  [...activeAlertList].forEach((alert, i) => {
+    alert.addEventListener('closed.bs.alert', e => { // 'closed.bs.alert' is a BS5 event
+
+      saveDismissal(e.target.dataset.alertId);
+    });
+  })
 }
 
 export default createAlertsHtml;

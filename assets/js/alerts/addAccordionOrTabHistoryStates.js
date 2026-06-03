@@ -20,7 +20,9 @@ function accordionHandler(e) {
   
   const accordionIsOpening = Boolean(JSON.parse(e.target.getAttribute('aria-expanded')));
 
-  accordionIsOpening ? addHistoryState(e.target, e.target.dataset.bsTarget) : null;
+  if (accordionIsOpening) {
+    addHistoryState(e.target, e.target.dataset.bsTarget);
+  }
 }
 
 function tabHandler(e) {

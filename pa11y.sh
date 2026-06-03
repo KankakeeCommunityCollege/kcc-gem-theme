@@ -7,6 +7,9 @@
 # bundle exec jekyll build
 # echo ""
 
+# Exit immediately on error, except where explicitly handled (like curl checks)
+set -e
+
 echo "## ================================== ##"
 echo "##   Checking if Pa11y is installed.  ##"
 echo "## ================================== ##"
@@ -44,6 +47,18 @@ while getopts ":os" opt; do
 done
 shift $((OPTIND-1))
 
+# --- BASH 3 COMPATIBLE CLEANUP TRAP ---
+# This ensures that Jekyll running on port 3000 is always killed when the script ends.
+cleanup() {
+  if [ "$SKIP_BUILD_ARG_PASSED" = false ]; then
+    echo ""
+    echo "Stopping background Jekyll server on port 3000..."
+    pkill -f jekyll || true
+  fi
+}
+trap cleanup EXIT
+# --------------------------------------
+
 if $SKIP_BUILD_ARG_PASSED; then
   echo "## ================================== ##"
   echo "##       Skipping Jekyll build.       ##"
@@ -54,12 +69,21 @@ else
   echo "##        Running Jekyll build.       ##"
   echo "## ================================== ##"
   echo ""
-  bundle exec jekyll build
+  JEKYLL_ENV=production bundle exec jekyll serve --detach
+  echo ""
+  
+  echo "Waiting for Jekyll to finish compiling and start listening on port 3000..."
+  # Pure Bash 3 syntax: directly test the curl exit status without command substitution
+  until curl --output /dev/null --silent --head --fail http://localhost:3000; do
+      printf '.'
+      sleep 1
+  done
+  echo -e "\nJekyll server is ready!"
   echo ""
 fi
 
 echo "## ================================== ##"
-echo "##      Running Pa11y in _site.       ##"
+echo "##      Running Pa11y via localhost.  ##"
 echo "## ================================== ##"
 echo ""
 
@@ -75,12 +99,18 @@ if $OUTPUT_ARG_PASSED; then
   echo "" >> $filename
   # Find all HTML files recursively within the _site directory
   # and loop through each file
-  find _site -name "*.html" | while read file; do
-    echo "Checking accessibility for: $file"
-    # Run Pa11y on the current HTML file
-    # --reporter cli outputs results in a human-readable format
-    # || true prevents the script from exiting immediately if Pa11y finds issues
-    pa11y "$file" --config ./pa11y.dev.json 2>&1 | tee -a $filename
+  # Find files and loop using standard Bash 3 string manipulation
+  find _site -name "*.html" | while read -r file; do
+    # Strip the "_site/" prefix to get the relative web path
+    relative_path="${file#_site/}"
+    target_url="http://localhost:3000/${relative_path}"
+    
+    echo "Checking accessibility for: $target_url" | tee -a "$filename"
+    
+    # Run Pa11y targeting the local web server URL
+    # added "|| true" to keep loop executing if accessibility issues are found
+    pa11y "$target_url" --config ./pa11y.dev.json 2>&1 | tee -a "$filename" || true
+    echo "" >> "$filename"
   done
 else
   echo ""
@@ -89,12 +119,15 @@ else
   # Add commands for when the argument is missing
   # Find all HTML files recursively within the _site directory
   # and loop through each file
-  find _site -name "*.html" | while read file; do
-    echo "Checking accessibility for: $file"
-    # Run Pa11y on the current HTML file
-    # --reporter cli outputs results in a human-readable format
-    # || true prevents the script from exiting immediately if Pa11y finds issues
-    pa11y "$file" --config ./pa11y.dev.json
+  find _site -name "*.html" | while read -r file; do
+    relative_path="${file#_site/}"
+    target_url="http://localhost:3000/${relative_path}"
+    
+    echo "Checking accessibility for: $target_url"
+    
+    # Run Pa11y targeting the local web server URL
+    pa11y "$target_url" --config ./pa11y.dev.json || true
+    echo ""
   done
 fi
 

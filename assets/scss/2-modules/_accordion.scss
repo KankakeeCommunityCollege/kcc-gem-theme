@@ -19,7 +19,8 @@
     background-color: $primary-blue;
     border-radius: 50%;
     color: #fff;
-    content: '\2212';
+    // hexadecimal for minus (-)
+    content: '\2212' / ''; // The `/ ''` provides empty alt text so that "minus" is not announced
     display: inline-block;
     font-family: $font-family-paragraph;
     font-size: 2rem;
@@ -35,7 +36,8 @@
     width: 30px;
   }
   &__button.collapsed::before {
-    content: '\002B';
+    // hexadecimal for plus (+)
+    content: '\002B' / ''; // The `/ ''` provides empty alt text so that "plus" is not announced
   }
 }
 

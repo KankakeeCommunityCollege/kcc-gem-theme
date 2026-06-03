@@ -12,22 +12,16 @@
 //
 import Tab from 'bootstrap/js/dist/tab'; // Import Tab from Bootstrap 5
 
-const idRegex = /.*[\?&]id=([^&]+).*$/; // Lets just cache these reused regex's here
+const idRegex = /.*[\?&]id=([^&]+).*$/;
 const endingSlashRegex = /\/$/g;
-const PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY = 'userPrefersReducedMotion'; // This localStorage key is set by module: './checkForPrefersReducedMotion.js'
-const scrollIntoViewOptionsObject = {
-  behavior: 'smooth',
-  block: 'start'
-}
-const reducedMotionscrollIntoViewOptionsObject = {
-  block: 'start'
-}
+const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function focusElement(el) {
-  const prefersReducedMotion = window.localStorage.getItem(PREFERS_REDUCED_MOTION_LOCALSTORAGE_KEY);
-
-  prefersReducedMotion == 'true' ? el.scrollIntoView(reducedMotionscrollIntoViewOptionsObject) : el.scrollIntoView(scrollIntoViewOptionsObject);
-  return el.focus();
+  el.focus();
+  el.scrollIntoView({
+    behavior: motionQuery.matches ? 'instant' : 'smooth',
+    block: 'start'
+  });
 }
 
 function processIdQuery(query, hash) {
@@ -60,28 +54,43 @@ function openAllAccordions(Collapse) {
   })
 }
 
+function handleTabs(hash) {
+  const tab = document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`);
+  const bsTab = new Tab(tab);
+
+  tab.addEventListener('shown.bs.tab', _e => {
+    if (window.location.search) {
+      checkForQuery(window.location.search, hash);
+    } else {
+      findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an anchor or button. It won't work to do .scrollIntoView() and .focus() on the div
+    }
+  });
+  
+  bsTab.show();
+}
+
+function handleAccordions(hash, Collapse) {
+  const card = document.querySelector(hash);
+  const bsCard = new Collapse(card, {toggle: false});
+
+  card.addEventListener('shown.bs.collapse', _e => {
+    if (window.location.search) {
+      checkForQuery(window.location.search, hash);
+    } else {
+      findContentTarget(`button[data-bs-target="${hash}"]`);
+    }
+  });
+
+  bsCard.show();
+}
+
 function checkForMatchingTabOrAccordion(hash, Collapse) {
   if ( document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`) ) {  // Looks for a matching BS5 tab element
-    const tab = document.querySelector(`.nav-tabs [data-bs-target="${hash}"]`);
-    const bsTab = new Tab(tab);
-
-    tab.addEventListener('shown.bs.tab', _e => {
-      window.location.search ?
-        checkForQuery(window.location.search, hash)
-      : findContentTarget(`${hash}-label`); // You need to .scrollIntoView() & .focus() on the tab-label which is an <a href="...">. It won't work to do .scrollIntoView() and .focus() on the div
-    });
-    bsTab.show();
+    handleTabs(hash);
   } else if ( document.querySelector(`${hash}.collapse`) ) {  // Looks for a matching BS5 collapse element
-    const card = document.querySelector(hash);
-    const bsCard = new Collapse(card, {toggle: false});
-
-    card.addEventListener('shown.bs.collapse', _e => {
-      window.location.search ?
-        checkForQuery(window.location.search, hash)
-      : findContentTarget(`button[data-bs-target="${hash}"]`);
-    });
-    bsCard.show();
+    handleAccordions(hash, Collapse);
   } else if (hash === '#please-open-all-accordions') {
+    // The #please-open-all-accordions hash is a helper for accessibility testing
     openAllAccordions(Collapse);
   }
 }
@@ -101,9 +110,8 @@ function contentHashLink(Collapse) {
     checkForHash(Collapse);
   }, false);
 
-  import('./addAccordionOrTabHistoryStates').then(({ default: addAccordionOrTabHistoryStates }) => {
-    addAccordionOrTabHistoryStates();
-  });
+  import('./addAccordionOrTabHistoryStates')
+    .then(({ default: addAccordionOrTabHistoryStates }) => addAccordionOrTabHistoryStates());
 }
 
 export default contentHashLink;

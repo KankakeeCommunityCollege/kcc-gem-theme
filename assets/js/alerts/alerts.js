@@ -3,68 +3,63 @@
 // © 2020 Kankakee Community College
 // =================================================== */
 import createAlertsHtml from './createAlertsHtml';
-import cacheResponse from './cacheResponse';
-import getCachedResponse from './getCachedResponse';
-import checkForPrefersReducedMotion from './checkForPrefersReducedMotion';
 
-const EMERGENCY_ALERT_DIV_ID = 'emergencyAlerts'
-const SHEET_PARAMS = {
-  spreadsheetId: '1plXBiZY5pVbhNT-mszxEuqCl4zy8wMnz9gXXbbT_yLs',
+const apiKey = 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A';
+const sheetParams = {
+  spreadsheetId: '1pqYRAhZvOHB52KqttV_d5P8qWvh9j8pPR15MCoGjMK0',
   range: 'Alerts'
-};  // Configures the Object used for `sheets.spreadsheets.values.get()` parameters
-const API_PARAMS = { // This is configuration for API call with spreadsheets that are setup as readonly
-  'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
-  'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
 };
-const pageHasAccordionOrTabs = (document.querySelector('#accordion') || document.querySelector('.navTabs')) ? true : false;
 
-async function loadModule(module) {
-  const { default: module_func } = await import(`./${module}`);
+const pageHasAccordionOrTabs = (document.querySelector('#accordion') || document.querySelector('.navTabs'));
 
-  return module_func();
+function importHashLinkModule(Collapse) {
+  import('./contentHashLink')
+    .then(({ default: contentHashLink }) => contentHashLink(Collapse));
+}
+
+async function fetchSheetData(spreadsheetId, range, apiKey) {
+  // Use encodeURIComponent to handle spaces and '!' in the range string
+  const encodedRange = encodeURIComponent(range);
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodedRange}?key=${apiKey}`;
+
+  try {
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(`Google Sheets API Error: ${error.error.message}`);
+    }
+
+    const data = await response.json();
+    
+    // Google returns an empty object if the range is empty; 
+    // we default to an empty array for consistency.
+    return data.values || [];
+  } catch (err) {
+    console.error("Failed to fetch sheet data:", err);
+    throw err;
+  }
 }
 
 export default function alerts(Collapse) {
-  checkForPrefersReducedMotion();
-
-  if (!document.getElementById(EMERGENCY_ALERT_DIV_ID)) {
-    // return pageHasAccordionOrTabs ? loadModule('contentHashLink') : null;
-    if (pageHasAccordionOrTabs) {
-      return import('./contentHashLink').then(({default: contentHashLink}) => contentHashLink(Collapse));
-    }
+  if (!document.getElementById('emergencyAlerts') && pageHasAccordionOrTabs) {
+    // Handle page with no emergency alerts
+    importHashLinkModule(Collapse);
+  } else {
+    // Handle pages with alerts
+    // const response = await fetchSheetData(sheetParams.spreadsheetId, sheetParams.range, apiKey);
+    fetchSheetData(sheetParams.spreadsheetId, sheetParams.range, apiKey)
+      .then(response => {
+        createAlertsHtml(response);
+        if (pageHasAccordionOrTabs) {
+          importHashLinkModule(Collapse);
+        }
+      })
+      .catch(error => {
+        console.error("Error received:", error.message);
+        if (pageHasAccordionOrTabs) {
+          importHashLinkModule(Collapse);
+        }
+      })
   }
-
-  new Promise((resolve, reject) => { // First build the alert, whether by cache or API call
-
-    if (window.sessionStorage.getItem('Alert-Content')) { // If cache exists there will be an `Alert-Content` key in `sessionStorage` (which gets set in `./cacheResponse.js`)
-      getCachedResponse();
-      return resolve()
-    } else {
-      gapi.load('client', () => {
-        gapi.client.init(API_PARAMS).then(() => {
-          return gapi.client.sheets.spreadsheets.values.get(SHEET_PARAMS);
-        }).then(response => {
-          createAlertsHtml(response) // Promise is resolved after HTML alert is built
-          return response;
-        }).then(response => {
-          cacheResponse(response);
-          resolve();
-        }, err => {
-          console.error("Error trying to fetch the alert from gapi:", err);
-        })
-      });
-    }
-  }).then(() => {
-    window.setTimeout(() => {
-      if (pageHasAccordionOrTabs) {
-        import('./contentHashLink').then(({default: contentHashLink}) => contentHashLink(Collapse));
-      }
-    }, 100)
-  }) // Run accordion/tab JS, which includes a `scrollTo()`, after alert has painted
-    .then(() => {
-      if (!document.getElementById('syncAlert'))
-        return;
-
-      return loadModule('refreshAlertButton')
-    }) // Allow user to refresh the alert (and check for changes/updates)
 }

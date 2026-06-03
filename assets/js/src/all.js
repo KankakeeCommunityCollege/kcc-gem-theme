@@ -1,9 +1,10 @@
 import '../../scss/kcc-theme.scss';
-// import { Collapse, Tab, Dropdown } from 'bootstrap';
+
 import Collapse from 'bootstrap/js/dist/collapse';
 
-// Modules that load before window.onload
-window.addEventListener('load', () => {
+const searchPageRegexp = /^\/search\/?$/;
+
+document.addEventListener('DOMContentLoaded', () => {
 //  1.) Import hero slider JS modules
 // './wrapPowerText'
 // 'sliders', 'initSliders'
@@ -22,6 +23,7 @@ window.addEventListener('load', () => {
 // 10.) document.getElementById('google_translate_element') ? loadModule('translateScript', 'watchForMenuClicks') : null;
   
   import('../alerts/alerts')
+    // alerts.js also handles the accordion and tab hash-linking in order to properly orchestrate the timing
     .then(({ default: alerts }) => alerts(Collapse))
     .then(() => {
       if (document.querySelector('.hero-slider__slider')) {
@@ -58,7 +60,11 @@ window.addEventListener('load', () => {
         });
       })
     }
-    if (window.location.pathname == "/search/") {
+    if (searchPageRegexp.test(window.location.pathname)) {
+      // Fix needed so that nav skip link doesn't interfere with site search page
+      import('./searchPageJumpLinkFix')
+        .then(({ default: searchPageJumpLinkFix }) => searchPageJumpLinkFix());
+      // Custom styling for the results on our Google Programmable Search page
       import('../../scss/searchPageOverrides.scss')
         .catch(err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err));
     }

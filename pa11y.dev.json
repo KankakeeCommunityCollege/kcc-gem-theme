@@ -1,4 +1,17 @@
 {
   "timeout": 120000,
-  "hideElements": "table.gstl_50.gssb_c"
+  "waitUntil": "networkidle0",
+  "hideElements": "table.gstl_50.gssb_c, #HLC, .hero-slider__slider",
+  "runners": [
+    "axe"
+  ],
+  "includeNotices": true,
+  "includeWarnings": true,
+  "axe": {
+    "rules": {
+      "heading-order": {
+        "enabled": true
+      }
+    }
+  }
 }
