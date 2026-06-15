@@ -40,13 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
       import('./addClassToOpenNavbar').then(({ default: addClassToOpenNavbar }) => addClassToOpenNavbar());
     })
     .then(async () => {
-      if (document.querySelector('.dropdown-toggle')) {
+      if (document.querySelector('.dropdown-toggle') || document.getElementById('headerGlobalNavbarContent')) {
         const { default: Dropdown } = await import('bootstrap/js/dist/dropdown'); // Just importing BS5 Collapse enables them to work in a page
-      }
-      if (document.getElementById('headerGlobalNavbarContent')) {
-        const { default: megaNav } = await import('../nav/megaNav/megaNav');
 
-        return megaNav(Collapse);
+        if (document.getElementById('headerGlobalNavbarContent')) {
+          const { default: megaNav } = await import('../nav/megaNav/megaNav');
+
+          return megaNav(Collapse, Dropdown);
+        }
       }
     })
     .catch(err => console.error(`Error loading window.onload modules: ${err}`, err))
