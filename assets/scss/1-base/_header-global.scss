@@ -441,7 +441,7 @@
 }
 
 @media screen and (min-width: 992px) {
-  .header-global__dropdown.show { // `.show` is a BS class added when dropdowns are open
+  .header-global__dropdown:has(.dropdown-toggle.show) { // `.show` is a BS class added when dropdowns are open
     background-color: $color-blue-light-nav;
   }
 }
@@ -458,32 +458,8 @@
   visibility: visible;
 }
 
-@keyframes meganav {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-// Make mega-nav menu's show on hover (on larger screens only).
-@media screen and (min-width: 992px) {
-  .header-global__nav-bottom .dropdown:hover .dropdown-menu,
-  .header-global__nav-bottom .dropdown .dropdown-menu:hover {
-    animation-duration: .5s;
-    animation-name: meganav;
-    display: block !important; // Because Bootstrap loves to use !important
-  }
-}
-
 .header-global__nav-bottom .dropdown-item {
   color: $grey-1;
-}
-
-.header-global__nav-bottom .dropdown-item:active {
-  background-color: $primary-blue;
-  color: $white;
 }
 
 .header-global__nav-bottom .dropdown-item:hover,
