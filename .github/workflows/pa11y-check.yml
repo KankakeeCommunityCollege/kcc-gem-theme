@@ -6,7 +6,7 @@ on:
   # Triggers the workflow on push events to any branch
   push:
     branches:
-      - v3 # Or your default branch, e.g., 'master', 'gh-pages'
+      - master # Or your default branch, e.g., 'master', 'gh-pages'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
     steps:
       # Step 1: Checks out your repository under $GITHUB_WORKSPACE
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Step 2: Set up Ruby environment for Jekyll
       # This step now reads the Ruby version from the .ruby-version file
@@ -40,7 +40,7 @@ jobs:
       # Step 5: Set up Node.js environment for Pa11y
       # This step now reads the Node.js version from the .nvmrc file
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc # Reads the Node.js version from this file
 
