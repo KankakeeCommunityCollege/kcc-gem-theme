@@ -90,62 +90,87 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         Student in an electrical technology lab standing 
         in front of electrical equipment mounted to a wall
     button:
-      text: 'Explore Program Pathways'
+      text: 'Explore Academic Pathways'
       href: '/academics/'
     dropdown: # Defines the 'academics' items in the dropdown
-## IMPORTANT: The first item in the 'dropdown' list is not sorted but stays as the first dropdown item...
-##            After the first item, the dropdown list is sorted alphabetically by the 'text' key.
-      - text: Academic Programs Home ## Text for the first dropdown item (stays at the top)
-        href: 'academics/' ## Relative link that the first dropdown item should point to
-      - text: Class Schedule 
-        href: 'schedule/' # Relative link with hashes and queries work too 'page/#hash' or 'page/?id=some-heading#hash'
-      - text: Academic Calendar
-        href: 'calendar/'
-      - text: Continuing Education
-        href: 'https://www.kcc.edu/continuinged/' ## Absolute URL with protocol works too
-      - text: Illinois High School Diploma (GED)
-        href: 'https://www.kcc.edu/adulted/programs/ged/'
-      - text: Commencement
-        href: 'commencement/'
-      - text: Final Exam Schedule
-        href: 'final-exams/'
-      - text: Register for Classes
-        href: 'register/'
-      - text: Academic Catalog
-        href: 'https://catalog.kcc.edu/'
-      - text: "Exam Make-ups"
-        href: exam-makeups/
-      - text: "Online Learning"
-        href: online-learning/
+      sub_site: academics
+      categories:
+        - heading: Explore programs
+          items:
+          - text: Academic Programs & Pathways
+            href: 'academics/'
+            sub_site_base: true
+          - text: Career Coach
+            href: https://kcc.lightcastcc.com/?radius=50%20miles&region=Kankakee%20County%20-%2050%20Mile%20Radius
+          - text: Academic Catalog
+            href: 'https://catalog.kcc.edu/'
+        - heading: Plan your classes
+          items:
+            - text: Class Schedule 
+              href: 'schedule/'
+            - text: Register for Classes
+              href: 'register/'
+            - text: Academic Calendar
+              href: 'calendar/'
+        - heading: Academic resources
+          items:
+            - text: "Online Learning"
+              href: online-learning/
+            - text: "Exam Make-ups"
+              href: exam-makeups/
+            - text: Final Exam Schedule
+              href: 'final-exams/'
+        - heading: Other options
+          items:
+            - text: Continuing Education
+              href: 'https://www.kcc.edu/continuinged/' ## Absolute URL with protocol works too
+            - text: Illinois High School Diploma (GED)
+              href: 'https://www.kcc.edu/adulted/programs/ged/'
+            - text: Commencement
+              href: 'commencement/'
 ## Admissions ##
   - link_text:  Admissions
     link_href: admissions
     image:
       source: 'assets/img/menu-admission.jpg'
       alt: 'Smiling student inside the KCC main entrance'
+    button:
+      text: 'Apply to KCC'
+      href: 'https://apply.kcc.edu'
     dropdown:
-      - text:  Admissions Home
-        href: admissions/
-      - text: Placement Testing
-        href: 'testing/'
-      - text: Apply
-        href: 'https://apply.kcc.edu'
-      - text: Request Information
-        href: 'https://info.kcc.edu/'
-      - text: Visit/Explore
-        href: 'https://visit.kcc.edu'
-      - text: 'Start in High School'
-        href: 'high-school/'
-      - text: Request KCC Transcripts
-        href: '#request-your-transcript'
-      - text: 'Veterans Services'
-        href: 'veterans/'
-      - text: 'Credit for Prior Learning'
-        href: 'credit-for-prior-learning/'
-      - text: DACA/Undocumented Students
-        href: 'undocumented/'
-      - text: 'Health Careers Requirements'
-        href: 'health-careers-requirements/'
+      sub_site: admissions
+      categories:
+        - heading: Get started
+          items:
+            - text:  Admissions Home
+              href: admissions/
+              sub_site_base: true
+            - text: Apply
+              href: 'https://apply.kcc.edu'
+            - text: Request Information
+              href: 'https://info.kcc.edu/'
+            - text: Visit/Explore
+              href: 'https://visit.kcc.edu'
+        - heading: Requirements & placement
+          items:
+            - text: 'Health Careers Requirements'
+              href: 'health-careers-requirements/'
+            - text: Placement Testing
+              href: 'testing/'
+            - text: 'Credit for Prior Learning'
+              href: 'credit-for-prior-learning/'
+        - heading: Non-Traditional Tracks
+          items:
+            - text: 'Start in High School'
+              href: 'high-school/'
+            - text: DACA/Undocumented Students
+              href: 'undocumented/'
+            - text: 'Veterans Services'
+              href: 'veterans/'
+        - heading: Records
+          items:
+            - text: Request KCC Transcripts
+              href: '#request-your-transcript'
 ## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
@@ -158,20 +183,27 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
       text: 'Financial Support Opportunities'
       href: '/tuition-and-aid/financial-support/'
     dropdown:
-      - text:  Tuition & Aid Home
-        href: 'tuition-and-aid/'
-      - text: Financial Aid
-        href: 'financial-aid/'
-      - text: Net Price Calculator
-        href: 'net-price-calculator/'
-      - text: 'Cost to Attend KCC'
-        href: '#cost-to-attend'
-      - text: 'Tuition Payment & Deadlines'
-        href: '#tuition-payment-and-deadlines'
-      - text: 'Financial Aid Forms'
-        href: 'financial-aid/#financial-aid-forms'
-      - text: 'Student Employment'
-        href: 'financial-aid/#student-employment'
+      sub_site: tuition-and-aid
+      categories:
+        - heading: Costs & payment
+          items: 
+            - text:  Tuition & Aid Home
+              href: 'tuition-and-aid/'
+              sub_site_base: true
+            - text: 'Cost to Attend KCC'
+              href: '#cost-to-attend'
+            - text: Net Price Calculator
+              href: 'net-price-calculator/'
+            - text: 'Tuition Payment & Deadlines'
+              href: '#tuition-payment-and-deadlines'
+        - heading: Financial aid
+          items:
+            - text: Financial Aid
+              href: 'financial-aid/'
+            - text: 'Financial Aid Forms'
+              href: 'financial-aid/#financial-aid-forms'
+            - text: 'Student Employment'
+              href: 'financial-aid/#student-employment'
 ## Student Resources ##
   - link_text: Student Resources
     link_href: 'student-resources'
@@ -181,66 +213,91 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         KCC Veteran Services staff from left-to-right; 
         Kendra Souligne, Hassel Hernandez, Jason Rodriguez, 
         and Megan Ponton.
+    button:
+      text: 'Get Student Support'
+      href: '/student-resources/support-resources/'
     dropdown:
-      - text: Student Resources Home
-        href: 'student-resources/'
-      - text: Bookstore
-        href: 'https://books.kcc.edu'
-      - text: 'Center for Equity, Diversity & Inclusion'
-        href: 'edi/'
-      - text: Fitness Center
-        href: 'fitness-center/'
-      - text: Advising
-        href: 'advising/'
-      - text: Transfer Services
-        href: 'transfer/'
-      - text: 'Counseling & Referral Services'
-        href: 'counseling-and-referral-services/'
-      - text: Office of Disability Services
-        href: 'disability-services/'
-      - text: Start the Semester Right
-        href: 'welcome/'
-      - text: Tutoring
-        href: 'https://www.kcc.edu/library/tutoring/'
-      - text: TRIO Student Support Services
-        href: 'trio/'
-      - text: Career Services
-        href: 'career-services/'
-      - text: Food Services
-        href: 'food-services/'
-      - text: Workforce Services
-        href: 'https://www.kcc.edu/workforceservices/'
-      - text: Support Resources
-        href: support-resources/
-      - text: Student Life
-        href: student-life/
+      sub_site: student-resources
+      categories:
+        - heading: Get help
+          items:
+            - text: Student Resources Home
+              href: 'student-resources/'
+              sub_site_base: true
+            - text: Support Resources
+              href: support-resources/
+            - text: 'Counseling & Referral Services'
+              href: 'counseling-and-referral-services/'
+            - text: Office of Disability Services
+              href: 'disability-services/'
+            - text: TRIO Student Support Services
+              href: 'trio/'
+        - heading: Academic support
+          items:
+            - text: Advising
+              href: 'advising/'
+            - text: Tutoring
+              href: 'https://www.kcc.edu/library/tutoring/'
+            - text: Transfer Services
+              href: 'transfer/'
+            - text: Start the Semester Right
+              href: 'welcome/'
+        - heading: Campus life & services
+          items:
+            - text: Bookstore
+              href: 'https://books.kcc.edu'
+            - text: Food Services
+              href: 'food-services/'
+            - text: Fitness Center
+              href: 'fitness-center/'
+            - text: Student Life
+              href: student-life/
+        - heading: Career & community
+          items:
+            - text: Career Services
+              href: 'career-services/'
+            - text: Workforce Services
+              href: 'https://www.kcc.edu/workforceservices/'
+            - text: 'Center for Equity, Diversity & Inclusion'
+              href: 'edi/'
 ## Community ##
   - link_text: Community
     link_href: 'community'
     image:
       source: 'assets/img/menu-community.jpg'
       alt: 'The Criminal Justice Club posing on the metal sculpture in front of the KCC main entrance'
+    button:
+      text: Explore Community Programs
+      href: '/community/'
     dropdown:
-      - text: Community Home
-        href: 'community/'
-      - text: Adult & Community Education
-        href: 'https://www.kcc.edu/adulted/'
-      - text: Continuing Education
-        href: 'https://www.kcc.edu/continuinged/'
-      - text: Sustainability
-        href: 'sustainability/'
-      - text: Arts & Culture
-        href: 'arts-and-culture/'
-      - text: Workforce Services
-        href: 'https://www.kcc.edu/workforceservices/'
-      - text: Community Testing Center
-        href: testing-center/
-      - text: Wheels of Opportunity
-        href: 'wheels/'
-      - text: Giving
-        href: 'https://www.kcc.edu/foundation/'
-      - text: 'CEJA Workforce Hub'
-        href: 'ceja/'
+      sub_site: community
+      categories:
+        - heading: Community learning
+          items:
+            - text: Adult & Community Education
+              href: 'https://www.kcc.edu/adulted/'
+            - text: Continuing Education
+              href: 'https://www.kcc.edu/continuinged/'
+            - text: Arts & Culture
+              href: 'arts-and-culture/'
+        - heading: Workforce & training
+          items:
+            - text: Workforce Services
+              href: 'https://www.kcc.edu/workforceservices/'
+            - text: 'CEJA Workforce Hub'
+              href: 'ceja/'
+        - heading: Community services
+          items:
+            - text: Community Testing Center
+              href: testing-center/
+            - text: Wheels of Opportunity
+              href: 'wheels/'
+            - text: Sustainability
+              href: 'sustainability/'
+        - heading: Support KCC
+          items:
+            - text: Giving
+              href: 'https://www.kcc.edu/foundation/'
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'
@@ -248,47 +305,61 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     image:
       source: 'assets/img/menu-about-kcc.jpg'
       alt: 'Two students posing in front of the KCC main entrance'
+    button:
+      text: Learn About KCC
+      href: '/about/'
     dropdown:
-      - text: About KCC Home
-        href: 'about/'
-      - text: Newsroom
-        href: 'https://news.kcc.edu'
-      - text: Leadership
-        href: 'leadership/'
-      - text: Board of Trustees
-        href: board-of-trustees/
-      - text: Human Resources
-        href: 'human-resources/'
-      - text: Job Openings
-        href: 'human-resources/job-openings/'
-      - text: Directories
-        href: 'directories/'
-      - text: Information Technology Services
-        href: 'its/'
-      - text: Marketing
-        href: 'marketing/'
-      - text: 'Institutional Effectiveness'
-        href: 'institutional-effectiveness/'
-      - text: 'Police & Safety'
-        href: 'police-and-safety/'
-      - text: 'Student Code of Conduct'
-        href: 'code-of-conduct/'
-      - text: 'Title IX'
-        href: 'title-ix/'
-      - text: 'Contact Us'
-        href: 'contact-us/'
-      - text: Web Services
-        href: 'marketing/web-services/'
-      - text: Consumer Info and Disclosures
-        href: 'consumer-info/'
-      - text: ICCB Salary and Benefits Portal
-        href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
-      - text: COVID-19 Response
-        href: 'https://coronavirus.kcc.edu'
-      - text: Report a Concern
-        href: 'report-a-concern/'
-      - text: Freedom of Information
-        href: 'https://www.kcc.edu/about/uploads/docs/freedom-of-information-act.pdf'
+      sub_site: about
+      categories:
+        - heading: About the college
+          items:
+            - text: About KCC Home
+              href: 'about/'
+              sub_site_base: true
+            - text: Leadership
+              href: 'leadership/'
+            - text: Board of Trustees
+              href: board-of-trustees/
+            - text: 'Institutional Effectiveness'
+              href: 'institutional-effectiveness/'
+            - text: Newsroom
+              href: 'https://news.kcc.edu'
+        - heading: Offices & departments
+          items:
+            - text: 'Contact Us'
+              href: 'contact-us/'
+            - text: Directories
+              href: 'directories/'
+            - text: Human Resources
+              href: 'human-resources/'
+            - text: Information Technology Services
+              href: 'its/'
+            - text: Marketing
+              href: 'marketing/'
+            - text: Web Services
+              href: 'marketing/web-services/'
+        - heading: Safety & accountability
+          items:
+            - text: 'Police & Safety'
+              href: 'police-and-safety/'
+            - text: Report a Concern
+              href: 'report-a-concern/'
+            - text: 'Title IX'
+              href: 'title-ix/'
+            - text: 'Student Code of Conduct'
+              href: 'code-of-conduct/'
+        - heading: Transparency & Employment
+          items:
+            - text: Consumer Info and Disclosures
+              href: 'consumer-info/'
+            - text: Freedom of Information
+              href: 'https://www.kcc.edu/about/uploads/docs/freedom-of-information-act.pdf'
+            - text: ICCB Salary and Benefits Portal
+              href: 'https://iccbdbsrv.iccb.org/salarysearch/home.cfm'
+            - text: COVID-19 Response
+              href: 'https://coronavirus.kcc.edu'
+            - text: Job Openings
+              href: 'human-resources/job-openings/'
 
 ## =================================================================== ##
 ##  Local Nav and Sub Nav configuration for testing those components.  ##

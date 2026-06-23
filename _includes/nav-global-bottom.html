@@ -17,30 +17,38 @@
                 <div class="container">
                   <div class="row header-global__row--max-width">
                     {%- if item.image -%}
-                    <div class="col-lg-3 offset-lg-1 text-center padding__col--mobile-none">
+                    <div class="col-lg-4 text-center padding__col--mobile-none">
                       <img src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
                         data-src="{{ page.baseurl }}{{ item.image.source }}"
                         width="280px"
                         height="157px"
-                        class="header-global__drodpown-menu--img img-fluid d-none d-lg-block"
+                        class="header-global__drodpown-menu--img w-100 img-fluid d-none d-lg-block"
                         alt="{{ item.image.alt }}">
                       {%- if item.button -%}
                       <a href="{{ item.button.href }}" class="btn btn-primary mt-0 mt-lg-3 mb-2 d-inline-block ga_menu_link">{{ item.button.text }}</a>{% endif %}
                     </div>{% endif %}
-                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
-                      {%- if item.dropdown[0] -%}
-                      {% assign sub_site = item.dropdown[0] %}
-                      <a class="dropdown-item ga_menu_link" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ sub_site.href }}{% endif %}">{{ sub_site.text }}</a>
-                      {%- endif -%}
-                      {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
-                      {% assign alphabetical_links = item.dropdown | slice: 1, item.dropdown.size | sort: "text" %}
-                      {% for link in alphabetical_links %}
-                      {% if item.link_href contains site_name_lowercase %}
-                      <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>
-                      {%- else -%}
-                      <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>
-                      {%- endif -%}
-                      {%- endfor -%}
+                    {% comment %}
+                    <!--
+                    Adding the .header-global__col--column-count class here breaks the list of links into 2 columns
+                    The liquid if-statement controls which dropdown menus get the 2-column layout
+                    -->
+                    {% endcomment %}
+                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Academics' or item.link_text == 'Admissions' or item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
+                      {% for section in item.dropdown.categories %}
+                      <section class="mb-3" aria-labelledby="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}">
+                        <h2 id="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}" class="typography__h6 mb-0">{{ section.heading }}</h2>
+                        {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
+                        {% for link in section.items %}
+                        {% if link.sub_site_base %}
+                        <a class="dropdown-item ga_menu_link" href="{% if item.link_href contains site_name_lowercase %}{{ page.baseurl }}{% else %}/{{ link.href }}{% endif %}">{{ link.text }}</a>
+                        {% elsif item.link_href contains site_name_lowercase %}
+                        <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}{{ page.baseurl }}{{ link.href }}{% endif %}">{{ link.text }}</a>
+                        {% else %}
+                        <a class="dropdown-item ga_menu_link" href="{% if link.href contains 'http://' or link.href contains 'https://' %}{{ link.href }}{% else %}/{{ item.link_href }}/{{ link.href }}{% endif %}">{{ link.text }}</a>
+                        {% endif %}
+                        {% endfor %}
+                      </section>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
