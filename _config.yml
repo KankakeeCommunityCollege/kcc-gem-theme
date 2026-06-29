@@ -95,7 +95,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown: # Defines the 'academics' items in the dropdown
       sub_site: academics
       categories:
-        - heading: Explore programs
+        - heading: Explore Programs
           items:
           - text: Academic Programs & Pathways
             href: 'academics/'
@@ -104,7 +104,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
             href: https://kcc.lightcastcc.com/?radius=50%20miles&region=Kankakee%20County%20-%2050%20Mile%20Radius
           - text: Academic Catalog
             href: 'https://catalog.kcc.edu/'
-        - heading: Plan your classes
+        - heading: Plan Your Classes
           items:
             - text: Class Schedule 
               href: 'schedule/'
@@ -112,7 +112,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'register/'
             - text: Academic Calendar
               href: 'calendar/'
-        - heading: Academic resources
+        - heading: Academic Resources
           items:
             - text: "Online Learning"
               href: online-learning/
@@ -120,7 +120,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: exam-makeups/
             - text: Final Exam Schedule
               href: 'final-exams/'
-        - heading: Other options
+        - heading: Other Options
           items:
             - text: Continuing Education
               href: 'https://www.kcc.edu/continuinged/' ## Absolute URL with protocol works too
@@ -140,7 +140,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown:
       sub_site: admissions
       categories:
-        - heading: Get started
+        - heading: Get Started
           items:
             - text:  Admissions Home
               href: admissions/
@@ -151,7 +151,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'https://info.kcc.edu/'
             - text: Visit/Explore
               href: 'https://visit.kcc.edu'
-        - heading: Requirements & placement
+        - heading: Requirements & Placement
           items:
             - text: 'Health Careers Requirements'
               href: 'health-careers-requirements/'
@@ -159,7 +159,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'testing/'
             - text: 'Credit for Prior Learning'
               href: 'credit-for-prior-learning/'
-        - heading: Non-Traditional Tracks
+        - heading: Specialized Admissions Resources
           items:
             - text: 'Start in High School'
               href: 'high-school/'
@@ -180,12 +180,12 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
         The early bird gets the money. FAFSA available before Dec. 31. Apply at fafsa.gov.
         More details and workshop info at www.kcc.edu/finaid
     button:
-      text: 'Financial Support Opportunities'
-      href: '/tuition-and-aid/financial-support/'
+      text: 'Explore Financial Aid'
+      href: '/tuition-and-aid/financial-aid/'
     dropdown:
       sub_site: tuition-and-aid
       categories:
-        - heading: Costs & payment
+        - heading: Costs & Payment
           items: 
             - text:  Tuition & Aid Home
               href: 'tuition-and-aid/'
@@ -196,12 +196,14 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'net-price-calculator/'
             - text: 'Tuition Payment & Deadlines'
               href: '#tuition-payment-and-deadlines'
-        - heading: Financial aid
+        - heading: Financial Aid
           items:
             - text: Financial Aid
               href: 'financial-aid/'
             - text: 'Financial Aid Forms'
               href: 'financial-aid/#financial-aid-forms'
+            - text: 'Financial Support Opportunities'
+              href: '/financial-support/'
             - text: 'Student Employment'
               href: 'financial-aid/#student-employment'
 ## Student Resources ##
@@ -219,7 +221,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown:
       sub_site: student-resources
       categories:
-        - heading: Get help
+        - heading: Get Help
           items:
             - text: Student Resources Home
               href: 'student-resources/'
@@ -232,7 +234,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'disability-services/'
             - text: TRIO Student Support Services
               href: 'trio/'
-        - heading: Academic support
+        - heading: Academic Support
           items:
             - text: Advising
               href: 'advising/'
@@ -242,7 +244,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'transfer/'
             - text: Start the Semester Right
               href: 'welcome/'
-        - heading: Campus life & services
+        - heading: Campus Life & Services
           items:
             - text: Bookstore
               href: 'https://books.kcc.edu'
@@ -252,7 +254,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'fitness-center/'
             - text: Student Life
               href: student-life/
-        - heading: Career & community
+        - heading: Career & Community
           items:
             - text: Career Services
               href: 'career-services/'
@@ -272,7 +274,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown:
       sub_site: community
       categories:
-        - heading: Community learning
+        - heading: Community Learning
           items:
             - text: Adult & Community Education
               href: 'https://www.kcc.edu/adulted/'
@@ -280,13 +282,13 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'https://www.kcc.edu/continuinged/'
             - text: Arts & Culture
               href: 'arts-and-culture/'
-        - heading: Workforce & training
+        - heading: Workforce & Training
           items:
             - text: Workforce Services
               href: 'https://www.kcc.edu/workforceservices/'
             - text: 'CEJA Workforce Hub'
               href: 'ceja/'
-        - heading: Community services
+        - heading: Community Services
           items:
             - text: Community Testing Center
               href: testing-center/
@@ -311,7 +313,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
     dropdown:
       sub_site: about
       categories:
-        - heading: About the college
+        - heading: About the College
           items:
             - text: About KCC Home
               href: 'about/'
@@ -324,7 +326,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'institutional-effectiveness/'
             - text: Newsroom
               href: 'https://news.kcc.edu'
-        - heading: Offices & departments
+        - heading: Offices & Departments
           items:
             - text: 'Contact Us'
               href: 'contact-us/'
@@ -338,7 +340,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
               href: 'marketing/'
             - text: Web Services
               href: 'marketing/web-services/'
-        - heading: Safety & accountability
+        - heading: Safety & Accountability
           items:
             - text: 'Police & Safety'
               href: 'police-and-safety/'

@@ -33,7 +33,7 @@
                     The liquid if-statement controls which dropdown menus get the 2-column layout
                     -->
                     {% endcomment %}
-                    <div class="col-lg-8 col-xl-7 offset-xl-1{% if item.link_text == 'Academics' or item.link_text == 'Admissions' or item.link_text == 'Student Resources' or item.link_text == 'About KCC' %} header-global__col--column-count{% endif %}">
+                    <div class="col-lg-8 col-xl-7 offset-xl-1 header-global__col--column-count">
                       {% for section in item.dropdown.categories %}
                       <section class="mb-3" aria-labelledby="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}">
                         <h2 id="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}" class="typography__h6 mb-0">{{ section.heading }}</h2>
