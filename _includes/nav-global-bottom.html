@@ -35,8 +35,8 @@
                     {% endcomment %}
                     <div class="col-lg-8 col-xl-7 offset-xl-1 header-global__col--column-count">
                       {% for section in item.dropdown.categories %}
-                      <section class="mb-3" aria-labelledby="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}">
-                        <h2 id="{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}" class="typography__h6 mb-0">{{ section.heading }}</h2>
+                      <section class="mb-3" aria-labelledby="nav-{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}">
+                        <h2 id="nav-{{ section.heading | downcase | replace: '&', 'and' | replace: ' ', '-' }}" class="typography__h6 mb-0">{{ section.heading }}</h2>
                         {% assign site_name_lowercase = site.site_name | downcase | replace: ' ', '-' | replace: '&', 'and' %}
                         {% for link in section.items %}
                         {% if link.sub_site_base %}
