@@ -531,6 +531,9 @@
   .header-global__col--column-count {
     column-count: 2;
   }
+  .header-global__col--column-count section {
+    break-inside: avoid;
+  }
 }
 
 // Fix buttons showing through collapsed nav-global-local on tablet sized screens
