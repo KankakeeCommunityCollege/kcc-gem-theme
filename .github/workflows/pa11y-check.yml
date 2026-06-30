@@ -6,7 +6,7 @@ on:
   # Triggers the workflow on push events to any branch
   push:
     branches:
-      - master # Or your default branch, e.g., 'master', 'gh-pages'
+      - v3 # Or your default branch, e.g., 'master', 'gh-pages'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
