@@ -201,7 +201,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
             - text: Financial Aid
               href: 'financial-aid/'
             - text: 'Financial Aid Forms'
-              href: 'financial-aid/#financial-aid-forms'
+              href: 'financial-aid/forms/'
             - text: 'Financial Support Opportunities'
               href: '/financial-support/'
             - text: 'Student Employment'
@@ -303,7 +303,6 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
 ## About KCC ##
   - link_text: About KCC
     link_href: 'about'
-    link_nav: 'about'
     image:
       source: 'assets/img/menu-about-kcc.jpg'
       alt: 'Two students posing in front of the KCC main entrance'
