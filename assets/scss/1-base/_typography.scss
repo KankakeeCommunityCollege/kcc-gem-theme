@@ -183,11 +183,18 @@ body {
 }
 
 @media screen and (min-width: 992px) {
+  // This rule prevents BS5 from nav styles from interfering with our custom nav styles
   .typography__header-global--nav-bottom:hover,
   .typography__header-global--nav-bottom:focus,
   .header-global__dropdown:hover .typography__header-global--nav-bottom,
   .header-global__dropdown:focus .typography__header-global--nav-bottom {
-    color: $primary-blue;
+    color: $white;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__header-global--nav-bottom.show {
+    color: $primary-blue !important; // !important is needed to prevent BS5 from overriding this style
   }
 }
 
