@@ -45,8 +45,10 @@ jobs:
           node-version-file: .nvmrc # Reads the Node.js version from this file
 
       # Step 6: Install Pa11y globally
-      - name: Install Pa11y
-        run: npm install -g pa11y
+      - name: Install Pa11y globally
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+        run: npm install -g pa11y --allow-scripts=puppeteer
 
       # Step 7: Run Pa11y accessibility checks on the built site
       # This step finds all HTML files in the _site directory and runs Pa11y on each.
@@ -63,3 +65,24 @@ jobs:
             pa11y "$file" --config ./pa11y.actions.json
             echo "::endgroup::" # End the collapsible group
           done
+      # Step 8: Create an issue in GH if the action fails so that developers get notified.
+      # Without this step, only the author of the commit causing the error is notified that
+      # the action has failed. Creating an issue and assigning it ensures developers are
+      #  notified regardless of the commit's author.
+      - name: Notify developers on failure
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const repoUrl = `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}`;
+            const issuesUrl = `${repoUrl}/issues`;
+
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '❌ Build Failed: ' + context.sha.substring(0,7),
+              body: 'Attention @wdzajicek and @rehmpke: The latest push by ' + context.actor + ' failed on the pa11y accessibility test. \n\n' +
+                    '**View logs:** ' + repoUrl + '/actions/runs/' + process.env.GITHUB_RUN_ID + '\n\n' +
+                    '**Check if the issue is still open:** ' + issuesUrl,
+              assignees: ['wdzajicek', 'rehmpke']
+            })
