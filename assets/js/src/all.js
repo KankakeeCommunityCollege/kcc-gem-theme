@@ -69,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
       import('../../scss/searchPageOverrides.scss')
         .catch(err => console.error(`Error loading searchPageOverrides.scss \n${err}`, err));
     }
+    // Fix WCAG violation in Google Programmable Search where results have
+    //  a thumbnail image wrapped in a link which doesn't have meaningful alt (that becomes) link text
+    //  and doesn't provide any visual indication of tabbing to them
+    if (document.getElementById('searchResultsWrapper')) {
+      import('./searchResultsWCAGFix')
+        .then(({ default: searchResultsWCAGFix }) => searchResultsWCAGFix());
+    }
     if (document.getElementById('google_translate_element')) {
       import('./translateScript').then(({ default: watchForMenuClicks }) => {
         return watchForMenuClicks();
