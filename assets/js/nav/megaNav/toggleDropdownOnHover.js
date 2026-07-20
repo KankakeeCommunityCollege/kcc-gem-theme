@@ -7,6 +7,8 @@
 //  toggle by mouse hover (see note above `let isForcedClosed = false`).           //
 // =============================================================================== //
 const dropdownList = document.querySelectorAll('#navGlobalBottom .dropdown');
+const desktopMediaQuery = window.matchMedia('(min-width: 992px)');
+const isDesktop = () => desktopMediaQuery.matches;
 
 //  BS5 dropdown HTML markup is like this (this is simplified to show HTML structure):
 //  <ul>
@@ -20,7 +22,7 @@ const dropdownList = document.querySelectorAll('#navGlobalBottom .dropdown');
 function toggleDropdownOnHover(Dropdown) {
   // Loop over the .dropdown list items
   [...dropdownList].forEach(dropdown => { 
-    const toggle = dropdown.querySelector('.dropdown-toggle'); // Grab out dropdown-toggles (anchor elements)
+    const toggle = dropdown.querySelector('.dropdown-toggle'); // Grab our dropdown-toggles (anchor elements)
     const bsDropdown = Dropdown.getOrCreateInstance(toggle); // Initiate BS5 Dropdown so we can use the .show(), .hide(), etc. methods.
 
     let isLockedOpen = false; // Track if the user clicked the dropdown to keep it open
@@ -29,8 +31,9 @@ function toggleDropdownOnHover(Dropdown) {
     // accidentally hover and the menu then obscures their screen since they're zoomed in so much.
     let isForcedClosed = false;
 
-    // 1. Hover Enter
+    // 1. Hover Enter (bypassed on mobile)
     dropdown.addEventListener('mouseenter', () => {
+      if (!isDesktop()) return; // Do nothing if on mobile/tablet viewport
       // Prevent re-toggling the dropdown if:
       // * they hit escape (b/c the mouse is most likely still within the dropdown toggle element), or
       // * they locked the dropdown open by clicking it.
@@ -39,8 +42,9 @@ function toggleDropdownOnHover(Dropdown) {
       }
     });
 
-    // 2. Hover Leave
+    // 2. Hover Leave (bypassed on mobile)
     dropdown.addEventListener('mouseleave', () => {
+      if (!isDesktop()) return; // Do nothing if on mobile/tablet viewport
       // Don't close it on them if they clicked the dropdown menu to keep it open
       if (!isLockedOpen) {
         bsDropdown.hide();
@@ -48,8 +52,10 @@ function toggleDropdownOnHover(Dropdown) {
       isForcedClosed = false; // Reset escape key block
     });
 
-    // 3. Handle the Click Lock (Respecting the native Bootstrap toggle)
+    // 3. Handle the click Lock (Respecting the native Bootstrap toggle)
     toggle.addEventListener('click', (event) => {
+      // On mobile, let Bootstrap handle normal click-to-open/close behavior.
+      if (!isDesktop()) return;
       // If it was opened by hover and NOT yet locked, the native click 
       // will cause it to close. We intercept this to lock it open instead.
       if (!isLockedOpen) {
@@ -70,6 +76,11 @@ function toggleDropdownOnHover(Dropdown) {
 
     // 4. Reset lock if closed externally (clicking outside, tabbing away, etc.)
     toggle.addEventListener('hidden.bs.dropdown', () => {
+      if (!isDesktop()) {
+        // Always reset states on mobile resize/close
+        isLockedOpen = false;
+        return;
+      }
       // Only reset lock if the mouse isn't currently hovering over it
       // (This prevents the click-to-close transition from permanently breaking the state)
       if (!dropdown.matches(':hover')) {
@@ -77,7 +88,7 @@ function toggleDropdownOnHover(Dropdown) {
       }
     });
 
-    // 5. Escape Key Handling
+    // 5. Escape Key Handling (Keep active everywhere! Keyboard users on tablets need it too)
     dropdown.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         isLockedOpen = false;
@@ -85,6 +96,16 @@ function toggleDropdownOnHover(Dropdown) {
         bsDropdown.hide();
         toggle.focus(); // Return focus to the toggle button so they know where they are.
         event.stopPropagation(); // Prevent default browser behavior if necessary
+      }
+    });
+
+    // Clean up states if the user resizes their window from desktop to mobile
+    desktopMediaQuery.addEventListener('change', (e) => {
+      if (!e.matches) {
+        // Reset desktop-specific state variables if screen shrinks to mobile
+        isLockedOpen = false;
+        isForcedClosed = false;
+        bsDropdown.hide(); // Close any left-open hover menus
       }
     });
 
