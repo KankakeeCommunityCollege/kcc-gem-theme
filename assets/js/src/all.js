@@ -99,6 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(({ default: highlightNavItems }) => highlightNavItems());
   }
 
+  if (document.querySelector('main a')) {
+    import('./accessibleExternalLinks')
+      .then(({ default: accessibleExternalLinks }) => accessibleExternalLinks())
+      .catch(err => console.error('Error importing "accessibleExternalLinks" module: ', err));
+  }
+
   if (document.getElementById('hlcIframeParent')) {
     import('./createHLCIframe').then(({ default: createHLCIframe }) => createHLCIframe());
   }

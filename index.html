@@ -56,15 +56,23 @@ extra_meta_tags:
       <h4 id="h4" class="typography__h4">Heading Level 4</h4>
       <h5 class="typography__h5">Heading Level 5</h5>
       <h6 class="typography__h6">Heading Level 6</h6>
-      <p class="mt-4">Paragraph text with a <a class="links__launch" href="#" target="_blank" rel="noopener noreferrer">
-        Link that launches in a new tab<span class="visually-hidden"> (opens in new tab/window)</span></a> using the <code>links__launch</code> class.
-        Links that open in a new tab or window should also contain screen reader links text (<code>&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;</code>):
+      <p class="mt-4"><strong>Paragraph text with a link that launches in a new tab:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+        MDN JS</a>.</strong><br>
+        JS automatically finds external link and applies the <code>.links__external</code> helper class along with necessary screen
+        reader text notifying the user that a link is external and/or opens in a new tab (to meet WCAG 2.1 AA link requirements and best practices).
+        The JS will decorate external links the same way in localhost and CloudCannon to ensure an accurate preview when published to
+        kcc.edu.
       </p>
-      <pre tabindex="0" class="px-3 pt-3 pb-1" style="background-color: #08121a; color: lightgreen; border-radius: 8px;">
-        <code>&lt;a class="links__launch" href="#" target="_blank" rel="noopener noreferrer"&gt;
-          Link text&lt;span class="visually-hidden"&gt; (open in new tab/window)&lt;/span&gt;
-        &lt;/a&gt;</code>
-      </pre>
+      <p class="mt-3">
+        <strong>External button-links work too:</strong><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-primary">MDN JS website</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">MDN JS website</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-success">MDN JS website</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-danger">MDN JS website</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-warning">MDN JS website</a><br>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="btn btn-info">MDN JS website</a>
+      </p>
       <p>
         Double hyphens are automatically converted to em-dashes using JS -- like this. Triple hyphens (---) are left alone.<br>
         If you need to keep the double hyphens as-is (like in code examples) escape it using a backslash:
