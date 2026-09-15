@@ -10,6 +10,7 @@ const currentHost = window.location.hostname.toLowerCase();
 const internalDomains = [
   'kcc.edu',
   'jotform.com',
+  'libcal.com',    // Needed for library libcal links
   'libguides.com', // Needed for library libguide links
   'cloudvent.net', // Ensure the CloudCannon previews look the same as the live website
   'localhost',     // Ensure local dev look the same as the live website
