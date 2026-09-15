@@ -27,8 +27,7 @@ jobs:
         with:
           ruby-version: .ruby-version # Reads the Ruby version from this file
           bundler-cache: true # Caches installed gems for faster builds
-          bundle-config: |
-            deployment false
+
       # Step 3: Install Jekyll and its dependencies
       - name: Install Jekyll and dependencies
         run: bundle install
