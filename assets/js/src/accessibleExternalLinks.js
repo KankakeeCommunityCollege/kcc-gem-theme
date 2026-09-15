@@ -18,7 +18,7 @@ const internalDomains = [
 ];
 
 function accessibleExternalLinks() {
-  document.querySelectorAll('main a').forEach(link => {
+  document.querySelectorAll('main a:not(.social-icons__links)').forEach(link => {
   if (!link.hostname) return;
 
   const linkHost = link.hostname.toLowerCase();
