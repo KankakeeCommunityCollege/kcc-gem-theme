@@ -7,7 +7,13 @@
  */
 const currentHost = window.location.hostname.toLowerCase();
 // Define hostnames/domains that should always be treated as internal
-const internalDomains = ['kcc.edu', 'cloudvent.net', 'localhost', '127.0.0.1'];
+const internalDomains = [
+  'kcc.edu',
+  'jotform.com',
+  'cloudvent.net', // Ensure the CloudCannon previews look the same as the live website
+  'localhost',     // Ensure local dev look the same as the live website
+  '127.0.0.1'      // Ensure local dev look the same as the live website
+];
 
 function accessibleExternalLinks() {
   document.querySelectorAll('main a').forEach(link => {
