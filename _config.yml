@@ -74,22 +74,31 @@ uploads_dir: # specifies the default uploads directory for uploads in CloudCanno
 # Hide page.schema_json_partial setting from CloudCannon
 ## Non-developers should never touch this setting!
 _inputs:
+  homepage:
+    hidden: true
   schema_json_partial:
+    hidden: true
+  layout:
+    hidden: true
+  baseurl:
     hidden: true
   social_title:
     type: text
     label: Custom Social Title
     comment: "Overrides the page title when shared on Facebook, X, LinkedIn, etc."
-  
   social_description:
     type: textarea
     label: Custom Social Description
     comment: "Overrides the standard page description for social sharing cards."
-
   social_image:
     type: image
     label: Social Sharing Image
     comment: "Upload a custom 1200x630px image for social media previews."
+
+# Configure CloudCannon schemas
+_schemas:
+  pages:
+    path: .cloudcannon/schemas/page.html
 
 ## ================================================ ##
 ## Global/Main Navigation configuration for kcc.edu ##
