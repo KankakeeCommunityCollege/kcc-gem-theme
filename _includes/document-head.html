@@ -17,6 +17,7 @@
     {%- if site.canonical_baseurl %}
     <link rel="canonical" href="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
     {%- endif %}
+    {% include social-media-meta-data.html %}
     {% include preconnect.html %}
     <!-- ==============================
       KCC GEM THEME

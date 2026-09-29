@@ -1,0 +1,50 @@
+<!-- Open Graph & Twitter meta tags -->
+<meta property="og:url" content="{% if site.canonical_baseurl == 'https://www.kcc.edu' and page.url == '/' %}{{ site.canonical_baseurl }}{% else %}{{ site.canonical_baseurl }}{{ page.url }}{% endif %}">
+<!-- Title Assembly -->
+{% if page.social_title %}
+<meta property="og:title" content="{{ page.social_title }}">
+<meta name="twitter:title" content="{{ page.social_title }}">
+{% else %}
+  {% if site.subsection_title %}
+    {% assign default_og_title = page.title | append: " - " | append: site.subsection_title %}
+  {% else %}
+    {% assign default_og_title = page.title | append: " - " | append: site.title %}
+  {% endif %}
+  <meta property="og:title" content="{{ default_og_title }}">
+  <meta name="twitter:title" content="{{ default_og_title }}">
+{% endif %}
+
+<!-- Description Assembly -->
+{% assign og_desc = page.social_description %}
+{% if og_desc == nil or og_desc == "" %}
+  {% assign og_desc = page.description %}
+{% endif %}
+{% if og_desc == nil or og_desc == "" %}
+  {% assign og_desc = site.description %}
+{% endif %}
+
+{% if og_desc != nil and og_desc != "" %}
+  <meta property="og:description" content="{{ og_desc | replace: '"', '&quot;' }}">
+  <meta name="twitter:description" content="{{ og_desc | replace: '"', '&quot;' }}">
+{% endif %}
+
+{% if page.social_image %}
+  {% assign first_char = page.social_image | slice: 0 %}
+  {% if first_char == '/' %}
+    {% assign image = page.social_image | remove_first: '/' %}
+  {% else %}
+    {% assign image = page.social_image %}
+  {% endif %}
+<meta property="og:image" content="{{ site.url }}/{{ image }}">
+<meta property="og:image:secure_url" content="{{ site.url }}/{{ image }}">
+  {% if image contains '.JPG' or image contains '.jpg' or image contains '.jpeg' or image contains '.JPEG' %}
+<meta property="og:image:type" content="image/jpeg">
+  {% elsif image contains '.PNG' or image contains '.png' %}
+<meta property="og:image:type" content="image/png">
+  {% elsif image contains '.GIF' or image contains '.gif' %}
+<meta property="og:image:type" content="image/gif">
+  {% elsif image contains '.SVG' or image contains '.svg' %}
+<meta property="og:image:type" content="image/svg+xml">
+  {% endif %}
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}

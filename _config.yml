@@ -1,7 +1,9 @@
 title: "KCC"
 site_name: KCC Gem Theme
+description:
 public-url: "https://www.kcc.edu"
-url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
+# url: 'URL is needed for robots.txt to work properly' ## NO TRAILING SLASHES!!/<--nope
+url: 'https://www.kcc.edu'
 canonical_baseurl: https://www.kcc.edu # NO trailing slash ## Used to build canonical link elements in document head
 port: 3000
 timezone: America/Chicago
@@ -17,8 +19,6 @@ collections:
   contacts:
     output: false
 permalink: pretty
-description: > # this means to ignore newlines until "baseurl:"
-# Delete this comment and place description on this line
 baseurl: "" # the subpath of your site, e.g. /blog
 #include:
 #  - "_pages"
@@ -76,6 +76,20 @@ uploads_dir: # specifies the default uploads directory for uploads in CloudCanno
 _inputs:
   schema_json_partial:
     hidden: true
+  social_title:
+    type: text
+    label: Custom Social Title
+    comment: "Overrides the page title when shared on Facebook, X, LinkedIn, etc."
+  
+  social_description:
+    type: textarea
+    label: Custom Social Description
+    comment: "Overrides the standard page description for social sharing cards."
+
+  social_image:
+    type: image
+    label: Social Sharing Image
+    comment: "Upload a custom 1200x630px image for social media previews."
 
 ## ================================================ ##
 ## Global/Main Navigation configuration for kcc.edu ##
