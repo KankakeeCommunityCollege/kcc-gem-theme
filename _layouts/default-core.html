@@ -24,7 +24,8 @@ layout: compress
 </main>
 {% include footer.html %}
 {% include scripts/vendor-cdn.html %}
-{% include scripts/google-api.html %}
+{%- if page.include_gapi -%}
+{% include scripts/google-api.html %}{% endif %}
 {% include scripts/kcc-theme.html %}
 {%- if page.sheet_key or page.include_datatables -%}
 {% include scripts/table-cdn.html %}{% endif %}

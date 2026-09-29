@@ -10,8 +10,9 @@
 {%- if page.sheet_key or page.include_datatables %}
 <link rel="preconnect" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer">
 {%- endif %}
+{%- if page.include_gapi -%}
 <!-- Google API -->
-<link rel="preconnect" as="script" href="https://apis.google.com/js/api.js">
+<link rel="preconnect" as="script" href="https://apis.google.com/js/api.js">{% endif %}
 {% if page.slides %}
 <!--  Slick.js v1.8.1 & slick-theme stylesheet  -->
 <link rel="preconnect" as="style" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.css"/>
