@@ -94,6 +94,13 @@ _inputs:
     type: image
     label: Social Sharing Image
     comment: "Upload a custom 1200x630px image for social media previews."
+    context:
+      open: false
+      title: Social Image Help
+      icon: help
+      content: |-
+        Ideal image size is 1200×630px.
+        Keep logos and text inside a 100px inner margin to avoid mobile cropping.
 ## ================================================ ##
 ## Global/Main Navigation configuration for kcc.edu ##
 ## ================================================ ##
