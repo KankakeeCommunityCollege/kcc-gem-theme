@@ -95,10 +95,14 @@ _inputs:
     label: Social Sharing Image
     comment: "Upload a custom 1200x630px image for social media previews."
 
-# Configure CloudCannon schemas
-_schemas:
+collections_config:
   pages:
-    path: .cloudcannon/schemas/page.html
+    path: "" # Targets root HTML/MD pages, or specify a subfolder like "pages"
+    output: true
+    schemas:
+      default:
+        path: .cloudcannon/schemas/page.html
+        name: Page
 
 ## ================================================ ##
 ## Global/Main Navigation configuration for kcc.edu ##
