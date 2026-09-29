@@ -7,9 +7,10 @@
  */
 const currentHost = window.location.hostname.toLowerCase();
 // Define hostnames/domains that should always be treated as internal
-const internalDomains = [
+const internalDomains = [ // Use domains without the subdomain here (no "www")
   'kcc.edu',
   'jotform.com',
+  'enrole.com',    // "Enrole" system used by Continuing Ed.
   'libcal.com',    // Needed for library libcal links
   'libguides.com', // Needed for library libguide links
   'cloudvent.net', // Ensure the CloudCannon previews look the same as the live website
