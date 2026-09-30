@@ -108,11 +108,9 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Academics # @link_text becomes the main navigational categories
     link_href: 'academics'
     image: # The image element built into each dropdown menu
-      source: 'assets/img/menu-academics.jpg' # Points to the image file
-      # YOU ALWAYS NEED ALT TEXT!!!
-      alt: >-
-        Student in an electrical technology lab standing 
-        in front of electrical equipment mounted to a wall
+      source: 'assets/img/mega-menu_academics.jpg' # Points to the image file
+      # YOU ALWAYS NEED ALT TEXT (unless the graphic is decorative which these mostly are)!!!
+      alt: ""
     button:
       text: 'Explore Academic Pathways'
       href: '/academics/'
@@ -156,8 +154,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text:  Admissions
     link_href: admissions
     image:
-      source: 'assets/img/menu-admission.jpg'
-      alt: 'Smiling student inside the KCC main entrance'
+      source: 'assets/img/mega-menu_admissions.jpg'
+      alt: ""
     button:
       text: 'Apply to KCC'
       href: 'https://apply.kcc.edu'
@@ -198,6 +196,7 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
 ## Tuition & Aid
   - link_text:  Tuition & Aid
     link_href: 'tuition-and-aid'
+### This infographic is not decorative and needs alt-text!
     image:
       source: 'assets/img/menu_fafsa-early-bird-web-banner-23.jpg'
       alt: >-
@@ -234,11 +233,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Student Resources
     link_href: 'student-resources'
     image:
-      source: 'assets/img/menu-student-resources.jpg'
-      alt: >-
-        KCC Veteran Services staff from left-to-right; 
-        Kendra Souligne, Hassel Hernandez, Jason Rodriguez, 
-        and Megan Ponton.
+      source: 'assets/img/mega-menu_student-resources.jpg'
+      alt: ""
     button:
       text: 'Get Student Support'
       href: '/student-resources/support-resources/'
@@ -290,8 +286,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: Community
     link_href: 'community'
     image:
-      source: 'assets/img/menu-community.jpg'
-      alt: 'The Criminal Justice Club posing on the metal sculpture in front of the KCC main entrance'
+      source: 'assets/img/mega-menu_community.jpg'
+      alt: ""
     button:
       text: Explore Community Programs
       href: '/community/'
@@ -328,8 +324,8 @@ navigation: ## Add a navigation key to any project using kcc-gem-theme to locall
   - link_text: About KCC
     link_href: 'about'
     image:
-      source: 'assets/img/menu-about-kcc.jpg'
-      alt: 'Two students posing in front of the KCC main entrance'
+      source: 'assets/img/mega-menu_about.jpg'
+      alt: ""
     button:
       text: Learn About KCC
       href: '/about/'
