@@ -13,6 +13,7 @@ const internalDomains = [ // Use domains without the subdomain here (no "www")
   'enrole.com',    // "Enrole" system used by Continuing Ed.
   'libcal.com',    // Needed for library libcal links
   'libguides.com', // Needed for library libguide links
+  'apta.org',      // Used for CAPTE (health careers) accreditation badge
   'cloudvent.net', // Ensure the CloudCannon previews look the same as the live website
   'localhost',     // Ensure local dev look the same as the live website
   '127.0.0.1'      // Ensure local dev look the same as the live website
