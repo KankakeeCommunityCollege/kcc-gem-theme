@@ -8,15 +8,17 @@
 const currentHost = window.location.hostname.toLowerCase();
 // Define hostnames/domains that should always be treated as internal
 const internalDomains = [ // Use domains without the subdomain here (no "www")
-  'kcc.edu',
-  'jotform.com',
-  'enrole.com',    // "Enrole" system used by Continuing Ed.
-  'libcal.com',    // Needed for library libcal links
-  'libguides.com', // Needed for library libguide links
-  'apta.org',      // Used for CAPTE (health careers) accreditation badge
-  'cloudvent.net', // Ensure the CloudCannon previews look the same as the live website
-  'localhost',     // Ensure local dev look the same as the live website
-  '127.0.0.1'      // Ensure local dev look the same as the live website
+  'kcc.edu',           // Make sure any subdomain is treated as internal
+  'elluciancloud.com', // The portal's domain
+  'jotform.com',       // Our digital form provider
+  'maxient.com',       // Form provider (used for misconduct and other forms)
+  'enrole.com',        // "Enrole" system used by Continuing Ed.
+  'libcal.com',        // Needed for library libcal links
+  'libguides.com',     // Needed for library libguide links
+  'apta.org',          // Used for CAPTE (health careers) accreditation badge
+  'cloudvent.net',     // Ensure the CloudCannon previews look the same as the live website
+  'localhost',         // Ensure local dev look the same as the live website
+  '127.0.0.1'          // Ensure local dev look the same as the live website
 ];
 
 function accessibleExternalLinks() {
