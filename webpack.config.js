@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
 
   return {
     mode: devMode ? 'development' : 'production',
-    // Remove this config/setting after switching to BS6:
+    // Remove this config/setting after switching to Bootstrap 6:
     ignoreWarnings: [
       {
         message: /repetitive deprecation warnings omitted/,
@@ -57,17 +57,6 @@ module.exports = (env, argv) => {
             },
             'postcss-loader',
             'sass-loader',
-            // {
-            //   loader: 'sass-loader',
-            //   options: {
-            //     sassOptions: {
-            //       // Remove this config/setting after switching to BS6:
-            //       quietDeps: true,
-            //       // Remove this config/setting after switching to BS6:
-            //       silenceDeprecations: ['import', 'global-builtin', 'color-functions'],
-            //     },
-            //   },
-            // },
           ],
         },
         {
